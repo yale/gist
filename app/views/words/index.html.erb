@@ -1,0 +1,12 @@
+<h1>List of words</h1>
+
+<% if !@words.empty? %>
+<ul>
+<% @words.each do |word| %>
+  <li><%= word.name %></li>
+<% end %>
+</ul>
+<% else %>
+<p>There are no words listed.</p>
+<% end %>
+<p><%= link_to "Create a new word", :action => "new" %></p>

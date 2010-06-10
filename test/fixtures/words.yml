@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  part_of_speech: MyString
+
+two:
+  name: MyString
+  part_of_speech: MyString

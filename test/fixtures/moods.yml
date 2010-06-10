@@ -1,0 +1,22 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  type: Useful
+
+two:
+  type: Funny
+
+three:
+  type: Poetic
+  
+four:
+  type: Inaccurate
+  
+five:
+  type: Offensive
+  
+six:
+  type: Mature
+
+seven:
+  type: Duplicate
