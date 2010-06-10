@@ -1,4 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
+  map.resources :words, :has_many => :definitions
+  map.resources :definitions
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
@@ -42,6 +44,4 @@ ActionController::Routing::Routes.draw do |map|
   map.connect ':controller/:action/:id.:format'
   
   
-  map.resources :words, :has_many => :definitions
-  map.resources :definitions
 end

@@ -1,16 +1,6 @@
 class WordsController < ApplicationController
   before_filter :find_word, :only => [:show, :edit, :update, :destroy]
 
-  # Define the parts of speech to be allowed
-  @parts_of_speech = ["noun", 
-                      "adverb", 
-                      "adjective",
-                      "pronoun",
-                      "verb",
-                      "preposition",
-                      "conjunction",
-                      "interjunction"]
-
   # GET /words
   # GET /words.xml
   def index
@@ -35,7 +25,9 @@ class WordsController < ApplicationController
   # GET /words/new.xml
   def new
     @word = Word.new
-
+    
+    @word.save
+    
     respond_to do |wants|
       wants.html # new.html.erb
       wants.xml  { render :xml => @word }
