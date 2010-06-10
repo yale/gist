@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100609190335) do
+ActiveRecord::Schema.define(:version => 20100610182453) do
 
   create_table "definitions", :force => true do |t|
     t.string   "body"
@@ -32,12 +32,17 @@ ActiveRecord::Schema.define(:version => 20100609190335) do
   end
 
   create_table "votes", :force => true do |t|
-    t.integer  "direction"
+    t.integer  "vote",          :null => false
+    t.integer  "voteable_id",   :null => false
+    t.string   "voteable_type", :null => false
+    t.integer  "voter_id"
+    t.string   "voter_type"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "mood_id"
-    t.integer  "definition_id"
   end
+
+  add_index "votes", ["voteable_id", "voteable_type"], :name => "fk_voteables"
+  add_index "votes", ["voter_id", "voter_type"], :name => "fk_voters"
 
   create_table "words", :force => true do |t|
     t.string   "name"
