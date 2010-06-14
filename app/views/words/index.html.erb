@@ -3,10 +3,16 @@
 <% if !@words.empty? %>
 <ul>
 <% @words.each do |word| %>
-  <li><%= word.name %></li>
+  <li><%= link_to "#{word.name}", word %></li>
 <% end %>
 </ul>
 <% else %>
 <p>There are no words listed.</p>
 <% end %>
-<p><%= link_to "Create a new word", :action => "new" %></p>
+
+<h2>Add a word</h2>
+<% form_for @word, :url => { :action => "create" } do |f| -%>
+  <%= f.error_messages %>
+  <p><%= f.text_field :name %></p>
+  <p><%= f.submit 'Create'  %></p>
+<% end -%>

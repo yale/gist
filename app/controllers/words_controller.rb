@@ -5,7 +5,8 @@ class WordsController < ApplicationController
   # GET /words.xml
   def index
     @words = Word.all
-
+    @word = Word.new
+    
     respond_to do |wants|
       wants.html # index.html.erb
       wants.xml  { render :xml => @words }
@@ -15,28 +16,16 @@ class WordsController < ApplicationController
   # GET /words/1
   # GET /words/1.xml
   def show
+    
+    @definitions = @word.definitions
+    
+    
     respond_to do |wants|
       wants.html # show.html.erb
       wants.xml  { render :xml => @word }
     end
   end
 
-  # GET /words/new
-  # GET /words/new.xml
-  def new
-    @word = Word.new
-    
-    @word.save
-    
-    respond_to do |wants|
-      wants.html # new.html.erb
-      wants.xml  { render :xml => @word }
-    end
-  end
-
-  # GET /words/1/edit
-  def edit
-  end
 
   # POST /words
   # POST /words.xml
@@ -46,18 +35,19 @@ class WordsController < ApplicationController
     respond_to do |wants|
       if @word.save
         flash[:notice] = 'Word was successfully created.'
-        wants.html { redirect_to(@word) }
+        wants.html { redirect_to :action => "index" }
         wants.xml  { render :xml => @word, :status => :created, :location => @word }
       else
-        wants.html { render :action => "new" }
+        wants.html { redirect_to :back }
         wants.xml  { render :xml => @word.errors, :status => :unprocessable_entity }
       end
     end
   end
 
-  # PUT /words/1
-  # PUT /words/1.xml
   def update
+    
+    p params
+    
     respond_to do |wants|
       if @word.update_attributes(params[:word])
         flash[:notice] = 'Word was successfully updated.'

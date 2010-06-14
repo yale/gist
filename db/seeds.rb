@@ -14,15 +14,3 @@ moods = Mood.create([
     {:name => "Inaccurate"},
     {:name => "Offensive"}
   ])
-  
-pos = LexicalCategory.create([
-    {:name => "Noun", :code => "n"},
-    {:name => "Verb", :code => "v"},
-    {:name => "Adjective", :code => "adj"},
-    {:name => "Pronoun", :code => "pronoun"},
-    {:name => "Adverb", :code => "adv"},
-    {:name => "Preposition", :code => "prep"},
-    {:name => "Conjunction", :code => "conj"},
-    {:name => "Interjection", :code => "intj"}
-  ])
-

@@ -1,3 +1,20 @@
 <h1><%= @word.name %></h1>
 
+<% if not @definitions.empty? %>
+<ul class="definition-list">
+  <% @definitions.each do |definition| %>
+  <li><%= definition.body %></li>
+  <% end %>
+</ul>
+<% else %>
+<p>This word has no definitions! Why don't you add one below?</p>
+<% end %>
+
+<% form_for @word do |f| -%>
+  <% f.fields_for :definitions do |defn| %>
+    <%= defn.text_area :body, :cols => 40, :rows => 3 %>
+  <% end %>
+  <%= f.submit "Define!" %>
+<% end -%>
+
 <p><%= link_to 'Show all words', words_path %></p>
