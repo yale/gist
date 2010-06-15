@@ -1,6 +1,7 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :words, :member => { :add_definition => :get }, :has_many => :definitions
   map.resources :definitions, :member => { :add_vote => :get }, :belongs_to => :word, :has_many => :votes
+
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
