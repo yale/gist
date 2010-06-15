@@ -5,12 +5,3 @@
 #   
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Major.create(:name => 'Daley', :city => cities.first)
-
-moods = Mood.create([
-    {:name => "Helpful"},
-    {:name => "Funny"},
-    {:name => "Poetic"},
-    {:name => "Mature"},
-    {:name => "Inaccurate"},
-    {:name => "Offensive"}
-  ])

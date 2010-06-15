@@ -2,6 +2,8 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :words, :member => { :add_definition => :get }, :has_many => :definitions
   map.resources :definitions, :member => { :add_vote => :get }, :belongs_to => :word, :has_many => :votes
 
+  map.resources :users
+
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
@@ -34,7 +36,7 @@ ActionController::Routing::Routes.draw do |map|
   #   end
 
   # You can have the root of your site routed with map.root -- just remember to delete public/index.html.
-  # map.root :controller => "welcome"
+  map.root :controller => "words"
 
   # See how all your routes lay out with "rake routes"
 
