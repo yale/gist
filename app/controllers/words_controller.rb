@@ -1,5 +1,5 @@
 class WordsController < ApplicationController
-  before_filter :find_word, :only => [:show, :edit, :update, :destroy]
+  before_filter :find_word, :only => [:show, :edit, :update, :destroy, :add_definition]
 
   # GET /words
   # GET /words.xml
@@ -19,7 +19,6 @@ class WordsController < ApplicationController
     
     @definitions = @word.definitions
     
-    
     respond_to do |wants|
       wants.html # show.html.erb
       wants.xml  { render :xml => @word }
@@ -36,6 +35,21 @@ class WordsController < ApplicationController
       if @word.save
         flash[:notice] = 'Word was successfully created.'
         wants.html { redirect_to :action => "index" }
+        wants.xml  { render :xml => @word, :status => :created, :location => @word }
+      else
+        wants.html { redirect_to :back }
+        wants.xml  { render :xml => @word.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
+
+  def add_definition
+    p params
+    
+    respond_to do |wants|
+      if @word.definitions << Definition.new(:body => params[:body])
+        flash[:notice] = 'Definition was successfully added.'
+        wants.html { redirect_to @word }
         wants.xml  { render :xml => @word, :status => :created, :location => @word }
       else
         wants.html { redirect_to :back }

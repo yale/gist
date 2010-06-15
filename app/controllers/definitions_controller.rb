@@ -12,6 +12,10 @@ class DefinitionsController < ApplicationController
     end
   end
 
+  def add_vote
+    
+  end
+
   # GET /definitions/1
   # GET /definitions/1.xml
   def show

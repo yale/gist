@@ -2,18 +2,14 @@
 
 <% if not @definitions.empty? %>
 <ul class="definition-list">
-  <% @definitions.each do |definition| %>
-  <li><%= definition.body %></li>
-  <% end %>
+  <%= render :partial => "words/definition", :collection => @definitions %>
 </ul>
 <% else %>
 <p>This word has no definitions! Why don't you add one below?</p>
 <% end %>
 
-<% form_for @word do |f| -%>
-  <% f.fields_for :definitions do |defn| %>
-    <%= defn.text_area :body, :cols => 40, :rows => 3 %>
-  <% end %>
+<% form_for @word, :html => { :method => :get }, :url => add_definition_word_path(@word) do |f| -%>
+  <%= text_area_tag "body", nil, :size => "40x3" %>
   <%= f.submit "Define!" %>
 <% end -%>
 
