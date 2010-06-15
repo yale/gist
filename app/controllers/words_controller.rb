@@ -70,6 +70,10 @@ class WordsController < ApplicationController
       wants.xml  { head :ok }
     end
   end
+  
+  protected
+    def authorize
+    end
 
   private
     def find_word
