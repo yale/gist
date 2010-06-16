@@ -18,3 +18,8 @@ a {
   width: 600px;
   margin: 20px auto;
 }
+
+#user_nav {
+  float: right;
+  font-size: 12px;
+}
