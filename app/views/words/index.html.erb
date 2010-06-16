@@ -1,13 +1,15 @@
 <h1>List of words</h1>
 
-<% if !@words.empty? %>
-<ul>
-<% @words.each do |word| %>
-  <li><%= link_to "#{word.name}", word %></li>
-<% end %>
-</ul>
-<% else %>
-<p>There are no words listed.</p>
+<% cache(:action => 'index', :action_suffix => 'all_words') do %>
+  <% if !@words.empty? %>
+  <ul>
+  <% @words.each do |word| %>
+    <li><%= link_to "#{word.name}", word %></li>
+  <% end %>
+  </ul>
+  <% else %>
+  <p>There are no words listed.</p>
+  <% end %>
 <% end %>
 
 <h2>Add a word</h2>

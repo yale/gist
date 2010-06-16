@@ -1,8 +1,6 @@
 class WordsController < ApplicationController
   before_filter :find_word, :only => [:show, :edit, :update, :destroy, :add_definition]
 
-  # GET /words
-  # GET /words.xml
   def index
     @words = Word.all
     @word = Word.new
@@ -13,8 +11,6 @@ class WordsController < ApplicationController
     end
   end
 
-  # GET /words/1
-  # GET /words/1.xml
   def show
     
     @definitions = @word.definitions
@@ -26,13 +22,13 @@ class WordsController < ApplicationController
   end
 
 
-  # POST /words
-  # POST /words.xml
   def create
     @word = Word.new(params[:word])
 
     respond_to do |wants|
       if @word.save
+        # If a word is created, expire the word listing cache
+        expire_fragment(:controller => 'words', :action => 'index', :action_suffix => 'all_words')
         flash[:notice] = 'Word was successfully created.'
         wants.html { redirect_to :action => "index" }
         wants.xml  { render :xml => @word, :status => :created, :location => @word }
@@ -48,6 +44,8 @@ class WordsController < ApplicationController
     
     respond_to do |wants|
       if @word.definitions << Definition.new(:body => params[:body])
+        # If a definition is added, expire the definitions listing cache
+        expire_fragment(:controller => 'words', :action => 'show', :action_suffix => 'all_defs')
         flash[:notice] = 'Definition was successfully added.'
         wants.html { redirect_to @word }
         wants.xml  { render :xml => @word, :status => :created, :location => @word }
@@ -74,8 +72,7 @@ class WordsController < ApplicationController
     end
   end
 
-  # DELETE /words/1
-  # DELETE /words/1.xml
+
   def destroy
     @word.destroy
 

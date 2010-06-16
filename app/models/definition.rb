@@ -1,7 +1,5 @@
 class Definition < ActiveRecord::Base
-  has_many :votes
-  has_many :moods, :through => :votes
+  has_many :user_votes
+  belongs_to :user
   belongs_to :word
-  
-  
 end

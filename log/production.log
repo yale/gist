@@ -1,0 +1,54 @@
+
+
+Processing WordsController#index (for 127.0.0.1 at 2010-06-15 16:36:41) [GET]
+Rendering template within layouts/application
+Rendering words/index
+Completed in 14ms (View: 8, DB: 1) | 200 OK [http://localhost/]
+
+
+Processing WordsController#show (for 127.0.0.1 at 2010-06-15 16:36:42) [GET]
+  Parameters: {"id"=>"4"}
+Rendering template within layouts/application
+Rendering words/show
+Completed in 7ms (View: 5, DB: 1) | 200 OK [http://localhost/words/4]
+
+
+Processing WordsController#show (for 127.0.0.1 at 2010-06-15 16:36:44) [GET]
+  Parameters: {"id"=>"5"}
+Rendering template within layouts/application
+Rendering words/show
+Completed in 16ms (View: 4, DB: 1) | 200 OK [http://localhost/words/5]
+
+
+Processing WordsController#show (for 127.0.0.1 at 2010-06-15 16:36:45) [GET]
+  Parameters: {"id"=>"8"}
+Rendering template within layouts/application
+Rendering words/show
+Completed in 5ms (View: 3, DB: 1) | 200 OK [http://localhost/words/8]
+
+
+Processing WordsController#show (for 127.0.0.1 at 2010-06-15 16:36:47) [GET]
+  Parameters: {"id"=>"9"}
+Rendering template within layouts/application
+Rendering words/show
+Completed in 5ms (View: 2, DB: 1) | 200 OK [http://localhost/words/9]
+
+
+Processing WordsController#show (for 127.0.0.1 at 2010-06-15 16:36:50) [GET]
+  Parameters: {"id"=>"10"}
+Rendering template within layouts/application
+Rendering words/show
+Completed in 8ms (View: 5, DB: 1) | 200 OK [http://localhost/words/10]
+
+
+Processing WordsController#add_definition (for 127.0.0.1 at 2010-06-15 16:37:38) [GET]
+  Parameters: {"commit"=>"Define!", "body"=>"The opposite of dog", "id"=>"10"}
+Redirected to http://localhost:3000/words/10
+Completed in 7ms (DB: 1) | 302 Found [http://localhost/words/10/add_definition?body=The+opposite+of+dog&commit=Define%21]
+
+
+Processing WordsController#show (for 127.0.0.1 at 2010-06-15 16:37:38) [GET]
+  Parameters: {"id"=>"10"}
+Rendering template within layouts/application
+Rendering words/show
+Completed in 7ms (View: 4, DB: 1) | 200 OK [http://localhost/words/10]
