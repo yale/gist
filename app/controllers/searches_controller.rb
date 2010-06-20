@@ -1,3 +1,4 @@
+# Type rake ferret_index to re-index words
 class SearchesController < ApplicationController
   def index
     if params[:q]

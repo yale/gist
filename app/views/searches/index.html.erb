@@ -1,7 +1,7 @@
 <h1><%= pluralize(@words.size, "Result") %></h1>
 
-<ul>
+<ol>
 <% @words.each do |s| %>
 	<li><%= link_to s.name, word_path(s) %></li>
 <% end -%>
-</ul>
+</ol>
