@@ -1,5 +1,12 @@
 class WordsController < ApplicationController
   before_filter :find_word, :only => [:show, :edit, :update, :destroy, :add_definition]
+  #auto_complete_for :word, :name, :limit => 15, :order => 'created_at DESC'
+
+  def auto_complete_for_word_name
+    word_search = params[:q]
+	@words = Word.find(:all, :conditions => [ 'LOWER(word_name) LIKE ?',book_search.downcase + '%' ], :order => 'book_name ASC')
+	render :partial => '/views/all_views'
+  end
 
   def index
     @words = Word.all
