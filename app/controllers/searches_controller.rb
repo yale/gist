@@ -10,6 +10,7 @@ class SearchesController < ApplicationController
   	  if @words.empty?
       	@words = Word.find_with_ferret(query + "*", :limit => :all)
   	  end
+  	  #render :partial => 'names'
     end
   end
 end

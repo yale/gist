@@ -14,7 +14,6 @@ class WordsController < ApplicationController
   def show
     
     @definitions = @word.definitions
-    
     respond_to do |wants|
       wants.html # show.html.erb
       wants.xml  { render :xml => @word }

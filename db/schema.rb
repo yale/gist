@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100616051717) do
+ActiveRecord::Schema.define(:version => 20100621234410) do
 
   create_table "definitions", :force => true do |t|
     t.string   "body"
@@ -36,6 +36,14 @@ ActiveRecord::Schema.define(:version => 20100616051717) do
 
   add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
   add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
+
+  create_table "trigrams", :force => true do |t|
+    t.string   "tg"
+    t.integer  "word_id"
+    t.integer  "score"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "user_sessions", :force => true do |t|
     t.string   "username"
@@ -73,6 +81,14 @@ ActiveRecord::Schema.define(:version => 20100616051717) do
     t.datetime "last_login_at"
     t.string   "current_login_ip"
     t.string   "last_login_ip"
+  end
+
+  create_table "votes", :force => true do |t|
+    t.integer  "direction"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "mood_id"
+    t.integer  "definition_id"
   end
 
   create_table "words", :force => true do |t|

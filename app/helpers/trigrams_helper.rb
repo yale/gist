@@ -1,0 +1,2 @@
+module TrigramsHelper
+end

@@ -1,0 +1,24 @@
+<h1>Editing trigram</h1>
+
+<% form_for(@trigram) do |f| %>
+  <%= f.error_messages %>
+
+  <p>
+    <%= f.label :tg %><br />
+    <%= f.text_field :tg %>
+  </p>
+  <p>
+    <%= f.label :word_id %><br />
+    <%= f.text_field :word_id %>
+  </p>
+  <p>
+    <%= f.label :score %><br />
+    <%= f.text_field :score %>
+  </p>
+  <p>
+    <%= f.submit 'Update' %>
+  </p>
+<% end %>
+
+<%= link_to 'Show', @trigram %> |
+<%= link_to 'Back', trigrams_path %>

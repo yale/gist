@@ -10,19 +10,29 @@
 </head>
 <body>
   <div id="container">
-  	<div id="user_nav">
-      <% if current_user %>
-        <%= link_to "Edit Profile", edit_user_path(:current) %> |
-        <%= link_to "Logout", logout_path %>
-    <% else %>
-        <%= link_to "Register", new_user_path %> |
-        <%= link_to "Login", login_path %>
-    <% end %>
-    <% form_tag(searches_path, :method => 'get') do %>
-      <%= text_field_tag "q", params[:q] %>
-	  <%= submit_tag "Search!" %>
-    <% end %>
-  </div>
+  	<div id="boxes">
+  	  <div id="user_nav">
+        <% if current_user %>
+          <%= link_to "Edit Profile", edit_user_path(:current) %> |
+          <%= link_to "Logout", logout_path %>
+      <% else %>
+          <%= link_to "Register", new_user_path %> |
+          <%= link_to "Login", login_path %>
+      <% end %>
+      </div>
+      <div id="search_box">
+        <% form_tag(searches_path, :method => 'get') do %>
+          <%= text_field_tag "q", params[:q] %>
+	      <%= submit_tag "Search!" %>
+        <% end %>
+      </div>
+      <div id="autocomplete_box">
+        <% form_tag(trigrams_path, :method => 'get') do %>
+          <%= text_field_tag "q", params[:q] %>
+	      <%= submit_tag "Search!" %>
+        <% end %>
+      </div>
+    </div>
     <div id="notice"><%= notice %></div>
     <div id="header">
       <h1 id="logo">
