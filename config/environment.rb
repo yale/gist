@@ -44,6 +44,7 @@ Rails::Initializer.run do |config|
   config.gem "ruby-openid", :lib => "openid"
   
   config.gem "repeated_auto_complete"
+  config.gem "acts_as_ferret"
 
 
 end
