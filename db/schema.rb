@@ -83,14 +83,6 @@ ActiveRecord::Schema.define(:version => 20100621234415) do
     t.string   "last_login_ip"
   end
 
-  create_table "votes", :force => true do |t|
-    t.integer  "direction"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-    t.integer  "mood_id"
-    t.integer  "definition_id"
-  end
-
   create_table "words", :force => true do |t|
     t.string   "name"
     t.string   "part_of_speech"

@@ -1,0 +1,20 @@
+GoogleSuggest
+=============
+
+Adds Google suggest service to all controllers.
+
+Example
+=======
+
+Install the plugin:
+script/plugin install git://github.com/mdh/g_suggest.git
+
+In your code do:
+  "rubie".g_suggest
+This will return "ruby"
+
+If no suggestion is found, nil is returned:
+  "ruby".g_suggest
+  => nil
+
+Copyright (c) 2008 Marek de Heus, released under the MIT license
