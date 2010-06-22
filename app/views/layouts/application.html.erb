@@ -35,6 +35,7 @@
           <%= text_field_tag "q", params[:q] %>
 	      <%= submit_tag "Search!" %>
         <% end %>
+        <% render :partial => 'searches/names' #AJAX update of dropdown list %>
       </div>
     </div>
     <div id="notice"><%= notice %></div>

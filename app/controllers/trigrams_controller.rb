@@ -7,7 +7,5 @@ class TrigramsController < ApplicationController
     top_ids = trigram_groups.sort_by {|a| -a[1]}.first(limit).map {|a| a[0]} #sorts by score, gets top scorers, returns simple array of ids
     unsorted_words = Word.find(top_ids) #get unsorted objects
     @words = top_ids.map{|id| unsorted_words.detect{|word| word.id == id}} #sort objects according to sorted ids
-    #@words = Word.all
-    #render :partial => 'names' #AJAX update of dropdown list
   end
 end
