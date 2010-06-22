@@ -1,12 +1,5 @@
 class WordsController < ApplicationController
   before_filter :find_word, :only => [:show, :edit, :update, :destroy, :add_definition]
-  auto_complete_for :word, :name, :limit => 15, :order => 'created_at DESC'
-
-  def auto_complete_for_word_name
-    word_search = params[:q]
-	@words = Word.find(:all, :conditions => [ 'LOWER(word_name) LIKE ?',book_search.downcase + '%' ], :order => 'book_name ASC')
-	render :partial => '/views/all_views'
-  end
 
   def index
     @words = Word.all
@@ -33,8 +26,6 @@ class WordsController < ApplicationController
 
     respond_to do |wants|
       if @word.save
-        # If a word is created, expire the word listing cache
-        expire_fragment(:controller => 'words', :action => 'index', :action_suffix => 'all_words')
         flash[:notice] = 'Word was successfully created.'
         wants.html { redirect_to :action => "index" }
         wants.xml  { render :xml => @word, :status => :created, :location => @word }
@@ -50,8 +41,6 @@ class WordsController < ApplicationController
     
     respond_to do |wants|
       if @word.definitions << Definition.new(:body => params[:body])
-        # If a definition is added, expire the definitions listing cache
-        expire_fragment(:controller => 'words', :action => 'show', :action_suffix => 'all_defs')
         flash[:notice] = 'Definition was successfully added.'
         wants.html { redirect_to @word }
         wants.xml  { render :xml => @word, :status => :created, :location => @word }

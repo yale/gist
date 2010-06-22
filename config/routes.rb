@@ -11,7 +11,7 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resources :searches
 
-  map.resources :words, :member => { :add_definition => :get }, :has_many => :definitions
+  map.resources :words, :member => { :add_definition => :get }, :has_many => :definitions, :collection => {:auto_complete_for_customer_name => :get }
   map.resources :definitions, :member => { :add_vote => :get }, :belongs_to => :word, :has_many => :votes
   
   map.connect ':controller/auto_complete_for_word_name', :action => 'auto_complete_for_word_name', :format => 'json'
