@@ -1,0 +1,8 @@
+cat
+dog
+man
+manly
+cat man
+doggy
+carpool
+you're
