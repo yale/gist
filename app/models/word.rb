@@ -5,12 +5,9 @@ class Word < ActiveRecord::Base
   
   acts_as_ferret( { :fields => [ :name ], :remote => true } )
   
-  def word_name
-    category.name if category
-  end
-
-  def word_name=(name)
-    self.word = Word.find_or_create_by_name(name) unless name.blank?
+  def self.names
+    # find all records, then map name attributes to an array
+    find(:all, :select => "name").map(&:name)
   end
   
 end
