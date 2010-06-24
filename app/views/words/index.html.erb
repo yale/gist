@@ -1,17 +1,7 @@
-<h1>List of words</h1>
+<h1>Word of the day</h1>
 
-<% cache(:action => 'index', :action_suffix => 'all_words') do %>
-  <% if !@words.empty? %>
-  <ul>
-  <% @words.each do |word| %>
-    <li><%= link_to "#{word.name}", word %></li>
-  <% end %>
-  </ul>
-  <% else %>
-  <p>There are no words listed.</p>
-  <% end %>
-<% end %>
-
+<%= link_to @random.name, @random %>
+<%= render :partial => 'words/definition', :locals => {:definition => @random_def} unless !@random_def %>
 <h2>Add a word</h2>
 <% form_for @word, :url => { :action => "create" } do |f| -%>
   <%= f.error_messages %>

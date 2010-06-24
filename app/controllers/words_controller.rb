@@ -11,7 +11,8 @@ class WordsController < ApplicationController
   end
   
   def index
-    @words = Word.all
+  	@random = Word.find :first, :offset => (Word.count * rand).to_i
+  	@random_def = @random.definitions.find :first, :order => "'like' DESC"
     @word = Word.new
     
     respond_to do |wants|
