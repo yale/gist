@@ -9,15 +9,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100621234421) do
+ActiveRecord::Schema.define(:version => 20100624060624) do
 
   create_table "definitions", :force => true do |t|
     t.string   "body"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "word_id"
-    t.integer  "likes"
-    t.integer  "dislikes"
+    t.integer  "like"
+    t.integer  "dislike"
     t.integer  "helpful"
     t.integer  "funny"
     t.integer  "poetic"
@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(:version => 20100621234421) do
     t.integer  "mature"
     t.integer  "offensive"
     t.integer  "duplicate"
+    t.integer  "user_id"
   end
 
   create_table "sessions", :force => true do |t|
@@ -64,6 +65,8 @@ ActiveRecord::Schema.define(:version => 20100621234421) do
     t.boolean  "duplicate"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
+    t.integer  "definition_id"
   end
 
   create_table "users", :force => true do |t|
