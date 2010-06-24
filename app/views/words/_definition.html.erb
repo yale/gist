@@ -1,1 +1,11 @@
-<li><%= definition.body %> </li>
+<li>
+  <%=h definition.body %>
+  <span class="votes">
+    <span class="likes"><span><%= definition.get_votes_by_mood(:like) %></span> likes</span>
+    <span class="dislikes"><span><%= definition.get_votes_by_mood(:dislike) %></span> dislikes</span>
+  </span>
+  <ul class="tools">
+    <li><%= link_to "Like", vote_definition_path(definition, :mood => :like), :method => :post %></li>
+    <li><%= link_to "Dislike", vote_definition_path(definition, :mood => :dislike), :method => :post %></li>
+  </ul>
+</li>

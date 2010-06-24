@@ -1,5 +1,6 @@
 class DefinitionsController < ApplicationController
-  before_filter :find_definition, :only => [:show, :edit, :update, :destroy]
+  before_filter :find_definition, :only => [:show, :edit, :update, :destroy, :vote]
+  before_filter :require_user, :only => [:vote, :new, :create, :update]
 
   # GET /definitions
   # GET /definitions.xml
@@ -12,8 +13,17 @@ class DefinitionsController < ApplicationController
     end
   end
 
-  def add_vote
-    
+  def vote
+    puts params[:mood]
+    respond_to do |wants|
+      if @definition.cast_vote(current_user, params[:mood])
+        flash[:notice] = 'Thank you for your vote!'
+        wants.html { redirect_to :back }
+      else
+        flash[:notice] = 'Something has gone horribly wrong.'
+        wants.html { redirect_to :back }
+      end
+    end
   end
 
   # GET /definitions/1
