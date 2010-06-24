@@ -1,6 +1,15 @@
 class WordsController < ApplicationController
   before_filter :find_word, :only => [:show, :edit, :update, :destroy, :add_definition]
-
+  auto_complete_for :word, :name
+  
+  def get_all
+    @words = Word.all.map(&:name)
+  end
+  
+  def get_words
+    @words = Word.find(:all, :conditions => ['name LIKE ?', "%#{params[:search]}%"])
+  end
+  
   def index
     @words = Word.all
     @word = Word.new

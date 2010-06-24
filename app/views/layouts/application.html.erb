@@ -7,9 +7,18 @@
   <title>Gist: <%= controller.action_name %></title>
   <%= stylesheet_link_tag 'ui-lightness/jquery-ui-1.8.2.custom' %>
   <%= stylesheet_link_tag 'application' %>
+  <%= javascript_include_tag :defaults %>
   <%= javascript_include_tag 'jquery-1.4.2.min' %>
   <%= javascript_include_tag 'jquery-ui-1.8.2.custom.min' %>
-  <%= javascript_include_tag 'application' %>
+  <%= javascript_include_tag 'jrails' %>
+  <script type="text/javascript">
+  		$(function() {
+		var availableTags = <%= get_string_array_of_words_for_js %>;
+		$("#autocomplete").autocomplete({
+			source: availableTags
+		});
+	});
+  </script>
 </head>
 <body>
   <div id="container">
@@ -23,18 +32,21 @@
           <%= link_to "Login", login_path %>
       <% end %>
       </div>
+      
       <div id="search_box">
         <% form_tag(searches_path, :method => 'get') do %>
-          <%= text_field_tag "q", params[:q] %>
+          <%= text_field_tag "q", params[:q], {'id' => 'autocomplete'} %>
 	      <%= submit_tag "Search!" %>
         <% end %>
       </div>
+      <!--
       <div id="autocomplete_box">
         <% form_tag(trigrams_path, :method => 'get') do %>
           <%= text_field_tag "q", params[:q], {'id' => 'autocomplete'} %>
 	      <%= submit_tag "Search!" %>
         <% end %>
       </div>
+      -->
     </div>
     <div id="notice"><%= notice %></div>
     <div id="header">

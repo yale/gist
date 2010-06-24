@@ -11,14 +11,15 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resources :searches
 
-  map.resources :words, :member => { :add_definition => :get }, :has_many => :definitions, :collection => {:auto_complete_for_customer_name => :get }
+  map.resources :words, :member => { :add_definition => :get }, :has_many => :definitions, :collection => {:auto_complete_for_word_name => :get }
+  
   map.resources :definitions, :member => { :add_vote => :get }, :belongs_to => :word, :has_many => :votes
   
   map.connect ':controller/auto_complete_for_word_name', :action => 'auto_complete_for_word_name', :format => 'json'
   map.auto_complete ':controller/:action', 
                   :requirements => { :action => /auto_complete_for_\S+/ },
                   :conditions => { :method => :get }
-
+  
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:

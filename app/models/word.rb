@@ -4,5 +4,10 @@ class Word < ActiveRecord::Base
   validates_presence_of :name
   
   acts_as_ferret( { :fields => [ :name ], :remote => true } )
-    
+  
+  def self.names
+    # find all records, then map name attributes to an array
+    find(:all, :select => "name").map(&:name)
+  end
+  
 end

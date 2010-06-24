@@ -9,6 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
+
 ActiveRecord::Schema.define(:version => 20100624060624) do
 
   create_table "definitions", :force => true do |t|
@@ -84,6 +85,14 @@ ActiveRecord::Schema.define(:version => 20100624060624) do
     t.datetime "last_login_at"
     t.string   "current_login_ip"
     t.string   "last_login_ip"
+  end
+
+  create_table "votes", :force => true do |t|
+    t.integer  "direction"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "mood_id"
+    t.integer  "definition_id"
   end
 
   create_table "words", :force => true do |t|
