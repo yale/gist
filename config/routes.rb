@@ -19,6 +19,11 @@ ActionController::Routing::Routes.draw do |map|
   map.auto_complete ':controller/:action', 
                   :requirements => { :action => /auto_complete_for_\S+/ },
                   :conditions => { :method => :get }
+                  
+  map.resources :definitions do |definition|
+    definition.resources :comments
+  end 
+
   
   # The priority is based upon order of creation: first created -> highest priority.
 
