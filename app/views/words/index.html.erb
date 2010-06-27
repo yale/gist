@@ -1,10 +1,10 @@
 <h1>Word of the day</h1>
 
-<%= link_to @random.name, @random %>
-<%= render :partial => 'words/definition', :locals => {:definition => @random_def} unless !@random_def %>
+<div id="word-of-the-day">
+  <%= render :partial => 'words/result', :locals => {:word => @random, :definition => @random_def } %>
+</div>
 <h2>Add a word</h2>
 <% form_for @word, :url => { :action => "create" } do |f| -%>
   <%= f.error_messages %>
-  <p><%= f.text_field :name %></p>
-  <p><%= f.submit 'Create'  %></p>
+  <p><%= f.text_field :name %><%= f.submit 'Create'  %></p>
 <% end -%>

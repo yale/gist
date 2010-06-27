@@ -1,3 +1,4 @@
+<div class="definition-comment-form">
 <% form_tag :action => 'add_comment' %>
   <%= text_field 'comment', 'comment' %></br>
 
@@ -6,3 +7,4 @@
   <%= hidden_field 'commentable', 'commentable', :value => "definition" %>
   <%= hidden_field 'commentable', 'commentable_id', :value => @definition_id %>
 <% form_tag %>
+</div>

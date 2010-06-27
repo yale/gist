@@ -1,14 +1,11 @@
-<h1><%= @word.name %></h1>
+<h1 class="title">Definitions for</h1>
 
-<% cache(:action => 'show', :action_suffix => 'all_defs') do %>
-  <% if not @definitions.empty? %>
-  <ul class="definition-list">
-    <%= render :partial => "words/definition", :collection => @definitions %>
-    <%= render :partial => 'words/comment_form' %>
-  </ul>
-  <% else %>
+<h2 class="word"><%= @word.name %></h2>
+
+<% if not @definitions.empty? %>
+  <%= render :partial => "words/definitions", :collection => @definitions %>
+<% else %>
   <p>This word has no definitions! Why don't you add one below?</p>
-  <% end %>
 <% end %>
 
 <% form_for @word, :html => { :method => :get }, :url => add_definition_word_path(@word) do |f| -%>
@@ -16,4 +13,4 @@
   <%= f.submit "Define!" %>
 <% end -%>
 
-<p><%= link_to 'Show all words', words_path %></p>
+<p><%= link_to 'Back to index', root_path %></p>

@@ -1,11 +1,5 @@
-<li>
+<li class="definition">
+  <%= render :partial => 'words/definition_stats', :locals => {:definition => definition} %>
   <%=h definition.body %>
-  <span class="votes">
-    <span class="likes"><span><%= definition.get_votes_by_mood(:like) %></span> likes</span>
-    <span class="dislikes"><span><%= definition.get_votes_by_mood(:dislike) %></span> dislikes</span>
-  </span>
-  <ul class="tools">
-    <li><%= link_to "Like", vote_definition_path(definition, :mood => :like), :method => :post %></li>
-    <li><%= link_to "Dislike", vote_definition_path(definition, :mood => :dislike), :method => :post %></li>
-  </ul>
+  <%= render :partial => 'words/comment_form' %>
 </li>
