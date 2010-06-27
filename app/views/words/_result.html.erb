@@ -1,0 +1,6 @@
+<li class="result">
+  <%= link_to word.name, word, {:class => 'word'} %>
+  <ul class="definitions">
+    <%= render :partial => 'words/definition', :locals => {:definition => definition} %>
+  </ul>
+</li>

@@ -16,7 +16,7 @@ class DefinitionsController < ApplicationController
     # Add the comment
     commentable.comments << comment
 
-    redirect_to :action => commentable_type.downcase, :id => commentable_id
+    redirect :back;
   end
 
   # GET /definitions

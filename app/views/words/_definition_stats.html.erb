@@ -1,0 +1,10 @@
+<div class="stats">
+  <ul class="votes">
+    <li class="like"><span><%= definition.get_votes_by_mood(:like) %></span> likes</li>
+    <li class="dislike"><span><%= definition.get_votes_by_mood(:dislike) %></span> dislikes</li>
+  </ul>
+  <ul class="tools">
+    <li class="like-button"><%= link_to "Like", vote_definition_path(definition, :mood => :like), :method => :post %></li>
+    <li class="dislike-button"><%= link_to "Dislike", vote_definition_path(definition, :mood => :dislike), :method => :post %></li>
+  </ul>
+</div>
