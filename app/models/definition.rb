@@ -2,6 +2,7 @@ class Definition < ActiveRecord::Base
   has_many :user_votes
   belongs_to :user
   belongs_to :word
+  acts_as_commentable
   
   def get_vote user, mood
     vote = user_votes.find_by_user_id(user.id)

@@ -4,6 +4,7 @@
   <% if not @definitions.empty? %>
   <ul class="definition-list">
     <%= render :partial => "words/definition", :collection => @definitions %>
+    <%= render :partial => 'words/comment_form' %>
   </ul>
   <% else %>
   <p>This word has no definitions! Why don't you add one below?</p>
