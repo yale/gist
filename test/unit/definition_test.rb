@@ -45,11 +45,11 @@ class DefinitionTest < ActiveSupport::TestCase
   test "likes neutralize dislikes and vice versa" do
     @d.cast_vote(@u, :like)
     
-    assert_equal 1, @d.get_vote(@u, :like)
+    assert @d.get_vote(@u, :like)
     
     @d.cast_vote(@u, :dislike)
     
-    assert_equal 0, @d.get_vote(@u, :like)
+    assert !@d.get_vote(@u, :like)
     assert_equal 1, @d.get_vote(@u, :dislike)
     
     @d.cast_vote(@u, :like)

@@ -16,9 +16,9 @@ class Definition < ActiveRecord::Base
     vote = user_votes.find_or_initialize_by_user_id(user.id)
     vote[mood] = !vote[mood]
     case mood
-    when "like" || :like
+    when ("like" || :like)
       vote[:dislike] = false
-    when "dislike" || :dislike
+    when ("dislike" || :dislike)
       vote[:like] = false
     end
     vote.save
