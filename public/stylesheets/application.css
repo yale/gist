@@ -2,6 +2,8 @@ html, body {
   background: #176093 url(../images/bg.gif) left repeat-y;
   color: white;
   font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 h1 {
