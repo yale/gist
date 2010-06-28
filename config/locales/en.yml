@@ -2,4 +2,10 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
-  hello: "Hello world"
+  hello: "HELLO"
+  List of words: "文字清單"
+  Add a word: "新增文字"
+  create: "確認新增"
+  Define!: "定義"
+  Show all words: "顯示所有單詞"
+  Search!: "搜尋"

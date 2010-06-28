@@ -10,6 +10,12 @@ class ApplicationController < ActionController::Base
   # filter_parameter_logging :password
   
   before_filter :instantiate_controller_and_action_names
+  before_filter :set_locale
+  
+  def set_locale
+    # if params[:locale] is nil then I18n.default_locale will be used
+    I18n.locale = params[:locale]
+  end
   
   # for authlogic
   filter_parameter_logging :password

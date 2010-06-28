@@ -10,7 +10,7 @@
 
 <% form_for @word, :html => { :method => :get }, :url => add_definition_word_path(@word) do |f| -%>
   <%= text_area_tag "body", nil, :size => "40x3" %>
-  <%= f.submit "Define!" %>
+  <%= f.submit I18n.t("Define!") %>
 <% end -%>
 
-<p><%= link_to 'Back to index', root_path %></p>
+<p><%= link_to I18n.t("Back to index"), root_path %></p>
