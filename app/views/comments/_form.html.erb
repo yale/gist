@@ -2,7 +2,7 @@
 <% form_tag add_comment_definition_path definition do %>
   <%= text_field 'comment', 'comment' %></br>
 
-  <%= submit_tag 'Add Comment' %>
+  <%= submit_tag I18n.t("Add Comment") %>
 
   <%= hidden_field 'commentable', :value => 'Definition' %>
   <%= hidden_field 'id', :value => definition.id %>

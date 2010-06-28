@@ -2659,3 +2659,1220 @@ Adding field name with value 'Test' to index
   [4;35;1mUserVote Load (0.3ms)[0m   [0mSELECT * FROM "user_votes" WHERE ("user_votes"."user_id" = 980190963) AND ("user_votes".definition_id = 983427998) LIMIT 1[0m
   [4;36;1mUserVote Update (0.1ms)[0m   [0;1mUPDATE "user_votes" SET "updated_at" = '2010-06-24 18:31:53', "like" = 'f' WHERE "id" = 980190963[0m
   [4;35;1mUserVote Load (0.3ms)[0m   [0mSELECT * FROM "user_votes" WHERE ("user_votes"."user_id" = 980190963) AND ("user_votes".definition_id = 983427998) LIMIT 1[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "trigrams" [0m
+
+
+Processing TrigramsController#create (for 0.0.0.0 at 2010-06-28 05:36:44) [POST]
+  Parameters: {"action"=>"create", "trigram"=>{}, "controller"=>"trigrams"}
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "trigrams" [0m
+  [4;36;1mTrigram Load (0.0ms)[0m   [0;1mSELECT * FROM "trigrams" WHERE ("trigrams"."id" = 980190962) [0m
+
+
+Processing TrigramsController#destroy (for 0.0.0.0 at 2010-06-28 05:36:44) [DELETE]
+  Parameters: {"action"=>"destroy", "id"=>"980190962", "controller"=>"trigrams"}
+  [4;35;1mTrigram Load (1.0ms)[0m   [0mSELECT * FROM "trigrams" WHERE ("trigrams"."id" = 980190962) [0m
+
+
+Processing TrigramsController#edit (for 0.0.0.0 at 2010-06-28 05:36:44) [GET]
+  Parameters: {"action"=>"edit", "id"=>"980190962", "controller"=>"trigrams"}
+Rendering template within layouts/application
+Rendering trigrams/edit
+
+
+Processing TrigramsController#index (for 0.0.0.0 at 2010-06-28 05:36:44) [GET]
+  Parameters: {"action"=>"index", "controller"=>"trigrams"}
+
+
+Processing TrigramsController#new (for 0.0.0.0 at 2010-06-28 05:36:44) [GET]
+  Parameters: {"action"=>"new", "controller"=>"trigrams"}
+Rendering template within layouts/application
+Rendering trigrams/new
+  [4;36;1mTrigram Load (1.0ms)[0m   [0;1mSELECT * FROM "trigrams" WHERE ("trigrams"."id" = 980190962) [0m
+
+
+Processing TrigramsController#show (for 0.0.0.0 at 2010-06-28 05:36:44) [GET]
+  Parameters: {"action"=>"show", "id"=>"980190962", "controller"=>"trigrams"}
+Rendering template within layouts/application
+Rendering trigrams/show
+  [4;35;1mTrigram Load (0.0ms)[0m   [0mSELECT * FROM "trigrams" WHERE ("trigrams"."id" = 980190962) [0m
+
+
+Processing TrigramsController#update (for 0.0.0.0 at 2010-06-28 05:36:44) [PUT]
+  Parameters: {"action"=>"update", "id"=>"980190962", "trigram"=>{}, "controller"=>"trigrams"}
+
+
+Processing UserSessionsController#index (for 0.0.0.0 at 2010-06-28 05:36:44) [GET]
+  Parameters: {"action"=>"index", "controller"=>"user_sessions"}
+
+
+Processing UserSessionsController#new (for 0.0.0.0 at 2010-06-28 05:36:44) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+  [4;36;1mWord Load (1.0ms)[0m   [0;1mSELECT * FROM "words" [0m
+Completed in 39ms (View: 33, DB: 1) | 200 OK [http://test.host/login]
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2010-06-28 05:36:44) [POST]
+  Parameters: {"user"=>{}, "action"=>"create", "controller"=>"users"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '7fc37ff341fc1581c1aa088a29b5c990e027f3a9ba7bfc432b5cdad5caf556fe0959a0a4ef1d082fa18c680ca099eac23949d68908318c5aa91524b3941a6751') LIMIT 1[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'gcIi3HoEjGlzKrvq_KJN') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (57.0ms)
+  [4;36;1mWord Load (1.0ms)[0m   [0;1mSELECT * FROM "words" [0m
+Completed in 12730ms (View: 68, DB: 2) | 200 OK [http://test.host/users?]
+  [4;35;1mSQL (4.0ms)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 980190962) [0m
+
+
+Processing UsersController#destroy (for 0.0.0.0 at 2010-06-28 05:36:57) [DELETE]
+  Parameters: {"action"=>"destroy", "id"=>"980190962", "controller"=>"users"}
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 980190962) [0m
+
+
+Processing UsersController#edit (for 0.0.0.0 at 2010-06-28 05:36:57) [GET]
+  Parameters: {"action"=>"edit", "id"=>"980190962", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/edit
+
+
+Processing UsersController#index (for 0.0.0.0 at 2010-06-28 05:36:57) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+
+
+Processing UsersController#new (for 0.0.0.0 at 2010-06-28 05:36:57) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (7.0ms)
+  [4;35;1mWord Load (1.0ms)[0m   [0mSELECT * FROM "words" [0m
+Completed in 19ms (View: 17, DB: 1) | 200 OK [http://test.host/users/new]
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 980190962) [0m
+
+
+Processing UsersController#show (for 0.0.0.0 at 2010-06-28 05:36:57) [GET]
+  Parameters: {"action"=>"show", "id"=>"980190962", "controller"=>"users"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 980190962) [0m
+
+
+Processing UsersController#update (for 0.0.0.0 at 2010-06-28 05:36:57) [PUT]
+  Parameters: {"user"=>{}, "action"=>"update", "id"=>"980190962", "controller"=>"users"}
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (5.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (3.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (4.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (5.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mWord Create (2.0ms)[0m   [0;1mINSERT INTO "words" ("name", "part_of_speech", "updated_at", "created_at") VALUES('Test', NULL, '2010-06-28 09:44:10', '2010-06-28 09:44:10')[0m
+ferret_create/update: Word-980190963
+creating doc for class: Word-980190963
+Adding field name with value 'Test' to index
+  [4;35;1mWord Create (1.0ms)[0m   [0mINSERT INTO "words" ("name", "part_of_speech", "updated_at", "created_at") VALUES('Test', NULL, '2010-06-28 09:44:10', '2010-06-28 09:44:10')[0m
+ferret_create/update: Word-980190963
+creating doc for class: Word-980190963
+Adding field name with value 'Test' to index
+  [4;36;1mWord Create (1.0ms)[0m   [0;1mINSERT INTO "words" ("name", "part_of_speech", "updated_at", "created_at") VALUES('Test', NULL, '2010-06-28 09:44:10', '2010-06-28 09:44:10')[0m
+ferret_create/update: Word-980190963
+creating doc for class: Word-980190963
+Adding field name with value 'Test' to index
+  [4;35;1mWord Create (1.0ms)[0m   [0mINSERT INTO "words" ("name", "part_of_speech", "updated_at", "created_at") VALUES('Test', NULL, '2010-06-28 09:44:10', '2010-06-28 09:44:10')[0m
+ferret_create/update: Word-980190963
+creating doc for class: Word-980190963
+Adding field name with value 'Test' to index
+  [4;36;1mWord Create (2.0ms)[0m   [0;1mINSERT INTO "words" ("name", "part_of_speech", "updated_at", "created_at") VALUES('Test', NULL, '2010-06-28 09:44:10', '2010-06-28 09:44:10')[0m
+ferret_create/update: Word-980190963
+creating doc for class: Word-980190963
+Adding field name with value 'Test' to index
+  [4;35;1mWord Create (2.0ms)[0m   [0mINSERT INTO "words" ("name", "part_of_speech", "updated_at", "created_at") VALUES('Test', NULL, '2010-06-28 09:44:10', '2010-06-28 09:44:10')[0m
+ferret_create/update: Word-980190963
+creating doc for class: Word-980190963
+Adding field name with value 'Test' to index
+  [4;36;1mSQL (5.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (3.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "trigrams" [0m
+
+
+Processing TrigramsController#create (for 0.0.0.0 at 2010-06-28 05:44:40) [POST]
+  Parameters: {"action"=>"create", "trigram"=>{}, "controller"=>"trigrams"}
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "trigrams" [0m
+  [4;36;1mTrigram Load (0.0ms)[0m   [0;1mSELECT * FROM "trigrams" WHERE ("trigrams"."id" = 980190962) [0m
+
+
+Processing TrigramsController#destroy (for 0.0.0.0 at 2010-06-28 05:44:40) [DELETE]
+  Parameters: {"action"=>"destroy", "id"=>"980190962", "controller"=>"trigrams"}
+  [4;35;1mTrigram Load (0.0ms)[0m   [0mSELECT * FROM "trigrams" WHERE ("trigrams"."id" = 980190962) [0m
+
+
+Processing TrigramsController#edit (for 0.0.0.0 at 2010-06-28 05:44:40) [GET]
+  Parameters: {"action"=>"edit", "id"=>"980190962", "controller"=>"trigrams"}
+Rendering template within layouts/application
+Rendering trigrams/edit
+
+
+Processing TrigramsController#index (for 0.0.0.0 at 2010-06-28 05:44:40) [GET]
+  Parameters: {"action"=>"index", "controller"=>"trigrams"}
+
+
+Processing TrigramsController#new (for 0.0.0.0 at 2010-06-28 05:44:40) [GET]
+  Parameters: {"action"=>"new", "controller"=>"trigrams"}
+Rendering template within layouts/application
+Rendering trigrams/new
+  [4;36;1mTrigram Load (0.0ms)[0m   [0;1mSELECT * FROM "trigrams" WHERE ("trigrams"."id" = 980190962) [0m
+
+
+Processing TrigramsController#show (for 0.0.0.0 at 2010-06-28 05:44:40) [GET]
+  Parameters: {"action"=>"show", "id"=>"980190962", "controller"=>"trigrams"}
+Rendering template within layouts/application
+Rendering trigrams/show
+  [4;35;1mTrigram Load (1.0ms)[0m   [0mSELECT * FROM "trigrams" WHERE ("trigrams"."id" = 980190962) [0m
+
+
+Processing TrigramsController#update (for 0.0.0.0 at 2010-06-28 05:44:40) [PUT]
+  Parameters: {"action"=>"update", "id"=>"980190962", "trigram"=>{}, "controller"=>"trigrams"}
+
+
+Processing UserSessionsController#index (for 0.0.0.0 at 2010-06-28 05:44:40) [GET]
+  Parameters: {"action"=>"index", "controller"=>"user_sessions"}
+
+
+Processing UserSessionsController#new (for 0.0.0.0 at 2010-06-28 05:44:40) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+  [4;36;1mWord Load (1.0ms)[0m   [0;1mSELECT * FROM "words" [0m
+Completed in 30ms (View: 28, DB: 1) | 200 OK [http://test.host/login]
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2010-06-28 05:44:40) [POST]
+  Parameters: {"user"=>{}, "action"=>"create", "controller"=>"users"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = '8fe7b9e556278a804b62ec84938d2182e813b477a9e162af79c354a53910e252d0ea2ab36770521e3060cd2675d215db2e015863a33402d9ed98a92b9b462d1d') LIMIT 1[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = '8r1WDOO8cFebzcjYHV-x') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (69.0ms)
+  [4;36;1mWord Load (1.0ms)[0m   [0;1mSELECT * FROM "words" [0m
+Completed in 12225ms (View: 86, DB: 2) | 200 OK [http://test.host/users?]
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 980190962) [0m
+
+
+Processing UsersController#destroy (for 0.0.0.0 at 2010-06-28 05:44:52) [DELETE]
+  Parameters: {"action"=>"destroy", "id"=>"980190962", "controller"=>"users"}
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 980190962) [0m
+
+
+Processing UsersController#edit (for 0.0.0.0 at 2010-06-28 05:44:52) [GET]
+  Parameters: {"action"=>"edit", "id"=>"980190962", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/edit
+
+
+Processing UsersController#index (for 0.0.0.0 at 2010-06-28 05:44:52) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+
+
+Processing UsersController#new (for 0.0.0.0 at 2010-06-28 05:44:52) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (5.0ms)
+  [4;35;1mWord Load (2.0ms)[0m   [0mSELECT * FROM "words" [0m
+Completed in 19ms (View: 17, DB: 2) | 200 OK [http://test.host/users/new]
+  [4;36;1mUser Load (2.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 980190962) [0m
+
+
+Processing UsersController#show (for 0.0.0.0 at 2010-06-28 05:44:52) [GET]
+  Parameters: {"action"=>"show", "id"=>"980190962", "controller"=>"users"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 980190962) [0m
+
+
+Processing UsersController#update (for 0.0.0.0 at 2010-06-28 05:44:52) [PUT]
+  Parameters: {"user"=>{}, "action"=>"update", "id"=>"980190962", "controller"=>"users"}
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (3.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "trigrams" [0m
+
+
+Processing TrigramsController#create (for 0.0.0.0 at 2010-06-28 05:49:45) [POST]
+  Parameters: {"action"=>"create", "trigram"=>{}, "controller"=>"trigrams"}
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "trigrams" [0m
+  [4;36;1mTrigram Load (1.0ms)[0m   [0;1mSELECT * FROM "trigrams" WHERE ("trigrams"."id" = 980190962) [0m
+
+
+Processing TrigramsController#destroy (for 0.0.0.0 at 2010-06-28 05:49:45) [DELETE]
+  Parameters: {"action"=>"destroy", "id"=>"980190962", "controller"=>"trigrams"}
+  [4;35;1mTrigram Load (1.0ms)[0m   [0mSELECT * FROM "trigrams" WHERE ("trigrams"."id" = 980190962) [0m
+
+
+Processing TrigramsController#edit (for 0.0.0.0 at 2010-06-28 05:49:45) [GET]
+  Parameters: {"action"=>"edit", "id"=>"980190962", "controller"=>"trigrams"}
+Rendering template within layouts/application
+Rendering trigrams/edit
+
+
+Processing TrigramsController#index (for 0.0.0.0 at 2010-06-28 05:49:45) [GET]
+  Parameters: {"action"=>"index", "controller"=>"trigrams"}
+
+
+Processing TrigramsController#new (for 0.0.0.0 at 2010-06-28 05:49:45) [GET]
+  Parameters: {"action"=>"new", "controller"=>"trigrams"}
+Rendering template within layouts/application
+Rendering trigrams/new
+  [4;36;1mTrigram Load (0.0ms)[0m   [0;1mSELECT * FROM "trigrams" WHERE ("trigrams"."id" = 980190962) [0m
+
+
+Processing TrigramsController#show (for 0.0.0.0 at 2010-06-28 05:49:45) [GET]
+  Parameters: {"action"=>"show", "id"=>"980190962", "controller"=>"trigrams"}
+Rendering template within layouts/application
+Rendering trigrams/show
+  [4;35;1mTrigram Load (1.0ms)[0m   [0mSELECT * FROM "trigrams" WHERE ("trigrams"."id" = 980190962) [0m
+
+
+Processing TrigramsController#update (for 0.0.0.0 at 2010-06-28 05:49:45) [PUT]
+  Parameters: {"action"=>"update", "id"=>"980190962", "trigram"=>{}, "controller"=>"trigrams"}
+
+
+Processing UserSessionsController#index (for 0.0.0.0 at 2010-06-28 05:49:45) [GET]
+  Parameters: {"action"=>"index", "controller"=>"user_sessions"}
+
+
+Processing UserSessionsController#new (for 0.0.0.0 at 2010-06-28 05:49:45) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+  [4;36;1mWord Load (2.0ms)[0m   [0;1mSELECT * FROM "words" [0m
+Completed in 31ms (View: 28, DB: 2) | 200 OK [http://test.host/login]
+  [4;35;1mSQL (3.0ms)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2010-06-28 05:49:45) [POST]
+  Parameters: {"user"=>{}, "action"=>"create", "controller"=>"users"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = 'd587fe5bf82310e333b11d61a03cccf880c1eabd765125e3cb971ec2815c5af4c0411094822ad4d4c3561e6fe9b1d6ba63504af68f490182804977cef218624b') LIMIT 1[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'Q80ogKhHtB2D9mvni6Zr') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (41.0ms)
+  [4;36;1mWord Load (1.0ms)[0m   [0;1mSELECT * FROM "words" [0m
+Completed in 12505ms (View: 59, DB: 5) | 200 OK [http://test.host/users?]
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 980190962) [0m
+
+
+Processing UsersController#destroy (for 0.0.0.0 at 2010-06-28 05:49:58) [DELETE]
+  Parameters: {"action"=>"destroy", "id"=>"980190962", "controller"=>"users"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 980190962) [0m
+
+
+Processing UsersController#edit (for 0.0.0.0 at 2010-06-28 05:49:58) [GET]
+  Parameters: {"action"=>"edit", "id"=>"980190962", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/edit
+
+
+Processing UsersController#index (for 0.0.0.0 at 2010-06-28 05:49:58) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+
+
+Processing UsersController#new (for 0.0.0.0 at 2010-06-28 05:49:58) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (5.0ms)
+  [4;35;1mWord Load (1.0ms)[0m   [0mSELECT * FROM "words" [0m
+Completed in 18ms (View: 15, DB: 1) | 200 OK [http://test.host/users/new]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 980190962) [0m
+
+
+Processing UsersController#show (for 0.0.0.0 at 2010-06-28 05:49:58) [GET]
+  Parameters: {"action"=>"show", "id"=>"980190962", "controller"=>"users"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 980190962) [0m
+
+
+Processing UsersController#update (for 0.0.0.0 at 2010-06-28 05:49:58) [PUT]
+  Parameters: {"user"=>{}, "action"=>"update", "id"=>"980190962", "controller"=>"users"}
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (3.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (3.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (4.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (3.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mWord Create (3.0ms)[0m   [0;1mINSERT INTO "words" ("name", "part_of_speech", "updated_at", "created_at") VALUES('Test', NULL, '2010-06-28 09:52:40', '2010-06-28 09:52:40')[0m
+ferret_create/update: Word-980190963
+creating doc for class: Word-980190963
+Adding field name with value 'Test' to index
+  [4;35;1mWord Create (2.0ms)[0m   [0mINSERT INTO "words" ("name", "part_of_speech", "updated_at", "created_at") VALUES('Test', NULL, '2010-06-28 09:52:40', '2010-06-28 09:52:40')[0m
+ferret_create/update: Word-980190963
+creating doc for class: Word-980190963
+Adding field name with value 'Test' to index
+  [4;36;1mWord Create (3.0ms)[0m   [0;1mINSERT INTO "words" ("name", "part_of_speech", "updated_at", "created_at") VALUES('Test', NULL, '2010-06-28 09:52:40', '2010-06-28 09:52:40')[0m
+ferret_create/update: Word-980190963
+creating doc for class: Word-980190963
+Adding field name with value 'Test' to index
+  [4;35;1mWord Create (1.0ms)[0m   [0mINSERT INTO "words" ("name", "part_of_speech", "updated_at", "created_at") VALUES('Test', NULL, '2010-06-28 09:52:40', '2010-06-28 09:52:40')[0m
+ferret_create/update: Word-980190963
+creating doc for class: Word-980190963
+Adding field name with value 'Test' to index
+  [4;36;1mWord Create (3.0ms)[0m   [0;1mINSERT INTO "words" ("name", "part_of_speech", "updated_at", "created_at") VALUES('Test', NULL, '2010-06-28 09:52:40', '2010-06-28 09:52:40')[0m
+ferret_create/update: Word-980190963
+creating doc for class: Word-980190963
+Adding field name with value 'Test' to index
+  [4;35;1mWord Create (5.0ms)[0m   [0mINSERT INTO "words" ("name", "part_of_speech", "updated_at", "created_at") VALUES('Test', NULL, '2010-06-28 09:52:40', '2010-06-28 09:52:40')[0m
+ferret_create/update: Word-980190963
+creating doc for class: Word-980190963
+Adding field name with value 'Test' to index
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "trigrams" [0m
+
+
+Processing TrigramsController#create (for 0.0.0.0 at 2010-06-28 05:53:11) [POST]
+  Parameters: {"action"=>"create", "trigram"=>{}, "controller"=>"trigrams"}
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "trigrams" [0m
+  [4;36;1mTrigram Load (1.0ms)[0m   [0;1mSELECT * FROM "trigrams" WHERE ("trigrams"."id" = 980190962) [0m
+
+
+Processing TrigramsController#destroy (for 0.0.0.0 at 2010-06-28 05:53:11) [DELETE]
+  Parameters: {"action"=>"destroy", "id"=>"980190962", "controller"=>"trigrams"}
+  [4;35;1mTrigram Load (1.0ms)[0m   [0mSELECT * FROM "trigrams" WHERE ("trigrams"."id" = 980190962) [0m
+
+
+Processing TrigramsController#edit (for 0.0.0.0 at 2010-06-28 05:53:11) [GET]
+  Parameters: {"action"=>"edit", "id"=>"980190962", "controller"=>"trigrams"}
+Rendering template within layouts/application
+Rendering trigrams/edit
+
+
+Processing TrigramsController#index (for 0.0.0.0 at 2010-06-28 05:53:11) [GET]
+  Parameters: {"action"=>"index", "controller"=>"trigrams"}
+
+
+Processing TrigramsController#new (for 0.0.0.0 at 2010-06-28 05:53:11) [GET]
+  Parameters: {"action"=>"new", "controller"=>"trigrams"}
+Rendering template within layouts/application
+Rendering trigrams/new
+  [4;36;1mTrigram Load (1.0ms)[0m   [0;1mSELECT * FROM "trigrams" WHERE ("trigrams"."id" = 980190962) [0m
+
+
+Processing TrigramsController#show (for 0.0.0.0 at 2010-06-28 05:53:11) [GET]
+  Parameters: {"action"=>"show", "id"=>"980190962", "controller"=>"trigrams"}
+Rendering template within layouts/application
+Rendering trigrams/show
+  [4;35;1mTrigram Load (1.0ms)[0m   [0mSELECT * FROM "trigrams" WHERE ("trigrams"."id" = 980190962) [0m
+
+
+Processing TrigramsController#update (for 0.0.0.0 at 2010-06-28 05:53:11) [PUT]
+  Parameters: {"action"=>"update", "id"=>"980190962", "trigram"=>{}, "controller"=>"trigrams"}
+
+
+Processing UserSessionsController#index (for 0.0.0.0 at 2010-06-28 05:53:11) [GET]
+  Parameters: {"action"=>"index", "controller"=>"user_sessions"}
+
+
+Processing UserSessionsController#new (for 0.0.0.0 at 2010-06-28 05:53:11) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+  [4;36;1mWord Load (1.0ms)[0m   [0;1mSELECT * FROM "words" [0m
+Completed in 42ms (View: 38, DB: 1) | 200 OK [http://test.host/login]
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2010-06-28 05:53:11) [POST]
+  Parameters: {"user"=>{}, "action"=>"create", "controller"=>"users"}
+  [4;36;1mUser Load (0.0ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = 'b3a55cc17b1ba06c220ad6889651d38c4722a5afb8a6db2a99efca065df2d99b020ab9c639d18a8ad15ae2e9dabd864b93e2c72200d1fb8831dc9db32b95b06d') LIMIT 1[0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = 'sdsekAgfQTJfHfat0uN4') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (42.0ms)
+  [4;36;1mWord Load (1.0ms)[0m   [0;1mSELECT * FROM "words" [0m
+Completed in 12835ms (View: 55, DB: 2) | 200 OK [http://test.host/users?]
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 980190962) [0m
+
+
+Processing UsersController#destroy (for 0.0.0.0 at 2010-06-28 05:53:24) [DELETE]
+  Parameters: {"action"=>"destroy", "id"=>"980190962", "controller"=>"users"}
+  [4;36;1mUser Load (4.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 980190962) [0m
+
+
+Processing UsersController#edit (for 0.0.0.0 at 2010-06-28 05:53:24) [GET]
+  Parameters: {"action"=>"edit", "id"=>"980190962", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/edit
+
+
+Processing UsersController#index (for 0.0.0.0 at 2010-06-28 05:53:24) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+
+
+Processing UsersController#new (for 0.0.0.0 at 2010-06-28 05:53:24) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (5.0ms)
+  [4;35;1mWord Load (0.0ms)[0m   [0mSELECT * FROM "words" [0m
+Completed in 17ms (View: 16, DB: 0) | 200 OK [http://test.host/users/new]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 980190962) [0m
+
+
+Processing UsersController#show (for 0.0.0.0 at 2010-06-28 05:53:24) [GET]
+  Parameters: {"action"=>"show", "id"=>"980190962", "controller"=>"users"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 980190962) [0m
+
+
+Processing UsersController#update (for 0.0.0.0 at 2010-06-28 05:53:24) [PUT]
+  Parameters: {"user"=>{}, "action"=>"update", "id"=>"980190962", "controller"=>"users"}
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (4.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (3.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mWord Create (2.0ms)[0m   [0;1mINSERT INTO "words" ("name", "part_of_speech", "updated_at", "created_at") VALUES('Test', NULL, '2010-06-28 09:57:32', '2010-06-28 09:57:32')[0m
+ferret_create/update: Word-980190963
+creating doc for class: Word-980190963
+Adding field name with value 'Test' to index
+  [4;35;1mWord Create (3.0ms)[0m   [0mINSERT INTO "words" ("name", "part_of_speech", "updated_at", "created_at") VALUES('Test', NULL, '2010-06-28 09:57:32', '2010-06-28 09:57:32')[0m
+ferret_create/update: Word-980190963
+creating doc for class: Word-980190963
+Adding field name with value 'Test' to index
+  [4;36;1mWord Create (2.0ms)[0m   [0;1mINSERT INTO "words" ("name", "part_of_speech", "updated_at", "created_at") VALUES('Test', NULL, '2010-06-28 09:57:32', '2010-06-28 09:57:32')[0m
+ferret_create/update: Word-980190963
+creating doc for class: Word-980190963
+Adding field name with value 'Test' to index
+  [4;35;1mWord Create (3.0ms)[0m   [0mINSERT INTO "words" ("name", "part_of_speech", "updated_at", "created_at") VALUES('Test', NULL, '2010-06-28 09:57:32', '2010-06-28 09:57:32')[0m
+ferret_create/update: Word-980190963
+creating doc for class: Word-980190963
+Adding field name with value 'Test' to index
+  [4;36;1mWord Create (2.0ms)[0m   [0;1mINSERT INTO "words" ("name", "part_of_speech", "updated_at", "created_at") VALUES('Test', NULL, '2010-06-28 09:57:32', '2010-06-28 09:57:32')[0m
+ferret_create/update: Word-980190963
+creating doc for class: Word-980190963
+Adding field name with value 'Test' to index
+  [4;35;1mWord Create (2.0ms)[0m   [0mINSERT INTO "words" ("name", "part_of_speech", "updated_at", "created_at") VALUES('Test', NULL, '2010-06-28 09:57:32', '2010-06-28 09:57:32')[0m
+ferret_create/update: Word-980190963
+creating doc for class: Word-980190963
+Adding field name with value 'Test' to index
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "trigrams" [0m
+
+
+Processing TrigramsController#create (for 0.0.0.0 at 2010-06-28 05:58:04) [POST]
+  Parameters: {"action"=>"create", "trigram"=>{}, "controller"=>"trigrams"}
+  [4;35;1mSQL (1.0ms)[0m   [0mSELECT count(*) AS count_all FROM "trigrams" [0m
+  [4;36;1mTrigram Load (1.0ms)[0m   [0;1mSELECT * FROM "trigrams" WHERE ("trigrams"."id" = 980190962) [0m
+
+
+Processing TrigramsController#destroy (for 0.0.0.0 at 2010-06-28 05:58:04) [DELETE]
+  Parameters: {"action"=>"destroy", "id"=>"980190962", "controller"=>"trigrams"}
+  [4;35;1mTrigram Load (1.0ms)[0m   [0mSELECT * FROM "trigrams" WHERE ("trigrams"."id" = 980190962) [0m
+
+
+Processing TrigramsController#edit (for 0.0.0.0 at 2010-06-28 05:58:04) [GET]
+  Parameters: {"action"=>"edit", "id"=>"980190962", "controller"=>"trigrams"}
+Rendering template within layouts/application
+Rendering trigrams/edit
+
+
+Processing TrigramsController#index (for 0.0.0.0 at 2010-06-28 05:58:04) [GET]
+  Parameters: {"action"=>"index", "controller"=>"trigrams"}
+
+
+Processing TrigramsController#new (for 0.0.0.0 at 2010-06-28 05:58:04) [GET]
+  Parameters: {"action"=>"new", "controller"=>"trigrams"}
+Rendering template within layouts/application
+Rendering trigrams/new
+  [4;36;1mTrigram Load (1.0ms)[0m   [0;1mSELECT * FROM "trigrams" WHERE ("trigrams"."id" = 980190962) [0m
+
+
+Processing TrigramsController#show (for 0.0.0.0 at 2010-06-28 05:58:04) [GET]
+  Parameters: {"action"=>"show", "id"=>"980190962", "controller"=>"trigrams"}
+Rendering template within layouts/application
+Rendering trigrams/show
+  [4;35;1mTrigram Load (1.0ms)[0m   [0mSELECT * FROM "trigrams" WHERE ("trigrams"."id" = 980190962) [0m
+
+
+Processing TrigramsController#update (for 0.0.0.0 at 2010-06-28 05:58:04) [PUT]
+  Parameters: {"action"=>"update", "id"=>"980190962", "trigram"=>{}, "controller"=>"trigrams"}
+
+
+Processing UserSessionsController#index (for 0.0.0.0 at 2010-06-28 05:58:04) [GET]
+  Parameters: {"action"=>"index", "controller"=>"user_sessions"}
+
+
+Processing UserSessionsController#new (for 0.0.0.0 at 2010-06-28 05:58:04) [GET]
+  Parameters: {"action"=>"new", "controller"=>"user_sessions"}
+Rendering template within layouts/application
+Rendering user_sessions/new
+  [4;36;1mWord Load (1.0ms)[0m   [0;1mSELECT * FROM "words" [0m
+Completed in 34ms (View: 31, DB: 1) | 200 OK [http://test.host/login]
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+
+
+Processing UsersController#create (for 0.0.0.0 at 2010-06-28 05:58:04) [POST]
+  Parameters: {"user"=>{}, "action"=>"create", "controller"=>"users"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT "users".id FROM "users" WHERE ("users"."persistence_token" = 'fad79b11cfeeab5eadfac0193076690ad5a5a6464895261fe1c761f3cd872a11267494589de3a81cbd9830576ec220ff7f56c77d7a28b077ba175bdcd5f4cdf8') LIMIT 1[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT "users".id FROM "users" WHERE ("users"."single_access_token" = '100pS8UyA_kuwJzD5zVC') LIMIT 1[0m
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (59.0ms)
+  [4;36;1mWord Load (1.0ms)[0m   [0;1mSELECT * FROM "words" [0m
+Completed in 12600ms (View: 69, DB: 3) | 200 OK [http://test.host/users?]
+  [4;35;1mSQL (0.0ms)[0m   [0mSELECT count(*) AS count_all FROM "users" [0m
+  [4;36;1mSQL (0.0ms)[0m   [0;1mSELECT count(*) AS count_all FROM "users" [0m
+  [4;35;1mUser Load (0.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 980190962) [0m
+
+
+Processing UsersController#destroy (for 0.0.0.0 at 2010-06-28 05:58:17) [DELETE]
+  Parameters: {"action"=>"destroy", "id"=>"980190962", "controller"=>"users"}
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 980190962) [0m
+
+
+Processing UsersController#edit (for 0.0.0.0 at 2010-06-28 05:58:17) [GET]
+  Parameters: {"action"=>"edit", "id"=>"980190962", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/edit
+
+
+Processing UsersController#index (for 0.0.0.0 at 2010-06-28 05:58:17) [GET]
+  Parameters: {"action"=>"index", "controller"=>"users"}
+
+
+Processing UsersController#new (for 0.0.0.0 at 2010-06-28 05:58:17) [GET]
+  Parameters: {"action"=>"new", "controller"=>"users"}
+Rendering template within layouts/application
+Rendering users/new
+Rendered users/_form (5.0ms)
+  [4;35;1mWord Load (1.0ms)[0m   [0mSELECT * FROM "words" [0m
+Completed in 16ms (View: 14, DB: 1) | 200 OK [http://test.host/users/new]
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM "users" WHERE ("users"."id" = 980190962) [0m
+
+
+Processing UsersController#show (for 0.0.0.0 at 2010-06-28 05:58:17) [GET]
+  Parameters: {"action"=>"show", "id"=>"980190962", "controller"=>"users"}
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM "users" WHERE ("users"."id" = 980190962) [0m
+
+
+Processing UsersController#update (for 0.0.0.0 at 2010-06-28 05:58:17) [PUT]
+  Parameters: {"user"=>{}, "action"=>"update", "id"=>"980190962", "controller"=>"users"}
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (3.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (4.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (1.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (4.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (4.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (3.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (3.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;36;1mSQL (2.0ms)[0m   [0;1m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
+  [4;35;1mSQL (2.0ms)[0m   [0m SELECT name
+ FROM sqlite_master
+ WHERE type = 'table' AND NOT name = 'sqlite_sequence'
+[0m
