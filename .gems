@@ -1,6 +1,4 @@
 authlogic
-authlogic-oid
-ruby-openid
 ferret
 acts_as_ferret --version 0.4.4
 jackdempsey-acts_as_commentable --source http://gems.github.com
