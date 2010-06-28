@@ -3,7 +3,7 @@
 <h2 class="word"><%= @word.name %></h2>
 
 <% if not @definitions.empty? %>
-  <%= render :partial => "words/definitions", :collection => @definitions %>
+  <%= render :partial => "definitions/definitions", :object => @definitions %>
 <% else %>
   <p>This word has no definitions! Why don't you add one below?</p>
 <% end %>

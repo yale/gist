@@ -23,7 +23,6 @@
 </head>
 <body>
   <div id="container">
-    <div id="notice"><%= notice %></div>
     <div id="header">
       <h1 id="logo">
         <a href="/"><span>Definitious</span></a>
@@ -38,7 +37,7 @@
       </div> <!-- end tools -->
     </div>
 	<div id="sidebar">
-    <div id="user_nav">
+    <div class="section" id="user_nav">
       <% if current_user %>
         <%= link_to "Edit Profile", edit_user_path(:current) %> |
         <%= link_to "Logout", logout_path %>
@@ -47,9 +46,9 @@
         <%= link_to "Login", login_path %>
     <% end %>
     </div>
+    <div class="section" id="notice"><%= notice %></div>
 	</div>
     <div id="main">
-      
     <%= yield %>
     
     </div>

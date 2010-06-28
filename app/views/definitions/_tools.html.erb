@@ -1,0 +1,4 @@
+<ul class="tools">
+  <li class="like-button"><%= link_to_remote "Like", :url => vote_definition_path(definition, :mood => :like), :method => :post %></li>
+  <li class="dislike-button"><%= link_to_remote "Dislike", :url => vote_definition_path(definition, :mood => :dislike), :method => :post %></li>
+</ul>

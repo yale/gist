@@ -1,0 +1,8 @@
+<li class="definition" id="definition-<%= definition.id %>">
+  <%= render :partial => 'definitions/stats', :locals => {:definition => definition} %>
+  <%=h definition.body %>
+  <% if definition.comments.count > 0 %>
+  <%= render :partial => 'comments/comments', :locals => {:comments => definition.comments.recent.limit(10).all} %>
+  <% end %>
+  <%= render :partial => 'comments/form', :locals => {:definition => definition} %>
+</li>

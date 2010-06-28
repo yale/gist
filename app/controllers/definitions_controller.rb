@@ -1,22 +1,22 @@
 class DefinitionsController < ApplicationController
-  before_filter :find_definition, :only => [:show, :edit, :update, :destroy, :vote]
+  before_filter :find_definition, :only => [:show, :edit, :update, :destroy, :vote, :add_comment]
   before_filter :require_user, :only => [:vote, :new, :create, :update]
   
   def add_comment
-    commentable_type = params[:commentable][:commentable]
-    commentable_id = params[:commentable][:commentable_id]
-    # Get the object that you want to comment
-    commentable = Comment.find_commentable(commentable_type, commentable_id)
-
     # Create a comment with the user submitted content
-    comment = Comment.new(params[:comment])
+    comment = @definition.comments.create(params[:comment])
     # Assign this comment to the logged in user
-    comment.user_id = session[:user].id
+    comment.user_id = current_user.id
 
     # Add the comment
-    commentable.comments << comment
-
-    redirect :back;
+    if comment.save
+      flash[:notice] = 'Thank you for your comment!'
+    else
+      flash[:error] = 'Your definition could not be saved. Sorry!'
+    end
+    respond_to do |wants|
+      wants.html { redirect_to(@definition.word); }
+    end
   end
 
   # GET /definitions
@@ -36,6 +36,7 @@ class DefinitionsController < ApplicationController
       if @definition.cast_vote(current_user, params[:mood])
         flash[:notice] = 'Thank you for your vote!'
         wants.html { redirect_to :back }
+        wants.js
       else
         flash[:notice] = 'Something has gone horribly wrong.'
         wants.html { redirect_to :back }

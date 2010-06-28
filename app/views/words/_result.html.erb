@@ -2,7 +2,7 @@
   <%= link_to word.name, word, {:class => 'word'} %>
   <% if definition %>
   <ul class="definitions">
-    <%= render :partial => 'words/definition', :locals => {:definition => definition} %>
+    <%= render :partial => 'definitions/definition', :locals => {:definition => definition} %>
   </ul>
   <% end %>
 </li>

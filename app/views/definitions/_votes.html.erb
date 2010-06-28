@@ -1,0 +1,4 @@
+<ul class="votes" id="votes-definition-<%=h definition.id %>">
+  <li class="like"><span><%= definition.get_votes_by_mood(:like) %></span> likes</li>
+  <li class="dislike"><span><%= definition.get_votes_by_mood(:dislike) %></span> dislikes</li>
+</ul>

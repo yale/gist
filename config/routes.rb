@@ -13,7 +13,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :words, :member => { :add_definition => :get }, :has_many => :definitions, :collection => {:auto_complete_for_word_name => :get }
   
-  map.resources :definitions, :member => { :vote => :post }, :belongs_to => :word, :has_many => :votes, :collection => {:add_definition => :post}
+  map.resources :definitions, :member => { :vote => :post, :add_comment => :post }, :belongs_to => :word, :has_many => :votes
   
   map.connect ':controller/auto_complete_for_word_name', :action => 'auto_complete_for_word_name', :format => 'json'
   map.auto_complete ':controller/:action', 
