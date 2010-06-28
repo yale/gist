@@ -1,0 +1,5 @@
+authlogic
+authlogic-oid
+ruby-openid
+acts_as_ferret
+jackdempsey-acts_as_commentable --source http://gems.github.com

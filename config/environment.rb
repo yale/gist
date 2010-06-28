@@ -43,7 +43,6 @@ Rails::Initializer.run do |config|
   config.gem "authlogic-oid", :lib => "authlogic_openid"
   config.gem "ruby-openid", :lib => "openid"
   
-  config.gem "repeated_auto_complete"
   config.gem "acts_as_ferret"
   config.gem 'jackdempsey-acts_as_commentable', :lib => 'acts_as_commentable', :source => "http://gems.github.com"
 
