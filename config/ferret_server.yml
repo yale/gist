@@ -1,4 +1,4 @@
 production:
-  host: ferret.warm-moon-60.heroku.com
+  host: ferret.yourdomain.com
   port: 9009
   pid_file: log/ferret.pid
