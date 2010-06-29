@@ -1,0 +1,8 @@
+log/*.log
+db/*.sqlite3
+doc/api
+doc/app
+.DS_Store
+Thumbs.db
+tmp/**/*
+index
