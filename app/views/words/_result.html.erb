@@ -1,7 +1,7 @@
 <li class="result">
-  <% tr = Google::Translate.new %>
   <%= link_to word.name, word, {:class => 'word'} %>
-  <%-# link_to tr.translate( :from => "en", :to => "zh-CN", :text => word.name), word, {:class => 'word'} %>
+  <% tr = Google::Translate.new %>
+  <%= link_to "(" + tr.translate( :from => "en", :to => "zh-CN", :text => word.name) + ")", word, {:class => 'word'} %>
   <% if definition %>
   <ul class="definitions">
     <%= render :partial => 'definitions/definition', :locals => {:definition => definition} %>

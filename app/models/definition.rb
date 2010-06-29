@@ -3,6 +3,7 @@ class Definition < ActiveRecord::Base
   belongs_to :user
   belongs_to :word
   acts_as_commentable
+  validates_length_of :body, :maximum => 140
   
   def get_vote user, mood
     vote = user_votes.find_by_user_id(user.id)
