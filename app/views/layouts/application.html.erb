@@ -28,27 +28,29 @@
       <h1 id="logo">
         <a href="/"><span>Definitious</span></a>
       </h1>
-      <div id="tools">
-        <div id="search">
+      <div id="top-nav">
+        <ul id="i18n-nav">
+          <li><%= link_to I18n.t("English"), :locale => nil %></li>
+          <li><%= link_to I18n.t("Chinese"), :locale => "tw" %></li>
+        </ul>
+        <ul id="user-nav">
+            <% if current_user %>
+              <li><%= link_to I18n.t("Edit Profile"), edit_user_path(:current) %> |</li>
+              <li><%= link_to I18n.t("Logout"), logout_path %></li>
+          <% else %>
+              <li><%= link_to I18n.t("Register"), new_user_path %></li>
+              <li><%= link_to I18n.t("Login"), login_path %></li>
+          <% end %>
+        </ul>
+      </div>
+      <div id="search">
           <% form_tag(searches_path, :method => 'get') do %>
             <%= text_field_tag "q", params[:q], {'id' => 'autocomplete'} %>
   	      <%= submit_tag I18n.t("Search!") %>
           <% end %>
-        </div>
-        <%= link_to I18n.t("English"), :locale => nil %>
-        <%= link_to I18n.t("Chinese"), :locale => "tw" %>
-      </div> <!-- end tools -->
+      </div>
     </div>
 	<div id="sidebar">
-    <div class="section" id="user_nav">
-      <% if current_user %>
-        <%= link_to I18n.t("Edit Profile"), edit_user_path(:current) %> |
-        <%= link_to I18n.t("Logout"), logout_path %>
-    <% else %>
-        <%= link_to I18n.t("Register"), new_user_path %> |
-        <%= link_to I18n.t("Login"), login_path %>
-    <% end %>
-    </div>
     <div class="section" id="notice"><%= notice %></div>
 	</div>
     <div id="main">

@@ -1,7 +1,7 @@
 html, body {
   background: #176093 url(../images/bg.gif) left repeat-y;
   color: white;
-  font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   margin: 0;
   padding: 0;
 }
@@ -9,11 +9,11 @@ html, body {
 h1 {
   margin-top: 1em;
   margin-bottom: 1em;
-  text-transform: uppercase;
 }
 
 h1, h2, h3, h4, h5, h6 {
   margin: .5em 0;
+  font-weight: bold;
 }
 
 h1 {
@@ -28,6 +28,7 @@ a {
 
 #container {
   margin-top: 40px;
+  max-width: 1000px;
 }
 
 #header {
@@ -47,6 +48,21 @@ a {
   overflow: hidden;
   background-image: url(../images/logo.png);
   border: none;
+}
+
+#top-nav {
+  float: right;
+  text-align: right;
+}
+
+#user-nav, #i18n-nav {
+  display: inline;
+  margin-left: 25px;
+}
+
+#user-nav li, #i18n-nav li {
+  display: inline;
+  padding: 0 5px;
 }
 
 #search {
@@ -158,4 +174,31 @@ input, textarea {
 
 input[type=submit] {
   padding: 5px 10px;
+}
+
+@media screen and (max-width: 480px) {
+  html, body {
+    background-image: none;
+  }
+  
+  #logo {
+    float: none;
+  }
+  
+  #main {
+    margin-left: 20px;
+  }
+  
+  #top-nav {
+    float: none;
+    text-align: left;
+  }
+  
+  #top-nav ul {
+    display: block;
+  }
+  
+  #search {
+    margin-left: 20px;
+  }
 }
