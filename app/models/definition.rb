@@ -26,6 +26,6 @@ class Definition < ActiveRecord::Base
   end
   
   def get_votes_by_mood mood
-    return user_votes.count(:conditions => "`#{mood}` = 't'")
+    return user_votes.count(:conditions => "'#{mood}' = 't'")
   end
 end
