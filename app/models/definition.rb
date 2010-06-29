@@ -5,7 +5,7 @@ class Definition < ActiveRecord::Base
   acts_as_commentable
   
   def get_vote user, mood
-    vote = UserVotes.find_by_user_id(user.id)
+    vote = user_votes.find_by_user_id(user.id)
     if vote
       return vote[mood] ? 1 : 0
     else
@@ -14,7 +14,7 @@ class Definition < ActiveRecord::Base
   end
   
   def cast_vote user, mood
-    vote = UserVotes.find_or_initialize_by_user_id(user.id)
+    vote = user_votes.find_or_initialize_by_user_id(user.id)
     vote[mood] = !vote[mood]
     case mood
     when ("like" || :like)
@@ -26,6 +26,6 @@ class Definition < ActiveRecord::Base
   end
   
   def get_votes_by_mood mood
-    return UserVotes.count(:conditions => "#{mood} = 't'")
+    return user_votes.count(:conditions => "#{mood} = 't'")
   end
 end
