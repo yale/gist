@@ -4,5 +4,7 @@
   <% if definition.comments.count > 0 %>
   <%= render :partial => 'comments/comments', :locals => {:comments => definition.comments.recent.limit(10).all} %>
   <% end %>
-  <%= render :partial => 'comments/form', :locals => {:definition => definition} %>
+  <% if current_user %>
+    <%= render :partial => 'comments/form', :locals => {:definition => definition} %>
+  <% end %>
 </li>

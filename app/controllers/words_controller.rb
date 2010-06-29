@@ -13,7 +13,7 @@ class WordsController < ApplicationController
   
   def index
   	@random = Word.find :first, :offset => (Word.count * rand).to_i
-  	@random_def = @random.definitions.find :first, :order => "'like' DESC"
+  	@random_def = @random.definitions.find :first
     @word = Word.new
     
     respond_to do |wants|
