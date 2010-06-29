@@ -1,6 +1,6 @@
 rails -v 2.3.8
 authlogic
-ferret
+ferret --version 0.11.5
 acts_as_ferret --version 0.4.4
 jackdempsey-acts_as_commentable --source http://gems.github.com
 hpricot 
