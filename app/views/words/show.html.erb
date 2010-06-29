@@ -1,11 +1,11 @@
-<h1 class="title">Definitions for</h1>
+<h1 class="title"><%= I18n.t("Definitions for") %></h1>
 
 <h2 class="word"><%=h @word.name %></h2>
 
 <% if not @definitions.empty? %>
   <%= render :partial => "definitions/definitions", :object => @definitions %>
 <% else %>
-  <p>This word has no definitions! Why don't you add one below?</p>
+  <p><%= I18n.t("This word has no definitions! Why don't you add one below?") %></p>
 <% end %>
 
 <% form_for @word, :html => { :method => :get }, :url => add_definition_word_path(@word) do |f| -%>

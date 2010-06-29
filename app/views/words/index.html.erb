@@ -1,4 +1,4 @@
-<h1>Random word</h1>
+<h1><%= I18n.t("Random word") %></h1>
 
 <div id="random_word">
   <%= render :partial => 'words/result', :locals => {:word => @random, :definition => @random_def } %>

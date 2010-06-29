@@ -3,6 +3,6 @@
   <% if current_user %>
     <%= render :partial => 'definitions/tools', :locals => { :definition => definition } %>
   <% else %>
-    <%= link_to "Log in to vote!", login_path %>
+    <%= link_to I18n.t("Log in to vote!"), login_path %>
   <% end %>
 </div>

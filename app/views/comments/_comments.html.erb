@@ -1,4 +1,4 @@
 <ul class="comments">
-  <li class="title">Comments</li>
+  <li class="title"><%= I18n.t("Comments") %></li>
   <%= render :partial => 'comments/comment', :collection => comments, :as => :comment %>
 </ul>
