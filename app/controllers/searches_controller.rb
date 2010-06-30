@@ -1,6 +1,7 @@
 # Type rake ferret_index to re-index words
 class SearchesController < ApplicationController
   def index
+  	Word.rebuild_index
   	@word = Word.new
     if params[:q]
       query = params[:q]
