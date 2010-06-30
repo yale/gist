@@ -1,10 +1,16 @@
 <li class="result">
   <%= link_to word.name, word, {:class => 'word'} %>
   <% tr = Google::Translate.new %>
-  <%= link_to "(" + tr.translate( :from => "en", :to => "zh-CN", :text => word.name) + ")", word, {:class => 'word'} %>
+  <%#- link_to "(" + tr.translate( :from => "en", :to => "zh-CN", :text => word.name) + ")", word, {:class => 'word'} %>
   <% if definition %>
-  <ul class="definitions">
-    <%= render :partial => 'definitions/definition', :locals => {:definition => definition} %>
-  </ul>
+    <ul class="definitions">
+      <%= render :partial => 'definitions/definition', :locals => {:definition => definition} %>
+    </ul>
+  <% else %>
+    <p><%= I18n.t("This word has no definitions! Why don't you add one below?") %></p>
   <% end %>
+  <% form_for word, :html => { :method => :get }, :url => add_definition_word_path(word) do |f| -%>
+    <%= text_field "body", nil %>
+    <%= f.submit I18n.t("Define!") %>
+  <% end -%>
 </li>

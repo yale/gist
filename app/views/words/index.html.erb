@@ -3,8 +3,3 @@
 <div id="random_word">
   <%= render :partial => 'words/result', :locals => {:word => @random, :definition => @random_def } %>
 </div>
-<h2><%= I18n.t("Add a word") %></h2>
-<% form_for @word, :url => { :action => "create" } do |f| -%>
-  <%= f.error_messages %>
-  <p><%= f.text_field :name %><%= f.submit I18n.t("Create")  %></p>
-<% end -%>

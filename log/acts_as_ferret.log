@@ -5268,3 +5268,653 @@ using index in C:/Users/Murtaza/Desktop/JBS/Installers/InstantRails-2.0-win/rail
 [word] refusing re-registration of class Word
 [word] register class Word with index word
 [word] refusing re-registration of class Word
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: murtaza
+-->+name:murtaza +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 1 results from AR: [#<Word id: 10916, name: "murtaza", part_of_speech: nil, created_at: "2010-06-28 03:31:21", updated_at: "2010-06-28 03:31:21">]
+Query: murtaza
+total hits: 1, results delivered: 1
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: murtaza
+-->+name:murtaza +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 1 results from AR: [#<Word id: 10916, name: "murtaza", part_of_speech: nil, created_at: "2010-06-28 03:31:21", updated_at: "2010-06-28 03:31:21">]
+Query: murtaza
+total hits: 1, results delivered: 1
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: murtaza
+-->+name:murtaza +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 1 results from AR: [#<Word id: 10916, name: "murtaza", part_of_speech: nil, created_at: "2010-06-28 03:31:21", updated_at: "2010-06-28 03:31:21">]
+Query: murtaza
+total hits: 1, results delivered: 1
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: murtaza
+-->+name:murtaza +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 1 results from AR: [#<Word id: 10916, name: "murtaza", part_of_speech: nil, created_at: "2010-06-28 03:31:21", updated_at: "2010-06-28 03:31:21">]
+Query: murtaza
+total hits: 1, results delivered: 1
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: murtaza
+-->+name:murtaza +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 1 results from AR: [#<Word id: 10916, name: "murtaza", part_of_speech: nil, created_at: "2010-06-28 03:31:21", updated_at: "2010-06-28 03:31:21">]
+Query: murtaza
+total hits: 1, results delivered: 1
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: murtaza
+-->+name:murtaza +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 1 results from AR: [#<Word id: 10916, name: "murtaza", part_of_speech: nil, created_at: "2010-06-28 03:31:21", updated_at: "2010-06-28 03:31:21">]
+Query: murtaza
+total hits: 1, results delivered: 1
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: candle
+-->+name:candle +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 1 results from AR: [#<Word id: 8105, name: "candle", part_of_speech: nil, created_at: "2010-06-28 02:17:27", updated_at: "2010-06-28 02:17:27">]
+Query: candle
+total hits: 3, results delivered: 1
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: package
+-->+name:package +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 1 results from AR: [#<Word id: 9345, name: "package", part_of_speech: nil, created_at: "2010-06-28 02:28:44", updated_at: "2010-06-28 02:28:44">]
+Query: package
+total hits: 1, results delivered: 1
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: careful
+-->+name:careful +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 1 results from AR: [#<Word id: 7243, name: "careful", part_of_speech: nil, created_at: "2010-06-28 02:10:51", updated_at: "2010-06-28 02:10:51">]
+Query: careful
+total hits: 3, results delivered: 1
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: CARFUL
+-->+name:carful +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 0 results from AR: []
+Query: CARFUL
+total hits: 0, results delivered: 0
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: CARFUL~
+-->+name:carful~ +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 3 results from AR: [#<Word id: 7243, name: "careful", part_of_speech: nil, created_at: "2010-06-28 02:10:51", updated_at: "2010-06-28 02:10:51">, #<Word id: 7419, name: "harmful", part_of_speech: nil, created_at: "2010-06-28 02:12:05", updated_at: "2010-06-28 02:12:05">, #<Word id: 7221, name: "awful", part_of_speech: nil, created_at: "2010-06-28 02:10:41", updated_at: "2010-06-28 02:10:41">]
+Query: CARFUL~
+total hits: 9, results delivered: 3
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: CAReFUL
+-->+name:careful +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 1 results from AR: [#<Word id: 7243, name: "careful", part_of_speech: nil, created_at: "2010-06-28 02:10:51", updated_at: "2010-06-28 02:10:51">]
+Query: CAReFUL
+total hits: 3, results delivered: 1
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: CARFUL
+-->+name:carful +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 0 results from AR: []
+Query: CARFUL
+total hits: 0, results delivered: 0
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: CARFUL~
+-->+name:carful~ +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 3 results from AR: [#<Word id: 7243, name: "careful", part_of_speech: nil, created_at: "2010-06-28 02:10:51", updated_at: "2010-06-28 02:10:51">, #<Word id: 7419, name: "harmful", part_of_speech: nil, created_at: "2010-06-28 02:12:05", updated_at: "2010-06-28 02:12:05">, #<Word id: 7221, name: "awful", part_of_speech: nil, created_at: "2010-06-28 02:10:41", updated_at: "2010-06-28 02:10:41">]
+Query: CARFUL~
+total hits: 9, results delivered: 3
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: CAReFUL
+-->+name:careful +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 1 results from AR: [#<Word id: 7243, name: "careful", part_of_speech: nil, created_at: "2010-06-28 02:10:51", updated_at: "2010-06-28 02:10:51">]
+Query: CAReFUL
+total hits: 3, results delivered: 1
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: CAReFUL
+-->+name:careful +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 1 results from AR: [#<Word id: 7243, name: "careful", part_of_speech: nil, created_at: "2010-06-28 02:10:51", updated_at: "2010-06-28 02:10:51">]
+Query: CAReFUL
+total hits: 3, results delivered: 1
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: CAReFUL
+-->+name:careful +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 1 results from AR: [#<Word id: 7243, name: "careful", part_of_speech: nil, created_at: "2010-06-28 02:10:51", updated_at: "2010-06-28 02:10:51">]
+Query: CAReFUL
+total hits: 3, results delivered: 1
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: CAReFUL
+-->+name:careful +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 1 results from AR: [#<Word id: 7243, name: "careful", part_of_speech: nil, created_at: "2010-06-28 02:10:51", updated_at: "2010-06-28 02:10:51">]
+Query: CAReFUL
+total hits: 3, results delivered: 1
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: CAReFUL
+-->+name:careful +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 1 results from AR: [#<Word id: 7243, name: "careful", part_of_speech: nil, created_at: "2010-06-28 02:10:51", updated_at: "2010-06-28 02:10:51">]
+Query: CAReFUL
+total hits: 3, results delivered: 1
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: CAReFUL
+-->+name:careful +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 1 results from AR: [#<Word id: 7243, name: "careful", part_of_speech: nil, created_at: "2010-06-28 02:10:51", updated_at: "2010-06-28 02:10:51">]
+Query: CAReFUL
+total hits: 3, results delivered: 1
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: CAReFUL
+-->+name:careful +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 1 results from AR: [#<Word id: 7243, name: "careful", part_of_speech: nil, created_at: "2010-06-28 02:10:51", updated_at: "2010-06-28 02:10:51">]
+Query: CAReFUL
+total hits: 3, results delivered: 1
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: CAReFUL
+-->+name:careful +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 1 results from AR: [#<Word id: 7243, name: "careful", part_of_speech: nil, created_at: "2010-06-28 02:10:51", updated_at: "2010-06-28 02:10:51">]
+Query: CAReFUL
+total hits: 3, results delivered: 1
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: careful
+-->+name:careful +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 1 results from AR: [#<Word id: 7243, name: "careful", part_of_speech: nil, created_at: "2010-06-28 02:10:51", updated_at: "2010-06-28 02:10:51">]
+Query: careful
+total hits: 3, results delivered: 1
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: careful
+-->+name:careful +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 1 results from AR: [#<Word id: 7243, name: "careful", part_of_speech: nil, created_at: "2010-06-28 02:10:51", updated_at: "2010-06-28 02:10:51">]
+Query: careful
+total hits: 3, results delivered: 1
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: CARFUL
+-->+name:carful +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 0 results from AR: []
+Query: CARFUL
+total hits: 0, results delivered: 0
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: CARFUL~
+-->+name:carful~ +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 3 results from AR: [#<Word id: 7243, name: "careful", part_of_speech: nil, created_at: "2010-06-28 02:10:51", updated_at: "2010-06-28 02:10:51">, #<Word id: 7419, name: "harmful", part_of_speech: nil, created_at: "2010-06-28 02:12:05", updated_at: "2010-06-28 02:12:05">, #<Word id: 7221, name: "awful", part_of_speech: nil, created_at: "2010-06-28 02:10:41", updated_at: "2010-06-28 02:10:41">]
+Query: CARFUL~
+total hits: 9, results delivered: 3
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: CARFUL
+-->+name:carful +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 0 results from AR: []
+Query: CARFUL
+total hits: 0, results delivered: 0
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: CARFUL~
+-->+name:carful~ +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 3 results from AR: [#<Word id: 7243, name: "careful", part_of_speech: nil, created_at: "2010-06-28 02:10:51", updated_at: "2010-06-28 02:10:51">, #<Word id: 7419, name: "harmful", part_of_speech: nil, created_at: "2010-06-28 02:12:05", updated_at: "2010-06-28 02:12:05">, #<Word id: 7221, name: "awful", part_of_speech: nil, created_at: "2010-06-28 02:10:41", updated_at: "2010-06-28 02:10:41">]
+Query: CARFUL~
+total hits: 9, results delivered: 3
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: careful
+-->+name:careful +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 1 results from AR: [#<Word id: 7243, name: "careful", part_of_speech: nil, created_at: "2010-06-28 02:10:51", updated_at: "2010-06-28 02:10:51">]
+Query: careful
+total hits: 3, results delivered: 1
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: careful
+-->+name:careful +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 1 results from AR: [#<Word id: 7243, name: "careful", part_of_speech: nil, created_at: "2010-06-28 02:10:51", updated_at: "2010-06-28 02:10:51">]
+Query: careful
+total hits: 3, results delivered: 1
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: careful
+-->+name:careful +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 1 results from AR: [#<Word id: 7243, name: "careful", part_of_speech: nil, created_at: "2010-06-28 02:10:51", updated_at: "2010-06-28 02:10:51">]
+Query: careful
+total hits: 3, results delivered: 1
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: able
+-->+name:able +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 1 results from AR: [#<Word id: 7176, name: "able", part_of_speech: nil, created_at: "2010-06-28 02:10:21", updated_at: "2010-06-28 02:10:21">]
+Query: able
+total hits: 3, results delivered: 1
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: able
+-->+name:able +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 1 results from AR: [#<Word id: 7176, name: "able", part_of_speech: nil, created_at: "2010-06-28 02:10:21", updated_at: "2010-06-28 02:10:21">]
+Query: able
+total hits: 3, results delivered: 1
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: hello
+-->+name:hello +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 0 results from AR: []
+Query: hello
+total hits: 0, results delivered: 0
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: hello~
+-->+name:hello~ +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 4 results from AR: [#<Word id: 8858, name: "hell", part_of_speech: nil, created_at: "2010-06-28 02:24:18", updated_at: "2010-06-28 02:24:18">, #<Word id: 7997, name: "belly", part_of_speech: nil, created_at: "2010-06-28 02:16:22", updated_at: "2010-06-28 02:16:22">, #<Word id: 8996, name: "jelly", part_of_speech: nil, created_at: "2010-06-28 02:25:20", updated_at: "2010-06-28 02:25:20">, #<Word id: 9817, name: "shell", part_of_speech: nil, created_at: "2010-06-28 02:33:29", updated_at: "2010-06-28 02:33:29">]
+Query: hello~
+total hits: 7, results delivered: 4
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: abnormal
+-->+name:abnormal +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 1 results from AR: [#<Word id: 7177, name: "abnormal", part_of_speech: nil, created_at: "2010-06-28 02:10:24", updated_at: "2010-06-28 02:10:24">]
+Query: abnormal
+total hits: 3, results delivered: 1
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: normal
+-->+name:normal +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 1 results from AR: [#<Word id: 7549, name: "normal", part_of_speech: nil, created_at: "2010-06-28 02:12:58", updated_at: "2010-06-28 02:12:58">]
+Query: normal
+total hits: 3, results delivered: 1
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: murtazas
+-->+name:murtazas +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 0 results from AR: []
+Query: murtazas
+total hits: 0, results delivered: 0
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: murtazas~
+-->+name:murtazas~ +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 1 results from AR: [#<Word id: 10916, name: "murtaza", part_of_speech: nil, created_at: "2010-06-28 03:31:21", updated_at: "2010-06-28 03:31:21">]
+Query: murtazas~
+total hits: 1, results delivered: 1
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: freak
+-->+name:freak +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 0 results from AR: []
+Query: freak
+total hits: 0, results delivered: 0
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: freak~
+-->+name:freak~ +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 14 results from AR: [#<Word id: 8053, name: "break", part_of_speech: nil, created_at: "2010-06-28 02:16:54", updated_at: "2010-06-28 02:16:54">, #<Word id: 10363, name: "break in", part_of_speech: nil, created_at: "2010-06-28 02:39:08", updated_at: "2010-06-28 02:39:08">, #<Word id: 10457, name: "break down", part_of_speech: nil, created_at: "2010-06-28 02:40:10", updated_at: "2010-06-28 02:40:10">, #<Word id: 7391, name: "frank", part_of_speech: nil, created_at: "2010-06-28 02:11:53", updated_at: "2010-06-28 02:11:53">, #<Word id: 7394, name: "fresh", part_of_speech: nil, created_at: "2010-06-28 02:11:55", updated_at: "2010-06-28 02:11:55">, #<Word id: 7413, name: "great", part_of_speech: nil, created_at: "2010-06-28 02:12:03", updated_at: "2010-06-28 02:12:03">, #<Word id: 8052, name: "bread", part_of_speech: nil, created_at: "2010-06-28 02:16:53", updated_at: "2010-06-28 02:16:53">, #<Word id: 8347, name: "cream", part_of_speech: nil, created_at: "2010-06-28 02:19:57", updated_at: "2010-06-28 02:19:57">, #<Word id: 8510, name: "dream", part_of_speech: nil, created_at: "2010-06-28 02:21:25", updated_at: "2010-06-28 02:21:25">, #<Word id: 9935, name: "steak", part_of_speech: nil, created_at: "2010-06-28 02:34:49", updated_at: "2010-06-28 02:34:49">, #<Word id: 10290, name: "wreck", part_of_speech: nil, created_at: "2010-06-28 02:38:19", updated_at: "2010-06-28 02:38:19">, #<Word id: 10883, name: "tread", part_of_speech: nil, created_at: "2010-06-28 02:45:18", updated_at: "2010-06-28 02:45:18">, #<Word id: 10126, name: "treat", part_of_speech: nil, created_at: "2010-06-28 02:36:47", updated_at: "2010-06-28 02:36:47">, #<Word id: 8908, name: "ice cream", part_of_speech: nil, created_at: "2010-06-28 02:24:44", updated_at: "2010-06-28 02:24:44">]
+Query: freak~
+total hits: 26, results delivered: 14
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: freak
+-->+name:freak +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 0 results from AR: []
+Query: freak
+total hits: 0, results delivered: 0
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: freak~
+-->+name:freak~ +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 14 results from AR: [#<Word id: 8053, name: "break", part_of_speech: nil, created_at: "2010-06-28 02:16:54", updated_at: "2010-06-28 02:16:54">, #<Word id: 10363, name: "break in", part_of_speech: nil, created_at: "2010-06-28 02:39:08", updated_at: "2010-06-28 02:39:08">, #<Word id: 10457, name: "break down", part_of_speech: nil, created_at: "2010-06-28 02:40:10", updated_at: "2010-06-28 02:40:10">, #<Word id: 7391, name: "frank", part_of_speech: nil, created_at: "2010-06-28 02:11:53", updated_at: "2010-06-28 02:11:53">, #<Word id: 7394, name: "fresh", part_of_speech: nil, created_at: "2010-06-28 02:11:55", updated_at: "2010-06-28 02:11:55">, #<Word id: 7413, name: "great", part_of_speech: nil, created_at: "2010-06-28 02:12:03", updated_at: "2010-06-28 02:12:03">, #<Word id: 8052, name: "bread", part_of_speech: nil, created_at: "2010-06-28 02:16:53", updated_at: "2010-06-28 02:16:53">, #<Word id: 8347, name: "cream", part_of_speech: nil, created_at: "2010-06-28 02:19:57", updated_at: "2010-06-28 02:19:57">, #<Word id: 8510, name: "dream", part_of_speech: nil, created_at: "2010-06-28 02:21:25", updated_at: "2010-06-28 02:21:25">, #<Word id: 9935, name: "steak", part_of_speech: nil, created_at: "2010-06-28 02:34:49", updated_at: "2010-06-28 02:34:49">, #<Word id: 10290, name: "wreck", part_of_speech: nil, created_at: "2010-06-28 02:38:19", updated_at: "2010-06-28 02:38:19">, #<Word id: 10883, name: "tread", part_of_speech: nil, created_at: "2010-06-28 02:45:18", updated_at: "2010-06-28 02:45:18">, #<Word id: 10126, name: "treat", part_of_speech: nil, created_at: "2010-06-28 02:36:47", updated_at: "2010-06-28 02:36:47">, #<Word id: 8908, name: "ice cream", part_of_speech: nil, created_at: "2010-06-28 02:24:44", updated_at: "2010-06-28 02:24:44">]
+Query: freak~
+total hits: 26, results delivered: 14
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: freak
+-->+name:freak +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 0 results from AR: []
+Query: freak
+total hits: 0, results delivered: 0
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: freak~
+-->+name:freak~ +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 14 results from AR: [#<Word id: 8053, name: "break", part_of_speech: nil, created_at: "2010-06-28 02:16:54", updated_at: "2010-06-28 02:16:54">, #<Word id: 10363, name: "break in", part_of_speech: nil, created_at: "2010-06-28 02:39:08", updated_at: "2010-06-28 02:39:08">, #<Word id: 10457, name: "break down", part_of_speech: nil, created_at: "2010-06-28 02:40:10", updated_at: "2010-06-28 02:40:10">, #<Word id: 7391, name: "frank", part_of_speech: nil, created_at: "2010-06-28 02:11:53", updated_at: "2010-06-28 02:11:53">, #<Word id: 7394, name: "fresh", part_of_speech: nil, created_at: "2010-06-28 02:11:55", updated_at: "2010-06-28 02:11:55">, #<Word id: 7413, name: "great", part_of_speech: nil, created_at: "2010-06-28 02:12:03", updated_at: "2010-06-28 02:12:03">, #<Word id: 8052, name: "bread", part_of_speech: nil, created_at: "2010-06-28 02:16:53", updated_at: "2010-06-28 02:16:53">, #<Word id: 8347, name: "cream", part_of_speech: nil, created_at: "2010-06-28 02:19:57", updated_at: "2010-06-28 02:19:57">, #<Word id: 8510, name: "dream", part_of_speech: nil, created_at: "2010-06-28 02:21:25", updated_at: "2010-06-28 02:21:25">, #<Word id: 9935, name: "steak", part_of_speech: nil, created_at: "2010-06-28 02:34:49", updated_at: "2010-06-28 02:34:49">, #<Word id: 10290, name: "wreck", part_of_speech: nil, created_at: "2010-06-28 02:38:19", updated_at: "2010-06-28 02:38:19">, #<Word id: 10883, name: "tread", part_of_speech: nil, created_at: "2010-06-28 02:45:18", updated_at: "2010-06-28 02:45:18">, #<Word id: 10126, name: "treat", part_of_speech: nil, created_at: "2010-06-28 02:36:47", updated_at: "2010-06-28 02:36:47">, #<Word id: 8908, name: "ice cream", part_of_speech: nil, created_at: "2010-06-28 02:24:44", updated_at: "2010-06-28 02:24:44">]
+Query: freak~
+total hits: 26, results delivered: 14
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: freak
+-->+name:freak +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 0 results from AR: []
+Query: freak
+total hits: 0, results delivered: 0
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: freak~
+-->+name:freak~ +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 14 results from AR: [#<Word id: 8053, name: "break", part_of_speech: nil, created_at: "2010-06-28 02:16:54", updated_at: "2010-06-28 02:16:54">, #<Word id: 10363, name: "break in", part_of_speech: nil, created_at: "2010-06-28 02:39:08", updated_at: "2010-06-28 02:39:08">, #<Word id: 10457, name: "break down", part_of_speech: nil, created_at: "2010-06-28 02:40:10", updated_at: "2010-06-28 02:40:10">, #<Word id: 7391, name: "frank", part_of_speech: nil, created_at: "2010-06-28 02:11:53", updated_at: "2010-06-28 02:11:53">, #<Word id: 7394, name: "fresh", part_of_speech: nil, created_at: "2010-06-28 02:11:55", updated_at: "2010-06-28 02:11:55">, #<Word id: 7413, name: "great", part_of_speech: nil, created_at: "2010-06-28 02:12:03", updated_at: "2010-06-28 02:12:03">, #<Word id: 8052, name: "bread", part_of_speech: nil, created_at: "2010-06-28 02:16:53", updated_at: "2010-06-28 02:16:53">, #<Word id: 8347, name: "cream", part_of_speech: nil, created_at: "2010-06-28 02:19:57", updated_at: "2010-06-28 02:19:57">, #<Word id: 8510, name: "dream", part_of_speech: nil, created_at: "2010-06-28 02:21:25", updated_at: "2010-06-28 02:21:25">, #<Word id: 9935, name: "steak", part_of_speech: nil, created_at: "2010-06-28 02:34:49", updated_at: "2010-06-28 02:34:49">, #<Word id: 10290, name: "wreck", part_of_speech: nil, created_at: "2010-06-28 02:38:19", updated_at: "2010-06-28 02:38:19">, #<Word id: 10883, name: "tread", part_of_speech: nil, created_at: "2010-06-28 02:45:18", updated_at: "2010-06-28 02:45:18">, #<Word id: 10126, name: "treat", part_of_speech: nil, created_at: "2010-06-28 02:36:47", updated_at: "2010-06-28 02:36:47">, #<Word id: 8908, name: "ice cream", part_of_speech: nil, created_at: "2010-06-28 02:24:44", updated_at: "2010-06-28 02:24:44">]
+Query: freak~
+total hits: 26, results delivered: 14
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: cat
+-->+name:cat +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 1 results from AR: [#<Word id: 8130, name: "cat", part_of_speech: nil, created_at: "2010-06-28 02:17:42", updated_at: "2010-06-28 02:17:42">]
+Query: cat
+total hits: 3, results delivered: 1
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: freak
+-->+name:freak +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 0 results from AR: []
+Query: freak
+total hits: 0, results delivered: 0
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: freak~
+-->+name:freak~ +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 14 results from AR: [#<Word id: 8053, name: "break", part_of_speech: nil, created_at: "2010-06-28 02:16:54", updated_at: "2010-06-28 02:16:54">, #<Word id: 10363, name: "break in", part_of_speech: nil, created_at: "2010-06-28 02:39:08", updated_at: "2010-06-28 02:39:08">, #<Word id: 10457, name: "break down", part_of_speech: nil, created_at: "2010-06-28 02:40:10", updated_at: "2010-06-28 02:40:10">, #<Word id: 7391, name: "frank", part_of_speech: nil, created_at: "2010-06-28 02:11:53", updated_at: "2010-06-28 02:11:53">, #<Word id: 7394, name: "fresh", part_of_speech: nil, created_at: "2010-06-28 02:11:55", updated_at: "2010-06-28 02:11:55">, #<Word id: 7413, name: "great", part_of_speech: nil, created_at: "2010-06-28 02:12:03", updated_at: "2010-06-28 02:12:03">, #<Word id: 8052, name: "bread", part_of_speech: nil, created_at: "2010-06-28 02:16:53", updated_at: "2010-06-28 02:16:53">, #<Word id: 8347, name: "cream", part_of_speech: nil, created_at: "2010-06-28 02:19:57", updated_at: "2010-06-28 02:19:57">, #<Word id: 8510, name: "dream", part_of_speech: nil, created_at: "2010-06-28 02:21:25", updated_at: "2010-06-28 02:21:25">, #<Word id: 9935, name: "steak", part_of_speech: nil, created_at: "2010-06-28 02:34:49", updated_at: "2010-06-28 02:34:49">, #<Word id: 10290, name: "wreck", part_of_speech: nil, created_at: "2010-06-28 02:38:19", updated_at: "2010-06-28 02:38:19">, #<Word id: 10883, name: "tread", part_of_speech: nil, created_at: "2010-06-28 02:45:18", updated_at: "2010-06-28 02:45:18">, #<Word id: 10126, name: "treat", part_of_speech: nil, created_at: "2010-06-28 02:36:47", updated_at: "2010-06-28 02:36:47">, #<Word id: 8908, name: "ice cream", part_of_speech: nil, created_at: "2010-06-28 02:24:44", updated_at: "2010-06-28 02:24:44">]
+Query: freak~
+total hits: 26, results delivered: 14

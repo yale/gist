@@ -1,6 +1,7 @@
 # Type rake ferret_index to re-index words
 class SearchesController < ApplicationController
   def index
+  	@word = Word.new
     if params[:q]
       query = params[:q]
       @words = Word.find_with_ferret(query, :limit => :all)
@@ -10,11 +11,30 @@ class SearchesController < ApplicationController
   	  if @words.empty?
       	@words = Word.find_with_ferret(query + "*", :limit => :all)
   	  end
-  	  #render :partial => 'searches/names'
     end
     respond_to do |wants|
-      wants.html
-      wants.js
+      if @words.length == 1
+        wants.html { redirect_to @words[0] }
+        wants.xml  { render :xml => @word, :status => :created, :location => @word }
+      else 
+      	wants.html 
+        wants.xml
+      end
+    end
+  end
+  
+  def create
+    @word = Word.new(params[:word])
+
+    respond_to do |wants|
+      if @word.save
+        flash[:notice] = 'Word was successfully created.'
+        wants.html { redirect_to @word }
+        wants.xml  { render :xml => @word, :status => :created, :location => @word }
+      else
+        wants.html { redirect_to :back }
+        wants.xml  { render :xml => @word.errors, :status => :unprocessable_entity }
+      end
     end
   end
   
