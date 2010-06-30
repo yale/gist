@@ -1,6 +1,8 @@
 <li class="definition" id="definition-<%= definition.id %>">
   <%= render :partial => 'definitions/stats', :locals => {:definition => definition} %>
   <%=h definition.body %>
+  <% tr = Google::Translate.new %>
+  <%= "(" + tr.translate( :from => "en", :to => "zh-CN", :text => definition.body) + ")" %>
   <% if definition.comments.count > 0 %>
   <%= render :partial => 'comments/comments', :locals => {:comments => definition.comments.recent.limit(10).all} %>
   <% end %>
