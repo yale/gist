@@ -5918,3 +5918,33 @@ ar_options: {}
 [word] 14 results from AR: [#<Word id: 8053, name: "break", part_of_speech: nil, created_at: "2010-06-28 02:16:54", updated_at: "2010-06-28 02:16:54">, #<Word id: 10363, name: "break in", part_of_speech: nil, created_at: "2010-06-28 02:39:08", updated_at: "2010-06-28 02:39:08">, #<Word id: 10457, name: "break down", part_of_speech: nil, created_at: "2010-06-28 02:40:10", updated_at: "2010-06-28 02:40:10">, #<Word id: 7391, name: "frank", part_of_speech: nil, created_at: "2010-06-28 02:11:53", updated_at: "2010-06-28 02:11:53">, #<Word id: 7394, name: "fresh", part_of_speech: nil, created_at: "2010-06-28 02:11:55", updated_at: "2010-06-28 02:11:55">, #<Word id: 7413, name: "great", part_of_speech: nil, created_at: "2010-06-28 02:12:03", updated_at: "2010-06-28 02:12:03">, #<Word id: 8052, name: "bread", part_of_speech: nil, created_at: "2010-06-28 02:16:53", updated_at: "2010-06-28 02:16:53">, #<Word id: 8347, name: "cream", part_of_speech: nil, created_at: "2010-06-28 02:19:57", updated_at: "2010-06-28 02:19:57">, #<Word id: 8510, name: "dream", part_of_speech: nil, created_at: "2010-06-28 02:21:25", updated_at: "2010-06-28 02:21:25">, #<Word id: 9935, name: "steak", part_of_speech: nil, created_at: "2010-06-28 02:34:49", updated_at: "2010-06-28 02:34:49">, #<Word id: 10290, name: "wreck", part_of_speech: nil, created_at: "2010-06-28 02:38:19", updated_at: "2010-06-28 02:38:19">, #<Word id: 10883, name: "tread", part_of_speech: nil, created_at: "2010-06-28 02:45:18", updated_at: "2010-06-28 02:45:18">, #<Word id: 10126, name: "treat", part_of_speech: nil, created_at: "2010-06-28 02:36:47", updated_at: "2010-06-28 02:36:47">, #<Word id: 8908, name: "ice cream", part_of_speech: nil, created_at: "2010-06-28 02:24:44", updated_at: "2010-06-28 02:24:44">]
 Query: freak~
 total hits: 26, results delivered: 14
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: break
+-->+name:break +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 3 results from AR: [#<Word id: 8053, name: "break", part_of_speech: nil, created_at: "2010-06-28 02:16:54", updated_at: "2010-06-28 02:16:54">, #<Word id: 10363, name: "break in", part_of_speech: nil, created_at: "2010-06-28 02:39:08", updated_at: "2010-06-28 02:39:08">, #<Word id: 10457, name: "break down", part_of_speech: nil, created_at: "2010-06-28 02:40:10", updated_at: "2010-06-28 02:40:10">]
+Query: break
+total hits: 5, results delivered: 3
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+[word] register class Word with index word
+[word] refusing re-registration of class Word
