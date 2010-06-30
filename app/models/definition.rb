@@ -14,9 +14,26 @@ class Definition < ActiveRecord::Base
     end
   end
   
+  def increment mood
+    old = self.send(mood.to_sym)
+    old ||= 0;
+    self.send((mood + "=").to_sym, old + 1)
+  end
+  
+  def decrement mood
+    old = self.send(mood.to_sym)
+    old ||= 0;
+    self.send((mood + "=").to_sym, old - 1)
+  end
+  
   def cast_vote user, mood
     vote = user_votes.find_or_initialize_by_user_id(user.id)
+    # Toggle switch in user vote object
     vote[mood] = !vote[mood]
+    
+    # Increment/decrement counter in definition object
+    
+    
     case mood
     when ("like" || :like)
       vote[:dislike] = false

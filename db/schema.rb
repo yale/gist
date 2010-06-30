@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100625180529) do
+ActiveRecord::Schema.define(:version => 20100630183327) do
 
   create_table "comments", :force => true do |t|
     t.string   "title",            :limit => 50, :default => ""
@@ -30,15 +30,15 @@ ActiveRecord::Schema.define(:version => 20100625180529) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "word_id"
-    t.integer  "like"
-    t.integer  "dislike"
-    t.integer  "helpful"
-    t.integer  "funny"
-    t.integer  "poetic"
-    t.integer  "inaccurate"
-    t.integer  "mature"
-    t.integer  "offensive"
-    t.integer  "duplicate"
+    t.integer  "like",       :default => 0
+    t.integer  "dislike",    :default => 0
+    t.integer  "helpful",    :default => 0
+    t.integer  "funny",      :default => 0
+    t.integer  "poetic",     :default => 0
+    t.integer  "inaccurate", :default => 0
+    t.integer  "mature",     :default => 0
+    t.integer  "offensive",  :default => 0
+    t.integer  "duplicate",  :default => 0
     t.integer  "user_id"
   end
 
@@ -98,6 +98,14 @@ ActiveRecord::Schema.define(:version => 20100625180529) do
     t.datetime "last_login_at"
     t.string   "current_login_ip"
     t.string   "last_login_ip"
+  end
+
+  create_table "votes", :force => true do |t|
+    t.integer  "direction"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "mood_id"
+    t.integer  "definition_id"
   end
 
   create_table "words", :force => true do |t|

@@ -12,7 +12,7 @@ class WordsController < ApplicationController
   end
   
   def index
-  	@random = Word.find :first, :offset => (Word.count * rand).to_i
+  	@random = Word.random
   	@random_def = @random.definitions.find :first
     @word = Word.new
     
@@ -21,9 +21,15 @@ class WordsController < ApplicationController
       wants.xml  { render :xml => @words }
     end
   end
+  
+  def random
+    @word = Word.random
+    respond_to do |wants|
+      wants.html { redirect_to @word }
+    end
+  end
 
   def show
-    
     @definitions = @word.definitions
     respond_to do |wants|
       wants.html

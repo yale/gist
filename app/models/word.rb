@@ -10,4 +10,8 @@ class Word < ActiveRecord::Base
     find(:all, :select => "name").map(&:name)
   end
   
+  def self.random
+    find :first, :offset => (count * rand).to_i
+  end
+  
 end

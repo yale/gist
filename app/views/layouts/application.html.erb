@@ -64,6 +64,9 @@
     </div>
 	<div id="sidebar">
     <div class="section" id="notice"><%= notice %></div>
+    <ul class="section" id="side-nav">
+      <li id="random-link"><%= link_to "Random Word", random_words_path %></li>
+    </ul>
 	</div>
     <div id="main">
     <%= yield %>
