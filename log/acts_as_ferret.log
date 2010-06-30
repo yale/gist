@@ -5392,3 +5392,27 @@ total hits: 1, results delivered: 1
 [word] refusing re-registration of class Word
 [word] register class Word with index word
 [word] refusing re-registration of class Word
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: candle
+-->+name:candle +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 1 results from AR: [#<Word id: 8105, name: "candle", part_of_speech: nil, created_at: "2010-06-28 02:17:27", updated_at: "2010-06-28 02:17:27">]
+Query: candle
+total hits: 3, results delivered: 1
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: package
+-->+name:package +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 1 results from AR: [#<Word id: 9345, name: "package", part_of_speech: nil, created_at: "2010-06-28 02:28:44", updated_at: "2010-06-28 02:28:44">]
+Query: package
+total hits: 1, results delivered: 1
