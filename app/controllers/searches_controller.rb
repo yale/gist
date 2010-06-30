@@ -1,7 +1,6 @@
 # Type rake ferret_index to re-index words
 class SearchesController < ApplicationController
   def index
-  	Word.rebuild_index
   	@word = Word.new
     if params[:q]
       query = params[:q]
@@ -26,7 +25,6 @@ class SearchesController < ApplicationController
   
   def create
     @word = Word.new(params[:word])
-
     respond_to do |wants|
       if @word.save
         flash[:notice] = 'Word was successfully created.'
