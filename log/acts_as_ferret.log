@@ -5982,3 +5982,166 @@ ar_options: {}
 [word] 4 results from AR: [#<Word id: 8858, name: "hell", part_of_speech: nil, created_at: "2010-06-28 02:24:18", updated_at: "2010-06-28 02:24:18">, #<Word id: 7997, name: "belly", part_of_speech: nil, created_at: "2010-06-28 02:16:22", updated_at: "2010-06-28 02:16:22">, #<Word id: 8996, name: "jelly", part_of_speech: nil, created_at: "2010-06-28 02:25:20", updated_at: "2010-06-28 02:25:20">, #<Word id: 9817, name: "shell", part_of_speech: nil, created_at: "2010-06-28 02:33:29", updated_at: "2010-06-28 02:33:29">]
 Query: hello~
 total hits: 7, results delivered: 4
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: hell
+-->+name:hell +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 1 results from AR: [#<Word id: 8858, name: "hell", part_of_speech: nil, created_at: "2010-06-28 02:24:18", updated_at: "2010-06-28 02:24:18">]
+Query: hell
+total hits: 2, results delivered: 1
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: sdkgjlksdgjsdkg
+-->+name:sdkgjlksdgjsdkg +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 0 results from AR: []
+Query: sdkgjlksdgjsdkg
+total hits: 0, results delivered: 0
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: sdkgjlksdgjsdkg~
+-->+name:sdkgjlksdgjsdkg~ +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 0 results from AR: []
+Query: sdkgjlksdgjsdkg~
+total hits: 0, results delivered: 0
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: sdkgjlksdgjsdkg*
+-->+name:sdkgjlksdgjsdkg* +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 0 results from AR: []
+Query: sdkgjlksdgjsdkg*
+total hits: 0, results delivered: 0
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+Will use local index.
+using index in C:/Users/Murtaza/Desktop/JBS/Installers/InstantRails-2.0-win/rails_apps/gist/tmp/index/word
+[word] rebuild index with models: []
+[word] reopening index at C:/Users/Murtaza/Desktop/JBS/Installers/InstantRails-2.0-win/rails_apps/gist/tmp/index/word
+[word] register class Word with index word
+[word] default field list for index word: [:name]
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: cat
+-->+name:cat +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 0 results from AR: []
+Query: cat
+total hits: 3, results delivered: 0
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: cat~
+-->+name:cat~ +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 0 results from AR: []
+Query: cat~
+total hits: 32, results delivered: 0
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: cat*
+-->+name:cat* +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 0 results from AR: []
+Query: cat*
+total hits: 19, results delivered: 0
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: careful
+-->+name:careful +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 0 results from AR: []
+Query: careful
+total hits: 3, results delivered: 0
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: careful~
+-->+name:careful~ +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 0 results from AR: []
+Query: careful~
+total hits: 18, results delivered: 0
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: careful*
+-->+name:careful* +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 0 results from AR: []
+Query: careful*
+total hits: 3, results delivered: 0
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: business
+-->+name:business +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 0 results from AR: []
+Query: business
+total hits: 3, results delivered: 0
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: business~
+-->+name:business~ +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 0 results from AR: []
+Query: business~
+total hits: 9, results delivered: 0
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: business*
+-->+name:business* +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 0 results from AR: []
+Query: business*
+total hits: 6, results delivered: 0
+Will use local index.
+using index in C:/Users/Murtaza/Desktop/JBS/Installers/InstantRails-2.0-win/rails_apps/gist/tmp/index/word
+[word] register class Word with index word
+[word] default field list for index word: [:name]
+[word] rebuild index with models: [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+[word] reindexing model Word
+[word] reindex model Word : 0.00% complete : 29.76 secs to finish
+[word] reindex model Word : 26.75% complete : 23.85 secs to finish
+[word] reindex model Word : 53.49% complete : 19.24 secs to finish
+[word] reindex model Word : 80.24% complete : 10.11 secs to finish
+[word] reopening index at C:/Users/Murtaza/Desktop/JBS/Installers/InstantRails-2.0-win/rails_apps/gist/tmp/index/word
