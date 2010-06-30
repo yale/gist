@@ -16,6 +16,9 @@ class SearchesController < ApplicationController
       if @words.length == 1
         wants.html { redirect_to @words[0] }
         wants.xml  { render :xml => @word, :status => :created, :location => @word }
+      else 
+      	wants.html 
+        wants.xml
       end
     end
   end
