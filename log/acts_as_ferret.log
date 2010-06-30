@@ -5948,3 +5948,37 @@ total hits: 5, results delivered: 3
 [word] refusing re-registration of class Word
 [word] register class Word with index word
 [word] refusing re-registration of class Word
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: break
+-->+name:break +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 3 results from AR: [#<Word id: 8053, name: "break", part_of_speech: nil, created_at: "2010-06-28 02:16:54", updated_at: "2010-06-28 02:16:54">, #<Word id: 10363, name: "break in", part_of_speech: nil, created_at: "2010-06-28 02:39:08", updated_at: "2010-06-28 02:39:08">, #<Word id: 10457, name: "break down", part_of_speech: nil, created_at: "2010-06-28 02:40:10", updated_at: "2010-06-28 02:40:10">]
+Query: break
+total hits: 5, results delivered: 3
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: hello
+-->+name:hello +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 0 results from AR: []
+Query: hello
+total hits: 0, results delivered: 0
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: hello~
+-->+name:hello~ +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 4 results from AR: [#<Word id: 8858, name: "hell", part_of_speech: nil, created_at: "2010-06-28 02:24:18", updated_at: "2010-06-28 02:24:18">, #<Word id: 7997, name: "belly", part_of_speech: nil, created_at: "2010-06-28 02:16:22", updated_at: "2010-06-28 02:16:22">, #<Word id: 8996, name: "jelly", part_of_speech: nil, created_at: "2010-06-28 02:25:20", updated_at: "2010-06-28 02:25:20">, #<Word id: 9817, name: "shell", part_of_speech: nil, created_at: "2010-06-28 02:33:29", updated_at: "2010-06-28 02:33:29">]
+Query: hello~
+total hits: 7, results delivered: 4
