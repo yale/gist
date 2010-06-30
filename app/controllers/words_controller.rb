@@ -38,7 +38,7 @@ class WordsController < ApplicationController
     respond_to do |wants|
       if @word.save
         flash[:notice] = 'Word was successfully created.'
-        wants.html { redirect_to :action => @word }
+        wants.html { redirect_to @word }
         wants.xml  { render :xml => @word, :status => :created, :location => @word }
       else
         wants.html { redirect_to :back }
