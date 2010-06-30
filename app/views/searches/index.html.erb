@@ -5,3 +5,8 @@
     <li><%= link_to s.name, word_path(s) %></li>
   <% end %>
 </ol>
+<h2><%= I18n.t("Add a word") %></h2>
+<% form_for @word, :url => { :action => "create" } do |f| -%>
+  <%= f.error_messages %>
+  <p><%= f.text_field :name %><%= f.submit I18n.t("Create")  %></p>
+<% end -%>

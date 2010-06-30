@@ -10,7 +10,7 @@
     <p><%= I18n.t("This word has no definitions! Why don't you add one below?") %></p>
   <% end %>
   <% form_for word, :html => { :method => :get }, :url => add_definition_word_path(word) do |f| -%>
-    <%= text_area_tag "body", nil, :size => "40x3" %>
+    <%= text_field "body", nil %>
     <%= f.submit I18n.t("Define!") %>
   <% end -%>
 </li>
