@@ -19,6 +19,21 @@ class SearchesController < ApplicationController
     end
   end
   
+  def create
+    @word = Word.new(params[:word])
+
+    respond_to do |wants|
+      if @word.save
+        flash[:notice] = 'Word was successfully created.'
+        wants.html { redirect_to @word }
+        wants.xml  { render :xml => @word, :status => :created, :location => @word }
+      else
+        wants.html { redirect_to :back }
+        wants.xml  { render :xml => @word.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
+  
   def auto_complete_for_word_name
     word_search = params[:q]
 	@words = Word.find(:all, :conditions => [ 'LOWER(word_name) LIKE ?',book_search.downcase + '%' ], :order => 'book_name ASC')
