@@ -6145,3 +6145,78 @@ using index in C:/Users/Murtaza/Desktop/JBS/Installers/InstantRails-2.0-win/rail
 [word] reindex model Word : 53.49% complete : 19.24 secs to finish
 [word] reindex model Word : 80.24% complete : 10.11 secs to finish
 [word] reopening index at C:/Users/Murtaza/Desktop/JBS/Installers/InstantRails-2.0-win/rails_apps/gist/tmp/index/word
+Will use local index.
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: cool
+-->+name:cool +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 0 results from AR: []
+Query: cool
+total hits: 3, results delivered: 0
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: cool~
+-->+name:cool~ +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 0 results from AR: []
+Query: cool~
+total hits: 13, results delivered: 0
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:limit=>:all, :offset=>0, :page=>nil}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: cool*
+-->+name:cool* +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 0 results from AR: []
+Query: cool*
+total hits: 3, results delivered: 0
+using index in C:/Users/Murtaza/Desktop/JBS/Installers/InstantRails-2.0-win/rails_apps/gist/tmp/index/word
+[word] register class Word with index word
+[word] default field list for index word: [:name]
+[word] rebuild index with models: [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+[word] reindexing model Word
+[word] reindex model Word : 0.00% complete : 30.86 secs to finish
+[word] reindex model Word : 26.75% complete : 20.10 secs to finish
+[word] reindex model Word : 53.49% complete : 23.61 secs to finish
+[word] reindex model Word : 80.24% complete : 10.33 secs to finish
+[word] reopening index at C:/Users/Murtaza/Desktop/JBS/Installers/InstantRails-2.0-win/rails_apps/gist/tmp/index/word
+Will use local index.
+using index in C:/Users/Murtaza/Desktop/JBS/Installers/InstantRails-2.0-win/rails_apps/gist/tmp/index/word
+[word] register class Word with index word
+[word] default field list for index word: [:name]
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:page=>nil, :limit=>:all, :offset=>0}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: cool
+-->+name:cool +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 1 results from AR: [#<Word id: 11031, name: "cool", part_of_speech: nil, created_at: "2010-06-30 17:59:53", updated_at: "2010-06-30 17:59:53">]
+Query: cool
+total hits: 1, results delivered: 1
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+index_for [Word(id: integer, name: string, part_of_speech: string, created_at: datetime, updated_at: datetime)]
+options: {:page=>nil, :limit=>:all, :offset=>0}
+ar_options: {}
+[word] stored_fields: nil
+[word] query: hell
+-->+name:hell +(class_name:Word)
+[word] now retrieving records from AR with options: {}
+[word] 1 results from AR: [#<Word id: 12601, name: "hell", part_of_speech: nil, created_at: "2010-06-30 18:12:52", updated_at: "2010-06-30 18:12:52">]
+Query: hell
+total hits: 1, results delivered: 1
+[word] register class Word with index word
+[word] refusing re-registration of class Word
+[word] register class Word with index word
+[word] refusing re-registration of class Word
