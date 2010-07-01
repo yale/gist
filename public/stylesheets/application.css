@@ -142,9 +142,32 @@ a {
     display: inline;
   }
 
-  .votes span {
-    font-weight: bold;
-  }
+
+
+
+.votes {
+  display: inline;
+}
+
+.votes span {
+  font-weight: bold;
+}
+
+.tools {
+  display: inline;
+}  
+
+.tools a {
+  background-color: #1b2e4d;
+  color: #d1d5db;
+  border-radius: 4px;
+  border-bottom: none;
+  padding: 2px 5px;
+}
+
+.tools .voted a {
+  background-color: black;
+}
 
 .like {
   color: #4ea34a;
