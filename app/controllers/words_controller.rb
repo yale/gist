@@ -23,9 +23,12 @@ class WordsController < ApplicationController
   
   def random
     @word = Word.random
+    @definition = @word.definitions.find :first
+    
     respond_to do |wants|
       wants.html { redirect_to @word }
       wants.xml { render :xml => @word }
+      wants.js
     end
   end
 

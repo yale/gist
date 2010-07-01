@@ -1,4 +1,4 @@
-<h1><%= I18n.t("Random word") %> (<a href="">refresh</a>)</h1>
+<h1><%= I18n.t("Random word") %> (<%= link_to_remote I18n.t("refresh"), :url => random_words_path %>)</h1>
 
 <div id="random_word">
   <%= render :partial => 'words/result', :locals => {:word => @random, :definition => @random_def } %>
