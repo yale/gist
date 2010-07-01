@@ -18,6 +18,7 @@
 		var availableTags = <%= get_string_array_of_words_for_js %>;
 		$("#autocomplete").autocomplete({
 			source: availableTags
+			max: 2
 		});
 	});
   </script>
