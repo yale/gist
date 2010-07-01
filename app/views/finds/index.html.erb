@@ -1,0 +1,5 @@
+<h1><%= "#{$query} is not defined. Do you want to define it?" %></h1>
+<% form_for @word, :url => { :action => "create" } do |f| -%>
+  <%= f.error_messages %>
+  <p><%= f.submit I18n.t("Define!")  %></p>
+<% end -%>

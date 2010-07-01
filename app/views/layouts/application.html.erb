@@ -22,7 +22,6 @@
 	});
   </script>
   <script type="text/javascript">
-
     var _gaq = _gaq || [];
     _gaq.push(['_setAccount', 'UA-17217475-1']);
     _gaq.push(['_trackPageview']);
@@ -56,11 +55,7 @@
         </ul>
       </div>
       <div id="search">
-          <%#- form_tag(searches_path, :method => 'get') do %>
-            <%#- text_field_tag "q", params[:q], {'id' => 'autocomplete'} %>
-  	        <%#- submit_tag I18n.t("Search!") %>
-          <%#- end %>
-          <% form_tag(trigrams_path, :method => 'get') do %>
+          <% form_tag(finds_path, :method => 'get') do %>
             <%= text_field_tag "q", params[:q], {'id' => 'autocomplete'} %>
   	        <%= submit_tag I18n.t("Search!") %>
           <% end %>

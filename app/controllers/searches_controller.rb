@@ -24,7 +24,7 @@ class SearchesController < ApplicationController
   end
   
   def create
-    @word = Word.new(params[:word])
+    @word = Word.new(params[:name])
     respond_to do |wants|
       if @word.save
         flash[:notice] = 'Word was successfully created.'

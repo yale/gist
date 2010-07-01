@@ -1,5 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
   map.resources :trigrams
+  map.resources :finds
 
   # for authlogic
   map.login "login", :controller => "user_sessions", :action => "new"
