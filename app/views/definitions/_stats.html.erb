@@ -1,8 +1,8 @@
-<span class="stats">
+<div class="stats">
   <%= render :partial => 'definitions/votes', :locals => { :definition => definition } %>
   <% if current_user %>
     <%= render :partial => 'definitions/tools', :locals => { :definition => definition } %>
   <% else %>
     <%= link_to I18n.t("Log in to vote!"), login_path %>
   <% end %>
-</span>
+</div>

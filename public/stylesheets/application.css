@@ -136,6 +136,7 @@ a {
 .stats {
   font-size: 12px;
   margin-bottom: 10px;
+  line-height: 20px;
 }
 
   .stats li {
@@ -153,20 +154,31 @@ a {
   font-weight: bold;
 }
 
+.dislike-button {
+  margin-left: -2px;
+}
+
+.tools .like-button a {
+  border-bottom-right-radius: 0 0;
+  border-top-right-radius: 0 0;
+}
+
+.tools .dislike-button a {
+  border-bottom-left-radius: 0 0;
+  border-top-left-radius: 0 0;
+}
+
 .tools {
-  display: inline;
 }  
 
 .tools a {
-  background-color: #1b2e4d;
-  color: #d1d5db;
-  border-radius: 4px;
-  border-bottom: none;
-  padding: 2px 5px;
+  background-color: #bfbfbf;
+  color: black;
 }
 
 .tools .voted a {
   background-color: black;
+  color: white;
 }
 
 .like {
@@ -224,4 +236,13 @@ input[type=submit] {
   #search {
     margin-left: 20px;
   }
+}
+
+
+
+
+.buttons a {
+  border-radius: 4px;
+  border-bottom: none;
+  padding: 2px 5px;
 }
