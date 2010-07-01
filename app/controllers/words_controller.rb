@@ -14,7 +14,6 @@ class WordsController < ApplicationController
   def index
   	@random = Word.random
   	@random_def = @random.definitions.find :first
-    @word = Word.new
     
     respond_to do |wants|
       wants.html # index.html.erb
@@ -26,6 +25,7 @@ class WordsController < ApplicationController
     @word = Word.random
     respond_to do |wants|
       wants.html { redirect_to @word }
+      wants.xml { render :xml => @word }
     end
   end
 

@@ -72,6 +72,7 @@ class DefinitionsController < ApplicationController
   # POST /definitions.xml
   def create
     @definition = Definition.new(params[:definition])
+    current_user.definitions << @definition
 
     respond_to do |wants|
       if @definition.save

@@ -6,7 +6,8 @@ class FindsController < ApplicationController
     respond_to do |wants|
       if !@result.nil?
         wants.html { redirect_to @result }
-        wants.xml  { render :xml => @word, :status => :created, :location => @word }
+        wants.xml  { render :xml => @result }
+        wants.json { render :json => @result }
       else 
       	wants.html 
         wants.xml

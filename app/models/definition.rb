@@ -8,22 +8,18 @@ class Definition < ActiveRecord::Base
   def get_vote user, mood
     vote = user_votes.find_by_user_id(user.id)
     if vote
-      return vote[mood] ? 1 : 0
+      return vote[mood]
     else
-      return 0
+      return false
     end
   end
   
   def increment mood
-    old = self.send(mood.to_sym)
-    old ||= 0;
-    self.send((mood + "=").to_sym, old + 1)
+    self.send((mood + "=").to_sym, get_votes_by_mood(mood) + 1)
   end
   
   def decrement mood
-    old = self.send(mood.to_sym)
-    old ||= 0;
-    self.send((mood + "=").to_sym, old - 1)
+    self.send((mood + "=").to_sym, get_votes_by_mood(mood) - 1)
   end
   
   def cast_vote user, mood
@@ -32,18 +28,32 @@ class Definition < ActiveRecord::Base
     vote[mood] = !vote[mood]
     
     # Increment/decrement counter in definition object
+    if vote[mood]
+      increment mood
+    else
+      decrement mood
+    end
     
-    
+    # Now neutralize previous 'like' vote if disliked, and vice versa
     case mood
     when ("like" || :like)
-      vote[:dislike] = false
+      if (vote[:dislike])
+        decrement "dislike"
+        vote[:dislike] = false
+      end
     when ("dislike" || :dislike)
-      vote[:like] = false
+      if (vote[:like])
+        decrement "like"
+        vote[:like] = false
+      end
     end
+    
+    self.save
     vote.save
   end
   
   def get_votes_by_mood mood
-    return user_votes.count(:conditions => "'#{mood}' = 't'")
+    # return user_votes.count(:conditions => "'#{mood}' = 't'")
+    return self.send(mood)
   end
 end
