@@ -1,4 +1,4 @@
-<li class="result">
+<div class="result">
   <%= link_to word.name, word, {:class => 'word'} %>
   <% tr = Google::Translate.new %>
   <%#- link_to "(" + tr.translate( :from => "en", :to => "zh-CN", :text => word.name) + ")", word, {:class => 'word'} %>
@@ -13,4 +13,4 @@
     <%= text_field "body", nil %>
     <%= f.submit I18n.t("Define!") %>
   <% end -%>
-</li>
+</div>
