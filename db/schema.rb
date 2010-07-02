@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100630183327) do
+ActiveRecord::Schema.define(:version => 20100701183327) do
 
   create_table "comments", :force => true do |t|
     t.string   "title",            :limit => 50, :default => ""
@@ -30,16 +30,18 @@ ActiveRecord::Schema.define(:version => 20100630183327) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "word_id"
-    t.integer  "like",       :default => 0
-    t.integer  "dislike",    :default => 0
-    t.integer  "helpful",    :default => 0
-    t.integer  "funny",      :default => 0
-    t.integer  "poetic",     :default => 0
-    t.integer  "inaccurate", :default => 0
-    t.integer  "mature",     :default => 0
-    t.integer  "offensive",  :default => 0
-    t.integer  "duplicate",  :default => 0
+    t.integer  "like",           :default => 0
+    t.integer  "dislike",        :default => 0
+    t.integer  "helpful",        :default => 0
+    t.integer  "funny",          :default => 0
+    t.integer  "poetic",         :default => 0
+    t.integer  "inaccurate",     :default => 0
+    t.integer  "mature",         :default => 0
+    t.integer  "offensive",      :default => 0
+    t.integer  "duplicate",      :default => 0
     t.integer  "user_id"
+    t.text     "part_of_speech"
+    t.text     "category"
   end
 
   create_table "sessions", :force => true do |t|
