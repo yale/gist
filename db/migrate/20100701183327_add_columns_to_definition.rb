@@ -1,7 +1,7 @@
 class AddColumnsToDefinition < ActiveRecord::Migration
   def self.up
-    add_column :definitions, :part_of_speech, :text
-    add_column :definitions, :category, :text
+    add_column :definitions, :part_of_speech, :string
+    add_column :definitions, :category, :string
   end
 
   def self.down
