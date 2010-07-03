@@ -1,4 +1,5 @@
 <li class="definition" id="definition-<%= definition.id %>">
+  <%=h definition.part_of_speech %><br/>
   <%=h definition.body %>
   <%= render :partial => 'definitions/stats', :locals => {:definition => definition} %>
   <% if definition.comments.count > 0 %>
