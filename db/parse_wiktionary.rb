@@ -15,13 +15,13 @@ UserVote.delete_all
 # Then, seed"
 
 file = File.new("wiktionary.tsv")
-language = /(English|English phrase)/
-word = /(.+)/
-body = /(.+)/
-part_of_speech = /(.+)/
-category = /(?:\{\{(.+)\}\})/ # like {{Internet}} - the category of the language it 
-re = /^#{language}\t#{word}\t#{part_of_speech}?\t# ?#{category}?#{body}$/
-re2 = /^#{language}\t#{word}\t#{category}\t# ?#{body}/
+language_regex = /(English|English phrase)/
+word_regex = /(.+)/
+body_regex = /(.+)/
+part_of_speech_regex = /(.+)/
+category_regex = /(?:\{\{(.+)\}\})/ # like {{Internet}} - the category of the language it 
+re = /^#{language_regex}\t#{word_regex}\t#{part_of_speech_regex}?\t# ?#{category_regex}?#{body_regex}$/
+re2 = /^#{language_regex}\t#{word_regex}\t#{category_regex}\t# ?#{body_regex}/
 re_remove_brackets = /\[{2}|\]{2}|\{{2}|\}{2}/
 while (line = file.gets)
 	next if line.nil?
@@ -35,23 +35,23 @@ while (line = file.gets)
 			p line
 			exit 1
 		else
-			# Second one matched
-			language = m[1]
-			word = m[2]
-			word = word.gsub("'", "\\\\'")
-			part_of_speech = '' # not captured
-			category = m[3] || ''
-			category = category.gsub(re_remove_brackets, '')
-			category = category.gsub("'", "\\\\'")
-			body = m[4]
-			body = body.gsub(re_remove_brackets, '')
-			body = body.gsub("\\","\\\\\\\\")
-			body = body.gsub("'", "\\\\'")
+		# Second one matched
+		language = m[1]
+		word = m[2]
+		word = word.gsub("'", "\\\\'")
+		part_of_speech = '' # not captured
+		category = m[3] || ''
+		category = category.gsub(re_remove_brackets, '')
+		category = category.gsub("'", "\\\\'")
+		body = m[4]
+		body = body.gsub(re_remove_brackets, '')
+		body = body.gsub("\\","\\\\\\\\")
+		body = body.gsub("'", "\\\\'")
 		end
 	else
 		language = m[1]
 		word = m[2]
-		word = word.gsub("'", "\\\\'")
+		wird = word.gsub("'", "\\\\'")
 		part_of_speech = m[3].downcase
 		part_of_speech = part_of_speech.gsub("'", "")
 		part_of_speech = part_of_speech.gsub(re_remove_brackets, '')
