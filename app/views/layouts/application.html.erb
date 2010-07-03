@@ -56,7 +56,7 @@
       </div>
       <div id="search">
           <% form_tag(finds_path, :method => 'get') do %>
-            <%= text_field_tag (:q, "Search for a word...", :onFocus => "if(this.value==this.defaultValue) this.value='';", :onBlur  => "if(this.value=='') this.value=this.defaultValue;", 'id' => 'autocomplete') %>
+            <%= text_field_tag (:q, I18n.t("Search for a word..."), :onFocus => "if(this.value==this.defaultValue) this.value='';", :onBlur  => "if(this.value=='') this.value=this.defaultValue;", 'id' => 'autocomplete') %>
   	        <%= submit_tag I18n.t("Search!") %>
           <% end %>
       </div>
@@ -64,7 +64,7 @@
 	<div id="sidebar">
     <div class="section" id="notice"><%= notice %></div>
     <ul class="section" id="side-nav">
-      <li id="random-link"><%= link_to "Random Word", random_words_path %></li>
+      <li id="random-link"><%= link_to I18n.t("Random Word"), random_words_path %></li>
     </ul>
 	</div>
     <div id="main">
