@@ -51,7 +51,7 @@ while (line = file.gets)
 	else
 		language = m[1]
 		word = m[2]
-		wird = word.gsub("'", "\\\\'")
+		word = word.gsub("'", "\\\\'")
 		part_of_speech = m[3].downcase
 		part_of_speech = part_of_speech.gsub("'", "")
 		part_of_speech = part_of_speech.gsub(re_remove_brackets, '')

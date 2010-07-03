@@ -56,7 +56,7 @@
       </div>
       <div id="search">
           <% form_tag(finds_path, :method => 'get') do %>
-            <%= text_field_tag "q", params[:q], {'id' => 'autocomplete'} %>
+            <%= text_field_tag (:q, "Search for a word...", :onFocus => "if(this.value==this.defaultValue) this.value='';", :onBlur  => "if(this.value=='') this.value=this.defaultValue;", 'id' => 'autocomplete') %>
   	        <%= submit_tag I18n.t("Search!") %>
           <% end %>
       </div>
