@@ -1,6 +1,12 @@
 <li class="definition" id="definition-<%= definition.id %>">
   <%=h definition.part_of_speech %><br/>
   <%=h definition.body %>
+  <ul class="comments">	
+    <% @user = User.find(definition.user_id) unless definition.user_id.nil?%>
+    <% if !@user.nil?%>
+      <%=h "by " + @user.username %>
+    <% end %>
+  </ul>
   <%= render :partial => 'definitions/stats', :locals => {:definition => definition} %>
   <% if definition.comments.count > 0 %>
   <%= render :partial => 'comments/comments', :locals => {:comments => definition.comments.recent.limit(10).all} %>
