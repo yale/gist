@@ -10,7 +10,7 @@
     <p><%= I18n.t("This word has no definitions! Why don't you add one below?") %></p>
   <% end %>
   <% form_for word, :html => { :method => :get }, :url => add_definition_word_path(word) do |f| -%>
-    <%= text_field_tag("body", I18n.t(""Add your own definition..."), :onFocus => "if(this.value==this.defaultValue) this.value='';", :onBlur  => "if(this.value=='') this.value=this.defaultValue;") %>
+    <%= text_field_tag("body", I18n.t("Add your own definition..."), :onFocus => "if(this.value==this.defaultValue) this.value='';", :onBlur  => "if(this.value=='') this.value=this.defaultValue;") %>
     <%= f.submit I18n.t("Define!") %>
   <% end -%>
 </div>
