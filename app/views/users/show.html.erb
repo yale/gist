@@ -1,0 +1,22 @@
+<h1>Profile for <%= @user.username %></h1>
+
+<h2>Points</h2>
+<p class="score">This user has receieved <span><%= pluralize(@definitions.collect(&:like).sum, "like") %></span></p>
+
+<h2>Recent comments</h2>
+<% if @comments %>
+<ul id="user-comments">
+  <%= render :partial => 'users/comment', :collection => @comments %>
+</ul>
+<% else %>
+<p>This user has not commented.</p>
+<% end %>
+
+<h2>Recent definitions</h2>
+<% if @definitions %>
+<ul id="user-definitions">
+  <%= render :partial => 'users/definition', :collection => @definitions %>
+</ul>
+<% else %>
+<p>This user has not posted any definitions.</p>
+<% end %>

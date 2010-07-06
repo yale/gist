@@ -27,5 +27,16 @@ class UsersController < ApplicationController
       render :action => 'edit'
     end
   end
+  
+  def show
+    @user = User.find(params[:id])
+    @comments = @user.comments
+    @votes = @user.user_votes
+    @definitions = @user.definitions
+    
+    respond_to do |wants|
+      wants.html
+    end
+  end
 
 end

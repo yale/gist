@@ -12,6 +12,8 @@ class ApplicationController < ActionController::Base
   before_filter :instantiate_controller_and_action_names
   before_filter :set_locale
   
+  LOCALES = {"en" => I18n.t("English"), "tw" => I18n.t("Chinese")}
+  
   def set_locale
     # if params[:locale] is nil then I18n.default_locale will be used
     I18n.locale = params[:locale]

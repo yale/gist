@@ -1,4 +1,5 @@
+<p><a href="##" class="comment-box-toggle"><%= pluralize(comments.size, "comment") %></a></p>
 <div class="comment-box">
-  <%= render :partial => 'comments/comments', :collection => comments, :as => :comment %>
+  <%= render :partial => 'comments/comments', :locals => {:comments => comments} %>
   <%= render :partial => 'comments/form', :locals => {:definition => definition} %>
 </div>

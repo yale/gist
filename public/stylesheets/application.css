@@ -25,7 +25,6 @@ h1 {
 a {
   color: #e1ccb5;
   text-decoration: none;
-  border-bottom: dashed 1px white;
 }
 
 #container {
@@ -77,11 +76,14 @@ a {
 
 #search {
   float: right;
-  padding-top: 8px;
+  padding-top: 6px;
 }
 
 #search input {
   font-size: 20px;
+  width: 280px;
+  padding: 6px 40px 6px 6px;
+  background: #fff url(../images/search.gif) 290px 4px no-repeat;
 }
 
 #main {
@@ -89,6 +91,15 @@ a {
   max-width: 700px;
   padding: 20px;
   margin: 0 auto;
+}
+
+#notice {
+  text-align: center;
+  color: #a2bfd4;
+}
+
+#new_word {
+  text-align: center;
 }
 
 .result {
@@ -102,6 +113,10 @@ a {
   color: #dce7ef;
   border-bottom: none;
 }
+
+  #user-definitions .word {
+    font-size: 16px;
+  }
 
   .word:hover {
     color: #8bb0c9;
@@ -118,6 +133,11 @@ a {
   list-style: decimal; 
   font-size: 16px;
   clear: right;
+}
+
+#user-definitions .definition {
+  margin-left: 0;
+  font-size: 14px;
 }
 
 .definition .body {
@@ -141,10 +161,22 @@ a {
     border: solid 1px #054674;
     color: white;
   }
+  
+  .definition-comment-form input[type=submit] {
+    background-color: #06548a;
+    border: solid 1px #054674;
+  }
+
+.definition-form {
+  text-align: center;
+}
+
+.definition-form input[name=body] {
+  width: 240px;
+}
 
 .stats {
   font-size: 12px;
-  margin-bottom: 10px;
   line-height: 18px;
 }
 
@@ -154,7 +186,7 @@ a {
 
 
 #like-buttons {
-  display: inline;
+  margin-top: 5px;
 }
 
 #like-buttons li {
@@ -162,25 +194,29 @@ a {
 }
 
 #like-buttons li a {
+  font-size: 12px;
   display: inline-block;
+  border-bottom: none;
   background-color: white;
+  color: #11466b;
   padding: 2px 5px;
 }
 
 #like-buttons li.voted a {
   background-color: black;
+  color: white;
 }
 
 #like-buttons li a {
   border-radius: 4px;
 }
 
-#like-buttons .like-button {
-  
+.stats a {
+  text-decoration: underline;
 }
 
-#like-buttons .dislike-button {
-  
+.stats .voted a {
+  background-color: black;
 }
 
 .votes {
@@ -189,6 +225,15 @@ a {
 
 .votes span {
   font-weight: bold;
+}
+
+.stats {
+  color: #a2bfd4;
+}
+
+.comment-box-toggle {
+  text-decoration: underline;
+  font-size: 12px;
 }
 
 .comments {
@@ -200,13 +245,24 @@ a {
   font-weight: bold;
 }
 
+form p {
+  margin-bottom: 1em;
+}
+
+label {
+  font-weight: bold;
+}
+
 input, textarea {
   border: none;
   padding: 4px;
+  border-radius: 3px;
 }
 
 input[type=submit] {
   padding: 5px 10px;
+  background-color: #ddd;
+  border: solid 1px #666;
 }
 
 

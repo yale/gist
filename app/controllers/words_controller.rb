@@ -21,6 +21,10 @@ class WordsController < ApplicationController
     end
   end
   
+  def browse
+    
+  end
+  
   def random
     @word = Word.random
     @definition = @word.definitions.find :first
@@ -59,7 +63,7 @@ class WordsController < ApplicationController
   def add_definition
     p params
     respond_to do |wants|
-      if @word.definitions << Definition.new(:body => params[:body], :user_id => current_user.id)
+      if @word.definitions << Definition.new(:body => params[:body], :part_of_speech => params[:part_of_speech], :user_id => current_user.id)
         flash[:notice] = 'Definition was successfully added.'
         wants.html { redirect_to @word }
         wants.xml  { render :xml => @word, :status => :created, :location => @word }
@@ -70,26 +74,8 @@ class WordsController < ApplicationController
     end
   end
 
-  def update
-    
-    p params
-    
-    respond_to do |wants|
-      if @word.update_attributes(params[:word])
-        flash[:notice] = 'Word was successfully updated.'
-        wants.html { redirect_to(@word) }
-        wants.xml  { head :ok }
-      else
-        wants.html { render :action => "edit" }
-        wants.xml  { render :xml => @word.errors, :status => :unprocessable_entity }
-      end
-    end
-  end
-
-
   def destroy
     @word.destroy
-
     respond_to do |wants|
       wants.html { redirect_to(words_url) }
       wants.xml  { head :ok }

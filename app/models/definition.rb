@@ -5,6 +5,8 @@ class Definition < ActiveRecord::Base
   acts_as_commentable
   validates_length_of :body, :maximum => 140
   
+  PARTS_OF_SPEECH = ['noun', 'adjective', 'acronym', 'verb', 'adverb', 'preposition', 'interjection']
+  
   def get_vote user, mood
     vote = user_votes.find_by_user_id(user.id)
     if vote

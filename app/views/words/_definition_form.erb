@@ -1,5 +1,7 @@
+<div class="definition-form">
 <% form_for word, :html => { :method => :get }, :url => add_definition_word_path(word) do |f| -%>
   <%= text_field_tag("body", I18n.t("Add your own definition..."), :onFocus => "if(this.value==this.defaultValue) this.value='';", :onBlur  => "if(this.value=='') this.value=this.defaultValue;") %>
-  <%= select_tag("part_of_speech", "<option>noun</option><option>adjective</option><option>acronym</option><option>verb</option><option>adverb</option><option>preposition</option><option>interjection</option>") %>
+  <%= select_tag("part_of_speech", options_for_select([nil => "(part of speech)"] + Definition::PARTS_OF_SPEECH)) %>
   <%= f.submit I18n.t("Define!") %>
 <% end -%>
+</div>

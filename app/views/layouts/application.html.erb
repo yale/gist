@@ -46,7 +46,7 @@
   <div id="container">
     <div id="top-bar">
       <ul id="nav">
-        <li><a href="#">Home</a></li>
+        <li><%= link_to I18n.t("Home"), root_path %></a></li>
         <li id="random-link"><%= link_to I18n.t("Random Word"), random_words_path %></li>
       </ul>
       <ul id="user-nav">
@@ -67,20 +67,20 @@
       <div id="search">
           <% form_tag(finds_path, :method => 'get') do %>
             <%= text_field_tag (:q, I18n.t("Search for a word..."), :onFocus => "if(this.value==this.defaultValue) this.value='';", :onBlur  => "if(this.value=='') this.value=this.defaultValue;", 'id' => 'autocomplete') %>
-  	        <%= submit_tag I18n.t("Search!") %>
           <% end %>
       </div>
     </div>
     <div id="main">
-      <div class="section" id="notice"><%= notice %></div>
+      <div id="notice"><%= notice %></div>
     <%= yield %>
     
     </div>
 	<div id="footer">
 	  <p>View this site in
+		<%= select_tag("locale", "") %>
 		<select id="i18n-nav">
-      <option value="en"><%= link_to I18n.t("English"), :locale => nil %></option>
-      <option value="tw"><%= link_to I18n.t("Chinese"), :locale => "tw" %></option>
+      <option value="en"><%= I18n.t("English") %></option>
+      <option value="tw"><%= I18n.t("Chinese") %></option>
     </select>
     </p>
 	</div>

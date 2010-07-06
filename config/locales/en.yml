@@ -2,6 +2,7 @@
 # See http://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  Home: "Home"
   Add a word: "Add a word"
   Create: "Create"
   Define!: "Define!"
@@ -39,6 +40,7 @@ en:
   Add your own definition...: "Add your own definition..."
   
 tw:
+  Home: "家"
   Add a word: "新增文字"
   Create: "创建"
   Define!: "确定"
