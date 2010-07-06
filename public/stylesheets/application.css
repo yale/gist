@@ -28,11 +28,13 @@ a {
 }
 
 #container {
-
 }
 
 #logo {
   float: left;
+  display: block;
+  width: 209px;
+  height: 48px;
   margin-top: 0;
   margin-left: 20px;
 }
@@ -272,23 +274,34 @@ input[type=submit] {
 
 
 #footer {
-  margin-top: 1em;
+  margin: 1em;
   text-align: center;
 }
 
 /* Mobile CSS */
-@media only screen and (max-device-width: 480px) {
+@media screen and (max-width: 480px) {
   
   #logo {
     float: none;
+    margin: 0 auto;
+  }
+  
+  #logo a {
   }
   
   #search {
     float: none;
+    margin-left: 0;
+    padding: 0;
+    text-align: center;
+  }
+  
+  #header {
+    width: auto;
   }
   
   #main {
-    margin-left: 20px;
+    margin-left: 16px;
   }
   
   #top-nav {
@@ -296,11 +309,16 @@ input[type=submit] {
     text-align: left;
   }
   
-  #top-nav ul {
+  h1 {
+    text-align: left;
+    font-size: 20px;
+  }
+  
+  .tools {
     display: block;
   }
   
-  #search {
-    margin-left: 20px;
+  #top-nav ul {
+    display: block;
   }
 }
