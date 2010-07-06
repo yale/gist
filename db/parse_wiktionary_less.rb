@@ -64,10 +64,10 @@ while (line = file.gets)
 		body = body.gsub("\\","\\\\\\\\")
 		body = body.gsub("'", "\\\\'")
 	end
+	output.puts "@word.definitions.create(:id => 52, :username => 'wiktionary.org', :email => 'murtazajafferji@gmail.com', :crypted_password => '4e8fb3562484c59fc14ecf4c0819b6a6a5b1dfa97eddc689b5f1a0424cfe1c61c066607bdef68093249daae7d8782fa4bb0507b3bb07f0c615fad54fd0d65aff', :password_salt => 'COMKg9mIN-IJNFkDHZ0v', :persistence_token => 'd1498bdf7147b7dc8ef2ece2628ff2b82d709bd53d28f8f93571d3a75fe3721c91f11885ea28de2729b37aeb8f52b3fb304c51bcd9a0da45ebff05b8f8be8ed8', :single_access_token => 'M6f6pQj7903Sm-cs0g7d', :perishable_token => 'nAUmDooR2yZuqqmX3g1r')"
 	if s1.include?(word)
 	  output.puts "@word = Word.find_or_initialize_by_name('#{word}')"
       output.puts "@word.save"
-  	  popularity = (rand*10).to_i + 1
-      output.puts "@word.definitions.create(:body =>'#{body}', :category =>'#{category}', :part_of_speech =>'#{part_of_speech}', :like => #{(rand*30).to_i * popularity}, :dislike => #{(rand*10).to_i * popularity}, :helpful => #{(rand*10).to_i * popularity}, :funny => #{(rand*10).to_i * popularity}, :poetic => #{(rand*10).to_i * popularity}, :inaccurate => #{(rand*2).to_i * popularity}, :mature => #{(rand*2).to_i * popularity}, :offensive => #{(rand*2).to_i * popularity})"
+      output.puts "@word.definitions.create(:body =>'#{body}', :category =>'#{category}', :part_of_speech =>'#{part_of_speech}', :user_id => 52)"
     end   
 end

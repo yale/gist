@@ -47,6 +47,8 @@ class DefinitionsController < ApplicationController
   # GET /definitions/1
   # GET /definitions/1.xml
   def show
+  	@word = @definition.word
+  	@user = @definition.user
     respond_to do |wants|
       wants.html # show.html.erb
       wants.xml  { render :xml => @definition }
