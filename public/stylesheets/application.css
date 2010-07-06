@@ -1,12 +1,14 @@
 html, body {
-  background: #176093 url(../images/bg.gif) left repeat-y;
+  background-color: #176093;
   color: white;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
   margin: 0;
   padding: 0;
+  font-size: 13px;
 }
 
 h1 {
+  text-align: center;
   margin-top: 1em;
   margin-bottom: 1em;
 }
@@ -27,11 +29,7 @@ a {
 }
 
 #container {
-  margin-top: 40px;
-  max-width: 1000px;
-}
 
-#header {
 }
 
 #logo {
@@ -50,23 +48,35 @@ a {
   border: none;
 }
 
-#top-nav {
+#top-bar {
+  background-color: #11466b;
+  padding: 7px 12px;
+}
+
+#top-bar ul {
+  display: inline;
+}
+
+#top-bar li {
+  display: inline;
+  padding: 0 7px;
+}
+
+#top-bar li a {
+  border-bottom: none;
+}
+
+#user-nav {
   float: right;
-  text-align: right;
 }
 
-#user-nav, #i18n-nav {
-  display: inline;
-  margin-left: 25px;
-}
-
-#user-nav li, #i18n-nav li {
-  display: inline;
-  padding: 0 5px;
+#header {
+  width: 570px;
+  margin: 40px auto;
 }
 
 #search {
-  margin-left: 300px;
+  float: right;
   padding-top: 8px;
 }
 
@@ -74,25 +84,11 @@ a {
   font-size: 20px;
 }
 
-#sidebar {
-	width: 230px;
-	float: left;
-  clear: left;
-  padding: 10px;
-}
-
-#sidebar .section {
-  margin: 1em 0;
-}
-
-#user_nav {
-  text-align: center;
-}
-
 #main {
-	margin-left: 300px;
-	margin-top: 60px;
+  clear: both;
   max-width: 700px;
+  padding: 20px;
+  margin: 0 auto;
 }
 
 .result {
@@ -119,9 +115,21 @@ a {
 .definition {
   margin-left: 15px;
   margin-bottom: 1em;
-  list-style: none; 
-  font-size: 18px;
+  list-style: decimal; 
+  font-size: 16px;
   clear: right;
+}
+
+.definition .body {
+  line-height: 20px;
+}
+
+.definition .byline {
+  font-size
+}
+
+.part-of-speech {
+  color: #ABCDCF;
 }
 
 .definition-comment-form {
@@ -131,12 +139,13 @@ a {
   .definition-comment-form input {
     background-color: #06548a;
     border: solid 1px #054674;
+    color: white;
   }
 
 .stats {
   font-size: 12px;
   margin-bottom: 10px;
-  line-height: 20px;
+  line-height: 18px;
 }
 
   .stats li {
@@ -144,7 +153,35 @@ a {
   }
 
 
+#like-buttons {
+  display: inline;
+}
 
+#like-buttons li {
+  display: inline-block;
+}
+
+#like-buttons li a {
+  display: inline-block;
+  background-color: white;
+  padding: 2px 5px;
+}
+
+#like-buttons li.voted a {
+  background-color: black;
+}
+
+#like-buttons li a {
+  border-radius: 4px;
+}
+
+#like-buttons .like-button {
+  
+}
+
+#like-buttons .dislike-button {
+  
+}
 
 .votes {
   display: inline;
@@ -152,41 +189,6 @@ a {
 
 .votes span {
   font-weight: bold;
-}
-
-.dislike-button {
-  margin-left: -2px;
-}
-
-.tools .like-button a {
-  border-bottom-right-radius: 0 0;
-  border-top-right-radius: 0 0;
-}
-
-.tools .dislike-button a {
-  border-bottom-left-radius: 0 0;
-  border-top-left-radius: 0 0;
-}
-
-.tools {
-}  
-
-.tools a {
-  background-color: #bfbfbf;
-  color: black;
-}
-
-.tools .voted a {
-  background-color: black;
-  color: white;
-}
-
-.like {
-  color: #4ea34a;
-}
-
-.dislike {
-  color: #a37c4d;
 }
 
 .comments {
@@ -199,15 +201,20 @@ a {
 }
 
 input, textarea {
-  border-radius: 7px;
-  -moz-border-radius: 7px;
-  -webkit-border-radius: 7px;
   border: none;
   padding: 4px;
 }
 
 input[type=submit] {
   padding: 5px 10px;
+}
+
+
+
+
+#footer {
+  margin-top: 1em;
+  text-align: center;
 }
 
 /* Mobile CSS */
@@ -236,13 +243,4 @@ input[type=submit] {
   #search {
     margin-left: 20px;
   }
-}
-
-
-
-
-.buttons a {
-  border-radius: 4px;
-  border-bottom: none;
-  padding: 2px 5px;
 }

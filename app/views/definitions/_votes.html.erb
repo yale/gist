@@ -1,7 +1,1 @@
-<ul class="votes" id="votes-definition-<%=h definition.id %>">
-  <li class="like"><span><%=h definition.get_votes_by_mood(:like) %></span> likes</li>
-  <li class="dislike"><span><%=h definition.get_votes_by_mood(:dislike) %></span> dislikes</li>
-  <li class="helpful"><span><%=h definition.get_votes_by_mood(:helpful) %></span> helpful</li>
-  <li class="funny"><span><%=h definition.get_votes_by_mood(:funny) %></span> funny</li>
-  <li class="poetic"><span><%=h definition.get_votes_by_mood(:poetic) %></span> poetic</li>
-</ul>
+<span class="votes" id="votes-definition-<%=h definition.id %>"><%= definition.percent_liked %>% like this definition.</span>

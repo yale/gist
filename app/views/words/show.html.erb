@@ -1,4 +1,4 @@
-<h1 class="title"><%= I18n.t("Definitions for") %></h1>
+<h1 class="title"><%= I18n.t("Viewing definitions for") %> <%=h @word.name %>, sorted by <%= select_tag "sort", "<option>popularity</option>" %></h1>
 
 <h2 class="word"><%=h @word.name %></h2>
 
@@ -8,9 +8,6 @@
   <p><%= I18n.t("This word has no definitions! Why don't you add one below?") %></p>
 <% end %>
 
-<% form_for @word, :html => { :method => :get }, :url => add_definition_word_path(@word) do |f| -%>
-  <%= text_area_tag("body", I18n.t("Add your own definition..."), :onFocus => "if(this.value==this.defaultValue) this.value='';", :onBlur  => "if(this.value=='') this.value=this.defaultValue;", :size => "40x3") %>
-  <%= f.submit I18n.t("Define!") %>
-<% end -%>
+<%= render :partial => 'words/definition_form', :locals => {:word => @word} %>
 
 <p><%= link_to I18n.t("Back to index"), root_path %></p>

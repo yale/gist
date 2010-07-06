@@ -6,6 +6,15 @@
   <link rel="icon" href="images/favicon.ico" type="image/ico" />
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>Definitious - <%= controller.action_name.capitalize %></title>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js"></script>
+  <% if protect_against_forgery? %>
+    <script type='text/javascript'>
+        //<![CDATA[
+          window._auth_token_name = "#{request_forgery_protection_token}";
+          window._auth_token = "#{form_authenticity_token}";
+      //]]>
+      </script>
+  <% end %>
   <%= stylesheet_link_tag 'reset' %>
   <%= stylesheet_link_tag 'ui-lightness/jquery-ui-1.8.2.custom' %>
   <%= stylesheet_link_tag 'application' %>
@@ -14,7 +23,7 @@
   <%= javascript_include_tag 'jquery-ui-1.8.2.custom.min' %>
   <%= javascript_include_tag 'jrails' %>
   <script type="text/javascript">
-  		$(function() {
+  $(function() {
 		var availableTags = <%= get_string_array_of_words_for_js %>;
 		$("#autocomplete").autocomplete({
 			source: availableTags
@@ -35,25 +44,26 @@
 </head>
 <body>
   <div id="container">
+    <div id="top-bar">
+      <ul id="nav">
+        <li><a href="#">Home</a></li>
+        <li id="random-link"><%= link_to I18n.t("Random Word"), random_words_path %></li>
+      </ul>
+      <ul id="user-nav">
+          <% if current_user %>
+            <li>Hello, <%= current_user.username %></li>
+            <li><%= link_to I18n.t("Edit Profile"), edit_user_path(:current) %></li>
+            <li><%= link_to I18n.t("Logout"), logout_path %></li>
+        <% else %>
+            <li><%= link_to I18n.t("Register"), new_user_path %></li>
+            <li><%= link_to I18n.t("Login"), login_path %></li>
+        <% end %>
+      </ul>
+    </div>
     <div id="header">
       <h1 id="logo">
         <a href="/"><span>Definitious</span></a>
       </h1>
-      <div id="top-nav">
-        <ul id="i18n-nav">
-          <li><%= link_to I18n.t("English"), :locale => nil %></li>
-          <li><%= link_to I18n.t("Chinese"), :locale => "tw" %></li>
-        </ul>
-        <ul id="user-nav">
-            <% if current_user %>
-              <li><%= link_to I18n.t("Edit Profile"), edit_user_path(:current) %> |</li>
-              <li><%= link_to I18n.t("Logout"), logout_path %></li>
-          <% else %>
-              <li><%= link_to I18n.t("Register"), new_user_path %></li>
-              <li><%= link_to I18n.t("Login"), login_path %></li>
-          <% end %>
-        </ul>
-      </div>
       <div id="search">
           <% form_tag(finds_path, :method => 'get') do %>
             <%= text_field_tag (:q, I18n.t("Search for a word..."), :onFocus => "if(this.value==this.defaultValue) this.value='';", :onBlur  => "if(this.value=='') this.value=this.defaultValue;", 'id' => 'autocomplete') %>
@@ -61,18 +71,18 @@
           <% end %>
       </div>
     </div>
-	<div id="sidebar">
-    <div class="section" id="notice"><%= notice %></div>
-    <ul class="section" id="side-nav">
-      <li id="random-link"><%= link_to I18n.t("Random Word"), random_words_path %></li>
-    </ul>
-	</div>
     <div id="main">
+      <div class="section" id="notice"><%= notice %></div>
     <%= yield %>
     
     </div>
 	<div id="footer">
-		
+	  <p>View this site in
+		<select id="i18n-nav">
+      <option value="en"><%= link_to I18n.t("English"), :locale => nil %></option>
+      <option value="tw"><%= link_to I18n.t("Chinese"), :locale => "tw" %></option>
+    </select>
+    </p>
 	</div>
   </div>
 </body>

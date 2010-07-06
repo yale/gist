@@ -58,9 +58,8 @@ class WordsController < ApplicationController
 
   def add_definition
     p params
-    
     respond_to do |wants|
-      if @word.definitions << Definition.new(:body => params[:body])
+      if @word.definitions << Definition.new(:body => params[:body], :user_id => current_user.id)
         flash[:notice] = 'Definition was successfully added.'
         wants.html { redirect_to @word }
         wants.xml  { render :xml => @word, :status => :created, :location => @word }

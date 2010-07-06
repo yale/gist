@@ -40,8 +40,8 @@ ActiveRecord::Schema.define(:version => 20100701183327) do
     t.integer  "offensive",      :default => 0
     t.integer  "duplicate",      :default => 0
     t.integer  "user_id"
-    t.text     "part_of_speech"
-    t.text     "category"
+    t.string   "part_of_speech"
+    t.string   "category"
   end
 
   create_table "sessions", :force => true do |t|

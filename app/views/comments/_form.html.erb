@@ -1,10 +1,15 @@
 <div class="definition-comment-form">
-<% form_tag add_comment_definition_path definition do %>
-  <%= text_field 'comment', 'comment' %></br>
+  <% if current_user %>
+    <p><a href="#">Add a comment.</a></p>
+    <% form_tag add_comment_definition_path(definition), :class => 'comment-form' do %>
+      <%= text_field 'comment', 'comment' %></br>
 
-  <%= submit_tag I18n.t("Add Comment") %>
+      <%= submit_tag I18n.t("Add Comment") %>
 
-  <%= hidden_field 'commentable', :value => 'Definition' %>
-  <%= hidden_field 'id', :value => definition.id %>
-<% end %>
+      <%= hidden_field 'commentable', :value => 'Definition' %>
+      <%= hidden_field 'id', :value => definition.id %>
+    <% end %>
+  <% else %>
+    <p><%= link_to 'Log in to comment.', login_path %></p>
+  <% end %>
 </div>

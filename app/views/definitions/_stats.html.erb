@@ -1,4 +1,12 @@
 <div class="stats">
+  <p class="byline">	
+    <% @user = User.find(definition.user_id) unless definition.user_id.nil?%>
+    <% if !@user.nil?%>
+      <%=h "Submitted by " + @user.username + " on " + distance_of_time_in_words(definition.updated_at) %>
+    <% else %>
+      <%= "Submitted by definitious" %>
+    <% end %>
+  </p>
   <%= render :partial => 'definitions/votes', :locals => { :definition => definition } %>
   <% if current_user %>
     <%= render :partial => 'definitions/tools', :locals => { :definition => definition } %>

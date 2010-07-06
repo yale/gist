@@ -1,17 +1,7 @@
 <li class="definition" id="definition-<%= definition.id %>">
-  <%=h definition.part_of_speech %><br/>
-  <%=h definition.body %>
-  <ul class="comments">	
-    <% @user = User.find(definition.user_id) unless definition.user_id.nil?%>
-    <% if !@user.nil?%>
-      <%=h "by " + @user.username %>
-    <% end %>
-  </ul>
+  <span class="part-of-speech"><%=h definition.part_of_speech %></span>
+  <span class="body"><%=h definition.body %></span>
+  <%= render :partial => 'definitions/like_buttons', :locals => {:definition => definition} %>
   <%= render :partial => 'definitions/stats', :locals => {:definition => definition} %>
-  <% if definition.comments.count > 0 %>
-  <%= render :partial => 'comments/comments', :locals => {:comments => definition.comments.recent.limit(10).all} %>
-  <% end %>
-  <% if current_user %>
-    <%= render :partial => 'comments/form', :locals => {:definition => definition} %>
-  <% end %>
+  <%= render :partial => 'comments/comment_box', :locals => {:comments => definition.comments.recent.limit(10).all, :definition => definition} %>
 </li>
