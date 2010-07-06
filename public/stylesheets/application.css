@@ -107,7 +107,7 @@ a {
 }
 
 .word {
-  font-size: 36px;
+  font-size: 32px;
   font-family: Georgia, "Times New Roman", Times, serif;
   font-style: italic;
   color: #dce7ef;
@@ -168,11 +168,14 @@ a {
   }
 
 .definition-form {
-  text-align: center;
+  margin-left: 15px;
 }
 
-.definition-form input[name=body] {
-  width: 240px;
+.definition-form #body {
+}
+
+.definition-form select {
+
 }
 
 .stats {
@@ -274,12 +277,13 @@ input[type=submit] {
 }
 
 /* Mobile CSS */
-@media screen and (max-width: 480px) {
-  html, body {
-    background-image: none;
-  }
+@media only screen and (max-device-width: 480px) {
   
   #logo {
+    float: none;
+  }
+  
+  #search {
     float: none;
   }
   
