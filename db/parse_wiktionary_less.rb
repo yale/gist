@@ -66,9 +66,11 @@ while (line = file.gets)
 		body = body.gsub("\\","\\\\\\\\")
 		body = body.gsub("'", "\\\\'")
 	end
-	if s1.include?(word)
-	  output.puts "@word = Word.find_or_initialize_by_name('#{word}')"
-      output.puts "@word.save"
-      output.puts "@word.definitions.create(:body =>'#{body}', :category =>'#{category}', :part_of_speech =>'#{part_of_speech}', :user_id => 52)"
+	if body.length <= 140
+	  if s1.include?(word)
+	    output.puts "@word = Word.find_or_initialize_by_name('#{word}')"
+        output.puts "@word.save"
+        output.puts "@word.definitions.create(:body =>'#{body}', :category =>'#{category}', :part_of_speech =>'#{part_of_speech}', :user_id => 52)"
+      end
     end   
 end
