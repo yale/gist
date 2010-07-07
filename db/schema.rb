@@ -54,13 +54,6 @@ ActiveRecord::Schema.define(:version => 20100701183327) do
   add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
   add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
 
-  create_table "trigrams", :force => true do |t|
-    t.string   "tg"
-    t.integer  "word_id"
-    t.integer  "score"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
 
   create_table "user_sessions", :force => true do |t|
     t.string   "username"
@@ -112,7 +105,6 @@ ActiveRecord::Schema.define(:version => 20100701183327) do
 
   create_table "words", :force => true do |t|
     t.string   "name"
-    t.string   "part_of_speech"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
