@@ -70,7 +70,11 @@ while (line = file.gets)
 	  if s1.include?(word)
 	    output.puts "@word = Word.find_or_initialize_by_name('#{word}')"
         output.puts "@word.save"
-        output.puts "@word.definitions.create(:body =>'#{body}', :category =>'#{category}', :part_of_speech =>'#{part_of_speech}', :user_id => 52)"
+        if category.length <= 255 
+          output.puts "@word.definitions.create(:body =>'#{body}', :category =>'#{category}', :part_of_speech =>'#{part_of_speech}', :user_id => 52)"
+        else
+          output.puts "@word.definitions.create(:body =>'#{body}', :category =>'', :part_of_speech =>'#{part_of_speech}', :user_id => 52)"
+        end
       end
     end   
 end
