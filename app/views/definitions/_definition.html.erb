@@ -1,7 +1,9 @@
 <li class="definition" id="definition-<%= definition.id %>">
   <span class="part-of-speech"><%=h definition.part_of_speech %></span>
   <span class="body"><%=h definition.body %></span>
-  <%= render :partial => 'definitions/like_buttons', :locals => {:definition => definition} %>
+  <% if current_user %>
+    <%= render :partial => 'definitions/like_buttons', :locals => {:definition => definition} %>
+  <% end %>
   <%= render :partial => 'definitions/stats', :locals => {:definition => definition} %>
   <%= render :partial => 'comments/comment_box', :locals => {:comments => definition.comments.recent.limit(10).all, :definition => definition} %>
 </li>
