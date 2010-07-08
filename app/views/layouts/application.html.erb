@@ -6,8 +6,6 @@
   <link rel="icon" href="images/favicon.ico" type="image/ico" />
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>Definitious - <%= controller.action_name.capitalize %></title>
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js"></script>
-  <script src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php" type="text/javascript"></script>
 
   <% if protect_against_forgery? %>
     <script type='text/javascript'>
@@ -24,6 +22,9 @@
   <%= javascript_include_tag 'jquery-1.4.2.min' %>
   <%= javascript_include_tag 'jquery-ui-1.8.2.custom.min' %>
   <%= javascript_include_tag 'jrails' %>
+  
+  <script src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php" type="text/javascript"></script>
+  
   <script type="text/javascript">
   $(function() {
 		var availableTags = <%= get_string_array_of_words_for_js %>;
@@ -78,6 +79,12 @@
   	<%= init_fb_connect "XFBML" %>
     <%= yield %>
     
+    </div>
+    <div id="sidebar">
+      <div class="section">
+        <h3>Section heading</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+      </div>
     </div>
 	<div id="footer">
 		<select id="i18n-nav">
