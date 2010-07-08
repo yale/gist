@@ -10,7 +10,7 @@ require File.join(File.dirname(__FILE__), 'boot')
 # require 'acts_as_ferret'
 # ActsAsFerret.index_dir = "#{RAILS_ROOT}/tmp/index"
 
-require 'facebooker'
+# require 'facebooker'
 
 Rails::Initializer.run do |config|
   # Settings in config/environments/* take precedence over those specified here.
@@ -51,6 +51,6 @@ Rails::Initializer.run do |config|
   
   config.gem 'jackdempsey-acts_as_commentable', :lib => 'acts_as_commentable', :source => "http://gems.github.com"
   config.gem "google_translate"
-  config.gem "facebooker"
+  #config.gem "facebooker"
 
 end
