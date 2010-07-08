@@ -1,8 +1,8 @@
 # Settings specified here will take precedence over those in config/environment.rb
 
 # for searching
-require 'acts_as_ferret'
-ActsAsFerret.index_dir = "#{RAILS_ROOT}/tmp/index"
+# require 'acts_as_ferret'
+# ActsAsFerret.index_dir = "#{RAILS_ROOT}/tmp/index"
 
 # The production environment is meant for finished, "live" apps.
 # Code is not reloaded between requests
