@@ -10,7 +10,7 @@ require File.join(File.dirname(__FILE__), 'boot')
 # require 'acts_as_ferret'
 # ActsAsFerret.index_dir = "#{RAILS_ROOT}/tmp/index"
 
- require 'facebooker'
+require 'facebooker'
 
 Rails::Initializer.run do |config|
   # Settings in config/environments/* take precedence over those specified here.
