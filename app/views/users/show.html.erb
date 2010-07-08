@@ -19,7 +19,7 @@
 <h2>Recent definitions</h2>
 <% if @definitions %>
 <ol id="user-definitions">
-  <% if current_user.username == "wiktionary.org" %>
+  <% if @user.username == "wiktionary.org" %>
     <span class="definition"><%= "You are not allowed to see wiktionary.org's definitions." %></span>
   <% else %>
     <%= render :partial => 'users/definition', :collection => @definitions %>
