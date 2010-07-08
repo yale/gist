@@ -6,7 +6,10 @@
   <link rel="icon" href="images/favicon.ico" type="image/ico" />
   <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
   <title>Definitious - <%= controller.action_name.capitalize %></title>
+<<<<<<< HEAD
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js"></script>
+=======
+>>>>>>> 5876c5a19711df350c497aa494b2375f6942e7c0
 
   <% if protect_against_forgery? %>
     <script type='text/javascript'>
@@ -23,6 +26,9 @@
   <%= javascript_include_tag 'jquery-1.4.2.min' %>
   <%= javascript_include_tag 'jquery-ui-1.8.2.custom.min' %>
   <%= javascript_include_tag 'jrails' %>
+  
+  <script src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php" type="text/javascript"></script>
+  
   <script type="text/javascript">
   $(function() {
 		var availableTags = <%= get_string_array_of_words_for_js %>;
@@ -72,9 +78,11 @@
       </div>
     </div>
     <div id="main">
-      <div id="notice"><%= notice %></div>
-    <%= yield %>
-    
+      <div id="notice"><%= notice %></div>  	
+  	<%= render :partial => 'layouts/sidebar' %>    
+  	<div id="content">
+  	  <%= yield %>
+  	</div>
     </div>
 	<div id="footer">
 		<select id="i18n-nav">

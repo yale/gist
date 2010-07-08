@@ -8,7 +8,6 @@ html, body {
 }
 
 h1 {
-  text-align: center;
   margin-top: 1em;
   margin-bottom: 1em;
 }
@@ -74,6 +73,7 @@ a {
 #header {
   width: 570px;
   margin: 40px auto;
+  height: 48px;
 }
 
 #search {
@@ -90,9 +90,19 @@ a {
 
 #main {
   clear: both;
-  max-width: 700px;
-  padding: 20px;
+  width: 900px;
   margin: 0 auto;
+}
+
+#sidebar {
+  width: 200px;
+  float: left;
+  color: #abcdcf;
+}
+
+#content { 
+  width: 660px;
+  margin-left: 240px;
 }
 
 #notice {
@@ -270,10 +280,8 @@ input[type=submit] {
   border: solid 1px #666;
 }
 
-
-
-
 #footer {
+  clear: both;
   margin: 1em;
   text-align: center;
 }

@@ -1,5 +1,6 @@
 class WordsController < ApplicationController
   before_filter :find_word, :only => [:show, :edit, :update, :destroy, :add_definition]
+  before_filter :find_random_words, :only => [:index, :show]
   auto_complete_for :word, :name
   before_filter :require_user, :only => [:add_definition, :new, :create, :update]
   
@@ -89,6 +90,10 @@ class WordsController < ApplicationController
   private
     def find_word
       @word = Word.find(params[:id])
+    end
+    
+    def find_random_words
+      @random_words = Word.random_collection 10
     end
 
 end
