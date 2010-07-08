@@ -13,4 +13,8 @@ class Word < ActiveRecord::Base
     find :first, :offset => (count * rand).to_i
   end
   
+  def self.random_collection n
+    find(:all, :offset => (count * rand).to_i, :limit => n)
+  end
+  
 end

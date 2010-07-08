@@ -77,14 +77,12 @@
       <div id="notice"><%= notice %></div>
     <%= fb_connect_javascript_tag %>
   	<%= init_fb_connect "XFBML" %>
-    <%= yield %>
+  	
+  	<%= render :partial => 'layouts/sidebar' %>
     
-    </div>
-    <div id="sidebar">
-      <div class="section">
-        <h3>Section heading</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-      </div>
+  	<div id="content">
+  	  <%= yield %>
+  	</div>
     </div>
 	<div id="footer">
 		<select id="i18n-nav">
