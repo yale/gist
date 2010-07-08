@@ -14,7 +14,7 @@ class ApplicationController < ActionController::Base
   
   LOCALES = {"en" => I18n.t("English"), "tw" => I18n.t("Chinese")}
   
-  sbefore_filter :set_facebook_session
+  before_filter :set_facebook_session
   helper_method :facebook_session
 
   
