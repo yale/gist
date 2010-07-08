@@ -4,8 +4,8 @@ class User < ActiveRecord::Base
   has_many :definitions
   has_many :user_votes
   
-  #def before_connect(facebook_session)
-  #  self.username = facebook_session.user.name
-  #end
+  def before_connect(facebook_session)
+    self.username = facebook_session.user.name
+  end
 
 end
