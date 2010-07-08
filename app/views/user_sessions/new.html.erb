@@ -1,4 +1,19 @@
 <h1>Login</h1>
 
-<%= authlogic_facebook_login_button %>
+<%# authlogic_facebook_login_button %>
 
+
+<% form_for @user_session do |f| %>
+  <%= f.error_messages %>
+  <p>
+    <%= f.label I18n.t("Username") %><br />
+    <%= f.text_field :username %>
+  </p>
+  <p>
+    <%= f.label I18n.t("Password") %><br />
+    <%= f.password_field :password %>
+  </p>
+  <p><%= f.submit I18n.t("Submit") %></p>
+<% end %>
+
+<%= link_to I18n.t("Back"), "/words" %>
