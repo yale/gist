@@ -1,5 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :trigrams
+  #map.resources :trigrams
   map.resources :finds
 
   # for authlogic
@@ -10,7 +10,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.resources :users
   
-  map.resources :searches
+  #map.resources :searches
 
   map.resources :words, :member => { :add_definition => :get }, :has_many => :definitions, :collection => {:auto_complete_for_word_name => :get, :random => :get }
   
