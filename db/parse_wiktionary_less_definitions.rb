@@ -31,10 +31,12 @@ while (line = file.gets)
 		category = m[3] || ''
 		category = category.gsub(re_remove_brackets, '')
 		category = category.gsub("'", "\\\\'")
-		body = m[4]
+		category = category.gsub("\"", "\\\\\"")
+		body = m[4].strip
 		body = body.gsub(re_remove_brackets, '')
 		body = body.gsub("\\","\\\\\\\\")
 		body = body.gsub("'", "\\\\'")
+		body = body.gsub("\"", "\\\\\"")
 	else
 		language = m[1]
 		word = m[2]
@@ -45,20 +47,22 @@ while (line = file.gets)
 		category = m[4] || ''
 		category = category.gsub(re_remove_brackets, '')
 		category = category.gsub("'", "\\\\'")
-		body = m[5]
+		category = category.gsub("\"", "\\\\\"")
+		body = m[5].strip
 		body = body.gsub(re_remove_brackets, '')
 		body = body.gsub("\\","\\\\\\\\")
 		body = body.gsub("'", "\\\\'")
+		body = body.gsub("\"", "\\\\\"")
 	end
 	if body.length <= 140
 	  if s1.include?(word)
 	  	output.puts "#{number}:"
-	    output.puts "  word: #{word}"
-	    output.puts "  body: #{body}"
-	    output.puts "  part_of_speech: #{part_of_speech}"
-	    output.puts "  user: wiktionary.org"
+	    output.puts "  word: \"#{word}\""
+	    output.puts "  body: \"#{body}\""
+	    output.puts "  part_of_speech: \"#{part_of_speech}\""
+	    output.puts "  user: \"wiktionary.org\""
         if category.length <= 255 
-        	output.puts "  category: #{category}"
+        	output.puts "  category: \"#{category}\""
         end
         number += 1
       end
