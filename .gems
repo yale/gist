@@ -5,3 +5,4 @@ acts_as_ferret --version 0.4.4
 jackdempsey-acts_as_commentable --version 2.0.2 --source http://gems.github.com
 hpricot --version 0.6
 google_translate
+facebooker
