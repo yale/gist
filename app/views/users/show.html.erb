@@ -22,7 +22,7 @@
   <% if current_user.username == "wiktionary.org" %>
     <span class="definition"><%= "You are not allowed to see wiktionary.org's definitions." %></span>
   <% else %>
-    <%= render :partial => 'users/definition', :collection => @definitions.first(10) %>
+    <%= render :partial => 'users/definition', :collection => @definitions %>
   <% end %>
 </ol>
 <% else %>
