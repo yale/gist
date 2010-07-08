@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100701183327) do
+ActiveRecord::Schema.define(:version => 20100708000000) do
 
   create_table "comments", :force => true do |t|
     t.string   "title",            :limit => 50, :default => ""
@@ -54,6 +54,13 @@ ActiveRecord::Schema.define(:version => 20100701183327) do
   add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
   add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
 
+  create_table "trigrams", :force => true do |t|
+    t.string   "tg"
+    t.integer  "word_id"
+    t.integer  "score"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "user_sessions", :force => true do |t|
     t.string   "username"
@@ -93,6 +100,8 @@ ActiveRecord::Schema.define(:version => 20100701183327) do
     t.datetime "last_login_at"
     t.string   "current_login_ip"
     t.string   "last_login_ip"
+    t.string   "name"
+    t.integer  "facebook_uid",        :limit => 8
   end
 
   create_table "votes", :force => true do |t|
