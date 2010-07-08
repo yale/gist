@@ -26,32 +26,26 @@ while (line = file.gets)
 		# Second one matched
 		language = m[1]
 		word = m[2]
-		word = word.gsub("'", "\\\\'")
 		part_of_speech = '' # not captured
 		category = m[3] || ''
 		category = category.gsub(re_remove_brackets, '')
-		category = category.gsub("'", "\\\\'")
 		category = category.gsub("\"", "\\\\\"")
 		body = m[4].strip
 		body = body.gsub(re_remove_brackets, '')
 		body = body.gsub("\\","\\\\\\\\")
-		body = body.gsub("'", "\\\\'")
 		body = body.gsub("\"", "\\\\\"")
 	else
 		language = m[1]
 		word = m[2]
-		word = word.gsub("'", "\\\\'")
 		part_of_speech = m[3].downcase
 		part_of_speech = part_of_speech.gsub("'", "")
 		part_of_speech = part_of_speech.gsub(re_remove_brackets, '')
 		category = m[4] || ''
 		category = category.gsub(re_remove_brackets, '')
-		category = category.gsub("'", "\\\\'")
 		category = category.gsub("\"", "\\\\\"")
 		body = m[5].strip
 		body = body.gsub(re_remove_brackets, '')
 		body = body.gsub("\\","\\\\\\\\")
-		body = body.gsub("'", "\\\\'")
 		body = body.gsub("\"", "\\\\\"")
 	end
 	if body.length <= 140
