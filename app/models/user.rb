@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   include ::Authentication
   include ::Authentication::ByPassword
   include ::Authentication::ByCookieToken
-  include ::Authorization::AasmRoles::AASM
+  #include ::Authorization::AasmRoles::AASM
 
   has_many :comments
   has_many :definitions
