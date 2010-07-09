@@ -13,9 +13,9 @@ development:
   api_key: b33d27141426c0ba61e5327b8137db0b
   secret_key: 1de354c13159cd3a0a89b464c7504518
   canvas_page_name: definitious
-  callback_url: http://localhost:3000/
+  callback_url: http://definitious.heroku.com/
   pretty_errors: true
-  set_asset_host_to_callback_url: true
+  set_asset_host_to_callback_url: false
   tunnel:
     public_host_username:
     public_host:
@@ -26,9 +26,9 @@ test:
   api_key: b33d27141426c0ba61e5327b8137db0b
   secret_key: 1de354c13159cd3a0a89b464c7504518
   canvas_page_name: definitious
-  callback_url: http://localhost:3000/
+  callback_url: http://definitious.heroku.com/
   pretty_errors: true
-  set_asset_host_to_callback_url: true
+  set_asset_host_to_callback_url: false
   tunnel:
     public_host_username:
     public_host:
@@ -41,7 +41,7 @@ production:
   canvas_page_name: definitious
   callback_url: http://definitious.heroku.com/
   pretty_errors: true
-  set_asset_host_to_callback_url: true
+  set_asset_host_to_callback_url: false
   tunnel:
     public_host_username:
     public_host:
