@@ -4,7 +4,7 @@
 <%= error_messages_for :user %>
 
 <p>Register with your Facebook account!</p>
-<%= fb_login_button('window.location = "/users/link_user_accounts";')%>
+<%= fb_login_button('window.location = "/users/link_user_accounts";')%><br />
 
 <p>or create a new definitious account</p>
 <% form_for :user, :url => users_path do |f| -%>
