@@ -2,6 +2,7 @@
 
 wiktionary.org:
   login: wiktionary.org
+  name: wiktionary.org
   email: murtazajafferji@gmail.com
   crypted_password: 7e8273cd47090f7444b3145068fa52490799a034
   salt: 0c5e52773fdd34e4a5257273bde298236901cb2b

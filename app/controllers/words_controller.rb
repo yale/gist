@@ -1,7 +1,7 @@
 class WordsController < ApplicationController
   before_filter :find_word, :only => [:show, :edit, :update, :destroy, :add_definition]
   before_filter :find_random_words, :only => [:index, :show]
-  #before_filter :require_user, :only => [:add_definition, :new, :create, :update]
+  before_filter :require_user, :only => [:add_definition, :new, :create, :update]
   
   def get_all
     @words = Word.all.map(&:name)
