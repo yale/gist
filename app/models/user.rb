@@ -1,7 +1,6 @@
 require 'digest/sha1'
 
 class User < ActiveRecord::Base
-  require 'aasm'
   include ::Authentication
   include ::Authentication::ByPassword
   include ::Authentication::ByCookieToken
