@@ -16,11 +16,6 @@ development:
   callback_url: http://definitious.heroku.com/
   pretty_errors: true
   set_asset_host_to_callback_url: false
-  tunnel:
-    public_host_username:
-    public_host:
-    public_port: 4007
-    local_port: 3000
 
 test:
   api_key: b33d27141426c0ba61e5327b8137db0b
@@ -29,12 +24,7 @@ test:
   callback_url: http://definitious.heroku.com/
   pretty_errors: true
   set_asset_host_to_callback_url: false
-  tunnel:
-    public_host_username:
-    public_host:
-    public_port: 4007
-    local_port: 3000
-
+  
 production:
   api_key: b33d27141426c0ba61e5327b8137db0b
   secret_key: 1de354c13159cd3a0a89b464c7504518
@@ -42,8 +32,3 @@ production:
   callback_url: http://definitious.heroku.com/
   pretty_errors: true
   set_asset_host_to_callback_url: false
-  tunnel:
-    public_host_username:
-    public_host:
-    public_port: 4007
-    local_port: 3000
