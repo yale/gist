@@ -1,3 +1,20 @@
-<h1>Login with your Facebook account!</h1>
+<h1>Log In</h1>
 
+<p>Login with your Facebook account!</p>
 <%= fb_login_button('window.location = "/users/link_user_accounts";')%>
+
+<p>or login with your definitious account</p>
+<% form_tag session_path do -%>
+<p><%= label_tag 'login' %><br />
+<%= text_field_tag 'login', @login %></p>
+
+<p><%= label_tag 'password' %><br/>
+<%= password_field_tag 'password', nil %></p>
+
+
+<p><%= label_tag 'remember_me', 'Remember me' %>
+<%= check_box_tag 'remember_me', '1', @remember_me %></p>
+
+<p><%= submit_tag 'Log in' %></p>
+
+<% end -%>
