@@ -1,16 +1,16 @@
 ActionController::Routing::Routes.draw do |map|
-  #map.resources :trigrams
-  map.resources :finds
-
-  # for authlogic
-  map.login "login", :controller => "user_sessions", :action => "new"
-  map.logout "logout", :controller => "user_sessions", :action => "destroy"
-	
-  map.resources :user_sessions
-
-  map.resources :users
+  map.logout '/logout', :controller => 'sessions', :action => 'destroy'
+  map.login '/login', :controller => 'sessions', :action => 'new'
+  map.register '/register', :controller => 'users', :action => 'create'
+  map.signup '/signup', :controller => 'users', :action => 'new'
+  map.home '/home', :controller => "users", :action => "home"
   
-  #map.resources :searches
+  map.resources :users, :collection => {:link_user_accounts => :get}
+  #map.root :controller => "users", :action => "home"
+
+  map.resource :session
+
+  map.resources :finds
 
   map.resources :words, :member => { :add_definition => :get }, :has_many => :definitions, :collection => {:auto_complete_for_word_name => :get, :random => :get }
   

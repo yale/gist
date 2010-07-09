@@ -1,6 +1,6 @@
 class DefinitionsController < ApplicationController
   before_filter :find_definition, :only => [:show, :edit, :update, :destroy, :vote, :add_comment]
-  before_filter :require_user, :only => [:vote, :new, :create, :update]
+  #before_filter :require_user, :only => [:vote, :new, :create, :update]
   
   def add_comment
     # Create a comment with the user submitted content

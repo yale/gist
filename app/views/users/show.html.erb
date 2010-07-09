@@ -1,6 +1,21 @@
-<h1>Profile for <%= @user.username %></h1>
-<% if @user.id == current_user.id %>
-  <p><%= link_to I18n.t("Edit Profile"), edit_user_path(:current) %></p>
+<h1>Profile for <%= @user.name %></h1>
+
+  <% if !current_user.nil? and @user.id == current_user.id %>
+    <% if current_user.facebook_user? %>
+      <fb:profile-pic uid="<%= current_user.fb_user_id%>" facebook-logo="true" size="thumb" ></fb:profile-pic>
+      <p><a href="#" onclick='FB.Connect.logoutAndRedirect("/logout")'>Logout</a></p>
+    <% end %>
+  <% else %>
+  <% if @user.facebook_user? %>
+    <fb:profile-pic uid="<%= @user.fb_user_id%>" facebook-logo="true" size="thumb" ></fb:profile-pic>
+  <% end %>
+<% end %>
+
+
+<% if !current_user.nil? %>
+  <% if @user.id == current_user.id %>
+    <p><%= link_to I18n.t("Edit Profile"), edit_user_path(:current) %></p>
+  <% end %>
 <% end %>
 
 <h2>Points</h2>
@@ -19,7 +34,7 @@
 <h2>Recent definitions</h2>
 <% if @definitions %>
 <ol id="user-definitions">
-  <% if @user.username == "wiktionary.org" %>
+  <% if @user.login == "wiktionary.org" %>
     <span class="definition"><%= "You are not allowed to see wiktionary.org's definitions." %></span>
   <% else %>
     <%= render :partial => 'users/definition', :collection => @definitions %>
