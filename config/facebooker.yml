@@ -15,7 +15,7 @@ development:
   canvas_page_name: definitious
   callback_url: http://localhost:3000/signup/
   pretty_errors: true
-  set_asset_host_to_callback_url: true
+  set_asset_host_to_callback_url: false
   tunnel:
     public_host_username: username
     public_host: localhost
@@ -29,7 +29,7 @@ test:
   canvas_page_name: definitious
   callback_url: http://localhost:3000/signup/
   pretty_errors: true
-  set_asset_host_to_callback_url: true
+  set_asset_host_to_callback_url: false
   tunnel:
     public_host_username: username
     public_host: localhost
