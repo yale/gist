@@ -12,11 +12,11 @@
 <% end %>
 
 
-<%# if !current_user.nil? %>
-  <%# if @user.id == current_user.id %>
-    <%# link_to I18n.t("Edit Profile"), edit_user_path(:current) %>
-  <%# end %>
-<%# end %>
+<% if !current_user.nil? %>
+  <% if @user.id == current_user.id %>
+    <p><%= link_to I18n.t("Edit Profile"), edit_user_path(:current) %></p>
+  <% end %>
+<% end %>
 
 <h2>Points</h2>
 <p class="score">This user has receieved <span><%= pluralize(@definitions.collect(&:like).sum, "like") %></span></p>
