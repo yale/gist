@@ -1,6 +1,6 @@
 <li class="definition" id="definition-<%= definition.id %>">
   <span class="part-of-speech"><%=h definition.part_of_speech %></span>
-  <span class="body"><%=h definition.body %></span>
+  <span class="body"><%=link_to definition.body, definition %></span>
   <% if current_user %>
     <%= render :partial => 'definitions/like_buttons', :locals => {:definition => definition} %>
   <% end %>
