@@ -308,24 +308,28 @@ input[type=submit] {
   }
   
   #main {
-    margin-left: 16px;
+    margin-left: 0;
+    padding: 20px;
+    width: auto;
   }
   
-  #top-nav {
-    float: none;
-    text-align: left;
+  #top-bar {
+    font-size: 12px;
   }
   
   h1 {
-    text-align: left;
-    font-size: 20px;
   }
   
   .tools {
     display: block;
   }
+
+  #sidebar {
+    display: none;
+  }
   
-  #top-nav ul {
-    display: block;
+  #content {
+    margin-left: 0;
+    width: auto;
   }
 }
