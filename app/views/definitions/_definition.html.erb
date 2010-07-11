@@ -5,5 +5,8 @@
     <%= render :partial => 'definitions/like_buttons', :locals => {:definition => definition} %>
   <% end %>
   <%= render :partial => 'definitions/stats', :locals => {:definition => definition} %>
+  <% if current_user.id == definition.user_id %>
+      <%= link_to 'Delete', definition, :confirm => "Are you sure?", :method => :delete %>
+  <% end %>
   <%= render :partial => 'comments/comment_box', :locals => {:comments => definition.comments.recent.limit(10).all, :definition => definition} %>
 </li>

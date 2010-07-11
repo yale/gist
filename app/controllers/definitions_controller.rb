@@ -110,7 +110,7 @@ class DefinitionsController < ApplicationController
     @definition.destroy
 
     respond_to do |wants|
-      wants.html { redirect_to(definitions_url) }
+      wants.html { redirect_to(:back) }
       wants.xml  { head :ok }
     end
   end

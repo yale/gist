@@ -7,8 +7,11 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resources :users, :collection => {:link_user_accounts => :get}
   #map.root :controller => "users", :action => "home"
-
+  
+  #Do NOT change to sessionS
   map.resource :session
+  
+  map.resources :comments
 
   map.resources :finds
 
