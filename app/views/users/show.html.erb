@@ -7,7 +7,7 @@
     <% end %>
   <% else %>
   <% if @user.facebook_user? %>
-    <fb:profile-pic uid="<%= @user.fb_user_id%>" facebook-logo="true" size="thumb" ></fb:profile-pic>
+    <fb:profile-pic uid="<%= @user.fb_user_id%>" facebook-logo="true" size="large" ></fb:profile-pic>
   <% end %>
 <% end %>
 
