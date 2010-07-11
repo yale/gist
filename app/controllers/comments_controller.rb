@@ -1,5 +1,5 @@
 class CommentsController < ApplicationController
-
+  before_filter :find_comment, :only => [:show, :destroy] 
   # GET /comments
   # GET /comments.xml
   def index
