@@ -1,6 +1,6 @@
 <h1>Profile for <%= @user.name %></h1>
 
-  <% if !current_user.nil? and @user.id == current_user.id %>
+  <% if current_user and @user.id == current_user.id %>
     <% if current_user.facebook_user? %>
       <fb:profile-pic uid="<%= current_user.fb_user_id%>" facebook-logo="true" size="thumb" ></fb:profile-pic>
       <p><a href="#" onclick='FB.Connect.logoutAndRedirect("/logout")'>Logout</a></p>
@@ -12,7 +12,7 @@
 <% end %>
 
 
-<% if !current_user.nil? %>
+<% if current_user %>
   <% if @user.id == current_user.id %>
     <p><%= link_to I18n.t("Edit Profile"), edit_user_path(:current) %></p>
   <% end %>
