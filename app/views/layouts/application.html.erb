@@ -57,7 +57,11 @@
         <li id="random-link"><%= link_to I18n.t("Random Word"), random_words_path %></li>
       </ul>
       <ul id="user-nav">
-          <% if current_user %>
+        <select id="i18n-nav">
+          <option value="en"><%= I18n.t("English") %></option>
+          <option value="zh"><%= I18n.t("Chinese") %></option>
+        </select>
+        <% if current_user %>
             <% if current_user.name %>
               <li>Hello, <%= link_to current_user.name, current_user %></li>
             <% else %>
@@ -95,10 +99,7 @@
   	</div>
     </div>
 	<div id="footer">
-		<select id="i18n-nav">
-      <option value="en"><%= I18n.t("English") %></option>
-      <option value="zh"><%= I18n.t("Chinese") %></option>
-    </select>
+
     </p>
 	</div>
   </div>
