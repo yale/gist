@@ -8,4 +8,5 @@
   <% if current_user and current_user.id == definition.user_id %>
       <%= link_to 'Delete', definition, :confirm => "Are you sure?", :method => :delete %>
   <% end %>
+  <%= render :partial => 'definitions/stats', :locals => { :definition => definition } %>
 </div>

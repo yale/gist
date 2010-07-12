@@ -100,6 +100,10 @@ a {
   color: #abcdcf;
 }
 
+  #sidebar .section {
+    margin-bottom: 1em;
+  }
+
 #content { 
   width: 660px;
   margin-left: 240px;
@@ -190,11 +194,20 @@ a {
   margin-left: 15px;
 }
 
-.definition-form #body {
+.definition-form textarea {
+  display: block;
+  width: 340px;
 }
 
 .definition-form select {
+  display: block;
+  float: left;
+  width: 120px;
+}
 
+.definition-form input[type=submit] {
+  width: 80px;
+  margin-left: 148px;
 }
 
 #like-buttons {
