@@ -59,7 +59,7 @@
       <ul id="user-nav">
         <ul id="i18n-nav">
           <li><%= link_to I18n.t("English"), :locale => nil %></li>
-          <li><%= link_to I18n.t("Chinese"), :locale => "zh" %> | </li>
+          <li><%= link_to I18n.t("Chinese"), :locale => "zh" %> |</li>
         </ul>
         <% if current_user %>
             <li>Hello, <%= link_to current_user.username, current_user %></li>
