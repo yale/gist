@@ -58,7 +58,11 @@
       </ul>
       <ul id="user-nav">
           <% if current_user %>
-            <li>Hello, <%= link_to current_user.name, current_user %></li>
+            <% if current_user.name %>
+              <li>Hello, <%= link_to current_user.name, current_user %></li>
+            <% else %>
+              <li>Hello, <%= link_to current_user.login, current_user %></li>
+            <% end %>
             <li><%= link_to I18n.t("Profile"), current_user %></li>
             <% if current_user.facebook_user? %>
               <li><a href="#" onclick='FB.Connect.logoutAndRedirect("/logout")'>Logout</a><li>
