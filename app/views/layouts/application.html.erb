@@ -27,9 +27,13 @@
   
   <script type="text/javascript">
   $(function() {
-		var availableTags = <%= get_string_array_of_words_for_js %>;
-		$("#autocomplete").autocomplete({
-			source: availableTags
+		var available_words = <%= get_string_array_of_words_for_js %>;
+		var available_users = <%= get_string_array_of_users_for_js %>;
+		$("#word_autocomplete").autocomplete({
+			source: available_words
+		});
+				$("#user_autocomplete").autocomplete({
+			source: available_users
 		});
 	});
   </script>
@@ -73,7 +77,7 @@
       </h1>
       <div id="search">
           <% form_tag(finds_path, :method => 'get') do %>
-            <%= text_field_tag (:q, I18n.t("Search for a word..."), :onFocus => "if(this.value==this.defaultValue) this.value='';", :onBlur  => "if(this.value=='') this.value=this.defaultValue;", 'id' => 'autocomplete') %>
+            <%= text_field_tag (:word, I18n.t("Search for a word..."), :onFocus => "if(this.value==this.defaultValue) this.value='';", :onBlur  => "if(this.value=='') this.value=this.defaultValue;", 'id' => 'word_autocomplete') %>
           <% end %>
       </div>
     </div>
@@ -89,7 +93,7 @@
 	<div id="footer">
 		<select id="i18n-nav">
       <option value="en"><%= I18n.t("English") %></option>
-      <option value="tw"><%= I18n.t("Chinese") %></option>
+      <option value="zh"><%= I18n.t("Chinese") %></option>
     </select>
     </p>
 	</div>

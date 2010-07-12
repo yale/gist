@@ -1,10 +1,21 @@
 class FindsController < ApplicationController
   def index
-  	$query = params[:q].downcase.lstrip.rstrip
-  	@word = Word.new
-    @result = Word.find(:first, :conditions => { :name => $query })
+  	if params[:word]
+  	  $query = params[:word].downcase.lstrip.rstrip
+  	  @word = Word.new
+  	  @result = Word.find(:first, :conditions => { :name => $query })
+  	end
+  	
+  	if params[:user]
+  	  $query = params[:user].lstrip.rstrip
+  	  @result = User.find(:first, :conditions => { :name => $query })
+  	  if @result.nil?
+  	  	@result = User.find(:first, :conditions => { :login => $query })
+  	  end
+  	end 
+    
     respond_to do |wants|
-      if !@result.nil?
+      if @result 
         wants.html { redirect_to @result }
         wants.xml  { render :xml => @result }
         wants.json { render :json => @result }

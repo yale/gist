@@ -1,4 +1,10 @@
-<h1>Profile for <%= @user.name %></h1>
+<h1>Profile for <%= (@user.name)? @user.name : @user.login %></h1>
+
+  <div id="search">
+    <% form_tag(finds_path, :method => 'get') do %>
+      <%= text_field_tag (:user, I18n.t("Search for a user..."), :onFocus => "if(this.value==this.defaultValue) this.value='';", :onBlur  => "if(this.value=='') this.value=this.defaultValue;", 'id' => 'user_autocomplete') %>
+      <% end %>
+  </div>
 
   <% if current_user and @user.id == current_user.id %>
     <% if current_user.facebook_user? %>

@@ -1,4 +1,4 @@
-<li class="comment"><%=h comment.user.name %>: <%=h comment.comment %></li>
+<li class="comment"><%=h (comment.user.name)? comment.user.name : comment.user.login %>: <%=h comment.comment %></li>
 <% if current_user and current_user.id == comment.user_id %>
   <%= link_to 'Delete', {:controller => "comments", :action => "destroy", :id => comment}, :confirm => "Are you sure?", :method => :delete %>
 <% end %>
