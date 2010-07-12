@@ -8,11 +8,8 @@
 
 <p>or create a new definitious account</p>
 <% form_for :user, :url => users_path do |f| -%>
-<p><%= label_tag 'login' %><br/>
+<p><%= label_tag 'login', "Username" %><br/>
 <%= f.text_field :login %></p>
-
-<p><%= label_tag 'name' %><br/>
-<%= f.text_field :name %></p>
 
 <p><%= label_tag 'email' %><br/>
 <%= f.text_field :email %></p>

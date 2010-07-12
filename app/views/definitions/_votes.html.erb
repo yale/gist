@@ -1,4 +1,4 @@
 <span class="votes" id="votes-definition-<%=h definition.id %>"><%= definition.percent_liked %>% liked, by
   <% @user = User.find(definition.user_id) unless definition.user_id.nil?%>
-  <%=link_to(@user.name, @user) + " on " + definition.created_at.strftime("%B %d, %Y") + "." %>
+  <%=link_to(@user.username, @user) + " on " + definition.created_at.strftime("%B %d, %Y") + "." %>
 </span>
