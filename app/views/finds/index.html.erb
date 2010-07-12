@@ -1,9 +1,10 @@
 <% if @word %>
-  <h1><%= "#{$query} is not defined. Do you want to define it?" %></h1>
+  <h1><%= "#{$query} is not defined. Do you want to define it?" %>
   <% form_for @word, :url => { :action => "create" } do |f| -%>
     <%= f.error_messages %>
-    <p><%= f.submit I18n.t("Define!")  %></p>
+    <%= f.submit I18n.t("Define!")  %>
   <% end -%>
+  </h1>
 <% else %>
   <h1><%= "Sorry. We could not find the user #{$query}." %></h1>
 <% end %>

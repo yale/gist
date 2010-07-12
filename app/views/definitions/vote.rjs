@@ -1,2 +1,2 @@
 page["#definition-#{@definition.id} #like-buttons"].replace :partial => 'definitions/like_buttons', :locals => {:definition => @definition}
-page["#definition-#{@definition.id} .stats"].replace :partial => 'definitions/stats', :locals => {:definition => @definition}
+page["#definition-#{@definition.id} .meta"].replace :partial => 'definitions/meta', :locals => {:definition => @definition}

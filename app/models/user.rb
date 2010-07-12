@@ -31,8 +31,7 @@ class User < ActiveRecord::Base
   # prevents a user from submitting a crafted form that bypasses activation
   # anything else you want your user to change should be added here.
   attr_accessible :login, :email, :name, :password, :password_confirmation
-
-
+  
 
   # Authenticates a user by their login name and unencrypted password.  Returns the user or nil.
   #
@@ -57,6 +56,14 @@ class User < ActiveRecord::Base
   #find the user in the database, first by the facebook user id and if that fails through the email hash
   def self.find_by_fb_user(fb_user)
     User.find_by_fb_user_id(fb_user.uid) || User.find_by_email_hash(fb_user.email_hashes)
+  end
+  
+  def username
+    if !name.nil? and name != ""
+      name
+    else
+      login
+    end
   end
  
   #Take the data returned from facebook and create a new user from it.

@@ -146,6 +146,10 @@ a {
   clear: right;
 }
 
+  .definition p a {
+    color: white;
+  }
+
 #user-definitions .definition {
   margin-left: 0;
   font-size: 14px;
@@ -161,6 +165,10 @@ a {
 
 .part-of-speech {
   color: #ABCDCF;
+}
+
+#new_word {
+  display: inline;
 }
 
 .definition-comment-form {
@@ -189,18 +197,10 @@ a {
 
 }
 
-.stats {
-  font-size: 12px;
-  line-height: 18px;
-}
-
-  .stats li {
-    display: inline;
-  }
-
-
 #like-buttons {
-  margin-top: 5px;
+  float: left;
+  margin-top: 15px;
+  margin-right: 15px;
 }
 
 #like-buttons li {
@@ -208,29 +208,31 @@ a {
 }
 
 #like-buttons li a {
+  text-indent: -9999em;
+  overflow: hidden;
   font-size: 12px;
   display: inline-block;
   border-bottom: none;
-  background-color: white;
-  color: #11466b;
-  padding: 2px 5px;
+  width: 24px;
+  height: 24px;
+  background: url(../images/thumbs.gif);
 }
 
-#like-buttons li.voted a {
-  background-color: black;
-  color: white;
-}
+#like-buttons li.like-button a          {background-position: 0px 24px;}
+#like-buttons li.dislike-button a       {background-position: 24px 24px;}
+#like-buttons li.voted.like-button a    {background-position: 0px 0px;}
+#like-buttons li.voted.dislike-button a {background-position: 24px 0px;}
 
-#like-buttons li a {
-  border-radius: 4px;
-}
-
-.stats a {
+.meta a {
   text-decoration: underline;
 }
 
-.stats .voted a {
+.meta .voted a {
   background-color: black;
+}
+
+.tools {
+  display: block;
 }
 
 .votes {
@@ -241,9 +243,19 @@ a {
   font-weight: bold;
 }
 
-.stats {
+.meta {
   color: #a2bfd4;
+  display: block;
+  margin-top: 5px;
+  margin-left: 68px;
+  font-size: 12px;
+  line-height: 18px;
 }
+
+  .meta li {
+    display: inline;
+  }
+
 
 .comment-box-toggle {
   text-decoration: underline;
@@ -252,7 +264,7 @@ a {
 
 .comments {
   font-size: 12px;
-  margin: 1em;
+  margin-left: 68px;
 }
 
 .comments .title {
@@ -318,10 +330,6 @@ input[type=submit] {
   }
   
   h1 {
-  }
-  
-  .tools {
-    display: block;
   }
 
   #sidebar {
