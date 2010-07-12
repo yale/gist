@@ -57,10 +57,10 @@
         <li id="random-link"><%= link_to I18n.t("Random Word"), random_words_path %></li>
       </ul>
       <ul id="user-nav">
-        <select id="i18n-nav">
-          <option value="en"><%= I18n.t("English") %></option>
-          <option value="zh"><%= I18n.t("Chinese") %></option>
-        </select>
+        <ul id="i18n-nav">
+          <li><%= link_to I18n.t("English"), :locale => nil %></li>
+          <li><%= link_to I18n.t("Chinese"), :locale => "zh" %> | </li>
+        </ul>
         <% if current_user %>
             <li>Hello, <%= link_to current_user.username, current_user %></li>
             <li><%= link_to I18n.t("Profile"), current_user %></li>
