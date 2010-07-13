@@ -116,8 +116,10 @@ a {
 #sidebar-nav li a {
   display: block;
   padding: 6px 10px;
-  background-color: white;
+  background-color: #aec8d9;
   color: black;
+  border-radius: 4px;
+  font-weight: bold;
 }
 
 #content { 
@@ -145,8 +147,8 @@ a {
   border-bottom: none;
 }
 
-  #user-definitions .word {
-    font-size: 16px;
+  #user-definitions .word, .definition .word {
+    font-size: 20px;
   }
 
   .word:hover {
