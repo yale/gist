@@ -123,6 +123,13 @@ class DefinitionsController < ApplicationController
       wants.html { render :action => "list" }
     end
   end
+  
+  def latest
+    @definitions = Definition.find_latest
+    respond_to do |wants|
+      wants.html { render :action => "list" }
+    end
+  end
 
   private
     def find_definition
