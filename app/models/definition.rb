@@ -6,6 +6,8 @@ class Definition < ActiveRecord::Base
   validates_length_of       :body, :maximum => 140, :message => 'definitions must be 140 characters or less'
   validates_presence_of     :body
   validates_uniqueness_of   :body
+  #validates_format_of    :body, :with => /^^Add your own definition for/
+
   
   
   PARTS_OF_SPEECH = ['noun', 'adjective', 'acronym', 'verb', 'adverb', 'preposition', 'interjection']
@@ -68,4 +70,5 @@ class Definition < ActiveRecord::Base
       return (100* like / (like + dislike)).to_i
     end
   end
+
 end
