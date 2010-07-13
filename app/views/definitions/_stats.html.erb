@@ -1,14 +1,17 @@
 <a href="##" class="stats-toggle">Stats</a>
 <ul class="stats">
-  <li class="like-votes"><%= pluralize(definition.like, "like") %></li>
-  <li class="dislike-votes"><%= pluralize(definition.dislike, "dislike") %></li>
-  <li class="helpful-votes"><%= definition.helpful %> helpful</li>
-  <li class="funny-votes"><%= definition.funny %> funny</li>
-  <li class="poetic-votes"><%= definition.poetic %> poetic</li>
+	
   <% if current_user %>
     <span class="tools">Do you find this
     <span class="<%= "voted" if definition.get_vote current_user, :helpful %>"><%= link_to_remote I18n.t("Helpful"), :url => vote_definition_path(definition, :mood => :helpful), :method => :post %></span>, 
     <span class="<%= "voted" if definition.get_vote current_user, :funny %>"><%= link_to_remote I18n.t("Funny"), :url => vote_definition_path(definition, :mood => :funny), :method => :post %></span>
     or <span class="<%= "voted" if definition.get_vote current_user, :poetic %>"><%= link_to_remote I18n.t("Poetic"), :url => vote_definition_path(definition, :mood => :poetic), :method => :post %></span>?</span>
   <% end %>
+  
+  <li class="like-votes"><%= pluralize(definition.like, "like") %></li>
+  <li class="dislike-votes"><%= pluralize(definition.dislike, "dislike") %></li>
+  <li class="helpful-votes"><%= definition.helpful %> helpful</li>
+  <li class="funny-votes"><%= definition.funny %> funny</li>
+  <li class="poetic-votes"><%= definition.poetic %> poetic</li>
+  
 </ul>
