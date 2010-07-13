@@ -3,10 +3,8 @@
 
 <%= error_messages_for :user %>
 
-<p>Register with your Facebook account!</p>
-<%= fb_login_button('window.location = "/users/link_user_accounts";')%><br />
-
-<p>or create a new definitious account</p>
+<div class="left" id="register-definitious">
+  <h2>Create a new definitious account</h2>
 <% form_for :user, :url => users_path do |f| -%>
 <p><%= label_tag 'login', "Username" %><br/>
 <%= f.text_field :login %></p>
@@ -20,7 +18,10 @@
 <p><%= label_tag 'password_confirmation', 'Confirm Password' %><br/>
 <%= f.password_field :password_confirmation %></p>
 
-<p><%= submit_tag 'Sign up' %></p>
-
+<p><%= submit_tag 'Sign up' %></p></div>
 <% end -%>
 
+<div class="right" id="register-facebook">
+<h2>Or register with your Facebook account!</h2>
+<%= fb_login_button('window.location = "/users/link_user_accounts";')%><br />
+</div>

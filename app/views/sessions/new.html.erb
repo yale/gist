@@ -1,9 +1,6 @@
 <h1>Log In</h1>
-
-<p>Login with your Facebook account!</p>
-<%= fb_login_button('window.location = "/users/link_user_accounts";')%><br />
-
-<p>or login with your definitious account</p>
+<div class="left" id="login-definitious">
+<h2>Login with your Definitious account</h2>
 <% form_tag session_path do -%>
 <p><%= label_tag 'login', 'Username' %><br />
 <%= text_field_tag 'login', @login %></p>
@@ -18,3 +15,9 @@
 <p><%= submit_tag 'Log in' %></p>
 
 <% end -%>
+</div>
+
+<div class="right" id="login-facebook">
+<h2>Or login with your Facebook account!</h2>
+<%= fb_login_button('window.location = "/users/link_user_accounts";')%>
+</div>
