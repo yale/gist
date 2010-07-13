@@ -68,4 +68,9 @@ class Definition < ActiveRecord::Base
       return (100* like / (like + dislike)).to_i
     end
   end
+  
+  def self.find_popular
+    result = self.find_by_sql("SELECT definitions.*, count('user_vote.like') AS 'votes' FROM definitions, user_votes WHERE user_votes.definition_id = definitions.id AND user_votes.like = 't' AND user_votes.created_at > '#{1.day.ago.strftime("%Y-%m-%d %H:%M:%S")}' GROUP BY definitions.id ORDER BY 'votes';")
+    return result
+  end
 end
