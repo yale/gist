@@ -70,7 +70,7 @@ class Definition < ActiveRecord::Base
   end
   
   def self.find_popular
-    result = self.find_by_sql("SELECT definitions.*, count(user_votes.id) AS votes FROM definitions, user_votes WHERE user_votes.definition_id = definitions.id AND user_votes.like = 't' AND user_votes.created_at > '#{1.day.ago.strftime("%Y-%m-%d %H:%M:%S")}' GROUP BY definitions.id ORDER BY votes;")
+    result = self.find_by_sql("SELECT definitions.*, count(user_votes.id) AS votes FROM definitions, user_votes WHERE user_votes.definition_id = definitions.id AND user_votes.like = 't' AND user_votes.created_at > '#{1.day.ago.strftime("%Y-%m-%d %H:%M:%S")}' GROUP BY definitions.id, definitions.body ORDER BY votes;")
     return result
   end
 end
