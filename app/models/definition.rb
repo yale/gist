@@ -4,6 +4,7 @@ class Definition < ActiveRecord::Base
   belongs_to :word
   acts_as_commentable
   validates_length_of :body, :maximum => 140, :message => 'definitions must be 140 characters or less'
+  validates_presence_of     :body
   
   PARTS_OF_SPEECH = ['noun', 'adjective', 'acronym', 'verb', 'adverb', 'preposition', 'interjection']
   
