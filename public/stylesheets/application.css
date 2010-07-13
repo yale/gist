@@ -217,6 +217,7 @@ a {
 }
 
 #like-buttons li {
+  display: inline-block;
 }
 
 #like-buttons li a {
