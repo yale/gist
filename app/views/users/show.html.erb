@@ -25,17 +25,12 @@
 <% end %>
 
 <h2>Points</h2>
-<p class="score">This user has receieved <span><%= pluralize(@definitions.collect(&:like).sum, "like") %></span></p>
-<p class="score">This user has receieved <span><%= pluralize(@definitions.collect(&:dislike).sum, "dislike") %></span></p>
-
-<h2>Recent comments</h2>
-<% if @comments %>
-<ol id="user-comments">
-  <%= render :partial => 'users/comment', :collection => @comments %>
-</ol>
-<% else %>
-<p>This user has not commented.</p>
-<% end %>
+<p class="score">This user's definitions have receieved:</p>
+<span><%= pluralize(@definitions.collect(&:like).sum, "like") %></span><br>
+<span><%= pluralize(@definitions.collect(&:dislike).sum, "dislike") %></span><br>
+<span><%= pluralize(@definitions.collect(&:helpful).sum, "helpful vote") %></span><br>
+<span><%= pluralize(@definitions.collect(&:funny).sum, "funny vote") %></span><br>
+<span><%= pluralize(@definitions.collect(&:poetic).sum, "poetic vote") %></span><br>
 
 <h2>Recent definitions</h2>
 <% if @definitions %>
@@ -48,4 +43,13 @@
 </ol>
 <% else %>
 <p>This user has not posted any definitions.</p>
+<% end %>
+
+<h2>Recent comments</h2>
+<% if @comments %>
+<ol id="user-comments">
+  <%= render :partial => 'users/comment', :collection => @comments %>
+</ol>
+<% else %>
+<p>This user has not commented.</p>
 <% end %>
