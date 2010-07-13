@@ -1,2 +1,2 @@
 <p class="definition"><%= link_to @word.name, @word %> - <%= @definition.body %></p>
-<p class="byline">Submitted by <%= @user.username %></p>
+<p class="byline">Submitted by <%= link_to(@user.username, @user) %></p>
