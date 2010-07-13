@@ -115,6 +115,15 @@ class DefinitionsController < ApplicationController
     end
   end
 
+
+
+  def hot
+    @definitions = Definition.find_popular
+    respond_to do |wants|
+      wants.html { render :action => "list" }
+    end
+  end
+
   private
     def find_definition
       @definition = Definition.find(params[:id])
