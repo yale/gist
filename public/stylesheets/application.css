@@ -90,7 +90,7 @@ a {
 
 #main {
   clear: both;
-  width: 900px;
+  width: 1100px;
   margin: 0 auto;
 }
 
@@ -120,6 +120,12 @@ a {
   color: black;
   border-radius: 4px;
   font-weight: bold;
+}
+
+#ads {
+  width: 160px;
+  float: right;
+  color: #abcdcf;
 }
 
 #content { 
@@ -165,7 +171,6 @@ a {
   margin-bottom: 1em;
   list-style: decimal; 
   font-size: 16px;
-  clear: right;
 }
 
   .definition p a {

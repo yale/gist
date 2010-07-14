@@ -87,7 +87,8 @@
     </div>
     <div id="main">
       <div id="notice"><%= notice %></div>  	
-  	<%= render :partial => 'layouts/sidebar' %>    
+  	<%= render :partial => 'layouts/sidebar' %> 
+  	<%= render :partial => 'layouts/ads' %>    
   	<div id="content">
   	  <%= fb_connect_javascript_tag %>
       <%= init_fb_connect "XFBML", :js => :jquery %>
