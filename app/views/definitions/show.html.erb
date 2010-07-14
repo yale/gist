@@ -1,2 +1,13 @@
-<p class="definition"><%= link_to @word.name, @word %> - <%= @definition.body %></p>
-<p class="byline">Submitted by <%= link_to(@user.username, @user) %></p>
+<div class="definition" id="definition-<%= @definition.id %>">
+  <p>
+    <span class="word"><%= link_to @definition.word.name, @definition.word %> - </span>
+    <span class="part-of-speech"><%=h @definition.part_of_speech %></span>
+    <span class="body"><%=link_to @definition.body, @definition %></span></p>
+  <% if current_user %>
+    <%= render :partial => 'definitions/like_buttons', :locals => {:definition => @definition} %>
+  <% end %>
+  <%= render :partial => 'definitions/meta', :locals => {:definition => @definition} %>
+  <div class="comments">
+    <%= render :partial => 'comments/comment_box', :locals => {:comments => @definition.comments.recent.limit(10).all, :definition => @definition} %>
+  </div>
+</div>
