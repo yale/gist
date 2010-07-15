@@ -43,7 +43,7 @@
 <span><%= @votes_cast_points %> points for <%= pluralize(@votes_cast, "vote") %> cast</span><br>
 <span><%= @comments_posted_points %> points for <%= pluralize(@comments_posted, "comment") %> posted</span><br>
 <span><%= @comments_received_points %> points for <%= pluralize(@comments_received, "comment") %> received</span><br>
-<span><%= @definition_points %> bonus points for <%= pluralize(@definitions_counted_for_points, "definition") %> definitions</span><br>
+<span><%= @definition_points %> bonus points for <%= pluralize(@definitions_counted_for_points, "popular definition") %></span><br>
 <span><%= @facebook_points %> bonus points for <%= (@user.facebook_user?)? "registering with Facebook": "not registering with Facebook" %></span><br>
 
 <h2>Recent definitions</h2>
