@@ -6,7 +6,11 @@ class Definition < ActiveRecord::Base
   validates_length_of       :body, :maximum => 140, :message => 'definitions must be 140 characters or less'
   validates_presence_of     :body
   validates_uniqueness_of   :body
-  #validates_format_of    :body, :with => /^Add your own definition for/
+  validate :must_be_defined
+  
+  def must_be_defined
+	 errors.add_to_base("You must write a definition") if body =~ /^Add your own definition for/
+  end
 
   PARTS_OF_SPEECH = ['noun', 'adjective', 'acronym', 'verb', 'adverb', 'preposition', 'interjection']
   
