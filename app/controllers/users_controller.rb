@@ -60,7 +60,7 @@ class UsersController < ApplicationController
     @poetic_total = @definitions.collect(&:poetic).sum
     
     if @helpful_total == @funny_total and @helpful_total == @poetic_total and @helpful_total == 0 
-        @user_type = "crappy"
+        @user_type = "unhelpful, unfunny, and unpoetic"
     elsif @helpful_total == @funny_total and @helpful_total == @poetic_total
     	@user_type = "helpful, funny, and poetic"
     elsif @helpful_total == @funny_total and @helpful_total > @poetic_total
