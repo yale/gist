@@ -88,6 +88,18 @@ a {
   background: #fff url(../images/search.gif) 290px 4px no-repeat;
 }
 
+#user-search {
+  float: right;
+  padding: 0px 0px 0px 3px;
+}
+
+#user-search input {
+  font-size: 14px;
+  width: 160px;
+  padding: 3px 40px 3px 6px;
+  background: #fff url(../images/search.gif) 170px 0px no-repeat;
+}
+
 #main {
   clear: both;
   width: 1100px;
