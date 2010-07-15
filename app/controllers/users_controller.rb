@@ -50,6 +50,53 @@ class UsersController < ApplicationController
     @votes = @user.user_votes
     @definitions = @user.definitions
     
+    @like_total = @definitions.collect(&:like).sum
+    @dislike_total = @definitions.collect(&:dislike).sum
+    @helpful_total = @definitions.collect(&:helpful).sum
+    @funny_total = @definitions.collect(&:funny).sum
+    @poetic_total = @definitions.collect(&:poetic).sum
+    
+    if @helpful_total == @funny_total and @helpful_total == @poetic_total and @helpful_total == 0 
+        @user_type = "crappy"
+    elsif @helpful_total == @funny_total and @helpful_total == @poetic_total
+    	@user_type = "helpful, funny, and poetic"
+    elsif @helpful_total == @funny_total
+    	@user_type = "helpful and funny"
+    elsif @helpful_total == @poetic_total
+    	@user_type = "helpful and poetic"
+    elsif @funny_total == @poetic_total
+    	@user_type = "funny and poetic"
+    elsif @helpful_total > @funny_total and @helpful_total > @poetic_total
+    	@user_type = "helpful"
+    elsif @funny_total > @helpful_total and @funny_total > @poetic_total
+    	@user_type = "funny"
+    #if @poetic_total > @helpful_total and @helpful_total > @funny_total
+    else
+    	@user_type = "poetic"
+    end
+    
+    @like_dislike_sum = @like_total.to_f + @dislike_total.to_f
+    
+    if @like_dislike_sum == 0
+      @like_percentage = number_to_percentage(@like_total.to_f/@like_dislike_sum * 100, :precision => 2) 
+      @dislike_percentage = number_to_percentage(@dislike_total.to_f/@like_dislike_sum * 100, :precision => 2)
+    else
+	  @like_percentage = number_to_percentage(0, :precision => 2) 
+      @dislike_percentage = number_to_percentage(0, :precision => 2)
+    end
+    
+    @mood_sum = @helpful_total + @funny_total.to_f + @poetic_total.to_f
+    
+    if @mood_sum == 0
+      @helpful_percentage = number_to_percentage(0, :precision => 2)
+      @funny_percentage = number_to_percentage(0, :precision => 2)
+      @poetic_percentage = number_to_percentage(0, :precision => 2)
+    else
+	  @helpful_percentage = number_to_percentage(@helpful_total.to_f/@mood_sum * 100, :precision => 2)
+      @funny_percentage = number_to_percentage(@funny_total.to_f/@mood_sum * 100, :precision => 2)
+      @poetic_percentage = number_to_percentage(@poetic_total.to_f/@mood_sum * 100, :precision => 2)
+    end
+    
     respond_to do |wants|
       wants.html
     end
@@ -65,5 +112,30 @@ class UsersController < ApplicationController
     end
     redirect_to '/'
   end
+ 
+private  
+  def number_to_percentage(number, options = {})
+    options   = options.stringify_keys
+    precision = options["precision"] || 3
+    separator = options["separator"] || "."
+    begin
+      number = number_with_precision(number, precision)
+      parts = number.split('.')
+      if parts.at(1).nil?
+        parts[0] + "%"
+      else
+        parts[0] + separator + parts[1].to_s + "%"
+      end
+    rescue
+      number
+    end
+  end
   
+  def number_with_precision(number, precision=3)
+    "%01.#{precision}f" % ((Float(number) * (10 ** precision)).round.to_f / 10 ** precision)
+  rescue
+    number
+  end
+
+ 
 end

@@ -1,4 +1,4 @@
-<h1>Profile for <%= @user.username %></h1>
+<h1>Profile for <%= link_to @user.username, @user %></h1>
 
   <div id="search">
   	<h1><%= @users.size %> users and counting...</h1>
@@ -25,13 +25,16 @@
   <% end %>
 <% end %>
 
+<h2>Based on votes, <%= link_to @user.username, @user %> is a <%= @user_type %> user</h2>
+
 <h2>Points</h2>
 <p class="score">This user's definitions have receieved:</p>
-<span><%= pluralize(@definitions.collect(&:like).sum, "like") %></span><br>
-<span><%= pluralize(@definitions.collect(&:dislike).sum, "dislike") %></span><br>
-<span><%= pluralize(@definitions.collect(&:helpful).sum, "helpful vote") %></span><br>
-<span><%= pluralize(@definitions.collect(&:funny).sum, "funny vote") %></span><br>
-<span><%= pluralize(@definitions.collect(&:poetic).sum, "poetic vote") %></span><br>
+<span><%= pluralize(@like_total, "like") %> - <%= @like_percentage %></span><br>
+<span><%= pluralize(@dislike_total, "dislike") %> - <%= @dislike_percentage %></span><br>
+<br><p>And</p>
+<span><%= pluralize(@helpful_total, "helpful vote") %> - <%= @helpful_percentage %></span><br>
+<span><%= pluralize(@funny_total, "funny vote") %> - <%= @funny_percentage %></span><br>
+<span><%= pluralize(@poetic_total, "poetic vote") %> - <%= @poetic_percentage %></span><br>
 
 <h2>Recent definitions</h2>
 <% if @definitions %>
