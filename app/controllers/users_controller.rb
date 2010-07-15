@@ -50,6 +50,8 @@ class UsersController < ApplicationController
     @votes = @user.user_votes
     @definitions = @user.definitions
     
+    
+    # For percentages and user type
     @like_total = @definitions.collect(&:like).sum
     @dislike_total = @definitions.collect(&:dislike).sum
     @helpful_total = @definitions.collect(&:helpful).sum
@@ -99,6 +101,41 @@ class UsersController < ApplicationController
     
     @like_cast = @user.votes_cast "like"
     @dislike_cast = @user.votes_cast "dislike"
+    @helpful_cast = @user.votes_cast "helpful"
+    @funny_cast = @user.votes_cast "funny"
+    @poetic_cast = @user.votes_cast "poetic"
+    
+    
+    # For points
+    #
+    # For each 5 likes for a definition a user gets 100 points
+    @definition_points = 0
+    @definitions.each {|definition| @definition_points += (definition.like / 5) * 100 }
+    #
+    # For each like a user gets 30 points
+    @like_points = @like_total * 30
+    #
+    # For each dislike a user loses 15 points
+    @dislike_points = @dislike_total * -15
+    #
+    # For each mood vote a user gets 10 points
+    @mood_points = (@helpful_total + @funny_total + @poetic_total) * 10
+    #
+    # For likes/dislikes cast
+    @votes_cast_points = (@like_cast + @dislike_cast) * 1
+    # 
+    # For mood votes cast
+    @mood_cast_points = (@helpful_cast + @funny_cast + @poetic_cast) * 2
+    #
+    # For comments made
+    @comments_made_points = @user.comments.size * 1
+    #
+    # For comments received
+    @comments_received_points = 0
+    @definitions.each {|definition| @comments_received_points += definition.comments.size * 1 }
+    # 
+    # Point total
+    @points = @definition_points + @like_points + @dislike_points + @mood_points + @votes_cast_points + @mood_cast_points + @comments_made_points + @comments_received_points
     
     respond_to do |wants|
       wants.html
