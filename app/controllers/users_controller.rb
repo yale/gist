@@ -97,7 +97,8 @@ class UsersController < ApplicationController
       @poetic_percentage = number_to_percentage(@poetic_total.to_f/@mood_sum * 100, :precision => 2)
     end
     
-    @votes_cast = @user.votes_cast "like"
+    @like_cast = @user.votes_cast "like"
+    @dislike_cast = @user.votes_cast "dislike"
     
     respond_to do |wants|
       wants.html
