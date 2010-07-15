@@ -27,6 +27,7 @@
     <span class="poetic-votes"><%= @definition.poetic %> poetic</span>
   </div>
   <div class="comments">
+  	Comments:
     <%= render :partial => 'comments/comments', :locals => {:comments => @definition.comments} %>
     <%= render :partial => 'comments/form', :locals => {:definition => @definition} %>
   </div>
