@@ -24,7 +24,6 @@
     <p><%= link_to I18n.t("Edit Profile"), edit_user_path(:current) %></p>
   <% end %>
 <% end %>
-<br>
 
 <h2>Based on votes, <%= link_to @user.username, @user %> is a <%= @user_type %> user</h2>
 <h2><%= link_to @user.username, @user %> has liked <%= pluralize(@like_cast, "definition") %> and disliked <%= pluralize(@dislike_cast, "definition") %></h2>

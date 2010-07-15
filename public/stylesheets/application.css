@@ -90,7 +90,7 @@ a {
 
 #user-search {
   float: right;
-  padding-top: 0px;
+  padding: 0px 0px 0px 3px;
 }
 
 #user-search input {
