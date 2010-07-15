@@ -60,11 +60,11 @@ class DefinitionsController < ApplicationController
         @definition_type = "boring"
     elsif @helpful_total == @funny_total and @helpful_total == @poetic_total
     	@definition_type = "helpful, funny, and poetic"
-    elsif @helpful_total == @funny_total
+    elsif @helpful_total == @funny_total and @helpful_total > @poetic_total
     	@definition_type = "helpful and funny"
-    elsif @helpful_total == @poetic_total
+    elsif @helpful_total == @poetic_total and @helpful_total > @funny_total
     	@definition_type = "helpful and poetic"
-    elsif @funny_total == @poetic_total
+    elsif @funny_total == @poetic_total and @funny_total > @helpful_total
     	@definition_type = "funny and poetic"
     elsif @helpful_total > @funny_total and @helpful_total > @poetic_total
     	@definition_type = "helpful"
