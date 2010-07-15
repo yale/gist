@@ -26,9 +26,10 @@
 <% end %>
 
 <h2>Based on votes, <%= link_to @user.username, @user %> is a <%= @user_type %> user</h2>
+<h2><%= link_to @user.username, @user %> has liked <%= @votes_cast %> definitions</h2>
 
 <h2>Points</h2>
-<p class="score">This user's definitions have receieved:</p>
+<p class="score"><%= link_to @user.username, @user %>'s definitions have receieved:</p>
 <span><%= pluralize(@like_total, "like") %> - <%= @like_percentage %></span><br>
 <span><%= pluralize(@dislike_total, "dislike") %> - <%= @dislike_percentage %></span><br>
 <br><p>And</p>
