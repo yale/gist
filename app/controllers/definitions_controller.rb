@@ -49,6 +49,54 @@ class DefinitionsController < ApplicationController
   def show
   	@word = @definition.word
   	@user = @definition.user
+  	
+  	@like_total = @definition.like
+    @dislike_total = @definition.dislike
+    @helpful_total = @definition.helpful
+    @funny_total = @definition.funny
+    @poetic_total = @definition.poetic
+    
+    if @helpful_total == @funny_total and @helpful_total == @poetic_total and @helpful_total == 0 
+        @definition_type = "boring"
+    elsif @helpful_total == @funny_total and @helpful_total == @poetic_total
+    	@definition_type = "helpful, funny, and poetic"
+    elsif @helpful_total == @funny_total
+    	@definition_type = "helpful and funny"
+    elsif @helpful_total == @poetic_total
+    	@definition_type = "helpful and poetic"
+    elsif @funny_total == @poetic_total
+    	@definition_type = "funny and poetic"
+    elsif @helpful_total > @funny_total and @helpful_total > @poetic_total
+    	@definition_type = "helpful"
+    elsif @funny_total > @helpful_total and @funny_total > @poetic_total
+    	@definition_type = "funny"
+    #if @poetic_total > @helpful_total and @helpful_total > @funny_total
+    else
+    	@definition_type = "poetic"
+    end
+    
+    @like_dislike_sum = @like_total.to_f + @dislike_total.to_f
+    
+    if @like_dislike_sum == 0
+      @like_percentage = number_to_percentage(@like_total.to_f/@like_dislike_sum * 100, :precision => 2) 
+      @dislike_percentage = number_to_percentage(@dislike_total.to_f/@like_dislike_sum * 100, :precision => 2)
+    else
+	  @like_percentage = number_to_percentage(0, :precision => 2) 
+      @dislike_percentage = number_to_percentage(0, :precision => 2)
+    end
+    
+    @mood_sum = @helpful_total + @funny_total.to_f + @poetic_total.to_f
+    
+    if @mood_sum == 0
+      @helpful_percentage = number_to_percentage(0, :precision => 2)
+      @funny_percentage = number_to_percentage(0, :precision => 2)
+      @poetic_percentage = number_to_percentage(0, :precision => 2)
+    else
+	  @helpful_percentage = number_to_percentage(@helpful_total.to_f/@mood_sum * 100, :precision => 2)
+      @funny_percentage = number_to_percentage(@funny_total.to_f/@mood_sum * 100, :precision => 2)
+      @poetic_percentage = number_to_percentage(@poetic_total.to_f/@mood_sum * 100, :precision => 2)
+    end
+    
     respond_to do |wants|
       wants.html # show.html.erb
       wants.xml  { render :xml => @definition }
