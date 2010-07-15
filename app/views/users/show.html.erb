@@ -1,6 +1,7 @@
 <h1>Profile for <%= @user.username %></h1>
 
   <div id="search">
+  	<h1><%= @users.size %> users and counting...</h1>
     <% form_tag(finds_path, :method => 'get') do %>
       <%= text_field_tag (:user, I18n.t("Search for a user..."), :onFocus => "if(this.value==this.defaultValue) this.value='';", :onBlur  => "if(this.value=='') this.value=this.defaultValue;", 'id' => 'user_autocomplete') %>
       <% end %>

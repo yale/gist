@@ -44,6 +44,7 @@ class UsersController < ApplicationController
   end
   
   def show
+  	@users = User.all
     @user = User.find(params[:id])
     @comments = @user.comments
     @votes = @user.user_votes
