@@ -78,11 +78,11 @@ class UsersController < ApplicationController
     @like_dislike_sum = @like_total.to_f + @dislike_total.to_f
     
     if @like_dislike_sum == 0
+      @like_percentage = number_to_percentage(0, :precision => 2) 
+      @dislike_percentage = number_to_percentage(0, :precision => 2) 
+    else
       @like_percentage = number_to_percentage(@like_total.to_f/@like_dislike_sum * 100, :precision => 2) 
       @dislike_percentage = number_to_percentage(@dislike_total.to_f/@like_dislike_sum * 100, :precision => 2)
-    else
-	  @like_percentage = number_to_percentage(0, :precision => 2) 
-      @dislike_percentage = number_to_percentage(0, :precision => 2)
     end
     
     @mood_sum = @helpful_total + @funny_total.to_f + @poetic_total.to_f
