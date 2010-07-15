@@ -108,7 +108,7 @@ class User < ActiveRecord::Base
 
   def votes_cast mood
     sum = 0
-    user_votes.each {|vote| sum += vote[mood]}
+    user_votes.each {|vote| sum += (vote[mood] ? 1 : 0)}
     return sum
   end
 
