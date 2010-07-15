@@ -60,3 +60,20 @@
 <p>This user has not commented.</p>
 <% end %>
 <h1>Member since <%= @user.created_at.strftime("%B %d, %Y") %></h1>
+
+<% content_for :sidebar do %>
+
+  <div class="section">
+    <h3>How points work:</h3>
+    <p>for each:</p>
+    <table>
+    <tr><td width="400">like received<td width="300">30 points</td></tr>
+    <tr><td>dislike received<td>-15 points</td></tr>
+    <tr><td>HFP vote received<td>10 points</td></tr>
+    <tr><td>vote cast<td>1 point</td></tr>
+    <tr><td>comment posted<td>1 point</td></tr>
+    <tr><td>comment received<td>1 point</td></tr>
+    </table><br>
+    <p>HFP = helpful/funny/poetic</p>
+  </div>
+<% end %>
