@@ -106,6 +106,12 @@ class User < ActiveRecord::Base
     return !fb_user_id.nil? && fb_user_id > 0
   end
 
+  def votes_cast mood
+    sum = 0
+    user_votes.each {|vote| sum += vote[mood]}
+    return sum
+  end
+
   protected
     
 
