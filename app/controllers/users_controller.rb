@@ -109,7 +109,8 @@ class UsersController < ApplicationController
     ##### Percentages and user type end #####
     
     ##### Points #####
-    
+    if @user.username != "wiktionary.org"
+    	
     # For each 5 likes for a definition a user gets 100 points
     @definition_points = 0
     @definitions_counted_for_points = 0
@@ -158,6 +159,7 @@ class UsersController < ApplicationController
     # Point total
     @points = @definition_points + @like_points + @dislike_points + @mood_points + @like_dislike_cast_points + @mood_cast_points + @comments_posted_points + @comments_received_points + @facebook_points
     
+    end
     ##### Points end #####
     
     respond_to do |wants|
