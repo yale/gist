@@ -5,7 +5,7 @@ class Word < ActiveRecord::Base
     end
     
     def sort_by_popularity
-      find(:all, :select => "*, (CAST(like AS REAL) + 1) / (CAST(like AS REAL) + CAST(dislike AS REAL) + 1) as like_index", :order => 'like_index DESC')
+      find(:all, :select => "*, (CAST('like' AS REAL) + 1) / (CAST('like' AS REAL) + CAST('dislike' AS REAL) + 1) as like_index", :order => 'like_index DESC')
     end
   end
   
