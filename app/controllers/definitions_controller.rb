@@ -166,7 +166,7 @@ class DefinitionsController < ApplicationController
 
 
   def hot
-    @definitions = Definition.find_popular
+    @definitions = Definition.find_popular params[:timespan]
     respond_to do |wants|
       wants.html { render :action => "list" }
     end
