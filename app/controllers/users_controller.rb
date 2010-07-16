@@ -50,6 +50,9 @@ class UsersController < ApplicationController
     @votes = @user.user_votes
     @definitions = @user.definitions
     
+    
+    ##### Percentages and user type #####
+    
     @like_total = @definitions.collect(&:like).sum
     @dislike_total = @definitions.collect(&:dislike).sum
     @helpful_total = @definitions.collect(&:helpful).sum
@@ -57,7 +60,7 @@ class UsersController < ApplicationController
     @poetic_total = @definitions.collect(&:poetic).sum
     
     if @helpful_total == @funny_total and @helpful_total == @poetic_total and @helpful_total == 0 
-        @user_type = "crappy"
+        @user_type = "unhelpful, unfunny, and unpoetic"
     elsif @helpful_total == @funny_total and @helpful_total == @poetic_total
     	@user_type = "helpful, funny, and poetic"
     elsif @helpful_total == @funny_total and @helpful_total > @poetic_total
@@ -99,6 +102,63 @@ class UsersController < ApplicationController
     
     @like_cast = @user.votes_cast "like"
     @dislike_cast = @user.votes_cast "dislike"
+    @helpful_cast = @user.votes_cast "helpful"
+    @funny_cast = @user.votes_cast "funny"
+    @poetic_cast = @user.votes_cast "poetic"
+    
+    ##### Percentages and user type end #####
+    
+    ##### Points #####
+    
+    # For each 5 likes for a definition a user gets 100 points
+    @definition_points = 0
+    @definitions_counted_for_points = 0
+    @definitions.each {|definition| 
+      temp = (definition.like / 5) * 100 
+      @definition_points += temp
+      if temp > 1
+      	@definitions_counted_for_points += 1
+      end
+    }
+    
+    # For each like a user gets 30 points
+    @like_points = @like_total * 30
+    
+    # For each dislike a user loses 15 points
+    @dislike_points = @dislike_total * -15
+    
+    # For each mood vote a user gets 10 points
+    @mood_points = (@helpful_total + @funny_total + @poetic_total) * 10
+    
+    # For likes/dislikes cast
+    @like_dislike_cast_points = (@like_cast + @dislike_cast) * 1
+     
+    # For mood votes cast
+    @mood_cast_points = (@helpful_cast + @funny_cast + @poetic_cast) * 1
+    
+    # For like/dislike + mood votes cast
+    @votes_cast = @like_cast + @dislike_cast + @helpful_cast + @funny_cast + @poetic_cast
+    @votes_cast_points = @mood_cast_points + @like_dislike_cast_points
+    
+    # For comments made
+    @comments_posted = @user.comments.size * 1
+    @comments_posted_points = @user.comments.size * 1
+    
+    # For comments received
+    @comments_received = 0
+    @definitions.each {|definition| @comments_received += definition.comments.size }
+    @comments_received_points = @comments_received * 1
+     
+    # For registering with Facebook
+    @facebook_points = 0
+    if @user.facebook_user?
+    	@facebook_points = 200
+    end
+    
+    # Point total
+    @points = @definition_points + @like_points + @dislike_points + @mood_points + @like_dislike_cast_points + @mood_cast_points + @comments_posted_points + @comments_received_points + @facebook_points
+    
+    ##### Points end #####
     
     respond_to do |wants|
       wants.html

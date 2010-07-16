@@ -6,6 +6,7 @@
 </div>
 
 <h1>Profile for <%= link_to @user.username, @user %></h1>
+<h2 class="word"><%=h @points %> points</h2>
 
   <% if current_user and @user.id == current_user.id %>
     <% if current_user.facebook_user? %>
@@ -26,16 +27,24 @@
 <% end %>
 
 <h2>Based on votes, <%= link_to @user.username, @user %> is a <%= @user_type %> user</h2>
-<h2><%= link_to @user.username, @user %> has liked <%= pluralize(@like_cast, "definition") %> and disliked <%= pluralize(@dislike_cast, "definition") %></h2>
 
-<h2>Points</h2>
-<p class="score"><%= link_to @user.username, @user %>'s definitions have receieved:</p>
-<span><%= pluralize(@like_total, "like") %> - <%= @like_percentage %></span><br>
-<span><%= pluralize(@dislike_total, "dislike") %> - <%= @dislike_percentage %></span><br>
-<br><p>And</p>
-<span><%= pluralize(@helpful_total, "helpful vote") %> - <%= @helpful_percentage %></span><br>
-<span><%= pluralize(@funny_total, "funny vote") %> - <%= @funny_percentage %></span><br>
-<span><%= pluralize(@poetic_total, "poetic vote") %> - <%= @poetic_percentage %></span><br>
+<h2>Stats</h2>
+<span><%= pluralize(@like_total, "like") %> received - <%= @like_percentage %></span><br>
+<span><%= pluralize(@dislike_total, "dislike") %> received - <%= @dislike_percentage %></span><br>
+<p>and</p>
+<span><%= pluralize(@helpful_total, "helpful vote") %> received - <%= @helpful_percentage %></span><br>
+<span><%= pluralize(@funny_total, "funny vote") %> received - <%= @funny_percentage %></span><br>
+<span><%= pluralize(@poetic_total, "poetic vote") %> received - <%= @poetic_percentage %></span><br>
+
+<h2>Points breakdown</h2>
+<span><%= @like_points %> points for <%= pluralize(@like_total, "like") %> received</span><br>
+<span><%= @dislike_points %> points for <%= pluralize(@dislike_total, "dislike") %> received</span><br>
+<span><%= @mood_points %> points for <%= pluralize(@mood_sum.to_i, "helpful/funny/poetic vote") %> received</span><br>
+<span><%= @votes_cast_points %> points for <%= pluralize(@votes_cast, "vote") %> cast</span><br>
+<span><%= @comments_posted_points %> points for <%= pluralize(@comments_posted, "comment") %> posted</span><br>
+<span><%= @comments_received_points %> points for <%= pluralize(@comments_received, "comment") %> received</span><br>
+<span><%= @definition_points %> bonus points for <%= pluralize(@definitions_counted_for_points, "popular definition") %></span><br>
+<span><%= @facebook_points %> bonus points for <%= (@user.facebook_user?)? "registering with Facebook": "not registering with Facebook" %></span><br>
 
 <h2>Recent definitions</h2>
 <% if @definitions %>
@@ -59,3 +68,23 @@
 <p>This user has not commented.</p>
 <% end %>
 <h1>Member since <%= @user.created_at.strftime("%B %d, %Y") %></h1>
+
+<% content_for :sidebar do %>
+
+  <div class="section">
+    <h3>How points work:</h3>
+    <p>for each</p>
+    <table>
+    <tr><td width="400">&nbsp&nbsp like received:<td width="50">+30</td></tr></tr>
+    <tr><td>&nbsp&nbsp dislike received:<td>-15</td></tr>
+    <tr><td>&nbsp&nbsp HFP vote received:<td>+10</td></tr>
+    <tr><td>&nbsp&nbsp vote cast:<td>+1</td></tr>
+    <tr><td>&nbsp&nbsp comment posted:<td>+1</td></tr>
+    <tr><td>&nbsp&nbsp comment received:<td>+1</td></tr>
+    <tr><td>bonuses</td></tr>
+    <tr><td>&nbsp&nbsp definition with 5 likes<td>+100</td></tr>
+    <tr><td>&nbsp&nbsp register with Facebook<td>+200</td></tr>
+    </table><br>
+    <p>HFP = helpful/funny/poetic</p>
+  </div>
+<% end %>
