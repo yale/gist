@@ -5,12 +5,6 @@
 </div>
 
 <% content_for :sidebar do %>
-<% if @random_words %>
-<div id="random-words" class="section">
-  <%= render :partial => 'words/cloud', :locals => {:words => @random_words} %>
-</div>
-<% end %>
-
   <div class="section">
     <h3>What's going on here?</h3>
     <p>Definitious is an online dictionary where users can submit and vote on definitions.</p>

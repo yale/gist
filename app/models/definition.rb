@@ -73,12 +73,19 @@ class Definition < ActiveRecord::Base
     end
   end
   
-  def self.find_popular
-    result = self.find_by_sql("SELECT definitions.*, count(user_votes.id) AS votes FROM definitions, user_votes WHERE user_votes.definition_id = definitions.id AND user_votes.like = 't' AND user_votes.created_at > '#{1.day.ago.strftime("%Y-%m-%d %H:%M:%S")}' GROUP BY definitions.id, definitions.body, definitions.created_at, definitions.updated_at, definitions.word_id, definitions.like, definitions.dislike, definitions.helpful, definitions.funny, definitions.poetic, definitions.inaccurate, definitions.mature, definitions.offensive, definitions.duplicate, definitions.user_id, definitions.part_of_speech, definitions.category ORDER BY votes DESC;") 
-    return result
+  def self.find_popular timespan = nil
+    query = "SELECT definitions.*, count(user_votes.id) AS votes FROM definitions, user_votes WHERE user_votes.definition_id = definitions.id AND user_votes.like = 't'"
+    if timespan
+      query += " AND user_votes.created_at > '#{timespan.days.ago.strftime("%Y-%m-%d %H:%M:%S")}'"
+    end
+    query += " GROUP BY definitions.id, definitions.body, definitions.created_at, definitions.updated_at, definitions.word_id, definitions.like, definitions.dislike, definitions.helpful, definitions.funny, definitions.poetic, definitions.inaccurate, definitions.mature, definitions.offensive, definitions.duplicate, definitions.user_id, definitions.part_of_speech, definitions.category ORDER BY votes DESC;"
+    return self.find_by_sql(query)
   end
+  
+  
   
   def self.find_latest
     self.all(:limit => 100, :order => 'created_at DESC')
   end
+
 end

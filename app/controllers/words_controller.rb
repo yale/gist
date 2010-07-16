@@ -37,7 +37,11 @@ class WordsController < ApplicationController
   end
 
   def show
-    @definitions = @word.definitions
+    if params[:mood]
+      @definitions = @word.definitions.sort_by_mood params[:mood]
+    else
+      @definitions = @word.definitions.sort_by_popularity
+    end
     respond_to do |wants|
       wants.html
       wants.xml  { render :xml => @word }

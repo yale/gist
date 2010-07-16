@@ -1,4 +1,6 @@
-<h1 class="title"><%= I18n.t("Viewing definitions for") %> <%=h @word.name %>, sorted by <%= select_tag "sort", "<option>popularity</option>" %></h1>
+<h1 class="title"><%= I18n.t("Viewing definitions for") %> <%=h @word.name %></h1>
+
+<%= render :partial => 'words/sorter', :locals => {:word => @word} %>
 
 <h2 class="word"><%=h @word.name %></h2>
 

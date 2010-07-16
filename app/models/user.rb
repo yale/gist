@@ -32,6 +32,17 @@ class User < ActiveRecord::Base
   # anything else you want your user to change should be added here.
   attr_accessible :login, :email, :name, :password, :password_confirmation
   
+  
+  SCORE = {
+    :fivelikes => 100,
+    :like => 30,
+    :dislike => -15,
+    :mood_vote => 10,
+    :mood_vote_cast => 2,
+    :vote_cast => 1,
+    :comment => 1
+  }
+  
 
   # Authenticates a user by their login name and unencrypted password.  Returns the user or nil.
   #
@@ -111,6 +122,7 @@ class User < ActiveRecord::Base
     user_votes.each {|vote| sum += (vote[mood] ? 1 : 0)}
     return sum
   end
+
 
   protected
     

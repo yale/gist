@@ -1,8 +1,4 @@
 <div id="sidebar">
-  <ul class="section" id="sidebar-nav">
-    <li id="whats-hot-button"><%= link_to "What's Hot", hot_definitions_path %></a></li>
-    <li id="whats-new-button"><a href="#">What's New</a></li>
-  </ul>
-  
+  <%= render :partial => 'layouts/timespan_nav' %>
   <%= yield :sidebar %>
 </div>
