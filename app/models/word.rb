@@ -1,7 +1,7 @@
 class Word < ActiveRecord::Base
   has_many :definitions do
     def sort_by_mood mood
-      find(:all, :select => "*, (cast(#{mood} AS REAL) + 1) / (cast(helpful AS REAL) + cast(funny AS REAL) + cast(poetic AS REAL) + 1) as mood_index", :order => 'mood_index DESC')
+      find(:all, :select => "*, (CAST(#{mood} AS REAL) + 1) / (CAST(helpful AS REAL) + CAST(funny AS REAL) + CAST(poetic AS REAL) + 1) as mood_index", :order => 'mood_index DESC')
     end
     
     def sort_by_popularity
