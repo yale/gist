@@ -38,5 +38,4 @@ class Word < ActiveRecord::Base
       id.to_s
     end
   end
-
 end
