@@ -129,7 +129,6 @@ class User < ActiveRecord::Base
     self.url = self.login.to_url
   end
   
-  
   def to_param
     if url
       url

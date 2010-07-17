@@ -36,6 +36,7 @@ class UsersController < ApplicationController
   def update
     @user = current_user
     if @user.update_attributes(params[:user])
+      User.update(@user.id, "url" => @user.login.to_url)
       flash[:notice] = "Successfully updated profile."
       redirect_to "/words"
     else
