@@ -28,7 +28,13 @@ class Word < ActiveRecord::Base
   end
   
   def make_slug
-    self.url = self.name.to_url
+  	d = LanguageDetector.new 
+    language = d.detect(self.name)
+  	if language == 'zh' or language == 'ar' or language == 'he'
+  		self.url = language + "-" + w.name.to_url
+    else
+      self.url = self.name.to_url
+    end
   end
   
   def to_param
