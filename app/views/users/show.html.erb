@@ -6,7 +6,7 @@
 </div>
 
 <h1>Profile for <%= link_to @user.username, @user %></h1>
-<h2 class="word"><%=h @points %> points</h2>
+<h2 class="word"><%= pluralize(@points, "point") %></h2>
 
   <% if current_user and @user.id == current_user.id %>
     <% if current_user.facebook_user? %>
@@ -37,14 +37,14 @@
 <span><%= pluralize(@poetic_total, "poetic vote") %> received - <%= @poetic_percentage %></span><br>
 
 <h2>Points breakdown</h2>
-<span><%= @like_points %> points for <%= pluralize(@like_total, "like") %> received</span><br>
-<span><%= @dislike_points %> points for <%= pluralize(@dislike_total, "dislike") %> received</span><br>
-<span><%= @mood_points %> points for <%= pluralize(@mood_sum.to_i, "helpful/funny/poetic vote") %> received</span><br>
-<span><%= @votes_cast_points %> points for <%= pluralize(@votes_cast, "vote") %> cast</span><br>
-<span><%= @comments_posted_points %> points for <%= pluralize(@comments_posted, "comment") %> posted</span><br>
-<span><%= @comments_received_points %> points for <%= pluralize(@comments_received, "comment") %> received</span><br>
-<span><%= @definition_points %> bonus points for <%= pluralize(@definitions_counted_for_points, "popular definition") %></span><br>
-<span><%= @facebook_points %> bonus points for <%= (@user.facebook_user?)? "registering with Facebook": "not registering with Facebook" %></span><br>
+<span><%= pluralize(@like_points, "point") %> for <%= pluralize(@like_total, "like") %> received</span><br>
+<span><%= pluralize(@dislike_points, "point") %> for <%= pluralize(@dislike_total, "dislike") %> received</span><br>
+<span><%= pluralize(@mood_points, "point") %> for <%= pluralize(@mood_sum.to_i, "helpful/funny/poetic vote") %> received</span><br>
+<span><%= pluralize(@votes_cast_points, "point") %> for <%= pluralize(@votes_cast, "vote") %> cast</span><br>
+<span><%= pluralize(@comments_posted_points, "point") %> for <%= pluralize(@comments_posted, "comment") %> posted</span><br>
+<span><%= pluralize(@comments_received_points, "point") %> for <%= pluralize(@comments_received, "comment") %> received</span><br>
+<span><%= pluralize(@definition_points, "bonus point") %> for <%= pluralize(@definitions_counted_for_points, "popular definition") %></span><br>
+<span><%= pluralize(@facebook_points, "bonus point") %> for <%= (@user.facebook_user?)? "registering with Facebook": "not registering with Facebook" %></span><br>
 
 <h2>Recent definitions</h2>
 <% if @definitions %>

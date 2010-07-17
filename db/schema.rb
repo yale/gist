@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100709041926) do
+ActiveRecord::Schema.define(:version => 20100716041850) do
 
   create_table "comments", :force => true do |t|
     t.string   "title",            :limit => 50, :default => ""
@@ -54,6 +54,13 @@ ActiveRecord::Schema.define(:version => 20100709041926) do
   add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
   add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
 
+  create_table "trigrams", :force => true do |t|
+    t.string   "tg"
+    t.integer  "word_id"
+    t.integer  "score"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "user_votes", :force => true do |t|
     t.boolean  "like"
@@ -83,6 +90,7 @@ ActiveRecord::Schema.define(:version => 20100709041926) do
     t.datetime "remember_token_expires_at"
     t.integer  "fb_user_id"
     t.string   "email_hash"
+    t.string   "url"
   end
 
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true
@@ -99,6 +107,8 @@ ActiveRecord::Schema.define(:version => 20100709041926) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "permalink"
+    t.string   "url"
   end
 
 end

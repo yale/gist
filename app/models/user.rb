@@ -9,6 +9,8 @@ class User < ActiveRecord::Base
   has_many :comments
   has_many :definitions
   has_many :user_votes
+  before_create :make_slug
+  after_update :make_slug
   
   after_create :register_user_to_fb
 
@@ -38,7 +40,7 @@ class User < ActiveRecord::Base
     :like => 30,
     :dislike => -15,
     :mood_vote => 10,
-    :mood_vote_cast => 2,
+    :mood_vote_cast => 1,
     :vote_cast => 1,
     :comment => 1
   }
@@ -122,10 +124,17 @@ class User < ActiveRecord::Base
     user_votes.each {|vote| sum += (vote[mood] ? 1 : 0)}
     return sum
   end
-
-
-  protected
-    
-
+  
+  def make_slug
+    self.url = self.login.to_url
+  end
+  
+  def to_param
+    if url
+    	url
+    else
+      id.to_s
+    end
+  end
 
 end

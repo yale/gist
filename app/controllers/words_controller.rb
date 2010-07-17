@@ -92,7 +92,10 @@ class WordsController < ApplicationController
 
   private
     def find_word
-      @word = Word.find(params[:id])
+      @word = Word.find_by_url(params[:id])
+      if @word.nil?
+      	@word = Word.find(params[:id])
+      end
     end
     
     def find_random_words

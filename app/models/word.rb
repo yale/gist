@@ -1,4 +1,6 @@
 class Word < ActiveRecord::Base
+  #acts_as_url :name
+  before_create :make_slug
   has_many :definitions do
     def sort_by_mood mood
       find(:all, :select => "*, (CAST(#{mood} AS REAL) + 1) / (CAST(helpful AS REAL) + CAST(funny AS REAL) + CAST(poetic AS REAL) + 1) as mood_index", :order => 'mood_index DESC')
@@ -25,4 +27,16 @@ class Word < ActiveRecord::Base
     find(:all, :offset => (count * rand).to_i, :limit => n)
   end
   
+  def make_slug
+    self.url = self.name.to_url
+  end
+  
+  def to_param
+    if url
+    	url
+    else
+      id.to_s
+    end
+  end
+
 end

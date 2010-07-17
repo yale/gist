@@ -45,7 +45,10 @@ class UsersController < ApplicationController
   
   def show
   	@users = User.all
-    @user = User.find(params[:id])
+    @user = User.find_by_url(params[:id])
+    if @user.nil?
+      @user = User.find(params[:id])
+    end
     @comments = @user.comments
     @votes = @user.user_votes
     @definitions = @user.definitions

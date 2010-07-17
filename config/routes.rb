@@ -28,7 +28,6 @@ ActionController::Routing::Routes.draw do |map|
     definition.resources :comments
   end 
 
-  
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:
