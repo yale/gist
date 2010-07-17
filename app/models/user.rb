@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   has_many :definitions
   has_many :user_votes
   before_create :make_slug
-  #after_update :update_slug
+  after_update :make_slug
   
   after_create :register_user_to_fb
 
@@ -32,7 +32,7 @@ class User < ActiveRecord::Base
   # HACK HACK HACK -- how to do attr_accessible from here?
   # prevents a user from submitting a crafted form that bypasses activation
   # anything else you want your user to change should be added here.
-  attr_accessible :login, :email, :name, :password, :password_confirmation
+  attr_accessible :login, :email, :name, :password, :password_confirmation, :url
   
   
   SCORE = {
@@ -129,13 +129,10 @@ class User < ActiveRecord::Base
     self.url = self.login.to_url
   end
   
-  #def update_slug
-  #	User.update(self.id, "url" => self.name.to_url)
-  #end
   
   def to_param
     if url
-    	url
+      url
     else
       id.to_s
     end
