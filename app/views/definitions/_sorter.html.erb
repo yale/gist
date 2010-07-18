@@ -1,1 +1,1 @@
-<p class="sorter">Sort definitions by <%= link_to "helpful", word_path(word, :mood => "helpful") %>, <%= link_to "funny", word_path(word, :mood => "funny") %> or <%= link_to "poetic", word_path(word, :mood => "poetic") %></p>
+<p class="sorter" id="mood-sorter">Sort by <%= link_to "Popularity", url_for(:sort => "like") %>, or by mood: <%= link_to "helpful", url_for(:sort => "helpful") %>, <%= link_to "funny", url_for(:sort => "funny") %>, <%= link_to "poetic", url_for(:sort => "poetic") %></p>

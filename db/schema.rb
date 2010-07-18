@@ -54,14 +54,6 @@ ActiveRecord::Schema.define(:version => 20100716041850) do
   add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"
   add_index "sessions", ["updated_at"], :name => "index_sessions_on_updated_at"
 
-  create_table "trigrams", :force => true do |t|
-    t.string   "tg"
-    t.integer  "word_id"
-    t.integer  "score"
-    t.datetime "created_at"
-    t.datetime "updated_at"
-  end
-
   create_table "user_votes", :force => true do |t|
     t.boolean  "like"
     t.boolean  "dislike"
@@ -107,7 +99,6 @@ ActiveRecord::Schema.define(:version => 20100716041850) do
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "permalink"
     t.string   "url"
   end
 

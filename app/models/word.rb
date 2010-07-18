@@ -1,15 +1,7 @@
 class Word < ActiveRecord::Base
   #acts_as_url :name
   before_create :make_slug
-  has_many :definitions do
-    def sort_by_mood mood
-      find(:all, :select => "*, (CAST(#{mood} AS REAL) + 1) / (CAST(helpful AS REAL) + CAST(funny AS REAL) + CAST(poetic AS REAL) + 1) as mood_index", :order => 'mood_index DESC')
-    end
-    
-    def sort_by_popularity
-      find(:all, :select => "*, (CAST(definitions.like AS REAL) + 1) / (CAST(definitions.like AS REAL) + CAST(dislike AS REAL) + 1) as like_index", :order => 'like_index DESC')
-    end
-  end
+  has_many :definitions
   
   validates_presence_of :name
   validates_uniqueness_of :name

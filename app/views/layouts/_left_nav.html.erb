@@ -1,0 +1,7 @@
+<div class="section">
+  <ul class="sidebar-nav">
+    <li id="hot-button"><%= link_to "What's Hot", hot_definitions_path %></li>
+    <li id="new-button"><%= link_to "New Definitions", definitions_path(:sort => :date) %></li>
+    <li id="top-button"><%= link_to "Top Definitions", definitions_path(:sort => :like, :timespan => :week) %></li>
+  </ul>
+</div>

@@ -1,6 +1,5 @@
 class WordsController < ApplicationController
   before_filter :find_word, :only => [:show, :edit, :update, :destroy, :add_definition]
-  before_filter :find_random_words, :only => [:index, :show]
   before_filter :require_user, :only => [:add_definition, :new, :create, :update]
   
   def get_all
@@ -37,11 +36,8 @@ class WordsController < ApplicationController
   end
 
   def show
-    if params[:mood]
-      @definitions = @word.definitions.sort_by_mood params[:mood]
-    else
-      @definitions = @word.definitions.sort_by_popularity
-    end
+    params[:word_id] = @word.id
+    @definitions = Definition.list params
     respond_to do |wants|
       wants.html
       wants.xml  { render :xml => @word }

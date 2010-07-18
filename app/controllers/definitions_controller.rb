@@ -22,10 +22,25 @@ class DefinitionsController < ApplicationController
   # GET /definitions
   # GET /definitions.xml
   def index
-    @definitions = Definition.all
+    @definitions = Definition.list params
+
+    @title = "Definitions"
+    
+    case params[:sort]
+    when "like" then @title = "Most Popular Definitions"
+    when "funny" then @title = "Funniest Definitions"
+    when "helpful" then @title = "Most Helpful Definitions"
+    when "poetic" then @title = "Most Poetic Definitions"
+    when "date" then @title = "New Definitions"
+    end
+    
+    case params[:timespan] 
+    when "today" then @title += " from today"
+    when "week", "month", "year" then @title += " from this #{params[:timespan]}"
+    end
 
     respond_to do |wants|
-      wants.html # index.html.erb
+      wants.html
       wants.xml  { render :xml => @definitions }
     end
   end
@@ -163,19 +178,10 @@ class DefinitionsController < ApplicationController
     end
   end
 
-
-
   def hot
-    @definitions = Definition.find_popular params[:timespan]
+    @definitions = Definition.hot
     respond_to do |wants|
-      wants.html { render :action => "list" }
-    end
-  end
-  
-  def latest
-    @definitions = Definition.find_latest
-    respond_to do |wants|
-      wants.html { render :action => "list" }
+      wants.html { render :action => "hot" }
     end
   end
 

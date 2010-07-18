@@ -1,6 +1,6 @@
 <li class="definition" id="definition-<%= definition.id %>">
   <p>
-    <% if defined? word %>
+    <% if defined? word and definition.word %>
       <span class="word"><%= link_to definition.word.name, definition.word %> - </span>
     <% end %>
     <span class="part-of-speech"><%=h definition.part_of_speech %></span>
