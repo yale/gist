@@ -1,1 +1,1 @@
-<p class="sorter" id="mood-sorter">Sort by <%= link_to "Popularity", url_for(:sort => "like") %>, or by mood: <%= link_to "helpful", url_for(:sort => "helpful") %>, <%= link_to "funny", url_for(:sort => "funny") %>, <%= link_to "poetic", url_for(:sort => "poetic") %></p>
+<p class="sorter" id="mood-sorter">Sort by <%= link_to "Popularity", sort_url("sort", "like") %>, or by mood: <%= link_to "helpful", sort_url("sort", "helpful") %>, <%= link_to "funny", sort_url("sort", "funny") %>, <%= link_to "poetic", sort_url("sort", "poetic") %></p>

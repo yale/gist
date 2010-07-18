@@ -17,4 +17,10 @@ module ApplicationHelper
   	users.uniq!
   	return "[" + users.join(", ") + "]"
   end
+  
+  def sort_url key, val
+    newparams = params.dup
+    newparams[key] = val
+    url_for(newparams)
+  end
 end
