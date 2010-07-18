@@ -155,7 +155,7 @@ class Definition < ActiveRecord::Base
     # (likes - dislikes - 1) / (time_since_submission_in_hours + 2)
     hour_difference = case ActiveRecord::Base.connection.instance_values["config"][:adapter]
     when "pgsql", "postgres", "postgresql"
-      "EXTRACT(hour FROM (localdatestamp - created_at))"
+      "EXTRACT(hour FROM (now() - created_at))"
     when "sqlite", "sqlite3"
       "CAST(strftime('%t', date('now') - created_at) AS REAL)"
     end
