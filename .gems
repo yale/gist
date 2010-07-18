@@ -4,3 +4,4 @@ hpricot --version 0.6
 google_translate
 authlogic
 will_paginate --version 2.3.11 --source http://gemcutter.org
+taps

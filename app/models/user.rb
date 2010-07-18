@@ -10,7 +10,6 @@ class User < ActiveRecord::Base
   has_many :definitions
   has_many :user_votes
   before_create :make_slug
-  after_update :make_slug
   
   after_create :register_user_to_fb
 
