@@ -157,7 +157,7 @@ class Definition < ActiveRecord::Base
     when "pgsql", "postgres", "postgresql"
       "EXTRACT(hour FROM (now() - created_at))"
     when "sqlite", "sqlite3"
-      "CAST(strftime('%t', date('now') - created_at) AS REAL)"
+      "CAST(strftime('%H', date('now') - created_at) AS REAL)"
     end
     select_query = "*, CAST(definitions.like - dislike - 1 AS REAL) / (#{hour_difference} + 2) AS popularity"
     
