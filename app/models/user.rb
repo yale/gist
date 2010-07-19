@@ -136,7 +136,8 @@ class User < ActiveRecord::Base
     end
   end
 
-  def add_points points, user
-	User.update(user.id, "points" => user.points + points) 
+  def add_points pts
+    points += pts
+    self.save
   end
 end
