@@ -21,7 +21,8 @@
       or <span class="<%= "voted" if @definition.get_vote current_user, :poetic %>"><%= link_to_remote I18n.t("Poetic"), :url => vote_definition_path(@definition, :mood => :poetic), :method => :post %></span>?</span>
     <% end %> 
     
-  <span class>This is a <%= @definition_type %> definition</span><br>
+  <span class>This is a <%= @definition_type %> definition.</span><br>
+  <span class>This definition has earned <%= @user.username %> <%= @points %> points.</span><br>
    
   <span class="like-votes"><%= pluralize(@definition.like, "like") %> - <%= @like_percentage %></span><br>
   <span class="dislike-votes"><%= pluralize(@definition.dislike, "dislike") %> - <%= @dislike_percentage %></span><br>

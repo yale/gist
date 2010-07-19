@@ -112,6 +112,20 @@ class DefinitionsController < ApplicationController
       @poetic_percentage = number_to_percentage(@poetic_total.to_f/@mood_sum * 100, :precision => 2)
     end
     
+    # For each 5 likes, 100 points
+    @definition_points = (@definition.like / 5) * 100 
+    
+    # For each like, 30 points
+    @like_points = @like_total * 30
+    
+    # For each dislike, 15 points
+    @dislike_points = @dislike_total * -15
+    
+    # For each mood vote a user gets 10 points
+    @mood_points = (@helpful_total + @funny_total + @poetic_total) * 10
+    
+    @points = @definition_points + @like_points + @dislike_points + @mood_points
+    
     respond_to do |wants|
       wants.html # show.html.erb
       wants.xml  { render :xml => @definition }
