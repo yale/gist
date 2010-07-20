@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100716041860) do
+ActiveRecord::Schema.define(:version => 20100716041870) do
 
   create_table "comments", :force => true do |t|
     t.string    "title",            :limit => 50, :default => ""
@@ -98,10 +98,8 @@ ActiveRecord::Schema.define(:version => 20100716041860) do
     t.integer   "fb_user_id"
     t.string    "email_hash"
     t.string    "url"
-    t.integer   "points"
+    t.integer   "points",                                   :default => 0
   end
-
-  add_index "users", ["login"], :name => "index_users_on_login", :unique => true
 
   create_table "votes", :force => true do |t|
     t.integer   "direction"
