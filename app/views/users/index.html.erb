@@ -1,9 +1,11 @@
 <h2>User Leaderboard</h2>
 
-<ul class="users">
+<ol class="users">
+  <% count = 1 %>
   <% @users.each do |user| %>
     <li>
-      <%= link_to user.username, user %> - <%= pluralize(user.points, "point") %>
+      <%= count. %> <%= link_to user.username, user %> - <%= pluralize(user.points, "point") %>
     </li>
+  <% count += 1 %>
   <% end %>
-</ul>
+</ol>

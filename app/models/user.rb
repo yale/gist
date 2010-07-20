@@ -143,7 +143,7 @@ class User < ActiveRecord::Base
     save(false)
   end
   
-  def self.top limit=10
+  def self.top limit = 50
     self.find(:all, :order => "points DESC", :limit => limit)
   end
 end
