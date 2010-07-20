@@ -56,11 +56,8 @@ task :update_user_points => [ :environment ] do | t |
     # Point total
     @points = @definition_points + @like_points + @dislike_points + @mood_points + @like_dislike_cast_points + @mood_cast_points + @comments_posted_points + @comments_received_points + @facebook_points
     
-    if @points.nil?
-    	@points = 0
-    end
-    
-    User.update(user.id, "points" => @points)
+    user.points = @points
+    user.save(false)
   end
   
   puts "User points updated"
