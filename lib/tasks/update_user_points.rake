@@ -3,11 +3,11 @@ task :update_user_points => [ :environment ] do | t |
   User.find(:all).each do |user|
   	
     @definitions = user.definitions
-    @like_total = @definitions.collect(&:like).sum
-    @dislike_total = @definitions.collect(&:dislike).sum
-    @helpful_total = @definitions.collect(&:helpful).sum
-    @funny_total = @definitions.collect(&:funny).sum
-    @poetic_total = @definitions.collect(&:poetic).sum
+    @like_total = @definitions.collect{|definition| definition.like}.sum
+    @dislike_total = @definitions.collect{|definition| definition.dislike}.sum
+    @helpful_total = @definitions.collect{|definition| definition.helpful}.sum
+    @funny_total = @definitions.collect{|definition| definition.funny}.sum
+    @poetic_total = @definitions.collect{|definition| definition.poetic}.sum
     
     @like_dislike_sum = @like_total.to_f + @dislike_total.to_f
     @mood_sum = @helpful_total + @funny_total.to_f + @poetic_total.to_f
@@ -31,7 +31,7 @@ task :update_user_points => [ :environment ] do | t |
     @dislike_points = @dislike_total * User::SCORE[:dislike] 
     
     # For each mood vote a user gets 10 points
-    @mood_points = (@helpful_total + @funny_total + @poetic_total) * User::SCORE[:mood] 
+    @mood_points = (@helpful_total + @funny_total + @poetic_total) * User::SCORE[:mood_vote] 
     
     # For likes/dislikes cast
     @like_dislike_cast_points = (@like_cast + @dislike_cast) * User::SCORE[:vote_cast] 

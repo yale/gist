@@ -6,7 +6,7 @@
 </div>
 
 <h1>Profile for <%= link_to @user.username, @user %></h1>
-<h2 class="word"><%= pluralize(@points, "point") %></h2>
+<h2 class="word"><%= pluralize(@user.points, "point") %></h2>
 
   <% if current_user and @user.id == current_user.id %>
     <% if current_user.facebook_user? %>
