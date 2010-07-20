@@ -4,7 +4,7 @@
   <% count = 1 %>
   <% @users.each do |user| %>
     <li>
-      <%= count. %> <%= link_to user.username, user %> - <%= pluralize(user.points, "point") %>
+      <%= count.to_s + "." %> <%= link_to user.username, user %> - <%= pluralize(user.points, "point") %>
     </li>
   <% count += 1 %>
   <% end %>
