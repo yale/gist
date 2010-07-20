@@ -10,6 +10,7 @@ class Definition < ActiveRecord::Base
   
   PAGE_LIMIT = 100
   PARTS_OF_SPEECH = ['noun', 'adjective', 'acronym', 'verb', 'adverb', 'preposition', 'interjection']
+  MOODS = ["helpful", "funny", "poetic", "offensive", "mature", "inaccurate"]
   
   
   def must_be_defined
@@ -38,11 +39,32 @@ class Definition < ActiveRecord::Base
     # Toggle switch in user vote object
     vote[mood] = !vote[mood]
     
+    # Get the user object of the definition
+    submitter = User.find_by_id(user_id)
+    
     # Increment/decrement counter in definition object
     if vote[mood]
       increment mood
+      user.add_points User::SCORE[:vote_cast]
+      if MOODS.include?(mood)
+        # If the vote is a mood vote:
+        submitter.add_points User::SCORE[:mood_vote]
+      else
+        # Otherwise, it's either Like or Dislike
+        submitter.add_points ((mood == "like") ? User::SCORE[:like] : User::SCORE[:dislike]) 
+        user.add_points User::SCORE[:likebonus] if like % 5 == 0
+      end
     else
       decrement mood
+      user.add_points -User::SCORE[:vote_cast]
+      if MOODS.include?(mood)
+        # If the vote is a mood vote:
+        submitter.add_points -User::SCORE[:mood_vote]
+      else
+        # Otherwise, it's either Like or Dislike
+        submitter.add_points ((mood == "like") ? -User::SCORE[:like] : -User::SCORE[:dislike])
+        user.add_points -User::SCORE[:likebonus] if (like + 1) % 5 == 0 
+      end
     end
     
     # Now neutralize previous 'like' vote if disliked, and vice versa
@@ -51,11 +73,15 @@ class Definition < ActiveRecord::Base
       if (vote[:dislike])
         decrement "dislike"
         vote[:dislike] = false
+        user.add_points -User::SCORE[:vote_cast]
+        submitter.add_points -User::SCORE[:dislike]
       end
     when ("dislike" || :dislike)
       if (vote[:like])
         decrement "like"
         vote[:like] = false
+        user.add_points -User::SCORE[:vote_cast]
+        submitter.add_points -User::SCORE[:like]
       end
     end
     
