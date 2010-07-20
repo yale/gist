@@ -113,8 +113,10 @@ class User < ActiveRecord::Base
     users = {:email => email, :account_id => id}
     Facebooker::User.register([users])
     self.email_hash = Facebooker::User.hash_email(email)
-    self.points = SCORE[:facebook_bonus]
-    save(false)
+    if points.nil? or points == 0
+      self.points = SCORE[:facebook_bonus]
+      save(false)
+    end
   end 
   def facebook_user?
     return !fb_user_id.nil? && fb_user_id > 0
