@@ -64,11 +64,11 @@ class UsersController < ApplicationController
     
     ##### Percentages and user type #####
     
-    @like_total = @definitions.collect(&:like).sum
-    @dislike_total = @definitions.collect(&:dislike).sum
-    @helpful_total = @definitions.collect(&:helpful).sum
-    @funny_total = @definitions.collect(&:funny).sum
-    @poetic_total = @definitions.collect(&:poetic).sum
+    @like_total = @definitions.collect{|definition| definition.like}.sum
+    @dislike_total = @definitions.collect{|definition| definition.dislike}.sum
+    @helpful_total = @definitions.collect{|definition| definition.helpful}.sum
+    @funny_total = @definitions.collect{|definition| definition.funny}.sum
+    @poetic_total = @definitions.collect{|definition| definition.poetic}.sum
     
     if @helpful_total == @funny_total and @helpful_total == @poetic_total and @helpful_total == 0 
         @user_type = "unhelpful, unfunny, and unpoetic"
