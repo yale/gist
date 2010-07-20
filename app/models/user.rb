@@ -34,13 +34,16 @@ class User < ActiveRecord::Base
   attr_accessible :login, :email, :name, :password, :password_confirmation, :url
   
   SCORE = {
-    :likebonus => 100,
+    :like_bonus => 100,
     :like => 30,
     :dislike => -15,
     :mood_vote => 10,
     :vote_cast => 1,
-    :comment => 1
+    :comment => 1,
+    :facebook_bonus => 200
   }
+  
+  LIKE_BONUS_THRESHOLD = 5
   
 
   # Authenticates a user by their login name and unencrypted password.  Returns the user or nil.
@@ -110,6 +113,7 @@ class User < ActiveRecord::Base
     users = {:email => email, :account_id => id}
     Facebooker::User.register([users])
     self.email_hash = Facebooker::User.hash_email(email)
+    points += SCORE[:facebook_bonus]
     save(false)
   end 
   def facebook_user?
@@ -137,5 +141,9 @@ class User < ActiveRecord::Base
   def add_points pts
     self.points += pts
     save(false)
+  end
+  
+  def self.top limit=10
+    self.find(:order => "points DESC", :limit => limit)
   end
 end

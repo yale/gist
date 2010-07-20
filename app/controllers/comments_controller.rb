@@ -44,6 +44,8 @@ class CommentsController < ApplicationController
     @comment = Comment.new(params[:comment])
     @comment.user_id = current_user.id
     current_user.comments << @comment
+    current_user.add_points User::SCORE[:comment]
+    @comment.user.add_points User::SCORE[:comment]
 
     respond_to do |wants|
       if @comment.save

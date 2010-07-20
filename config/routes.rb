@@ -6,7 +6,6 @@ ActionController::Routing::Routes.draw do |map|
   map.home '/home', :controller => "users", :action => "home"
   
   map.resources :users, :collection => {:link_user_accounts => :get}
-  #map.root :controller => "users", :action => "home"
   
   #Do NOT change to sessionS
   map.resource :session

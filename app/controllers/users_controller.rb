@@ -3,6 +3,13 @@ class UsersController < ApplicationController
   include AuthenticatedSystem
   
 
+  def index
+    @users = User.top
+    respond_to do |wants|
+      wants.html
+    end
+  end
+
   # render new.rhtml
   def new
     @user = User.new
