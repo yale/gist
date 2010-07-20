@@ -5,7 +5,7 @@ ActionController::Routing::Routes.draw do |map|
   map.signup '/signup', :controller => 'users', :action => 'new'
   map.home '/home', :controller => "users", :action => "home"
   
-  map.resources :users, :collection => {:link_user_accounts => :get}
+  map.resources :users, :collection => {:link_user_accounts => :get, :top => :get}
   
   #Do NOT change to sessionS
   map.resource :session
