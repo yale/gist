@@ -9,3 +9,23 @@
   <% count += 1 %>
   <% end %>
 </ol>
+
+<% content_for :sidebar do %>
+
+  <div class="section">
+    <h3>How points work:</h3>
+    <p>for each</p>
+    <table>
+    <tr><td width="400">&nbsp&nbsp like received:<td width="50">+30</td></tr></tr>
+    <tr><td>&nbsp&nbsp dislike received:<td>-15</td></tr>
+    <tr><td>&nbsp&nbsp HFP vote received:<td>+10</td></tr>
+    <tr><td>&nbsp&nbsp vote cast:<td>+1</td></tr>
+    <tr><td>&nbsp&nbsp comment posted:<td>+1</td></tr>
+    <tr><td>&nbsp&nbsp comment received:<td>+1</td></tr>
+    <tr><td>bonuses</td></tr>
+    <tr><td>&nbsp&nbsp definition with 5 likes<td>+100</td></tr>
+    <tr><td>&nbsp&nbsp register with Facebook<td>+200</td></tr>
+    </table><br>
+    <p>HFP = helpful/funny/poetic</p>
+  </div>
+<% end %>
