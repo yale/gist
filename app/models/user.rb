@@ -33,13 +33,11 @@ class User < ActiveRecord::Base
   # anything else you want your user to change should be added here.
   attr_accessible :login, :email, :name, :password, :password_confirmation, :url
   
-  
   SCORE = {
-    :fivelikes => 100,
+    :likebonus => 100,
     :like => 30,
     :dislike => -15,
     :mood_vote => 10,
-    :mood_vote_cast => 1,
     :vote_cast => 1,
     :comment => 1
   }
@@ -136,7 +134,8 @@ class User < ActiveRecord::Base
     end
   end
 
-  def add_points points, user
-	User.update(user.id, "points" => user.points + points) 
+  def add_points pts
+    self.points += pts
+    save(false)
   end
 end

@@ -86,19 +86,19 @@ ActiveRecord::Schema.define(:version => 20100716041870) do
   end
 
   create_table "users", :force => true do |t|
-    t.string    "login",                     :limit => 40
-    t.string    "name",                      :limit => 100, :default => ""
-    t.string    "email",                     :limit => 100
-    t.string    "crypted_password",          :limit => 40
-    t.string    "salt",                      :limit => 40
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
-    t.string    "remember_token",            :limit => 40
-    t.timestamp "remember_token_expires_at"
-    t.integer   "fb_user_id"
-    t.string    "email_hash"
-    t.string    "url"
-    t.integer   "points",                                   :default => 0
+    t.string   "login",                     :limit => 40
+    t.string   "name",                      :limit => 100, :default => ""
+    t.string   "email",                     :limit => 100
+    t.string   "crypted_password",          :limit => 40
+    t.string   "salt",                      :limit => 40
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "remember_token",            :limit => 40
+    t.datetime "remember_token_expires_at"
+    t.integer  "fb_user_id"
+    t.string   "email_hash"
+    t.string   "url"
+    t.integer  "points",                                   :default => 0
   end
 
   create_table "votes", :force => true do |t|
