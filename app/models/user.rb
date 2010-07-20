@@ -113,6 +113,7 @@ class User < ActiveRecord::Base
     users = {:email => email, :account_id => id}
     Facebooker::User.register([users])
     self.email_hash = Facebooker::User.hash_email(email)
+    points = 0
     points += SCORE[:facebook_bonus]
     save(false)
   end 
