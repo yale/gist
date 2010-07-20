@@ -9,9 +9,6 @@ task :update_user_points => [ :environment ] do | t |
     @funny_total = @definitions.collect{|definition| definition.funny}.sum
     @poetic_total = @definitions.collect{|definition| definition.poetic}.sum
     
-    @like_dislike_sum = @like_total.to_f + @dislike_total.to_f
-    @mood_sum = @helpful_total + @funny_total.to_f + @poetic_total.to_f
-    
     @like_cast = user.votes_cast "like"
     @dislike_cast = user.votes_cast "dislike"
     @helpful_cast = user.votes_cast "helpful"
@@ -58,6 +55,10 @@ task :update_user_points => [ :environment ] do | t |
     
     # Point total
     @points = @definition_points + @like_points + @dislike_points + @mood_points + @like_dislike_cast_points + @mood_cast_points + @comments_posted_points + @comments_received_points + @facebook_points
+    
+    if @points.nil?
+    	@points = 0
+    end
     
     User.update(user.id, "points" => @points)
   end
