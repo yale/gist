@@ -101,8 +101,6 @@ ActiveRecord::Schema.define(:version => 20100716041870) do
     t.integer  "points",                                   :default => 0
   end
 
-  add_index "users", ["login"], :name => "index_users_on_login", :unique => true
-
   create_table "votes", :force => true do |t|
     t.integer   "direction"
     t.timestamp "created_at"
