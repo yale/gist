@@ -306,6 +306,14 @@ a {
     display: inline;
   }
 
+.definition-page {
+  color: #a2bfd4;
+  display: block;
+  margin-top: 5px;
+  margin-left: 68px;
+  font-size: 12px;
+  line-height: 18px;
+}
 
 .comment-box-toggle {
   text-decoration: underline;
