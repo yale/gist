@@ -75,8 +75,6 @@ class DefinitionsController < ApplicationController
     @mature_total = @definition.mature
     @offensive_total = @definition.offensive
     
-    @definition_type = @definition.definition_type + @definition.definition_type_negative
-    
     @like_percentage = @definition.like_percentage
     @dislike_percentage = @definition.dislike_percentage
 	@helpful_percentage = @definition.helpful_percentage
