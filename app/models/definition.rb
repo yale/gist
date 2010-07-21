@@ -222,5 +222,134 @@ class Definition < ActiveRecord::Base
     end
     definition_type
   end
+  
+  def definition_type_negative
+	definition_type_negative = []
+  	if inaccurate == mature and inaccurate == offensive and inaccurate == 0 
+    elsif inaccurate == mature and inaccurate == offensive
+        definition_type_negative << "inaccurate"
+        definition_type_negative << "mature"
+        definition_type_negative << "offensive"
+    elsif inaccurate == mature and inaccurate > offensive
+        definition_type_negative << "inaccurate"
+        definition_type_negative << "mature"
+    elsif inaccurate == offensive and inaccurate > mature
+        definition_type_negative << "inaccurate"
+        definition_type_negative << "offensive"
+    elsif mature == offensive and mature > inaccurate
+        definition_type_negative << "mature"
+        definition_type_negative << "offensive"
+    elsif inaccurate > mature and inaccurate > offensive
+        definition_type_negative << "inaccurate"
+    elsif mature > inaccurate and mature > offensive
+        definition_type_negative << "mature"
+    else
+        definition_type_negative << "offensive"
+    end
+    definition_type_negative
+  end
+  
+  def number_to_percentage(number, options = {})
+    options   = options.stringify_keys
+    precision = options["precision"] || 3
+    separator = options["separator"] || "."
+    begin
+      number = number_with_precision(number, precision)
+      parts = number.split('.')
+      if parts.at(1).nil?
+        parts[0] + "%"
+      else
+        parts[0] + separator + parts[1].to_s + "%"
+      end
+    rescue
+      number
+    end
+  end
+  
+  def like_dislike_sum
+  	like.to_f + dislike.to_f
+  end
+  
+  def like_percentage
+    if like_dislike_sum == 0
+      like_percentage = number_to_percentage(0, :precision => 2) 
+    else
+      like_percentage = number_to_percentage(like.to_f/like_dislike_sum.to_f * 100, :precision => 2)
+    end
+  end
+  
+  def dislike_percentage
+    if like_dislike_sum == 0
+      dislike_percentage = number_to_percentage(0, :precision => 2) 
+    else
+      dislike_percentage = number_to_percentage(dislike.to_f/like_dislike_sum.to_f * 100, :precision => 2)
+    end
+  end
+  
+  def mood_sum
+  	helpful.to_f + funny.to_f + poetic.to_f
+  end
+  
+  def mood_sum_negative
+  	inaccurate.to_f + funny.to_f + poetic.to_f
+  end
+  
+  def helpful_percentage
+    if mood_sum == 0
+      helpful_percentage = number_to_percentage(0, :precision => 2) 
+    else
+      helpful_percentage = number_to_percentage(helpful.to_f/mood_sum.to_f * 100, :precision => 2)
+    end
+  end
+  
+  def funny_percentage
+    if mood_sum == 0
+      funny_percentage = number_to_percentage(0, :precision => 2) 
+    else
+      funny_percentage = number_to_percentage(funny.to_f/mood_sum.to_f * 100, :precision => 2)
+    end
+  end
+  
+  def poetic_percentage
+    if mood_sum == 0
+      poetic_percentage = number_to_percentage(0, :precision => 2) 
+    else
+      poetic_percentage = number_to_percentage(poetic.to_f/mood_sum.to_f * 100, :precision => 2)
+    end
+  end
+  
+  def inaccurate_percentage
+    if mood_sum == 0
+      inaccurate_percentage = number_to_percentage(0, :precision => 2) 
+    else
+      inaccurate_percentage = number_to_percentage(inaccurate.to_f/mood_sum_negative.to_f * 100, :precision => 2)
+    end
+  end
+  
+  def mature_percentage
+    if mood_sum == 0
+      mature_percentage = number_to_percentage(0, :precision => 2) 
+    else
+      mature_percentage = number_to_percentage(mature.to_f/mood_sum_negative.to_f * 100, :precision => 2)
+    end
+  end
+  
+  def offensive_percentage
+    if mood_sum == 0
+      offensive_percentage = number_to_percentage(0, :precision => 2) 
+    else
+      offensive_percentage = number_to_percentage(offensive.to_f/mood_sum_negative.to_f * 100, :precision => 2)
+    end
+  end    
+
+  def total_points
+  	(like / User::LIKE_BONUS_THRESHOLD * 100) + (like * User::SCORE[:like]) + (dislike * User::SCORE[:dislike]) + ((helpful + funny + poetic) * User::SCORE[:mood_vote])
+  end
+  
+  def number_with_precision(number, precision=3)
+    "%01.#{precision}f" % ((Float(number) * (10 ** precision)).round.to_f / 10 ** precision)
+  rescue
+    number
+  end
 
 end

@@ -24,13 +24,13 @@ module ApplicationHelper
     url_for(newparams)
   end
   
-  def itemize_type user_type
+  def itemize_type types
   	string = ""
- 	user_type.each_with_index do |type, index|
- 	  if index < (user_type.length - 1)
+ 	types.each_with_index do |type, index|
+ 	  if index < (types.length - 2)
  	    string += type + ", "
- 	  elsif index = user_type.length
- 	    string += type + " and "
+ 	  elsif index == types.length - 1
+ 	    string += " and " + type 
  	  else
  	  	string += type
  	  end

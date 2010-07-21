@@ -192,8 +192,12 @@ class User < ActiveRecord::Base
   	vote_cast_total * SCORE[:vote_cast]
   end
   
+  def comments_posted
+  	comments.size 
+  end
+  
   def comments_posted_points 
-  	comments.size * SCORE[:comment]
+  	comments_posted * SCORE[:comment]
   end
   
   def comments_received
@@ -218,7 +222,7 @@ class User < ActiveRecord::Base
     if like_dislike_vote_received == 0
       like_percentage = number_to_percentage(0, :precision => 2) 
     else
-      like_percentage = number_to_percentage((votes_received :like).to_f/like_dislike_vote_received * 100, :precision => 2)
+      like_percentage = number_to_percentage((votes_received :like).to_f/like_dislike_vote_received.to_f * 100, :precision => 2)
     end
   end
   
@@ -226,7 +230,7 @@ class User < ActiveRecord::Base
     if like_dislike_vote_received == 0
       dislike_percentage = number_to_percentage(0, :precision => 2) 
     else
-      dislike_percentage = number_to_percentage((votes_received :dislike).to_f/like_dislike_vote_received * 100, :precision => 2)
+      dislike_percentage = number_to_percentage((votes_received :dislike).to_f/like_dislike_vote_received.to_f * 100, :precision => 2)
     end
   end
   
@@ -234,7 +238,7 @@ class User < ActiveRecord::Base
   	if mood_vote_received == 0
       helpful_percentage = number_to_percentage(0, :precision => 2)
     else
-	  helpful_percentage = number_to_percentage((votes_received :helpful).to_f/mood_vote_received * 100, :precision => 2)
+	  helpful_percentage = number_to_percentage((votes_received :helpful).to_f/mood_vote_received.to_f * 100, :precision => 2)
     end
   end
   
@@ -242,7 +246,7 @@ class User < ActiveRecord::Base
   	if mood_vote_received == 0
       funny_percentage = number_to_percentage(0, :precision => 2)
     else
-	  funny_percentage = number_to_percentage((votes_received :funny).to_f/mood_vote_received * 100, :precision => 2)
+	  funny_percentage = number_to_percentage((votes_received :funny).to_f/mood_vote_received.to_f * 100, :precision => 2)
     end
   end
   
@@ -250,16 +254,16 @@ class User < ActiveRecord::Base
   	if mood_vote_received == 0
       poetic_percentage = number_to_percentage(0, :precision => 2)
     else
-	  poetic_percentage = number_to_percentage((votes_received :poetic).to_f/mood_vote_received * 100, :precision => 2)
+	  poetic_percentage = number_to_percentage((votes_received :poetic).to_f/mood_vote_received.to_f * 100, :precision => 2)
     end
   end
   
   def mood_vote_received
-  	(votes_received(:helpful) + votes_received(:funny) + votes_received(:poetic)).to_f
+  	votes_received(:helpful) + votes_received(:funny) + votes_received(:poetic)
   end
   
   def like_dislike_vote_received
-  	(votes_received(:like) + votes_received(:dislike)).to_f
+  	votes_received(:like) + votes_received(:dislike)
   end
   
   def user_type

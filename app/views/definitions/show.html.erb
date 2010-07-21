@@ -27,11 +27,8 @@
     <% end %> 
   </div> 
   <div class="definition-page">
-  	<% if @definition_type != "uncategorized" %>
-      <span class>This is a <%= @definition_type %> definition.</span><br>
-    <% end %>
-    <% if @definition_negative_type != "uncategorized" %>
-      <span class>This definition has been deemed <%= @definition_negative_type %>.</span><br>
+  	<% if !@definition_type.empty? %>
+      <span class>Voted as a <%= itemize_type @definition_type %> definition.</span><br>
     <% end %>
   <span class>This definition has earned <%= @user.username %> <%= @points %> points.</span><br>
    

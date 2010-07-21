@@ -61,11 +61,11 @@ class UsersController < ApplicationController
     @votes = @user.user_votes
     @definitions = @user.definitions
     
-    @like_total = @user.votes_cast "like"
-    @dislike_total = @user.votes_cast "dislike"
-    @helpful_total = @user.votes_cast "helpful"
-    @funny_total = @user.votes_cast "funny"
-    @poetic_total = @user.votes_cast "poetic"
+    @like_received = @user.votes_received "like"
+    @dislike_received = @user.votes_received "dislike"
+    @helpful_received = @user.votes_received "helpful"
+    @funny_received = @user.votes_received "funny"
+    @poetic_received = @user.votes_received "poetic"
     
     @user_type = @user.user_type
     
@@ -87,10 +87,11 @@ class UsersController < ApplicationController
       @like_points = @user.like_points
       @dislike_points = @user.dislike_points
       @mood_points = @user.mood_points
+      @mood_votes_received = @user.mood_vote_received
       @votes_cast = @user.vote_cast_total
       @votes_cast_points = @user.vote_cast_points
-      @comments_posted = @user.comments.size
-      @comments_posted_points = @user.comments_received_points
+      @comments_posted = @user.comments_posted
+      @comments_posted_points = @user.comments_posted_points
       @comments_received = @user.comments_received
       @comments_received_points = @user.comments_received_points
 	  @facebook_points = @user.facebook_points

@@ -75,90 +75,18 @@ class DefinitionsController < ApplicationController
     @mature_total = @definition.mature
     @offensive_total = @definition.offensive
     
-    if @helpful_total == @funny_total and @helpful_total == @poetic_total and @helpful_total == 0 
-        @definition_type = "uncategorized"
-    elsif @helpful_total == @funny_total and @helpful_total == @poetic_total
-    	@definition_type = "helpful, funny, and poetic"
-    elsif @helpful_total == @funny_total and @helpful_total > @poetic_total
-    	@definition_type = "helpful and funny"
-    elsif @helpful_total == @poetic_total and @helpful_total > @funny_total
-    	@definition_type = "helpful and poetic"
-    elsif @funny_total == @poetic_total and @funny_total > @helpful_total
-    	@definition_type = "funny and poetic"
-    elsif @helpful_total > @funny_total and @helpful_total > @poetic_total
-    	@definition_type = "helpful"
-    elsif @funny_total > @helpful_total and @funny_total > @poetic_total
-    	@definition_type = "funny"
-    #if @poetic_total > @helpful_total and @helpful_total > @funny_total
-    else
-    	@definition_type = "poetic"
-    end
+    @definition_type = @definition.definition_type + @definition.definition_type_negative
     
-    if @inaccurate_total == @mature_total and @inaccurate_total == @offensive_total and @inaccurate_total == 0 
-        @definition_negative_type = "uncategorized"
-    elsif @inaccurate_total == @mature_total and @inaccurate_total == @offensive_total
-    	@definition_negative_type = "inaccurate, mature, and offensive"
-    elsif @inaccurate_total == @mature_total and @inaccurate_total > @offensive_total
-    	@definition_negative_type = "inaccurate and mature"
-    elsif @inaccurate_total == @offensive_total and @inaccurate_total > @mature_total
-    	@definition_negative_type = "inaccurate and offensive"
-    elsif @mature_total == @offensive_total and @mature_total > @inaccurate_total
-    	@definition_negative_type = "mature and offensive"
-    elsif @inaccurate_total > @mature_total and @inaccurate_total > @offensive_total
-    	@definition_negative_type = "inaccurate"
-    elsif @mature_total > @inaccurate_total and @mature_total > @offensive_total
-    	@definition_negative_type = "mature"
-    #if @poetic_total > @helpful_total and @helpful_total > @funny_total
-    else
-    	@definition_negative_type = "offensive"
-    end
+    @like_percentage = @definition.like_percentage
+    @dislike_percentage = @definition.dislike_percentage
+	@helpful_percentage = @definition.helpful_percentage
+    @funny_percentage = @definition.funny_percentage
+    @poetic_percentage = @definition.poetic_percentage
+    @inaccurate_percentage = @definition.inaccurate_percentage
+    @mature_percentage = @definition.mature_percentage
+    @offensive_percentage = @definition.offensive_percentage
     
-    @like_dislike_sum = @like_total.to_f + @dislike_total.to_f
-    
-    if @like_dislike_sum == 0
-      @like_percentage = number_to_percentage(0, :precision => 2) 
-      @dislike_percentage = number_to_percentage(0, :precision => 2)
-    else
-      @like_percentage = number_to_percentage(@like_total.to_f/@like_dislike_sum * 100, :precision => 2) 
-      @dislike_percentage = number_to_percentage(@dislike_total.to_f/@like_dislike_sum * 100, :precision => 2)
-    end
-    
-    @mood_sum = @helpful_total + @funny_total.to_f + @poetic_total.to_f
-    @negative_mood_sum = @inaccurate_total + @mature_total.to_f + @offensive_total.to_f
-    
-    if @mood_sum == 0
-      @helpful_percentage = number_to_percentage(0, :precision => 2)
-      @funny_percentage = number_to_percentage(0, :precision => 2)
-      @poetic_percentage = number_to_percentage(0, :precision => 2)
-    else
-	  @helpful_percentage = number_to_percentage(@helpful_total.to_f/@mood_sum * 100, :precision => 2)
-      @funny_percentage = number_to_percentage(@funny_total.to_f/@mood_sum * 100, :precision => 2)
-      @poetic_percentage = number_to_percentage(@poetic_total.to_f/@mood_sum * 100, :precision => 2)
-    end
-    
-    if @negative_mood_sum == 0
-      @inaccurate_percentage = number_to_percentage(0, :precision => 2)
-      @mature_percentage = number_to_percentage(0, :precision => 2)
-      @offensive_percentage = number_to_percentage(0, :precision => 2)
-    else
-	  @inaccurate_percentage = number_to_percentage(@inaccurate_total.to_f/@negative_mood_sum * 100, :precision => 2)
-      @mature_percentage = number_to_percentage(@mature_total.to_f/@negative_mood_sum * 100, :precision => 2)
-      @offensive_percentage = number_to_percentage(@offensive_total.to_f/@negative_mood_sum * 100, :precision => 2)
-    end
-    
-    # For each 5 likes, 100 points
-    @definition_points = (@definition.like / 5) * 100 
-    
-    # For each like, 30 points
-    @like_points = @like_total * 30
-    
-    # For each dislike, 15 points
-    @dislike_points = @dislike_total * -15
-    
-    # For each mood vote a user gets 10 points
-    @mood_points = (@helpful_total + @funny_total + @poetic_total) * 10
-    
-    @points = @definition_points + @like_points + @dislike_points + @mood_points
+    @points = @definition.total_points
     
     respond_to do |wants|
       wants.html # show.html.erb
