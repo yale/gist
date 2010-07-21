@@ -268,8 +268,8 @@ class User < ActiveRecord::Base
   
   def user_type
   	helpful_total = votes_received :helpful
-  	funny_total = votes_received :helpful
-  	poetic_total = votes_received :helpful
+  	funny_total = votes_received :funny
+  	poetic_total = votes_received :poetic
 	user_type = []
   	if helpful_total == funny_total and helpful_total == poetic_total and helpful_total == 0 
         user_type << "unhelpful"
