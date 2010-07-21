@@ -23,4 +23,18 @@ module ApplicationHelper
     newparams[key] = val
     url_for(newparams)
   end
+  
+  def itemize_type user_type
+  	string = ""
+ 	user_type.each_with_index do |type, index|
+ 	  if index < (user_type.length - 1)
+ 	    string += type + ", "
+ 	  elsif index = user_type.length
+ 	    string += type + " and "
+ 	  else
+ 	  	string += type
+ 	  end
+ 	end
+ 	string
+  end
 end

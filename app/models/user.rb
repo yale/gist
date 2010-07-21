@@ -128,6 +128,10 @@ class User < ActiveRecord::Base
     return sum
   end
   
+  def votes_received mood
+    definitions.collect{|definition| definition.get_votes_by_mood mood}.sum
+  end
+  
   def make_slug
     self.url = self.login.to_url
   end
@@ -148,4 +152,169 @@ class User < ActiveRecord::Base
   def self.top limit = 50
     self.find(:all, :order => "points DESC", :limit => limit)
   end
+  
+  def definition_points
+  	definition_points = 0
+	definitions.each {|definition| 
+      temp = (definition.like / LIKE_BONUS_THRESHOLD) * 100 
+      definition_points += temp
+    }
+    definition_points  
+  end
+  
+  def popular_definitions
+  	popular_definitions = 0
+    definitions.each {|definition| 
+      if definition.like >= LIKE_BONUS_THRESHOLD
+      	popular_definitions += 1
+      end
+    }
+    popular_definitions
+  end
+  
+  def like_points
+  	votes_received(:like) * SCORE[:like]
+  end
+  
+  def dislike_points
+  	votes_received(:dislike) * SCORE[:dislike]
+  end
+  
+  def mood_points
+  	(votes_received(:helpful) + votes_received(:funnny) + votes_received(:poetic)) * SCORE[:mood_vote]
+  end
+  
+  def vote_cast_total
+  	votes_cast(:like) + votes_cast(:dislike) + votes_cast(:helpful) + votes_cast(:funny) + votes_cast(:poetic)
+  end
+  
+  def vote_cast_points
+  	vote_cast_total * SCORE[:vote_cast]
+  end
+  
+  def comments_posted_points 
+  	comments.size * SCORE[:comment]
+  end
+  
+  def comments_received
+  	comments_received = 0
+  	definitions.each {|definition| comments_received += definition.comments.size } 
+  	comments_received
+  end
+  
+  def comments_received_points
+  	comments_received * SCORE[:comment]
+  end
+  
+  def facebook_points
+  	if facebook_user?
+    	200
+    else
+    	0
+    end
+  end
+  
+  def like_percentage
+    if like_dislike_vote_received == 0
+      like_percentage = number_to_percentage(0, :precision => 2) 
+    else
+      like_percentage = number_to_percentage((votes_received :like).to_f/like_dislike_vote_received * 100, :precision => 2)
+    end
+  end
+  
+  def dislike_percentage
+    if like_dislike_vote_received == 0
+      dislike_percentage = number_to_percentage(0, :precision => 2) 
+    else
+      dislike_percentage = number_to_percentage((votes_received :dislike).to_f/like_dislike_vote_received * 100, :precision => 2)
+    end
+  end
+  
+  def helpful_percentage
+  	if mood_vote_received == 0
+      helpful_percentage = number_to_percentage(0, :precision => 2)
+    else
+	  helpful_percentage = number_to_percentage((votes_received :helpful).to_f/mood_vote_received * 100, :precision => 2)
+    end
+  end
+  
+  def funny_percentage
+  	if mood_vote_received == 0
+      funny_percentage = number_to_percentage(0, :precision => 2)
+    else
+	  funny_percentage = number_to_percentage((votes_received :funny).to_f/mood_vote_received * 100, :precision => 2)
+    end
+  end
+  
+  def poetic_percentage
+  	if mood_vote_received == 0
+      poetic_percentage = number_to_percentage(0, :precision => 2)
+    else
+	  poetic_percentage = number_to_percentage((votes_received :poetic).to_f/mood_vote_received * 100, :precision => 2)
+    end
+  end
+  
+  def mood_vote_received
+  	(votes_received(:helpful) + votes_received(:funny) + votes_received(:poetic)).to_f
+  end
+  
+  def like_dislike_vote_received
+  	(votes_received(:like) + votes_received(:dislike)).to_f
+  end
+  
+  def user_type
+  	helpful_total = votes_received :helpful
+  	funny_total = votes_received :helpful
+  	poetic_total = votes_received :helpful
+	user_type = []
+  	if helpful_total == funny_total and helpful_total == poetic_total and helpful_total == 0 
+        user_type << "unhelpful"
+        user_type << "unfunny"
+        user_type << "unpoetic"
+    elsif helpful_total == funny_total and helpful_total == poetic_total
+        user_type << "helpful"
+        user_type << "funny"
+        user_type << "poetic"
+    elsif helpful_total == funny_total and helpful_total > poetic_total
+        user_type << "helpful"
+        user_type << "funny"
+    elsif helpful_total == poetic_total and helpful_total > funny_total
+        user_type << "helpful"
+        user_type << "poetic"
+    elsif funny_total == poetic_total and funny_total > helpful_totall
+        user_type << "funny"
+        user_type << "poetic"
+    elsif helpful_total > funny_total and helpful_total > poetic_total
+        user_type << "helpful"
+    elsif funny_total > helpful_total and funny_total > poetic_total
+        user_type << "funny"
+    else
+        user_type << "poetic"
+    end
+    user_type
+  end
+  
+  def number_to_percentage(number, options = {})
+    options   = options.stringify_keys
+    precision = options["precision"] || 3
+    separator = options["separator"] || "."
+    begin
+      number = number_with_precision(number, precision)
+      parts = number.split('.')
+      if parts.at(1).nil?
+        parts[0] + "%"
+      else
+        parts[0] + separator + parts[1].to_s + "%"
+      end
+    rescue
+      number
+    end
+  end
+  
+  def number_with_precision(number, precision=3)
+    "%01.#{precision}f" % ((Float(number) * (10 ** precision)).round.to_f / 10 ** precision)
+  rescue
+    number
+  end
+  
 end

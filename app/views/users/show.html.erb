@@ -27,7 +27,7 @@
 <% end %>
 
 <li id="leaderboard-link"><%= link_to "Leaderboard", users_path %></li>
-<h2>Based on votes, <%= link_to @user.username, @user %> is a <%= @user_type %> user</h2>
+<h2>Based on votes, <%= link_to @user.username, @user %> is a <%= itemize_type @user_type %> user</h2>
 
 <h2>Stats</h2>
 <span><%= pluralize(@like_total, "like") %> received - <%= @like_percentage %></span><br>
@@ -37,6 +37,8 @@
 <span><%= pluralize(@funny_total, "funny vote") %> received - <%= @funny_percentage %></span><br>
 <span><%= pluralize(@poetic_total, "poetic vote") %> received - <%= @poetic_percentage %></span><br>
 
+<% if @user.login != "wiktionary.org" %>
+	
 <h2>Points breakdown</h2>
 <span><%= pluralize(@like_points, "point") %> for <%= pluralize(@like_total, "like") %> received</span><br>
 <span><%= pluralize(@dislike_points, "point") %> for <%= pluralize(@dislike_total, "dislike") %> received</span><br>
@@ -44,17 +46,13 @@
 <span><%= pluralize(@votes_cast_points, "point") %> for <%= pluralize(@votes_cast, "vote") %> cast</span><br>
 <span><%= pluralize(@comments_posted_points, "point") %> for <%= pluralize(@comments_posted, "comment") %> posted</span><br>
 <span><%= pluralize(@comments_received_points, "point") %> for <%= pluralize(@comments_received, "comment") %> received</span><br>
-<span><%= pluralize(@definition_points, "bonus point") %> for <%= pluralize(@definitions_counted_for_points, "popular definition") %></span><br>
+<span><%= pluralize(@definition_points, "bonus point") %> for <%= pluralize(@popular_definitions, "popular definition") %></span><br>
 <span><%= pluralize(@facebook_points, "bonus point") %> for <%= (@user.facebook_user?)? "registering with Facebook": "not registering with Facebook" %></span><br>
 
 <h2>Recent definitions</h2>
 <% if @definitions %>
 <ol id="user-definitions">
-  <% if @user.login == "wiktionary.org" %>
-    <span class="definition"><%= "You are not allowed to see wiktionary.org's definitions." %></span>
-  <% else %>
     <%= render :partial => 'users/definition', :collection => @definitions %>
-  <% end %>
 </ol>
 <% else %>
 <p>This user has not posted any definitions.</p>
@@ -67,6 +65,8 @@
 </ol>
 <% else %>
 <p>This user has not commented.</p>
+<% end %>
+
 <% end %>
 <h1>Member since <%= @user.created_at.strftime("%B %d, %Y") %></h1>
 

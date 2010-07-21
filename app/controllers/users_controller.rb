@@ -61,55 +61,19 @@ class UsersController < ApplicationController
     @votes = @user.user_votes
     @definitions = @user.definitions
     
+    @like_total = @user.votes_cast "like"
+    @dislike_total = @user.votes_cast "dislike"
+    @helpful_total = @user.votes_cast "helpful"
+    @funny_total = @user.votes_cast "funny"
+    @poetic_total = @user.votes_cast "poetic"
     
-    ##### Percentages and user type #####
+    @user_type = @user.user_type
     
-    @like_total = @definitions.collect{|definition| definition.like}.sum
-    @dislike_total = @definitions.collect{|definition| definition.dislike}.sum
-    @helpful_total = @definitions.collect{|definition| definition.helpful}.sum
-    @funny_total = @definitions.collect{|definition| definition.funny}.sum
-    @poetic_total = @definitions.collect{|definition| definition.poetic}.sum
-    
-    if @helpful_total == @funny_total and @helpful_total == @poetic_total and @helpful_total == 0 
-        @user_type = "unhelpful, unfunny, and unpoetic"
-    elsif @helpful_total == @funny_total and @helpful_total == @poetic_total
-    	@user_type = "helpful, funny, and poetic"
-    elsif @helpful_total == @funny_total and @helpful_total > @poetic_total
-    	@user_type = "helpful and funny"
-    elsif @helpful_total == @poetic_total and @helpful_total > @funny_total
-    	@user_type = "helpful and poetic"
-    elsif @funny_total == @poetic_total and @funny_total > @helpful_total
-    	@user_type = "funny and poetic"
-    elsif @helpful_total > @funny_total and @helpful_total > @poetic_total
-    	@user_type = "helpful"
-    elsif @funny_total > @helpful_total and @funny_total > @poetic_total
-    	@user_type = "funny"
-    #if @poetic_total > @helpful_total and @helpful_total > @funny_total
-    else
-    	@user_type = "poetic"
-    end
-    
-    @like_dislike_sum = @like_total.to_f + @dislike_total.to_f
-    
-    if @like_dislike_sum == 0
-      @like_percentage = number_to_percentage(0, :precision => 2) 
-      @dislike_percentage = number_to_percentage(0, :precision => 2) 
-    else
-      @like_percentage = number_to_percentage(@like_total.to_f/@like_dislike_sum * 100, :precision => 2) 
-      @dislike_percentage = number_to_percentage(@dislike_total.to_f/@like_dislike_sum * 100, :precision => 2)
-    end
-    
-    @mood_sum = @helpful_total + @funny_total.to_f + @poetic_total.to_f
-    
-    if @mood_sum == 0
-      @helpful_percentage = number_to_percentage(0, :precision => 2)
-      @funny_percentage = number_to_percentage(0, :precision => 2)
-      @poetic_percentage = number_to_percentage(0, :precision => 2)
-    else
-	  @helpful_percentage = number_to_percentage(@helpful_total.to_f/@mood_sum * 100, :precision => 2)
-      @funny_percentage = number_to_percentage(@funny_total.to_f/@mood_sum * 100, :precision => 2)
-      @poetic_percentage = number_to_percentage(@poetic_total.to_f/@mood_sum * 100, :precision => 2)
-    end
+    @like_percentage =  @user.like_percentage
+    @dislike_percentage = @user.dislike_percentage
+	@helpful_percentage = @user.helpful_percentage
+    @funny_percentage = @user.funny_percentage
+    @poetic_percentage = @user.poetic_percentage
     
     @like_cast = @user.votes_cast "like"
     @dislike_cast = @user.votes_cast "dislike"
@@ -117,61 +81,20 @@ class UsersController < ApplicationController
     @funny_cast = @user.votes_cast "funny"
     @poetic_cast = @user.votes_cast "poetic"
     
-    ##### Percentages and user type end #####
-    
-    ##### Points #####
     if @user.username != "wiktionary.org"
-    	
-    # For each 5 likes for a definition a user gets 100 points
-    @definition_points = 0
-    @definitions_counted_for_points = 0
-    @definitions.each {|definition| 
-      temp = (definition.like / 5) * 100 
-      @definition_points += temp
-      if temp > 1
-      	@definitions_counted_for_points += 1
-      end
-    }
-    
-    # For each like a user gets 30 points
-    @like_points = @like_total * 30
-    
-    # For each dislike a user loses 15 points
-    @dislike_points = @dislike_total * -15
-    
-    # For each mood vote a user gets 10 points
-    @mood_points = (@helpful_total + @funny_total + @poetic_total) * 10
-    
-    # For likes/dislikes cast
-    @like_dislike_cast_points = (@like_cast + @dislike_cast) * 1
-     
-    # For mood votes cast
-    @mood_cast_points = (@helpful_cast + @funny_cast + @poetic_cast) * 1
-    
-    # For like/dislike + mood votes cast
-    @votes_cast = @like_cast + @dislike_cast + @helpful_cast + @funny_cast + @poetic_cast
-    @votes_cast_points = @mood_cast_points + @like_dislike_cast_points
-    
-    # For comments made
-    @comments_posted = @user.comments.size * 1
-    @comments_posted_points = @user.comments.size * 1
-    
-    # For comments received
-    @comments_received = 0
-    @definitions.each {|definition| @comments_received += definition.comments.size }
-    @comments_received_points = @comments_received * 1
-     
-    # For registering with Facebook
-    @facebook_points = 0
-    if @user.facebook_user?
-    	@facebook_points = 200
+      @definition_points = @user.definition_points
+      @popular_definitions = @user.popular_definitions
+      @like_points = @user.like_points
+      @dislike_points = @user.dislike_points
+      @mood_points = @user.mood_points
+      @votes_cast = @user.vote_cast_total
+      @votes_cast_points = @user.vote_cast_points
+      @comments_posted = @user.comments.size
+      @comments_posted_points = @user.comments_received_points
+      @comments_received = @user.comments_received
+      @comments_received_points = @user.comments_received_points
+	  @facebook_points = @user.facebook_points
     end
-    
-    # Point total
-    @points = @definition_points + @like_points + @dislike_points + @mood_points + @like_dislike_cast_points + @mood_cast_points + @comments_posted_points + @comments_received_points + @facebook_points
-    
-    end
-    ##### Points end #####
     
     respond_to do |wants|
       wants.html
