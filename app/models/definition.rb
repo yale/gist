@@ -196,5 +196,31 @@ class Definition < ActiveRecord::Base
   def self.find_latest
     self.all(:limit => 100, :order => 'created_at DESC')
   end
+  
+  def definition_type
+	definition_type = []
+  	if helpful == funny and helpful == poetic and helpful == 0 
+    elsif helpful == funny and helpful == poetic
+        definition_type << "helpful"
+        definition_type << "funny"
+        definition_type << "poetic"
+    elsif helpful == funny and helpful > poetic
+        definition_type << "helpful"
+        definition_type << "funny"
+    elsif helpful == poetic and helpful > funny
+        definition_type << "helpful"
+        definition_type << "poetic"
+    elsif funny == poetic and funny > helpful
+        definition_type << "funny"
+        definition_type << "poetic"
+    elsif helpful > funny and helpful > poetic
+        definition_type << "helpful"
+    elsif funny > helpful and funny > poetic
+        definition_type << "funny"
+    else
+        definition_type << "poetic"
+    end
+    definition_type
+  end
 
 end

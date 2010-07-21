@@ -181,7 +181,7 @@ class User < ActiveRecord::Base
   end
   
   def mood_points
-  	(votes_received(:helpful) + votes_received(:funnny) + votes_received(:poetic)) * SCORE[:mood_vote]
+  	(votes_received(:helpful) + votes_received(:funny) + votes_received(:poetic)) * SCORE[:mood_vote]
   end
   
   def vote_cast_total
@@ -281,7 +281,7 @@ class User < ActiveRecord::Base
     elsif helpful_total == poetic_total and helpful_total > funny_total
         user_type << "helpful"
         user_type << "poetic"
-    elsif funny_total == poetic_total and funny_total > helpful_totall
+    elsif funny_total == poetic_total and funny_total > helpful_total
         user_type << "funny"
         user_type << "poetic"
     elsif helpful_total > funny_total and helpful_total > poetic_total
