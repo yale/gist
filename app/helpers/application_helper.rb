@@ -26,13 +26,17 @@ module ApplicationHelper
   
   def itemize_type types
   	string = ""
- 	types.each_with_index do |type, index|
- 	  if index < (types.length - 2)
- 	    string += type + ", "
- 	  elsif index == types.length - 1
- 	    string += " and " + type 
- 	  else
- 	  	string += type
+  	if types.length == 2
+  		string = types[0] + " and " + types[1]
+  	else
+ 	  types.each_with_index do |type, index|
+ 	    if index < (types.length - 2)
+ 	      string += type + ", "
+ 	    elsif index == types.length - 2
+ 	      string += type + ", and " 
+ 	    else
+ 	  	  string += type
+ 	    end
  	  end
  	end
  	string

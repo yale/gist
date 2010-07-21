@@ -1,4 +1,7 @@
 <span class="votes" id="votes-definition-<%=h definition.id %>"><%= definition.percent_liked %>% liked, by
   <% @user = User.find(definition.user_id) unless definition.user_id.nil?%>
-  <%=link_to(@user.username, @user) + " on " + definition.created_at.strftime("%B %d, %Y") + "." %>
+  <%=link_to(@user.username, @user) + " on " + definition.created_at.strftime("%B %d, %Y") + "." %><br>
+  <% if !@definition_type.empty? %>
+      Voted as a <%= itemize_type @definition_type %> definition.
+  <% end %>
 </span>

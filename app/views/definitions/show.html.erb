@@ -27,9 +27,6 @@
     <% end %> 
   </div> 
   <div class="definition-page">
-  	<% if !@definition_type.empty? %>
-      <span class>Voted as a <%= itemize_type @definition_type %> definition.</span><br>
-    <% end %>
   <span class>This definition has earned <%= @user.username %> <%= @points %> points.</span><br>
    
   <span class="like-votes"><%= pluralize(@definition.like, "like") %> - <%= @like_percentage %></span><br>
