@@ -1,16 +1,16 @@
 <div class="meta">
   
-  <p class="byline">Submitted by <% @user = User.find(definition.user_id) unless definition.user_id.nil?%>
-  <%=link_to(@user.username, @user) + " on " + definition.created_at.strftime("%B %d, %Y") + "." %></p>
+  <p class="byline"><%= I18n.t("Submitted by") %> <% @user = User.find(definition.user_id) unless definition.user_id.nil?%>
+  <%=link_to(@user.username, @user) + " " + I18n.t("on")+ " " + definition.created_at.strftime("%B %d, %Y") + "." %></p>
   
   <p class="stats">
-    <span class="score"><%= definition.percent_liked %>% Liked.
+    <span class="score"><%= definition.percent_liked %>% <%= I18n.t("Liked") %>.
     <% definition_type = definition.definition_type + definition.definition_type_negative %>
     <% if !definition_type.empty? %>
-      Voted as <span><%= itemize_type definition_type %></span>.
+      <%=I18n.t("Voted as")%> <span><%= itemize_type definition_type %></span>.
     <% end %>  
     </span>
-    <a href="#" class="stats-toggle">More stats</a>
+    <a href="#" class="stats-toggle"><%=I18n.t("More stats")%></a>
   </p>
   
   <% if current_user.nil? %>
