@@ -56,7 +56,7 @@ class Definition < ActiveRecord::Base
         submitter.add_points User::SCORE[:mood_vote]
       else
         # Otherwise, it's either Like or Dislike
-        submitter.add_points ((mood == "like") ? User::SCORE[:like] : User::SCORE[:dislike]) 
+        submitter.add_points((mood == "like") ? User::SCORE[:like] : User::SCORE[:dislike]) 
       if mood == "like"
         submitter.add_points User::SCORE[:like_bonus] if like % User::LIKE_BONUS_THRESHOLD == 0
       end
@@ -69,7 +69,7 @@ class Definition < ActiveRecord::Base
         submitter.add_points -User::SCORE[:mood_vote]
       else
         # Otherwise, it's either Like or Dislike
-        submitter.add_points ((mood == "like") ? -User::SCORE[:like] : -User::SCORE[:dislike])
+        submitter.add_points((mood == "like") ? -User::SCORE[:like] : -User::SCORE[:dislike])
       end
     end
     
