@@ -38,7 +38,7 @@ class Definition < ActiveRecord::Base
     vote = user_votes.find_or_initialize_by_user_id(user.id)
     
     if like % User::LIKE_BONUS_THRESHOLD == 0
-    	number = like
+    	number = like.dup
 	end
 	
     # Toggle switch in user vote object
@@ -91,7 +91,7 @@ class Definition < ActiveRecord::Base
       end
     end
     
-    if number and number == like - 1
+    if number and like == number - 1
       submitter.add_points -User::SCORE[:like_bonus]
     end
     
