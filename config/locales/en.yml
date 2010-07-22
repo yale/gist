@@ -46,6 +46,7 @@ en:
   Search for a user...: "Search for a user..."
   Public name: "Public name"
   Random word (refresh): "Random word (refresh)"
+  User Leaderboard: "User Leaderboard"
   
 zh:
   Home: "家"
@@ -92,3 +93,4 @@ zh:
   Search for a user...: "搜索用户..."
   Public name: "公共名称"
   Random word (refresh): "随机单词（刷新）"
+  User Leaderboard: "用户排行榜"
