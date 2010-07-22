@@ -63,7 +63,7 @@
           <% if current_user %>
             <li><%= link_to current_user.username, current_user %></li>
             <% if current_user.facebook_user? %>
-            <li><a href="#" onclick='FB.Connect.logoutAndRedirect("/logout")'>Logout</a><li>
+            <li><a href="#" onclick='FB.Connect.logoutAndRedirect("/logout")'><%= I18n.t("Logout") %></li></a><li>
             <% else %>
             <li><%= link_to I18n.t("Logout"), logout_path %></li>
             <% end %>
