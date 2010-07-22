@@ -88,6 +88,10 @@ class User < ActiveRecord::Base
     #We need to save without validations
     new_facebooker.save(false)
     new_facebooker.register_user_to_fb
+    if points.nil? or points == 0
+      self.points = SCORE[:facebook_bonus]
+      save(false)
+    end
   end
 
   #We are going to connect this user object with a facebook id. But only ever one account.
@@ -113,10 +117,6 @@ class User < ActiveRecord::Base
     users = {:email => email, :account_id => id}
     Facebooker::User.register([users])
     self.email_hash = Facebooker::User.hash_email(email)
-    if points.nil? or points == 0
-      self.points = SCORE[:facebook_bonus]
-      save(false)
-    end
   end 
   def facebook_user?
     return !fb_user_id.nil? && fb_user_id > 0
