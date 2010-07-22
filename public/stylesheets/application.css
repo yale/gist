@@ -18,7 +18,7 @@ body {
 }
 
 h2 {
-  font-size: 20px;
+  font-size: 24px;
   font-family: Georgia, "Times New Roman", serif;
   margin-bottom: 15px;
 }
@@ -35,7 +35,7 @@ h2.word {
 }
 
 h3 {
-  font-size: 17px;
+  font-size: 16px;
   color: white;
   font-weight: bold;
   margin: 20px 0 10px 0;
@@ -321,6 +321,21 @@ a {
   float: right;
 }
 
+#login-definitious, #register-definitious {
+  float: left;
+  width: 250px;
+}
+
+#login-facebook, #register-facebook {
+  padding-top: 1px;
+  margin-left: 260px;
+}
+
+#login-definitious h3, #register-definitious h3, #login-facebook h3, #register-facebook h3 {
+  font-size: 14px;
+}
+
+
 #ads {
   margin-left: 770px;
 }
@@ -338,4 +353,14 @@ a {
 #i18n a {
   font-weight: bold;
   border-bottom: dotted 1px white;
+}
+
+form p {
+  margin: 10px 0;
+}
+
+label {
+  display: block;
+  font-weight: bold;
+  text-transform: uppercase;
 }
