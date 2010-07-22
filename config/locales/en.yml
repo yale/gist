@@ -49,6 +49,9 @@ en:
   What's Hot: "What's Hot"
   New Definitions: "New Definitions"
   Top Definitions: "Top Definitions"
+  User Leaderboard: "User Leaderboard"
+  User: "User"
+  Points: "Points"
   
 zh:
   Home: "家"
@@ -98,3 +101,6 @@ zh:
   What's Hot: "什么是热"
   New Definitions: "新定义"
   Top Definitions: "热门定义"
+  User Leaderboard: "用户排行榜"
+  User: "用户"
+  Points: "点"
