@@ -5,3 +5,18 @@
 body {
   padding: 140px;
 }
+
+#sidebar {
+  width: 100%;
+  margin: 0;
+}
+
+#sidebar li {
+  float: left;
+}
+
+#main {
+  clear: both;
+  margin: 0;
+  width: 100%;
+}
