@@ -56,6 +56,7 @@ a {
 #topbar {
   background-color: #0e3b5a;
   height: 36px;
+  font-size: 11px;
 }
 
 #topbar a {
@@ -104,9 +105,9 @@ a {
 }
 
 #logo {
-  float: left;
+  margin: 0 auto;
+  text-align: center;
   display: block;
-  margin-left: 20px;
 }
 
 #logo a {
@@ -119,8 +120,8 @@ a {
 }
 
 #search {
+  margin: 20px auto;
   width: 280px;
-  margin-left: 230px;
   text-align: right;
   font-size: 18px;
 }
