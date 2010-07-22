@@ -1,23 +1,23 @@
 <% form_for @user do |f| %>
   <%= f.error_messages %>
   <p>
-    <%= f.label I18n.t("Username") %><br />
+    <%= f.label I18n.t("Username") %>
     <%= f.text_field :login %>
   </p>
   <p>
-    <%= f.label I18n.t("Public name") %><br />
+    <%= f.label I18n.t("Public name") %>
     <%= f.text_field :name %>
   </p>
   <p>
-    <%= f.label I18n.t("Email") %><br />
+    <%= f.label I18n.t("Email") %>
     <%= f.text_field :email %>
   </p>
   <p>
-    <%= f.label I18n.t("Password") %><br />
+    <%= f.label I18n.t("Password") %>
     <%= f.password_field :password %>
   </p>
   <p>
-    <%= f.label I18n.t("Password confirmation") %><br />
+    <%= f.label I18n.t("Password confirmation") %>
     <%= f.password_field :password_confirmation %>
   </p>
   <p><%= f.submit I18n.t("Submit") %></p>

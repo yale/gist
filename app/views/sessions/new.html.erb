@@ -1,11 +1,11 @@
-<h1><%=I18n.t("Log in")%></h1>
+<h2><%=I18n.t("Log in")%></h2>
 <div class="left" id="login-definitious">
-<h2><%=I18n.t("Login with your Definitious account")%></h2>
+<h3><%=I18n.t("Login with your Definitious account")%></h3>
 <% form_tag session_path do -%>
-<p><%= label_tag 'login', I18n.t("Username") %><br />
+<p><%= label_tag 'login', I18n.t("Username") %>
 <%= text_field_tag 'login', @login %></p>
 
-<p><%= label_tag I18n.t("password") %><br/>
+<p><%= label_tag I18n.t("password") %>
 <%= password_field_tag 'password', nil %></p>
 
 
@@ -18,6 +18,6 @@
 </div>
 
 <div class="right" id="login-facebook">
-<h2><%=I18n.t("Or login with your Facebook account!")%></h2>
+<h3><%=I18n.t("Or login with your Facebook account!")%></h3>
 <%= fb_login_button('window.location = "/users/link_user_accounts";')%>
 </div>
