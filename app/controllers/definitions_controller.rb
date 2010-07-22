@@ -15,7 +15,7 @@ class DefinitionsController < ApplicationController
       flash[:error] = 'Your definition could not be saved. Sorry!'
     end
     respond_to do |wants|
-      wants.html { redirect_to(@definition.word); }
+      wants.html { redirect_to(:back); }
     end
   end
 
@@ -120,6 +120,7 @@ class DefinitionsController < ApplicationController
         wants.html { redirect_to(@definition) }
         wants.xml  { render :xml => @definition, :status => :created, :location => @definition }
       else
+      	flash[:notice] = 'Definition was successfully created.'
         wants.html { render :action => "new" }
         wants.xml  { render :xml => @definition.errors, :status => :unprocessable_entity }
       end

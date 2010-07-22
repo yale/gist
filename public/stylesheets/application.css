@@ -276,6 +276,14 @@ a {
   background-color: #13517a;
 }
 
+.points {
+  font-size: 24px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-style: italic;
+  color: #dce7ef;
+  border-bottom: none;
+}
+
 #define {
   width: 440px;
   margin: 10px auto;
