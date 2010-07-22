@@ -1,12 +1,7 @@
 <div class="meta">
   
-<<<<<<< HEAD
-  <p class="byline">Submitted by <% @user = User.find(definition.user_id) unless definition.user_id.nil?%>
-  <%=link_to(@user.username, @user) + ", " + definition.created_at.strftime("%B %d, %Y") + "." %></p>
-=======
   <p class="byline"><%= I18n.t("Submitted by") %> <% @user = User.find(definition.user_id) unless definition.user_id.nil?%>
   <%=link_to(@user.username, @user) + " " + I18n.t("on") + " " + definition.created_at.strftime("%B %d, %Y") + "." %></p>
->>>>>>> 96633b3ea9ef3183c84dadedcf49ef93f26f374f
   
   <p class="stats">
     <span class="score"><%= definition.percent_liked %>% <%= I18n.t("Liked") %>.
