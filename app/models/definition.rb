@@ -47,6 +47,24 @@ class Definition < ActiveRecord::Base
     # Get the user object of the definition
     submitter = User.find_by_id(user_id)
     
+    # Now neutralize previous 'like' vote if disliked, and vice versa
+    case mood
+    when ("like" || :like)
+      if (vote[:dislike])
+        decrement "dislike"
+        vote[:dislike] = false
+        user.add_points -User::SCORE[:vote_cast]
+        submitter.add_points -User::SCORE[:dislike]
+      end
+    when ("dislike" || :dislike)
+      if (vote[:like])
+        decrement "like"
+        vote[:like] = false
+        user.add_points -User::SCORE[:vote_cast]
+        submitter.add_points -User::SCORE[:like]
+      end
+    end
+    
     # Increment/decrement counter in definition object
     if vote[mood]
       increment mood
@@ -73,24 +91,6 @@ class Definition < ActiveRecord::Base
         if number and number == like - 1
           submitter.add_points -User::SCORE[:like_bonus]
         end
-      end
-    end
-    
-    # Now neutralize previous 'like' vote if disliked, and vice versa
-    case mood
-    when ("like" || :like)
-      if (vote[:dislike])
-        decrement "dislike"
-        vote[:dislike] = false
-        user.add_points -User::SCORE[:vote_cast]
-        submitter.add_points -User::SCORE[:dislike]
-      end
-    when ("dislike" || :dislike)
-      if (vote[:like])
-        decrement "like"
-        vote[:like] = false
-        user.add_points -User::SCORE[:vote_cast]
-        submitter.add_points -User::SCORE[:like]
       end
     end
     
