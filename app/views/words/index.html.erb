@@ -3,11 +3,3 @@
 <div id="random_word">
   <%= render :partial => 'definitions/definition', :locals => {:word => @random, :definition => @random_def } %>
 </div>
-
-<% content_for :sidebar do %>
-  <div class="section">
-    <h3>What's going on here?</h3>
-    <p>Definitious is an online dictionary where users can submit and vote on definitions.</p>
-    <p>Go ahead - search for a word in the box above. If you don't like any of the definitions provided, you can submit your own!</p>
-  </div>
-<% end %>
