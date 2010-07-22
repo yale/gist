@@ -100,7 +100,7 @@ a {
 }
 
 #header {
-  margin: 20px 0;
+  margin: 20px auto;
   padding: 20px;
 }
 
@@ -120,13 +120,16 @@ a {
 }
 
 #search {
+  display: block;
   margin: 20px auto;
   text-align: right;
   font-size: 18px;
 }
 
 #search input {
+  display: block;
   padding: 8px 40px 8px 8px;
+  margin: 10px auto;
   width: 210px;
   background: #fff url(../images/search.gif) 220px 5px no-repeat;
 }
