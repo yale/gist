@@ -111,6 +111,7 @@ a {
 }
 
 #logo a {
+  margin: 0 auto;
   display: block;
   overflow: hidden;
   text-indent: -9999em;
