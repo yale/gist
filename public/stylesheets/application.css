@@ -272,6 +272,11 @@ a {
   color: #a1b0bb;
 }
 
+.meta .voted a {
+  font-weight: bold;
+  background-color: #176092;
+}
+
 .detailed-stats div {
   padding: 5px;
   border: solid 2px #13517a;
