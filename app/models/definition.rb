@@ -38,7 +38,7 @@ class Definition < ActiveRecord::Base
     vote = user_votes.find_or_initialize_by_user_id(user.id)
     
     if like % User::LIKE_BONUS_THRESHOLD == 0
-    	number = like.dup
+    	number = like
 	end
 	
     # Toggle switch in user vote object
