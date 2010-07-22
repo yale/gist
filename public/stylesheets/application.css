@@ -121,7 +121,7 @@ a {
 
 #search {
   width: 280px;
-  margin-left: 300px;
+  margin-left: 200px;
   text-align: right;
   font-size: 18px;
 }
@@ -181,6 +181,14 @@ a {
 
 #sidebar p {
   margin-bottom: 8px;
+}
+
+#notice .message {
+  width: 300px;
+  margin-left: 150px;
+  background-color: #0e3b5a;
+  padding: 20px;
+  display: block;
 }
 
 #main {
@@ -268,6 +276,10 @@ a {
 .meta {
   font-size: 11px;
   color: #a1b0bb;
+}
+
+.mood-vote-prompt .voted {
+  background-color: black;
 }
 
 .detailed-stats div {
