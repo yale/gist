@@ -145,7 +145,7 @@ a {
 }
 
 #sidebar {
-  
+  height: 30px;
 }
 
 #sidebar li {
@@ -157,10 +157,7 @@ a {
 
 #sidebar li a {
   font-size: 12px;
-  letter-spacing: 1px;
-  padding: 6px 10px;
   text-transform: uppercase;
-  background-color: #124b72;
 }
 
 #sidebar li a:hover {
