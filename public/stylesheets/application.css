@@ -280,14 +280,9 @@ a {
   color: #a1b0bb;
 }
 
-<<<<<<< HEAD
-.mood-vote-prompt .voted {
-  background-color: black;
-=======
 .meta .voted a {
   font-weight: bold;
   background-color: #176092;
->>>>>>> 96633b3ea9ef3183c84dadedcf49ef93f26f374f
 }
 
 .detailed-stats div {
