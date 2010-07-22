@@ -70,9 +70,6 @@ class Definition < ActiveRecord::Base
       else
         # Otherwise, it's either Like or Dislike
         submitter.add_points ((mood == "like") ? -User::SCORE[:like] : -User::SCORE[:dislike])
-        if number and number == like - 1
-          submitter.add_points -User::SCORE[:like_bonus]
-        end
       end
     end
     
@@ -91,10 +88,11 @@ class Definition < ActiveRecord::Base
         vote[:like] = false
         user.add_points -User::SCORE[:vote_cast]
         submitter.add_points -User::SCORE[:like]
-        if number and number == like - 1
-          submitter.add_points -User::SCORE[:like_bonus]
-        end
       end
+    end
+    
+    if number and number == like - 1
+      submitter.add_points -User::SCORE[:like_bonus]
     end
     
     self.save
