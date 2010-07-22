@@ -1,5 +1,4 @@
-<h2 class="word"><%=h @word.name %></h2>
-<%= render :partial => 'definitions/definition', :locals => {:definition => @definition} %>
+<%= render :partial => 'definitions/definition', :locals => {:definition => @definition, :word => true} %>
 
 <div id="definition-details">
   <p><%=I18n.t("This definition has earned")%> <%= @user.username %> <%= @points %> <%=I18n.t("points")%>.</p>
