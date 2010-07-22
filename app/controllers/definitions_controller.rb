@@ -36,7 +36,7 @@ class DefinitionsController < ApplicationController
     
     case params[:timespan] 
     when "today" then @title += " " + I18n.t("from today") + " " 
-    when "week", "month", "year" then @title += " " + I18n.t("from this") + " " + {params[:timespan]}
+    when "week", "month", "year" then @title += " " + I18n.t("from this") + " " + I18n.t(params[:timespan])
     end
 
     respond_to do |wants|
