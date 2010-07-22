@@ -1,2 +1,2 @@
-page["#random_word .result"].replace :partial => 'words/result', :locals => {:word => @word, :definition => @definition}
+page["#random_word .definition"].replace :partial => 'definitions/definition', :locals => {:word => @word, :definition => @definition}
 page[".comment-form"].hide

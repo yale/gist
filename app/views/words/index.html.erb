@@ -1,7 +1,7 @@
-<h1><%= link_to_remote I18n.t("Random word (refresh)"), :url => random_words_path %></h1>
+<h2><%= link_to_remote I18n.t("Random Word"), :url => random_words_path %></h2>
 
 <div id="random_word">
-  <%= render :partial => 'words/result', :locals => {:word => @random, :definition => @random_def } %>
+  <%= render :partial => 'definitions/definition', :locals => {:word => @random, :definition => @random_def } %>
 </div>
 
 <% content_for :sidebar do %>

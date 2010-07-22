@@ -1,12 +1,11 @@
 <!-- sort bars -->
 <% unless defined? no_sort %>
 <%= render :partial => 'definitions/sorter' %>
-<%= render :partial => 'definitions/timespan_picker' %>
 <% end %>
 
 <!-- list -->
-<ol class="definition-list">
+<div id="definitions">
   <%= render :partial => 'definitions/definition', :collection => definitions, :locals => {:word => true} %>
-</ol>
+</div>
 
 <!-- pager -->

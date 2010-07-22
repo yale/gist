@@ -1,7 +1,7 @@
-<div class="definition-form">
-<% form_for word, :html => { :method => :get }, :url => add_definition_word_path(word) do |f| -%>
-  <%= text_area(:definition, :body, {:value => I18n.t("Add your own definition for") + " #{word.name}...", :onFocus => "if(this.value==this.defaultValue) this.value='';", :onBlur  => "if(this.value=='') this.value=this.defaultValue;", :cols => 40, :rows => 4}) %>
-  <%= select(:definition, :part_of_speech, Definition::PARTS_OF_SPEECH, {:prompt => '(part of speech)'}) %>
-  <%= f.submit I18n.t("Define!") %>
-<% end -%>
+<div id="define">
+  <% form_for word, :html => { :method => :get }, :url => add_definition_word_path(word) do |f| -%>
+    <%= text_area(:definition, :body, {:value => I18n.t("Add your own definition for") + " #{word.name}...", :onFocus => "if(this.value==this.defaultValue) this.value='';", :onBlur  => "if(this.value=='') this.value=this.defaultValue;", :cols => 40, :rows => 4}) %>
+    <%= select(:definition, :part_of_speech, Definition::PARTS_OF_SPEECH, {:prompt => '(part of speech)'}) %>
+    <%= f.submit I18n.t("Define!") %>
+  <% end -%>
 </div>

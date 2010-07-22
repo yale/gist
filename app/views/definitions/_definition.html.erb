@@ -1,15 +1,21 @@
-<li class="definition" id="definition-<%= definition.id %>">
-  <p>
-    <% if defined? word and definition.word %>
-      <span class="word"><%= link_to definition.word.name, definition.word %> - </span>
-    <% end %>
-    <span class="part-of-speech"><%=h definition.part_of_speech %></span>
-    <span class="body"><%=link_to definition.body, definition %></span></p>
+<div class="definition" id="definition-<%= definition.id %>">
+  <% @counter ||= 1 %>
   <% if current_user %>
     <%= render :partial => 'definitions/like_buttons', :locals => {:definition => definition} %>
   <% end %>
-  <%= render :partial => 'definitions/meta', :locals => {:definition => definition} %>
-  <div class="comments">
-    <%= render :partial => 'comments/comment_box', :locals => {:comments => definition.comments.recent.limit(10).all, :definition => definition} %>
+  <div class="definition-content">
+    <p>
+      <% if defined? word and definition.word %>
+        <span class="word"><%= link_to definition.word.name, definition.word %> - </span>
+      <% else %>
+        <span class="index"><%= @counter %>.</span>
+      <% end %>
+      <span class="part-of-speech"><%=h definition.part_of_speech %></span>
+      <span class="body"><%=link_to definition.body, definition %></span>
+    </p>
+    
+    <%= render :partial => 'definitions/meta', :locals => {:definition => definition} %>
+    
   </div>
-</li>
+  <% @counter += 1 %>
+</div>

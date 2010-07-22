@@ -1,8 +1,6 @@
-<h1 class="title"><%= I18n.t("Viewing definitions for") %> <%=h @word.name %></h1>
+<h2 class="word"><%=h @word.name %></h2>
 
 <%= render :partial => 'definitions/sorter', :locals => {:word => @word} %>
-
-<h2 class="word"><%=h @word.name %></h2>
 
 <% if not @definitions.empty? %>
   <%= render :partial => "definitions/definitions", :object => @definitions %>

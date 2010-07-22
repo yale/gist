@@ -6,12 +6,14 @@
     <th>Points</th>
   </tr>
   <% @users.each_with_index do |user, count| %>
+  <tr>
     <td class="user">
-      <%= count.to_s + "." %> <%= link_to user.username, user %>
+      <%= (count + 1).to_s + "." %> <%= link_to user.username, user %>
     </td>
     <td class="points">
       <%= pluralize(user.points, "point") %>
     </td>
+  </tr>
   <% end %>
 </table>
 

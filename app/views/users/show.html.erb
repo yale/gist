@@ -1,12 +1,13 @@
 <div id="user-search">
-  <h1><%= @users.size %> users and counting...</h1>
+  <p><%= @users.size %> users and counting...</p>
   <% form_tag(finds_path, :method => 'get') do %>
     <%= text_field_tag(:user, I18n.t("Search for a user..."), :onFocus => "if(this.value==this.defaultValue) this.value='';", :onBlur  => "if(this.value=='') this.value=this.defaultValue;", 'id' => 'user_autocomplete') %>
   <% end %>
 </div>
 
-<h1>Profile for <%= link_to @user.username, @user %></h1>
-<h2 class="word"><%= pluralize(@user.points, "point") %></h2>
+<h2><%= link_to @user.username, @user %></h2>
+<p class="points"><%= pluralize(@user.points, "point") %></p>
+<p class="member-since">Member since <%= @user.created_at.strftime("%B %d, %Y") %></p>
 
   <% if current_user and @user.id == current_user.id %>
     <% if current_user.facebook_user? %>
@@ -26,10 +27,9 @@
   <% end %>
 <% end %>
 
-<li id="leaderboard-link"><%= link_to "Leaderboard", users_path %></li>
-<h2>Based on votes, <%= link_to @user.username, @user %> is a <%= itemize_type @user_type %> user</h2>
+<h3>Based on votes, <%= link_to @user.username, @user %> is a <%= itemize_type @user_type %> user</h3>
 
-<h2>Stats</h2>
+<h3>Stats</h3>
 <span><%= pluralize(@like_received, "like") %> received - <%= @like_percentage %></span><br>
 <span><%= pluralize(@dislike_received, "dislike") %> received - <%= @dislike_percentage %></span><br>
 <p>and</p>
@@ -39,7 +39,7 @@
 
 <% if @user.login != "wiktionary.org" %>
 	
-<h2>Points breakdown</h2>
+<h3>Points breakdown</h3>
 <span><%= pluralize(@like_points, "point") %> for <%= pluralize(@like_received, "like") %> received</span><br>
 <span><%= pluralize(@dislike_points, "point") %> for <%= pluralize(@dislike_received, "dislike") %> received</span><br>
 <span><%= pluralize(@mood_points, "point") %> for <%= pluralize(@mood_votes_received, "helpful/funny/poetic vote") %> received</span><br>
@@ -49,26 +49,25 @@
 <span><%= pluralize(@definition_points, "bonus point") %> for <%= pluralize(@popular_definitions, "popular definition") %></span><br>
 <span><%= pluralize(@facebook_points, "bonus point") %> for <%= (@user.facebook_user?)? "registering with Facebook": "not registering with Facebook" %></span><br>
 
-<h2>Recent definitions</h2>
+<h3>Recent definitions</h3>
 <% if @definitions %>
-<ol id="user-definitions">
-    <%= render :partial => 'users/definition', :collection => @definitions %>
-</ol>
+<div id="definitions">
+    <%= render :partial => 'definitions/definition', :collection => @definitions, :locals => {:word => true} %>
+</div>
 <% else %>
 <p>This user has not posted any definitions.</p>
 <% end %>
 
-<h2>Recent comments</h2>
+<h3>Recent comments</h3>
 <% if @comments %>
-<ol id="user-comments">
+<ul id="user-comments">
   <%= render :partial => 'users/comment', :collection => @comments %>
-</ol>
+</ul>
 <% else %>
-<p>This user has not commented.</p>
+<p>This user has not posted any comments.</p>
 <% end %>
 
 <% end %>
-<h1>Member since <%= @user.created_at.strftime("%B %d, %Y") %></h1>
 
 <% content_for :sidebar do %>
 

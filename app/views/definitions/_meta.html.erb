@@ -1,10 +1,35 @@
 <div class="meta">
-  <%= render :partial => 'definitions/votes', :locals => { :definition => definition } %>
+  
+  <p class="byline">Submitted by <% @user = User.find(definition.user_id) unless definition.user_id.nil?%>
+  <%=link_to(@user.username, @user) + " on " + definition.created_at.strftime("%B %d, %Y") + "." %></p>
+  
+  <p class="stats">
+    <span class="score"><%= definition.percent_liked %>% Liked.
+    <% definition_type = definition.definition_type + definition.definition_type_negative %>
+    <% if !definition_type.empty? %>
+      Voted as <span><%= itemize_type definition_type %></span>.
+    <% end %>  
+    </span>
+    <a href="#" class="stats-toggle">More stats</a>
+  </p>
+  
   <% if current_user.nil? %>
     <%= link_to I18n.t("Log in to vote!"), login_path %>
   <% end %>
+  
   <% if current_user and current_user.id == definition.user_id %>
-      <%= link_to 'Delete', definition, :confirm => "Are you sure?", :method => :delete %>
+    <%= link_to 'Delete', definition, :confirm => "Are you sure?", :method => :delete %>
   <% end %>
+  
   <%= render :partial => 'definitions/stats', :locals => { :definition => definition } %>
+  
+  <p class="comments">
+    <a href="#" class="comment-box-toggle"><%= pluralize(definition.comments.size, "comment") %></a>
+  </p>
+  
+  <div class="comment-box">
+    <%= render :partial => 'comments/comments', :locals => {:comments => definition.comments.recent.limit(10).all} %>
+    <%= render :partial => 'comments/form', :locals => {:definition => definition} %>
+  </div>
+  
 </div>

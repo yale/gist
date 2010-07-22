@@ -5,9 +5,9 @@ $(function() {
     return false;
   });
   
-  $(".stats").hide();
+  $(".detailed-stats").hide();
   $("a.stats-toggle").click(function() {
-    $(this).parent().children(".stats").slideToggle();
+    $(this).parents(".meta").children(".detailed-stats").slideToggle();
     return false;
   });
 });

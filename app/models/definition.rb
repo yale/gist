@@ -104,10 +104,10 @@ class Definition < ActiveRecord::Base
   end
   
   def percent_liked
-    if dislike == 0
+    if dislike == 0 && like > 0
       return 100
     else
-      return (100* like / (like + dislike)).to_i
+      return (100* like / (like + dislike + 1)).to_i
     end
   end
   
