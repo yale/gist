@@ -65,7 +65,6 @@ en:
   all time: "all time"
   Do you find this: "Do you find this"
   liked, by: "liked, by"
-  on: "on"
   Voted as: "Voted as"
   This definition has received: "This definition has received"
   and: "and"
@@ -101,6 +100,7 @@ en:
   email: "email"
   Confirm Password: "Confirm Password"
   Sign up: "Sign up"
+  on: "on"
   
 zh:
   Home: "家"
@@ -166,7 +166,6 @@ zh:
   all time: "所有时间"
   Do you find this: "你觉得这"
   liked, by: "喜欢，由"
-  on: "关于"
   Voted as: "评选为"
   This definition has received: "这一定义已收到"
   and: "和"
@@ -202,3 +201,4 @@ zh:
   email: "电子邮件"
   Confirm Password: "确认密码"
   Sign up: "Sign up"
+  on: "关于"
