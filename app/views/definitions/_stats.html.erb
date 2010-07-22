@@ -16,7 +16,7 @@
       <span class="<%= "voted" if definition.get_vote current_user, :mature %>"><%= link_to_remote I18n.t("Mature"), :url => vote_definition_path(definition, :mood => :mature), :method => :post %></span>
       or <span class="<%= "voted" if definition.get_vote current_user, :offensive %>"><%= link_to_remote I18n.t("Offensive"), :url => vote_definition_path(definition, :mood => :offensive), :method => :post %></span>?
       </p>
-      <p>This definition has received <%= definition.inaccurate %> inaccurate, <%= definition.mature %> mature, and <%= definition.offensive %> offensive votes.</p>
+      <p>This definition has received <%= pluralize(definition.like, "like") %>, <%= pluralize(definition.dislike, "dislike") %>, <%= definition.inaccurate %> inaccurate, <%= definition.mature %> mature, and <%= definition.offensive %> offensive votes.</p>
     </div>
     <% else %>
       <div>
