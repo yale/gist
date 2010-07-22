@@ -17,11 +17,11 @@
   
   <li class="like-votes"><%= pluralize(definition.like, "like") %></li>
   <li class="dislike-votes"><%= pluralize(definition.dislike, "dislike") %></li>
-  <% if !definition.get_vote(current_user, :dislike) %>
+  <% if current_user and !definition.get_vote(current_user, :dislike) %>
     <li class="helpful-votes"><%= definition.helpful %> helpful</li>
     <li class="funny-votes"><%= definition.funny %> funny</li>
     <li class="poetic-votes"><%= definition.poetic %> poetic</li>
-  <% elsif definition.get_vote(current_user, :dislike) %>
+  <% elsif current_user and definition.get_vote(current_user, :dislike) %>
     <li class="helpful-votes"><%= definition.inaccurate %> inaccurate</li>
     <li class="funny-votes"><%= definition.mature %> mature</li>
     <li class="poetic-votes"><%= definition.offensive %> offensive</li>
