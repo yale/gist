@@ -1,8 +1,8 @@
-<span class="votes" id="votes-definition-<%=h definition.id %>"><%= definition.percent_liked %>% liked, by
+<span class="votes" id="votes-definition-<%=h definition.id %>"><%= definition.percent_liked %>% <%= I18n.t("liked, by") %>
   <% @user = User.find(definition.user_id) unless definition.user_id.nil?%>
-  <%=link_to(@user.username, @user) + " on " + definition.created_at.strftime("%B %d, %Y") + "." %><br>
+  <%=link_to(@user.username, @user) + " " + I18n.t("on") + " " + definition.created_at.strftime("%B %d, %Y") + "." %><br>
   <% definition_type = definition.definition_type + definition.definition_type_negative %>
   <% if !definition_type.empty? %>
-      Voted as <%= itemize_type definition_type %>.
+      <%=I18n.t("Voted as")%> <%= itemize_type definition_type %>.
   <% end %>
 </span>

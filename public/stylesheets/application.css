@@ -108,6 +108,8 @@ a {
 
 #logo {
   float: left;
+  display: block;
+  margin-left: 40px;
 }
 
 #logo a {
@@ -278,14 +280,28 @@ a {
   color: #a1b0bb;
 }
 
+<<<<<<< HEAD
 .mood-vote-prompt .voted {
   background-color: black;
+=======
+.meta .voted a {
+  font-weight: bold;
+  background-color: #176092;
+>>>>>>> 96633b3ea9ef3183c84dadedcf49ef93f26f374f
 }
 
 .detailed-stats div {
   padding: 5px;
   border: solid 2px #13517a;
   background-color: #13517a;
+}
+
+.points {
+  font-size: 24px;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-style: italic;
+  color: #dce7ef;
+  border-bottom: none;
 }
 
 #define {

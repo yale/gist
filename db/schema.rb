@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100716041870) do
+ActiveRecord::Schema.define(:version => 20100722041735) do
 
   create_table "comments", :force => true do |t|
     t.string   "title",            :limit => 50, :default => ""
@@ -49,6 +49,7 @@ ActiveRecord::Schema.define(:version => 20100716041870) do
     t.text     "data"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "language"
   end
 
   add_index "sessions", ["session_id"], :name => "index_sessions_on_session_id"

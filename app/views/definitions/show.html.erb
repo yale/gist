@@ -1,16 +1,16 @@
 <%= render :partial => 'definitions/definition', :locals => {:definition => @definition} %>
 
 <div id="definition-details">
-  <p>This definition has earned <%= @user.username %> <%= @points %> points.</p>
+  <p><%=I18n.t("This definition has earned")%> <%= @user.username %> <%= @points %> <%=I18n.t("points")%>.</p>
  
   <p class="like-votes"><%= pluralize(@definition.like, "like") %> - <%= @like_percentage %></p>
   <p class="dislike-votes"><%= pluralize(@definition.dislike, "dislike") %> - <%= @dislike_percentage %></p>
   <p>And</p>
-  <p class="helpful-votes"><%= @definition.helpful %> helpful - <%= @helpful_percentage %></p>
-  <p class="funny-votes"><%= @definition.funny %> funny - <%= @funny_percentage %></p>
-  <p class="poetic-votes"><%= @definition.poetic %> poetic - <%= @poetic_percentage %></p>
+  <p class="helpful-votes"><%= @definition.helpful %> <%=I18n.t("helpful")%> - <%= @helpful_percentage %></p>
+  <p class="funny-votes"><%= @definition.funny %> <%=I18n.t("funny")%> - <%= @funny_percentage %></p>
+  <p class="poetic-votes"><%= @definition.poetic %> <%=I18n.t("poetic")%> - <%= @poetic_percentage %></p>
   <p>And</p>
-  <p class="helpful-votes"><%= @definition.inaccurate %> inaccurate - <%= @inaccurate_percentage %></p>
-  <p class="funny-votes"><%= @definition.mature %> mature - <%= @mature_percentage %></p>
-  <p class="poetic-votes"><%= @definition.offensive %> offensive - <%= @offensive_percentage %></p>
+  <p class="helpful-votes"><%= @definition.inaccurate %> <%=I18n.t("inaccurate")%> - <%= @inaccurate_percentage %></p>
+  <p class="funny-votes"><%= @definition.mature %> <%=I18n.t("mature")%> - <%= @mature_percentage %></p>
+  <p class="poetic-votes"><%= @definition.offensive %> <%=I18n.t("offensive")%> - <%= @offensive_percentage %></p>
 </div>

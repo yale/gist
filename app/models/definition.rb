@@ -56,7 +56,7 @@ class Definition < ActiveRecord::Base
         submitter.add_points User::SCORE[:mood_vote]
       else
         # Otherwise, it's either Like or Dislike
-        submitter.add_points ((mood == "like") ? User::SCORE[:like] : User::SCORE[:dislike]) 
+        submitter.add_points((mood == "like") ? User::SCORE[:like] : User::SCORE[:dislike]) 
       if mood == "like"
         submitter.add_points User::SCORE[:like_bonus] if like % User::LIKE_BONUS_THRESHOLD == 0
       end
@@ -69,7 +69,7 @@ class Definition < ActiveRecord::Base
         submitter.add_points -User::SCORE[:mood_vote]
       else
         # Otherwise, it's either Like or Dislike
-        submitter.add_points ((mood == "like") ? -User::SCORE[:like] : -User::SCORE[:dislike])
+        submitter.add_points((mood == "like") ? -User::SCORE[:like] : -User::SCORE[:dislike])
       end
     end
     
@@ -211,24 +211,24 @@ class Definition < ActiveRecord::Base
 	definition_type = []
   	if helpful == funny and helpful == poetic and helpful == 0 
     elsif helpful == funny and helpful == poetic
-        definition_type << "helpful"
-        definition_type << "funny"
-        definition_type << "poetic"
+        definition_type << I18n.t("helpful")
+        definition_type << I18n.t("funny")
+        definition_type << I18n.t("poetic")
     elsif helpful == funny and helpful > poetic
-        definition_type << "helpful"
-        definition_type << "funny"
+        definition_type << I18n.t("helpful")
+        definition_type << I18n.t("funny")
     elsif helpful == poetic and helpful > funny
-        definition_type << "helpful"
-        definition_type << "poetic"
+        definition_type << I18n.t("helpful")
+        definition_type << I18n.t("poetic")
     elsif funny == poetic and funny > helpful
-        definition_type << "funny"
-        definition_type << "poetic"
+        definition_type << I18n.t("funny")
+        definition_type << I18n.t("poetic")
     elsif helpful > funny and helpful > poetic
-        definition_type << "helpful"
+        definition_type << I18n.t("helpful")
     elsif funny > helpful and funny > poetic
-        definition_type << "funny"
+        definition_type << I18n.t("funny")
     else
-        definition_type << "poetic"
+        definition_type << I18n.t("poetic")
     end
     definition_type
   end

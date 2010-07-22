@@ -15,7 +15,7 @@ class DefinitionsController < ApplicationController
       flash[:error] = 'Your definition could not be saved. Sorry!'
     end
     respond_to do |wants|
-      wants.html { redirect_to(@definition.word); }
+      wants.html { redirect_to(:back); }
     end
   end
 
@@ -24,19 +24,19 @@ class DefinitionsController < ApplicationController
   def index
     @definitions = Definition.list params
 
-    @title = "Definitions"
+    @title = I18n.t("Definitions")
     
     case params[:sort]
-    when "like" then @title = "Most Popular Definitions"
-    when "funny" then @title = "Funniest Definitions"
-    when "helpful" then @title = "Most Helpful Definitions"
-    when "poetic" then @title = "Most Poetic Definitions"
-    when "date" then @title = "New Definitions"
+    when "like" then @title = I18n.t("Most Popular Definitions")
+    when "funny" then @title = I18n.t("Funniest Definitions")
+    when "helpful" then @title = I18n.t("Most Helpful Definitions")
+    when "poetic" then @title = I18n.t("Most Poetic Definitions")
+    when "date" then @title = I18n.t("New Definitions")
     end
     
     case params[:timespan] 
-    when "today" then @title += " from today"
-    when "week", "month", "year" then @title += " from this #{params[:timespan]}"
+    when "today" then @title += " " + I18n.t("from today") + " " 
+    when "week", "month", "year" then @title += " " + I18n.t("from this") + " " + I18n.t(params[:timespan])
     end
 
     respond_to do |wants|
@@ -120,6 +120,7 @@ class DefinitionsController < ApplicationController
         wants.html { redirect_to(@definition) }
         wants.xml  { render :xml => @definition, :status => :created, :location => @definition }
       else
+      	flash[:notice] = 'Definition was successfully created.'
         wants.html { render :action => "new" }
         wants.xml  { render :xml => @definition.errors, :status => :unprocessable_entity }
       end
