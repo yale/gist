@@ -1,4 +1,4 @@
 <div id="sorter">
-  <p>Sort by <%= link_to "Popularity", sort_url("sort", "like") %>, or by mood: <%= link_to "helpful", sort_url("sort", "helpful") %>, <%= link_to "funny", sort_url("sort", "funny") %> or <%= link_to "poetic", sort_url("sort", "poetic") %></p>
-  <p>Show definitions from: <%= link_to "today", sort_url("timespan", "today") %>, <%= link_to "this week", sort_url("timespan", "week") %>, <%= link_to "this month", sort_url("timespan", "month") %> or <%= link_to "all time", sort_url("timespan", "all") %></p>
+  <p><%=I18n.t("Sort by")%> <%= link_to I18n.t("Popularity"), sort_url("sort", "like") %>, <%=I18n.t("or by mood")%>: <%= link_to I18n.t("helpful"), sort_url("sort", "helpful") %>, <%= link_to I18n.t("funny"), sort_url("sort", "funny") %> or <%= link_to I18n.t("poetic"), sort_url("sort", "poetic") %></p>
+  <p><%=I18n.t("Show definitions from")%>: <%= link_to I18n.t("today"), sort_url("timespan", "today") %>, <%= link_to I18n.t("this week"), sort_url("timespan", "week") %>, <%= link_to I18n.t("this month"), sort_url("timespan", "month") %> or <%= link_to I18n.t("all time"), sort_url("timespan", "all") %></p>
 </div>

@@ -2,30 +2,30 @@
   <% if current_user %>
     <% if definition.get_vote(current_user, :like) %>
     <div>
-      <p class="mood-vote-prompt">Do you find this definition
+      <p class="mood-vote-prompt"><%=I18n.t("Do you find this definition")%>
       <span class="<%= "voted" if definition.get_vote current_user, :helpful %>"><%= link_to_remote I18n.t("Helpful"), :url => vote_definition_path(definition, :mood => :helpful), :method => :post %></span>, 
       <span class="<%= "voted" if definition.get_vote current_user, :funny %>"><%= link_to_remote I18n.t("Funny"), :url => vote_definition_path(definition, :mood => :funny), :method => :post %></span>
       or <span class="<%= "voted" if definition.get_vote current_user, :poetic %>"><%= link_to_remote I18n.t("Poetic"), :url => vote_definition_path(definition, :mood => :poetic), :method => :post %></span>?
       </p>
-      <p>This definition has received <%= pluralize(definition.like, "like") %>, <%= pluralize(definition.dislike, "dislike") %>, <%= definition.funny %> funny, <%= definition.helpful %> helpful, and <%= definition.poetic %> poetic votes.</p>
+      <p><%=I18n.t("This definition has received")%> <%= pluralize(definition.like, "like") %>, <%= pluralize(definition.dislike, "dislike") %>, <%= definition.funny %> <%=I18n.t("funny")%>, <%= definition.helpful %> <%=I18n.t("helpful")%>, <%=I18n.t("and")%> <%= definition.poetic %> <%=I18n.t("poetic")%> <%=I18n.t("votes")%>.</p>
     </div>
     <% elsif definition.get_vote(current_user, :dislike) %>
     <div>
-      <p class="mood-vote-prompt">Do you find this definition
+      <p class="mood-vote-prompt"><%=I18n.t("Do you find this definition")%>
       <span class="<%= "voted" if definition.get_vote current_user, :inaccurate %>"><%= link_to_remote I18n.t("Inaccurate"), :url => vote_definition_path(definition, :mood => :inaccurate), :method => :post %></span>, 
       <span class="<%= "voted" if definition.get_vote current_user, :mature %>"><%= link_to_remote I18n.t("Mature"), :url => vote_definition_path(definition, :mood => :mature), :method => :post %></span>
       or <span class="<%= "voted" if definition.get_vote current_user, :offensive %>"><%= link_to_remote I18n.t("Offensive"), :url => vote_definition_path(definition, :mood => :offensive), :method => :post %></span>?
       </p>
-      <p>This definition has received <%= pluralize(definition.like, "like") %>, <%= pluralize(definition.dislike, "dislike") %>, <%= definition.inaccurate %> inaccurate, <%= definition.mature %> mature, and <%= definition.offensive %> offensive votes.</p>
+      <p><%=I18n.t("This definition has received")%> <%= pluralize(definition.like, "like") %>, <%= pluralize(definition.dislike, "dislike") %>, <%= definition.inaccurate %> <%=I18n.t("inaccurate")%>, <%= definition.mature %> <%=I18n.t("mature")%>, and <%= definition.offensive %> <%=I18n.t("offensive")%> <%=I18n.t("votes")%>.</p>
     </div>
     <% else %>
       <div>
-        <p>This definition has received <%= pluralize(definition.like, "like") %>, <%= pluralize(definition.dislike, "dislike") %>, <%= definition.funny %> funny, <%= definition.helpful %> helpful, and <%= definition.poetic %> poetic votes.</p>
+        <p><%=I18n.t("This definition has received")%> <%= pluralize(definition.like, "like") %>, <%= pluralize(definition.dislike, "dislike") %>, <%= definition.funny %> <%=I18n.t("funny")%>, <%= definition.helpful %> <%=I18n.t("helpful")%>, <%=I18n.t("and")%> <%= definition.poetic %> <%=I18n.t("poetic")%> <%=I18n.t("votes")%>.</p>
       </div>
     <% end %>
   <% else %>
   <div>
-    <p>This definition has received <%= pluralize(definition.like, "like") %>, <%= pluralize(definition.dislike, "dislike") %>, <%= definition.funny %> funny, <%= definition.helpful %> helpful, and <%= definition.poetic %> poetic votes.</p>
+    <p><%=I18n.t("This definition has received")%> <%= pluralize(definition.like, "like") %>, <%= pluralize(definition.dislike, "dislike") %>, <%= definition.funny %> <%=I18n.t("funny")%>, <%= definition.helpful %> <%=I18n.t("helpful")%>, <%=I18n.t("and")%> <%= definition.poetic %> <%=I18n.t("poetic")%> <%=I18n.t("votes")%>.</p>
   </div>
   <% end %>
 </div>
