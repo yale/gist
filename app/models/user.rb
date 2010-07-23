@@ -88,9 +88,9 @@ class User < ActiveRecord::Base
     #We need to save without validations
     new_facebooker.save(false)
     new_facebooker.register_user_to_fb
-    if points.nil? or points == 0
-      points = SCORE[:facebook_bonus]
-      save(false)
+    if  new_facebooker.points.nil? or  new_facebooker.points == 0
+      new_facebooker.points = SCORE[:facebook_bonus]
+      new_facebooker.save(false)
     end
   end
 
