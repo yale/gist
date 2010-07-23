@@ -14,12 +14,16 @@
     <% end %>
     <%= stylesheet_link_tag 'reset' %>
     <%= stylesheet_link_tag 'ui-lightness/jquery-ui-1.8.2.custom' %>
-    <% if browser_is? :ie %>
-      <%= stylesheet_link_tag 'application' %>
+    <% if is_mobile_device? %>
+      <%= stylesheet_link_tag 'handheld' %>
     <% else %>
-      <%= stylesheet_link_tag 'application', :media => 'screen and (min-width: 8in), projection' %>
+      <% if browser_is? :ie %>
+        <%= stylesheet_link_tag 'application' %>
+      <% else %>
+        <%= stylesheet_link_tag 'application', :media => 'screen and (min-width: 8in), projection' %>
+      <% end %>
     <% end %>
-    <%= stylesheet_link_tag 'handheld', :media => 'handheld, only screen and (max-width:8in)' %>
+    <%= stylesheet_link_tag 'handheld', :media => 'handheld, only screen and max-device-width:8in' %>
     <%= javascript_include_tag :defaults %>
     <%= javascript_include_tag 'jquery-1.4.2.min' %>
     <%= javascript_include_tag 'jquery-ui-1.8.2.custom.min' %>
