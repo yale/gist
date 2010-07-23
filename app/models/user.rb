@@ -89,7 +89,7 @@ class User < ActiveRecord::Base
     new_facebooker.save(false)
     new_facebooker.register_user_to_fb
     if points.nil? or points == 0
-      self.points = SCORE[:facebook_bonus]
+      points = SCORE[:facebook_bonus]
       save(false)
     end
   end
