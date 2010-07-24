@@ -103,7 +103,7 @@ a {
   margin: 20px auto;
   padding: 20px;
 }
-/*
+
 #logo {
   margin: 0 auto;
   text-align: center;
@@ -134,12 +134,11 @@ a {
   width: 210px;
   background: #fff url(../images/search.gif) 220px 5px no-repeat;
 }
-*/
 
+/*
 #logo {
-  float: left;
+  float: center;
   display: block;
-  margin-left: 40px;
 }
 
 #logo a {
@@ -153,9 +152,10 @@ a {
 
 #search {
   width: 280px;
-  margin-left: 230px;
+  float: center;
   text-align: right;
   font-size: 18px;
+  padding-left: 40px;
 }
 
 #search input {
@@ -163,7 +163,7 @@ a {
   width: 210px;
   background: #fff url(../images/search.gif) 220px 5px no-repeat;
 }
-
+*/
 #user-search {
   float: right;
   padding: 0px 0px 0px 3px;
