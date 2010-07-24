@@ -16,8 +16,7 @@
     <%= stylesheet_link_tag 'reset' %>
     <%= stylesheet_link_tag 'ui-lightness/jquery-ui-1.8.2.custom' %>
     <% if is_mobile_device? %>
-      <%= stylesheet_link_tag 'application', :media => 'application, only screen and (min-device-width: 800px)' %>
-      <%= stylesheet_link_tag 'handheld', :media => 'handheld, only screen and (max-device-width: 800px)' %>
+      <%= stylesheet_link_tag 'handheld' %>
 	<% else %>
       <% if browser_is? :ie %>
         <%= stylesheet_link_tag 'application' %>
