@@ -299,6 +299,10 @@ a {
   border-bottom: none;
 }
 
+.search-result {
+  text-align: center;
+}
+
 #define {
   width: 440px;
   margin: 10px auto;

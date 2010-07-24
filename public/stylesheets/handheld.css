@@ -317,6 +317,10 @@ a {
   border-bottom: none;
 }
 
+.search-result {
+  text-align: center;
+}
+
 #define {
   margin: 10px auto;
 }

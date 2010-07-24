@@ -1,12 +1,13 @@
 <% title "Search" %>
-
-<% if @word %>
-  <h1><%= "#{$query} is not defined. Do you want to define it?" %>
-  <% form_for @word, :url => { :action => "create" } do |f| -%>
-    <%= f.error_messages %>
-    <%= f.submit I18n.t("Define!")  %>
-  <% end -%>
-  </h1>
-<% else %>
-  <h1><%= "Sorry. We could not find the user #{$query}." %></h1>
-<% end %>
+<div class="search-result">
+  <% if @word %>
+    <h1><%= "#{$query} is not defined. Do you want to define it?" %>
+    <% form_for @word, :url => { :action => "create" } do |f| -%>
+      <%= f.error_messages %>
+      <%= f.submit I18n.t("Define!")  %>
+    <% end -%>
+    </h1>
+  <% else %>
+    <h1><%= "Sorry. We could not find the user #{$query}." %></h1>
+  <% end %>
+</div>
