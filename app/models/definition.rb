@@ -236,24 +236,24 @@ class Definition < ActiveRecord::Base
   def definition_type_negative
 	definition_type_negative = []
   	if inaccurate == mature and inaccurate == offensive and inaccurate == 0 
-elsif inaccurate == mature and inaccurate == offensive and inaccurate >= 3
+elsif inaccurate == mature and inaccurate == offensive and inaccurate >= User::NEGATIVE_SHOW_THRESHOLD
         definition_type_negative << "inaccurate"
         definition_type_negative << "mature"
         definition_type_negative << "offensive"
-    elsif inaccurate == mature and inaccurate > offensive and inaccurate >= 3
+    elsif inaccurate == mature and inaccurate > offensive and inaccurate >= User::NEGATIVE_SHOW_THRESHOLD
         definition_type_negative << "inaccurate"
         definition_type_negative << "mature"
-    elsif inaccurate == offensive and inaccurate > mature and inaccurate >= 3
+    elsif inaccurate == offensive and inaccurate > mature and inaccurate >= User::NEGATIVE_SHOW_THRESHOLD
         definition_type_negative << "inaccurate"
         definition_type_negative << "offensive"
-    elsif mature == offensive and mature > inaccurate and mature >= 3
+    elsif mature == offensive and mature > inaccurate and mature >= User::NEGATIVE_SHOW_THRESHOLD
         definition_type_negative << "mature"
         definition_type_negative << "offensive"
-    elsif inaccurate > mature and inaccurate > offensive and inaccurate >= 3
+    elsif inaccurate > mature and inaccurate > offensive and inaccurate >= User::NEGATIVE_SHOW_THRESHOLD
         definition_type_negative << "inaccurate"
-    elsif mature > inaccurate and mature > offensive and mature >= 3
+    elsif mature > inaccurate and mature > offensive and mature >= User::NEGATIVE_SHOW_THRESHOLD
         definition_type_negative << "mature"
-    elsif offensive > inaccurate and offensive > mature and offensive >= 3
+    elsif offensive > inaccurate and offensive > mature and offensive >= User::NEGATIVE_SHOW_THRESHOLD
         definition_type_negative << "offensive"
     end
     definition_type_negative
