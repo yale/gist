@@ -9,7 +9,6 @@ class ApplicationController < ActionController::Base
   # Be sure to include AuthenticationSystem in Application Controller instead
   include AuthenticatedSystem
 
-
   helper :all # include all helpers, all the time
   protect_from_forgery # See ActionController::RequestForgeryProtection for details
 
@@ -87,5 +86,5 @@ private
   	logger.debug "default_url_options is passed options: #{options.inspect}\n"  
   	{ :locale => I18n.locale } 
   end 
-
+  
 end
