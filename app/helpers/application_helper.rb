@@ -51,5 +51,9 @@ module ApplicationHelper
   def is_mobile_device?
     request.user_agent.to_s.downcase =~ Regexp.new(MOBILE_USER_AGENTS)
   end
+  
+  def title(page_title)
+    content_for(:title) { page_title }
+  end
 
 end

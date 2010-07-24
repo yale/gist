@@ -162,7 +162,10 @@ class DefinitionsController < ApplicationController
 
   private
     def find_definition
-      @definition = Definition.find(params[:id])
+      @definition = Definition.find_by_url(params[:id])
+      if @definition.nil?
+      	@definition = Definition.find(params[:id])
+      end
     end
 
 end

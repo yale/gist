@@ -1,3 +1,5 @@
+<% title @user.username %>
+
 <div id="user-search">
   <p><%= @users.size %> users and counting...</p>
   <% form_tag(finds_path, :method => 'get') do %>

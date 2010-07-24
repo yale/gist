@@ -7,6 +7,7 @@ class Definition < ActiveRecord::Base
   validates_presence_of     :body
   validates_uniqueness_of   :body
   validate :must_be_defined
+  before_create :make_slug
   
   PAGE_LIMIT = 100
   PARTS_OF_SPEECH = ['noun', 'adjective', 'acronym', 'verb', 'adverb', 'preposition', 'interjection']
@@ -360,6 +361,18 @@ class Definition < ActiveRecord::Base
     "%01.#{precision}f" % ((Float(number) * (10 ** precision)).round.to_f / 10 ** precision)
   rescue
     number
+  end
+  
+  def make_slug
+    self.url = self.word.name.to_url + "-" + self.id.to_s
+  end
+  
+  def to_param
+    if url
+    	url
+    else
+      id.to_s
+    end
   end
 
 end
