@@ -1,6 +1,6 @@
 <div class="meta">
   
-  <p class="byline"><%= I18n.t("Submitted by") %> <% @user = User.find(definition.user_id) unless definition.user_id.nil?%>
+  <p class="byline"><%= I18n.t("by") %> <% @user = User.find(definition.user_id) unless definition.user_id.nil?%>
   <%=link_to(@user.username, @user) + " " + "on" + " " + definition.created_at.strftime("%B %d, %Y") + "." %></p>
   
   <p class="stats">

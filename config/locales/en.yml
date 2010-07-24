@@ -101,6 +101,7 @@ en:
   Confirm Password: "Confirm Password"
   Sign up: "Sign up"
   on: "on"
+  by: "by"
   
 zh:
   Home: "家"
@@ -202,3 +203,4 @@ zh:
   Confirm Password: "确认密码"
   Sign up: "Sign up"
   on: "关于"
+  by: "由"

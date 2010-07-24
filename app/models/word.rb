@@ -21,7 +21,7 @@ class Word < ActiveRecord::Base
   
   def make_slug
     self.url = self.name.to_url
-    end
+  end
   
   def to_param
     if url
