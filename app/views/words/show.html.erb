@@ -1,4 +1,4 @@
-<% title @word.name %>
+<% title @word.name.capitalize %>
 <h2 class="word"><%=h @word.name %></h2>
 
 <%= render :partial => 'definitions/sorter', :locals => {:word => @word} %>

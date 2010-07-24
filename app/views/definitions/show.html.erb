@@ -1,4 +1,4 @@
-<% title @definition.user.username + "'s definition for " + @definition.word.name %>
+<% title @definition.user.username + "'s definition for " + @definition.word.name.capitalize %>
 
 <%= render :partial => 'definitions/definition', :locals => {:definition => @definition, :word => true} %>
 
