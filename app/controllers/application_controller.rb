@@ -2,7 +2,6 @@
 # Likewise, all the methods added will be available for all controllers.
 
 class ApplicationController < ActionController::Base
-  has_mobile_fu
   # for Facebook Connect
   before_filter :set_facebook_session
   helper_method :facebook_session
