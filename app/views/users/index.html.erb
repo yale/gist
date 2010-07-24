@@ -25,15 +25,15 @@
     <h3>How points work:</h3>
     <p>for each</p>
     <table>
-    <tr><td width="400">&nbsp&nbsp like received:<td width="20">+30</td></tr></tr>
-    <tr><td>&nbsp&nbsp dislike received:<td>-5</td></tr>
-    <tr><td>&nbsp&nbsp HFP vote received:<td>+10</td></tr>
-    <tr><td>&nbsp&nbsp vote cast:<td>+1</td></tr>
-    <tr><td>&nbsp&nbsp comment posted:<td>+1</td></tr>
-    <tr><td>&nbsp&nbsp comment received:<td>+1</td></tr>
+    <tr><td width="400">&nbsp&nbsp like received:<td width="20">+<%=User::SCORE[:like]%></td></tr></tr>
+    <tr><td>&nbsp&nbsp dislike received:<td><%=User::SCORE[:dislike]%></td></tr>
+    <tr><td>&nbsp&nbsp HFP vote received:<td>+<%=User::SCORE[:mood_vote]%></td></tr>
+    <tr><td>&nbsp&nbsp vote cast:<td>+<%=User::SCORE[:vote_cast]%></td></tr>
+    <tr><td>&nbsp&nbsp comment posted:<td>+<%=User::SCORE[:comment]%></td></tr>
+    <tr><td>&nbsp&nbsp comment received:<td>+<%=User::SCORE[:comment]%></td></tr>
     <tr><td>bonuses</td></tr>
-    <tr><td>&nbsp&nbsp definition with 5 likes<td>+100</td></tr>
-    <tr><td>&nbsp&nbsp register with Facebook<td>+200</td></tr>
+    <tr><td>&nbsp&nbsp definition with <%=User::LIKE_BONUS_THRESHOLD%> likes<td>+<%=User::SCORE[:like_bonus]%></td></tr>
+    <tr><td>&nbsp&nbsp register with Facebook<td>+<%=User::SCORE[:facebook_bonus]%></td></tr>
     </table><br>
     <p>HFP = helpful/funny/poetic</p>
   </div>

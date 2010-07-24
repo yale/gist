@@ -82,7 +82,7 @@ class UsersController < ApplicationController
     @poetic_cast = @user.votes_cast "poetic"
     @inaccurate_cast = @user.votes_cast "inaccurate"
     @mature_cast = @user.votes_cast "mature"
-    @offensive_cast = @user.votes_cast "offensive"
+    @offensive_cast = @user.votes_cast "offensive" 
     
     if @user.username != "wiktionary.org"
       @definition_points = @user.definition_points
