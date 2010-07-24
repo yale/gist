@@ -44,7 +44,7 @@ class User < ActiveRecord::Base
   }
   
   LIKE_BONUS_THRESHOLD = 5
-  NEGATIVE_SHOW_THRESHOLD = 3
+  NEGATIVE_SHOW_THRESHOLD = 5
   
 
   # Authenticates a user by their login name and unencrypted password.  Returns the user or nil.
