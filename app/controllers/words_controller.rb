@@ -13,6 +13,8 @@ class WordsController < ApplicationController
   def index
   	@random = Word.random
   	@random_def = @random.definitions.find :first
+  	@words_size = Word.all.size
+  	@definitions_size = Definition.all.size
     
     respond_to do |wants|
       wants.html # index.html.erb
