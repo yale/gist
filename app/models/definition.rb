@@ -112,7 +112,6 @@ class Definition < ActiveRecord::Base
     end
   end
   
-  
   # This method returns a list of definitions, with optional sorting arguments:
   #   :sort (either one of the moods, "date" or "popularity")
   #   :timespan (either "today", "week", "month", "year", or "all")
