@@ -364,11 +364,8 @@ class Definition < ActiveRecord::Base
   end
   
   def make_slug
-  	if self.word.name
-      self.url = self.word.name.to_url + "-" + self.id.to_s
-	else
-	  self.url = self.id.to_s
-	end
+  	word = Word.find(definition.word_id)
+    self.url = word.to_url + "-" + self.id.to_s
   end
   
   def to_param
