@@ -236,24 +236,24 @@ class Definition < ActiveRecord::Base
   def definition_type_negative
 	definition_type_negative = []
   	if inaccurate == mature and inaccurate == offensive and inaccurate == 0 
-    elsif inaccurate == mature and inaccurate == offensive
+elsif inaccurate == mature and inaccurate == offensive and inaccurate >= 3
         definition_type_negative << "inaccurate"
         definition_type_negative << "mature"
         definition_type_negative << "offensive"
-    elsif inaccurate == mature and inaccurate > offensive
+    elsif inaccurate == mature and inaccurate > offensive and inaccurate >= 3
         definition_type_negative << "inaccurate"
         definition_type_negative << "mature"
-    elsif inaccurate == offensive and inaccurate > mature
+    elsif inaccurate == offensive and inaccurate > mature and inaccurate >= 3
         definition_type_negative << "inaccurate"
         definition_type_negative << "offensive"
-    elsif mature == offensive and mature > inaccurate
+    elsif mature == offensive and mature > inaccurate and mature >= 3
         definition_type_negative << "mature"
         definition_type_negative << "offensive"
-    elsif inaccurate > mature and inaccurate > offensive
+    elsif inaccurate > mature and inaccurate > offensive and inaccurate >= 3
         definition_type_negative << "inaccurate"
-    elsif mature > inaccurate and mature > offensive
+    elsif mature > inaccurate and mature > offensive and mature >= 3
         definition_type_negative << "mature"
-    else
+    elsif offensive > inaccurate and offensive > mature and offensive >= 3
         definition_type_negative << "offensive"
     end
     definition_type_negative

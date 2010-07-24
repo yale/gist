@@ -36,7 +36,7 @@ class User < ActiveRecord::Base
   SCORE = {
     :like_bonus => 100,
     :like => 30,
-    :dislike => -15,
+    :dislike => -5,
     :mood_vote => 10,
     :vote_cast => 1,
     :comment => 1,

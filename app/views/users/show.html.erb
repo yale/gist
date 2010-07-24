@@ -51,6 +51,16 @@
 <span><%= pluralize(@definition_points, "bonus point") %> for <%= pluralize(@popular_definitions, "popular definition") %></span><br>
 <span><%= pluralize(@facebook_points, "bonus point") %> for <%= (@user.facebook_user?)? "registering with Facebook": "not registering with Facebook" %></span><br>
 
+<h3>Voting breakdown</h3>
+<span><%= pluralize(@like_cast, "like vote") %> cast</span><br>  
+<span><%= pluralize(@dislike_cast, "dislike vote") %> cast</span><br> 
+<span><%= pluralize(@helpful_cast, "helpful vote") %> cast</span><br> 
+<span><%= pluralize(@funny_cast, "funny vote") %> cast</span><br> 
+<span><%= pluralize(@poetic_cast, "poetic vote") %> cast</span><br> 
+<span><%= pluralize(@inaccurate_cast, "inaccurate vote") %> cast</span><br> 
+<span><%= pluralize(@mature_cast, "mature vote") %> cast</span><br> 
+<span><%= pluralize(@offensive_cast, "offensive vote") %> cast</span><br>
+
 <h3>Recent definitions</h3>
 <% if @definitions %>
 <div id="definitions">
@@ -78,7 +88,7 @@
     <p>for each</p>
     <table>
     <tr><td width="400">&nbsp&nbsp like received:<td width="20">+30</td></tr></tr>
-    <tr><td>&nbsp&nbsp dislike received:<td>-15</td></tr>
+    <tr><td>&nbsp&nbsp dislike received:<td>-5</td></tr>
     <tr><td>&nbsp&nbsp HFP vote received:<td>+10</td></tr>
     <tr><td>&nbsp&nbsp vote cast:<td>+1</td></tr>
     <tr><td>&nbsp&nbsp comment posted:<td>+1</td></tr>
