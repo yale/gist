@@ -370,12 +370,12 @@ elsif inaccurate == mature and inaccurate == offensive and inaccurate >= User::N
 	end
   end
   
-  def to_param
-    if url
-    	url
-    else
-      id.to_s
-    end
-  end
+  #def to_param
+  #  if url
+  #  	url
+  #  else
+  #    id.to_s
+  #  end
+  #end
 
 end
