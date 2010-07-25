@@ -43,7 +43,7 @@ class User < ActiveRecord::Base
     :facebook_bonus => 200
   }
   
-  LIKE_BONUS_THRESHOLD = 10
+  LIKE_BONUS_THRESHOLD = 5
   NEGATIVE_SHOW_THRESHOLD = 5
   
 
