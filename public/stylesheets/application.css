@@ -48,6 +48,10 @@ h3 {
   font-weight: bold;
 }
 
+.search-result {
+  text-align: center;
+}
+
 a {
   text-decoration: none;
   color: #cbd7e0;
@@ -133,7 +137,6 @@ a {
   width: 210px;
   background: #fff url(../images/search.gif) 220px 5px no-repeat;
 }
-
 
 #user-search {
   float: right;
