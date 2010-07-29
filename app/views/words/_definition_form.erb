@@ -1,6 +1,37 @@
+<script type="text/javascript" src="jquery-1.3.1.js"></script>
+<script>
+  $(function() {  
+    $("#submitbutton").click(function() {  
+      if ($("textarea#PostArea").val() != "" && $("textarea#PostArea").val().length < 140) {
+        $('#formSubmit').submit();
+        $(".formmesssage").text("your form submitted").show().fadeOut(1000);
+      }else{
+        $(".formmesssage").text("Not valid!").show().fadeOut(1000);
+      }
+    });  
+  });  
+ 
+  $(function() {
+    CountlimitChars = function(){
+      $("#numberofWord").text(140 - $("textarea#PostArea").val().length ).show();
+      if($("textarea#PostArea").val().length > 130){
+        $("#numberofWord").addClass("one-fourty-red");
+      }else{
+        $("#numberofWord").removeClass('one-fourty-red').addClass("one-fourty-orange");
+      }
+      if($("textarea#PostArea").val().length > 110){
+        $("#numberofWord").addClass("one-fourty-orange");
+      }else{
+        $("#numberofWord").removeClass('one-fourty-orange').addClass("one-fourty");
+      }
+    }
+  });  
+</script>
+
+<div class="one-fourty" id="numberofWord">140</div>
 <div id="define">
   <% form_for word, :html => { :method => :get }, :url => add_definition_word_path(word) do |f| -%>
-    <%= text_area(:definition, :body, {:value => I18n.t("Add your own definition for") + " #{word.name}...", :onFocus => "if(this.value==this.defaultValue) this.value='';", :onBlur  => "if(this.value=='') this.value=this.defaultValue;", :cols => 40, :rows => 4}) %>
+    <%= text_area(:definition, :body, {:value => I18n.t("Add your own definition for") + " #{word.name}...", :onFocus => "if(this.value==this.defaultValue) this.value='';", :onBlur  => "if(this.value=='') this.value=this.defaultValue;", :cols => 40, :rows => 4, :onkeyup =>"CountlimitChars()", :id=>"PostArea"}) %>
     <%= select(:definition, :part_of_speech, Definition::PARTS_OF_SPEECH, {:prompt => '(part of speech)'}) %>
     <%= f.submit I18n.t("Define!") %>
   <% end -%>

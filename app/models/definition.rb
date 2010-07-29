@@ -8,6 +8,8 @@ class Definition < ActiveRecord::Base
   validates_uniqueness_of   :body
   validate :must_be_defined
   before_create :make_slug
+  validates_length_of       :body, :maximum => 140, :message => 'definitions must be 140 characters or less'
+  
   
   PAGE_LIMIT = 100
   PARTS_OF_SPEECH = ['noun', 'adjective', 'acronym', 'verb', 'adverb', 'preposition', 'interjection']
