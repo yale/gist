@@ -1,5 +1,8 @@
 <% title @word.name.capitalize %>
 <h2 class="word"><%=h @word.name %></h2>
+<% if current_user and current_user.login == "murtazajafferji"%>
+  <%= link_to 'Delete', @word, :confirm => "Are you sure?", :method => :delete %>
+<% end %>
 
 <%= render :partial => 'definitions/sorter', :locals => {:word => @word} %>
 
