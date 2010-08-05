@@ -370,6 +370,23 @@ a {
   font-size: 12px;
 }
 
+#info{
+  text-align: center;
+}
+
+#info a{
+  font-weight: bold;
+}
+
+#info ul {
+  
+}
+
+#info li {
+  display: inline;
+  padding: 0 7px;
+}
+
 #i18n {
   text-align: center;
 }

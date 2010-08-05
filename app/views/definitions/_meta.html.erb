@@ -20,6 +20,9 @@
   <% if current_user and (current_user.id == definition.user_id or current_user.login == "murtazajafferji")%>
     <%= link_to 'Delete', definition, :confirm => "Are you sure?", :method => :delete %>
   <% end %>
+  <% if current_user and current_user.login == "murtazajafferji" %>
+    <%= link_to 'Edit', edit_definition_path(definition)%>
+  <% end %>
   
   <%= render :partial => 'definitions/stats', :locals => { :definition => definition } %>
   

@@ -115,6 +115,14 @@
       <%= render :partial => 'layouts/ads' %>
     </div>
     <div id="footer">
+      <div id="info">
+      <ul>
+        <li id="terms"><%= link_to I18n.t("Terms of Service"), terms_path %></li>
+        <li id="privacy"><%= link_to I18n.t("Privacy"), privacy_path %></li>
+        <li id="about"><%= link_to I18n.t("About Us"), about_path %></li>
+        <li id="feedback"><%= link_to I18n.t("Feedback"), feedback_path %></li>
+      </ul>
+      </div>
       <p id="i18n">
         View this site in
         <span><%= link_to I18n.t("English"), :locale => nil %></span>

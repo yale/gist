@@ -102,6 +102,10 @@ en:
   Sign up: "Sign up"
   on: "on"
   by: "by"
+  Terms of Service: "Terms of Service"
+  Privacy: "Privacy"
+  About Us: "About Us"
+  Feedback: "Feedback"
   
 zh:
   Home: "家"
@@ -204,3 +208,7 @@ zh:
   Sign up: "Sign up"
   on: "关于"
   by: "由"
+  Terms of Service: "服务条款"
+  Privacy: "隐私"
+  About Us: "关于我们"
+  Feedback: "反馈"

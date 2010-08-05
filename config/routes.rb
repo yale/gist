@@ -27,6 +27,13 @@ ActionController::Routing::Routes.draw do |map|
     definition.resources :comments
   end 
 
+  map.with_options :controller => 'info' do |info|
+  	info.about 'about', :action => 'about'
+  	info.feedback 'feedback', :action => 'feedback'
+  	info.privacy 'privacy', :action => 'privacy'
+  	info.terms 'terms', :action => 'terms'
+  end
+  
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:

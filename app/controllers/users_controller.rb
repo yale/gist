@@ -40,6 +40,19 @@ class UsersController < ApplicationController
     @user = current_user
   end
   
+  def destroy
+    @user = User.find_by_url(params[:id])
+    if @user.nil?
+      @user = User.find(params[:id])
+    end
+    @user.destroy
+
+    respond_to do |wants|
+      wants.html { redirect_to(users_path) }
+      wants.xml  { head :ok }
+    end
+  end
+  
   def update
     @user = current_user
     if @user.update_attributes(params[:user])

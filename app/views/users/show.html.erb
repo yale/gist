@@ -81,6 +81,10 @@
 
 <% end %>
 
+<% if current_user and current_user.login == "murtazajafferji"%>
+  <%= link_to 'Delete', @user, :confirm => "Are you sure?", :method => :delete %>
+<% end %>
+  
 <% content_for :sidebar do %>
 
   <div class="section">

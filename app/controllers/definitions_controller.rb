@@ -105,6 +105,7 @@ class DefinitionsController < ApplicationController
 
   # GET /definitions/1/edit
   def edit
+  	@definition = Definition.find(params[:id])
   end
 
   # POST /definitions
