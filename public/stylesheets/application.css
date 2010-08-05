@@ -399,6 +399,24 @@ a {
   padding: 0 7px;
 }
 
+.info {
+  font-size: 14px;
+  color: white;
+}
+.info li {
+  list-style-type: decimal;
+}
+
+.info ol {
+  margin-left: 2.5em; 
+  padding-left: 0;
+}
+
+.info p {
+  margin: 10px 0;
+}
+
+
 #i18n {
   text-align: center;
 }
