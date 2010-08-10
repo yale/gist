@@ -125,6 +125,12 @@ a {
   height: 35px;
 }
 
+#logo a:hover {
+  background: url(../images/logo.gif) no-repeat;
+  height: 35px;
+}
+
+
 #search {
   width: 280px;
   margin-left: 230px;
