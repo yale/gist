@@ -126,9 +126,10 @@ a {
 }
 
 #logo a:hover {
-  background: url(../images/logo.gif) no-repeat;
+  /*background: url(../images/logo.gif) no-repeat;*/
+  background: url(../images/animated-logo.png) no-repeat;
   height: 45px;
-}
+}s
 
 
 #search {
