@@ -119,15 +119,17 @@ a {
   display: block;
   overflow: hidden;
   text-indent: -9999em;
-  background: url(../images/logo.png);
+  background: url(../images/logo.png) no-repeat;
   width: 190px;
   height: 35px;
+  padding-bottom: 5px;
 }
 
 #logo a:hover {
   /*background: url(../images/logo.gif) no-repeat;*/
   background: url(../images/animated-logo.png) no-repeat;
-  height: 45px;
+  height: 40px;
+  padding-bottom: 0px;
 }
 
 #search {
@@ -139,7 +141,7 @@ a {
 
 #search input {
   display: block;
-  padding: 8px 40px 8px 8px;
+  padding: 0px 40px 8px 8px;
   margin: 10px auto;
   width: 210px;
   background: #fff url(../images/search.gif) 220px 5px no-repeat;
@@ -175,6 +177,7 @@ a {
 }
 
 #sidebar li a:hover {
+  background-color: #176092;
 }
 
 #sidebar .section {
