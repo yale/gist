@@ -124,6 +124,12 @@ a {
   height: 35px;
 }
 
+#logo a:hover {
+  /*background: url(../images/logo.gif) no-repeat;*/
+  background: url(../images/animated-logo.png) no-repeat;
+  height: 45px;
+}
+
 #search {
   display: block;
   margin: 20px auto;
