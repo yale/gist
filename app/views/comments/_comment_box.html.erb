@@ -1,5 +1,9 @@
 <p><a href="##" class="comment-box-toggle"><%= pluralize(comments.size, "comment") %></a></p>
 <div class="comment-box">
+  <% if current_user and current_user.facebook_user? %>
+  <fb:comments xid="142208365795137" numposts="5" width="500"></fb:comments>
+  <% else %>
   <%= render :partial => 'comments/comments', :locals => {:comments => comments} %>
   <%= render :partial => 'comments/form', :locals => {:definition => definition} %>
+  <% end %>
 </div>
