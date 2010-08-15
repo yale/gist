@@ -1,7 +1,5 @@
 <div class="definition-comment-form">
-  <% if current_user and current_user.facebook_user? %>
-    <fb:comments xid="142208365795137" numposts="5" width="500"></fb:comments>
-  <% elsif current_user %>
+  <% if current_user %>
     <% form_tag add_comment_definition_path(definition), :class => 'comment-form' do %>
       <%= text_field 'comment', 'comment' %></br>
 
