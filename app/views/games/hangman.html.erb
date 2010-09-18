@@ -58,6 +58,14 @@ state6 = new Array([",      +----+    \n",
 				    "      |   / \\   \n",
 				    "      |  Owned   \n",
 				    "     ============"])
+				
+winner = new Array([",      +----+    \n",
+				    "      |  winner  \n",
+				    "      |          \n",
+				    "      |          \n",
+				    "      |  \\ O /  \n",
+				    "      |    |     \n",
+				    "     =====/=\\===="])
 gallows = new Array(state0, state1, state2, state3, state4, state5, state6)
 function startAgain() {
  guesses = 0
@@ -77,7 +85,9 @@ function usedLettersBox() {
  alert("This is the used letters box!")
 }
 function displayHangman() {
- document.game.status.value=gallows[guesses]
+ if (guesses <= max){
+  document.game.status.value=gallows[guesses]
+ }
 }
 function displayToGuess() {
  pattern=""
@@ -109,13 +119,17 @@ function guess(s){
   displayHangman()
   displayToGuess()
   //displayGuessed()
+  //TODO DISPLAY RANDOM DEFINITION INSTEAD OF FIRSH
   if(guesses >= max){
-   alert("You're dead. The word you missed was " + toGuess.toUpperCase() + ".")
-   startAgain()
+   pattern=""
+   for(i=0;i<toGuess.length;++i) {
+    pattern += (toGuess.charAt(i).toUpperCase()+" ")
+   }
+   document.game.toGuess.value=pattern
   }
   if(winner()) {
-   alert("You won!")
-   startAgain()
+   document.game.status.value=winner
+   guesses == max
   }
  }
 }
@@ -128,34 +142,34 @@ function guess(s){
 <div class="gallows"><textarea name="status" rows="6" cols="21" onfocus="stayAway()"></textarea><div>
 </pre><P>
 <div class="mystery-word"><input type="text" name="toGuess" onfocus="stayAway()"><br></div>
-<input type="button" id = 'q' value=" Q " onclick="guess('q'); style.visibility = 'hidden';">
-<input type="button" id = 'w' value=" W " onclick="guess('w'); style.visibility = 'hidden';">
-<input type="button" id = 'e' value=" E " onclick="guess('e'); style.visibility = 'hidden';">
-<input type="button" id = 'r' value=" R " onclick="guess('r'); style.visibility = 'hidden';">
-<input type="button" id = 't' value=" T " onclick="guess('t'); style.visibility = 'hidden';">
-<input type="button" id = 'y' value=" Y " onclick="guess('y'); style.visibility = 'hidden';">
-<input type="button" id = 'u' value=" U " onclick="guess('u'); style.visibility = 'hidden';">
-<input type="button" id = 'i' value=" I " onclick="guess('i'); style.visibility = 'hidden';">
-<input type="button" id = 'o' value=" O " onclick="guess('o'); style.visibility = 'hidden';">
-<input type="button" id = 'p' value=" P " onclick="guess('p'); style.visibility = 'hidden';"><br>
+<input type="button" id = 'q' value=" Q " onclick="style.visibility = 'hidden'; guess('q');">
+<input type="button" id = 'w' value=" W " onclick="style.visibility = 'hidden'; guess('w');">
+<input type="button" id = 'e' value=" E " onclick="style.visibility = 'hidden'; guess('e');">
+<input type="button" id = 'r' value=" R " onclick="style.visibility = 'hidden'; guess('r');">
+<input type="button" id = 't' value=" T " onclick="style.visibility = 'hidden'; guess('t');">
+<input type="button" id = 'y' value=" Y " onclick="style.visibility = 'hidden'; guess('y');">
+<input type="button" id = 'u' value=" U " onclick="style.visibility = 'hidden'; guess('u');">
+<input type="button" id = 'i' value=" I " onclick="style.visibility = 'hidden'; guess('i');">
+<input type="button" id = 'o' value=" O " onclick="style.visibility = 'hidden'; guess('o');">
+<input type="button" id = 'p' value=" P " onclick="style.visibility = 'hidden'; guess('p');"><br>
 &nbsp;&nbsp;
-<input type="button" id = 'a' value=" A " onclick="guess('a'); style.visibility = 'hidden';">
-<input type="button" id = 's' value=" S " onclick="guess('s'); style.visibility = 'hidden';">
-<input type="button" id = 'd' value=" D " onclick="guess('d'); style.visibility = 'hidden';">
-<input type="button" id = 'f' value=" F " onclick="guess('f'); style.visibility = 'hidden';">
-<input type="button" id = 'g' value=" G " onclick="guess('g'); style.visibility = 'hidden';">
-<input type="button" id = 'h' value=" H " onclick="guess('h'); style.visibility = 'hidden';">
-<input type="button" id = 'j' value=" J " onclick="guess('j'); style.visibility = 'hidden';">
-<input type="button" id = 'k' value=" K " onclick="guess('k'); style.visibility = 'hidden';">
-<input type="button" id = 'l' value=" L " onclick="guess('l'); style.visibility = 'hidden';"><br>
+<input type="button" id = 'a' value=" A " onclick="style.visibility = 'hidden'; guess('a');">
+<input type="button" id = 's' value=" S " onclick="style.visibility = 'hidden'; guess('s');">
+<input type="button" id = 'd' value=" D " onclick="style.visibility = 'hidden'; guess('d');">
+<input type="button" id = 'f' value=" F " onclick="style.visibility = 'hidden'; guess('f');">
+<input type="button" id = 'g' value=" G " onclick="style.visibility = 'hidden'; guess('g');">
+<input type="button" id = 'h' value=" H " onclick="style.visibility = 'hidden'; guess('h');">
+<input type="button" id = 'j' value=" J " onclick="style.visibility = 'hidden'; guess('j');">
+<input type="button" id = 'k' value=" K " onclick="style.visibility = 'hidden'; guess('k');">
+<input type="button" id = 'l' value=" L " onclick="style.visibility = 'hidden'; guess('l');"><br>
 &nbsp;&nbsp;&nbsp&nbsp;&nbsp;
-<input type="button" id = 'z' value=" Z " onclick="guess('z'); style.visibility = 'hidden';">
-<input type="button" id = 'x' value=" X " onclick="guess('x'); style.visibility = 'hidden';">
-<input type="button" id = 'c' value=" C " onclick="guess('c'); style.visibility = 'hidden';">
-<input type="button" id = 'v' value=" V " onclick="guess('v'); style.visibility = 'hidden';">
-<input type="button" id = 'b' value=" B " onclick="guess('b'); style.visibility = 'hidden';">
-<input type="button" id = 'n' value=" N " onclick="guess('n'); style.visibility = 'hidden';">
-<input type="button" id = 'm' value=" M " onclick="guess('m'); style.visibility = 'hidden';"><br>
+<input type="button" id = 'z' value=" Z " onclick="style.visibility = 'hidden'; guess('z');">
+<input type="button" id = 'x' value=" X " onclick="style.visibility = 'hidden'; guess('x');">
+<input type="button" id = 'c' value=" C " onclick="style.visibility = 'hidden'; guess('c');">
+<input type="button" id = 'v' value=" V " onclick="style.visibility = 'hidden'; guess('v');">
+<input type="button" id = 'b' value=" B " onclick="style.visibility = 'hidden'; guess('b');">
+<input type="button" id = 'n' value=" N " onclick="style.visibility = 'hidden'; guess('n');">
+<input type="button" id = 'm' value=" M " onclick="style.visibility = 'hidden'; guess('m');"><br>
 <!--<div class="used-letters"><input type="text" name="guessed" onfocus="usedLettersBox()"><br></div>-->
 <input type="text" onkeyup="if (this.value!='') { document.getElementById(this.value.toLowerCase()).style.visibility = 'hidden'; guess(this.value);}" onkeypress="this.value='';" value="Click letters or type here" onclick="this.value='';" maxlength="1"><br>
 <%= button_to " Next word ", hangman_path, :method => :get %>
