@@ -104,7 +104,7 @@ function badGuess(s) {
 }
 function winner() {
  for(i=0;i<toGuess.length;++i) {
-  if(guessed.indexOf(toGuess.charAt(i)) == -1) return false
+  if(guessed.indexOf(toGuess.charAt(i)) == -1 || guesses >= max) return false
  }
  return true
 }
