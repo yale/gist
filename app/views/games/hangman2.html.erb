@@ -1,0 +1,134 @@
+<% title "Hangman" %>
+
+<html>
+<style>
+.hangman {
+	font-face: tahoma;
+	font-size: 15pt;
+	color: white;  
+	TEXT-DECORATION: underline;
+}
+.letters {
+	font-face: tahoma;
+	font-size: 10pt;
+	color: white;  
+}
+.subject {
+	font-face: tahoma;
+	font-size: 12pt;
+	color: gold;  
+}
+.spacer {
+	font-face: tahome;
+	font-size: 14pt;
+}
+</style>
+<body bgcolor="black">
+<script>
+var Phrases = ["The quick brown fox jumps over the lazy dog", "Chuck", "Mc donalds", "Oragel", "Javascript"]; //set the answers
+var Subjects = ["Names", "Names", "Places", "Medicine", "Scripting Language"]; //set the subjects
+var misses = 0; //start off with 0 misses
+window.onload = doload; //load everything
+
+function doload() {
+	reset(); //reset all default values
+	setLetters(); //set the letters back to normal
+	setPhrase(); //put the phrase and subject up on screen
+}
+
+function setPhrase() {
+	var ph = random(0, Phrases.length-1); //get a random phrase
+	var phrase = Phrases[ph];
+	document.getElementById("subject").innerHTML = "Subject: " + Subjects[ph];
+	var tbody = document.getElementById("hangman");
+	var tr = document.createElement("TR"); //create the phrase on screen in cells
+	for (i=0; i<phrase.length; i++) {
+		if (document.all) { //Make internet explorer hack (it doesn't like dom elements created and using getelementbyname)
+			var td = document.createElement("<TD name=\"phrase\" id=\"phrase\">"); //IE's hacked way of creating elements so you can grab them via .getElementsByTagName
+		} else {
+			var td = document.createElement("TD");
+			td.setAttribute("name", "phrase"); //set the element name
+			td.id="phrase"+random(0, 100000); //set the element id hopefully unique.
+		}
+		if (phrase.substring(i, i+1)==" ") { tdClass = "spacer"; } else { tdClass = "hangman"; } //set the classname to be used
+		td.className=tdClass; //actually give the element the class
+		td.setAttribute("letter", phrase.substring(i, i+1)); //custom attribute (some people don't like custom attributes) I use them all the time without any problems.
+		td.innerHTML =  "&nbsp;&nbsp;&nbsp;"; //Give it some spaces so the underline is decent sized
+		tr.appendChild(td); //append the cell to the row
+	}
+	tbody.appendChild(tr); //append the row to the table body
+}
+
+function random(min, max) {
+	//Just a function for making random numbers more easily.
+	random_num = Math.round((Math.random()*max)+min)
+	return random_num
+}
+
+function reset() {
+	misses = 0; //reset misses to 0
+	setImage(); //reset the hang man image
+	document.getElementById("used_letters").innerHTML = ""; //reset the used letters
+	document.getElementById("letters").innerHTML = document.getElementById("main").innerHTML; //reset the letters available
+	var tbody = document.getElementById("hangman");
+	while (tbody.childNodes[0]) { //remove last phrase
+		tbody.removeChild(tbody.childNodes[0]); //This removes all the children of tbody so its a clean slate again.
+	}
+}
+
+function setLetters() {
+	var val=""; //set a blank val
+	var letters = document.getElementById("letters").innerHTML; //get the available letters
+	letters = letters.split(" "); //split it up by space
+	for (i=0; i<letters.length; i++) {
+			val+="<span onclick=\"tryLetter('"+letters[i]+"');\" style=\"cursor: pointer;\">"+letters[i]+"</span>&nbsp;"; //this is just creating a span of each letter so you can click the letters instead of typing.
+	}
+	document.getElementById("avail_letters").innerHTML = val; //sets the inner html of the avail letters to the new.
+}
+
+function tryLetter(letter) {
+	var letters = document.getElementById("letters").innerHTML;
+	var phrase = document.getElementsByName("phrase");
+	var cLetters = "";
+	var correct = false;
+	letters = letters.split(" ");
+	for (i=0; i<letters.length; i++) {
+		if (letters[i].toLowerCase()!=letter.toLowerCase()) { cLetters+=letters[i]+" "; } //simple compairson of letters if the letter does not match then it adds it back to the letters avail area.
+	}
+	document.getElementById("letters").innerHTML = cLetters;
+	if (document.getElementById("used_letters").innerHTML.indexOf(letter)>=0) { alert("this letter was already used!"); return false; }
+	setLetters();
+	count = 0;
+	for (i=0; i<phrase.length; i++) {
+		if (phrase[i].getAttribute("letter").toLowerCase()==letter.toLowerCase()) { phrase[i].innerHTML = letter; correct = true; }
+		if (phrase[i].innerHTML!="&nbsp;&nbsp;&nbsp;" || phrase[i].className=="spacer") { count++; }
+	}
+	if (count==phrase.length) { alert("Yay you won!"); doload(); return false; } //check for win
+	if (!correct) { misses++; var fail = setImage(); }
+	if (fail) { return false; } //return false if it fails
+	var used = document.getElementById("used_letters").innerHTML + " " + letter
+	document.getElementById("used_letters").innerHTML = used;
+}
+
+function setImage() {
+	document.getElementById("game").innerHTML = "<img src=\"images/"+Math.floor(misses+1)+".gif\">";
+	if (misses==6) { alert("You Lost!!!!"); doload(); return false; } else { return true; }
+}
+
+</script>
+<table border="0" width="100%">
+	<tr><td width="500" id="game"><img src="images/1.gif"></td>
+	<td>
+	<table>
+		<tbody id="hangman">
+			<tr><td class="hangman">&nbsp;&nbsp;&nbsp;</td><td class="hangman">&nbsp;&nbsp;&nbsp;</td><td class="hangman">&nbsp;&nbsp;&nbsp;</td></tr>
+		</tbody>
+	</table>
+				<tr><td>&nbsp;</td><td class="subject" align="left" id="subject"></td></tr>
+	<tr><td class="letters">Used letters: <span id="used_letters"></span></td><td class="letters">Available letters: <span id="avail_letters"></span></td></tr>
+	<tr><td>&nbsp;<td><input type="text" onkeyup="if (this.value!='') { tryLetter(this.value); this.value=''; }" value="Type Letters Here" onclick="this.value='';" maxlength="1">
+</table>
+<div id="letters">A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</div>
+<div id="main">A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</div>
+</body>
+</html>

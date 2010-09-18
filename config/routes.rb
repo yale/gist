@@ -33,7 +33,11 @@ ActionController::Routing::Routes.draw do |map|
   	info.privacy 'privacy', :action => 'privacy'
   	info.terms 'terms', :action => 'terms'
   end
-  
+ 
+  map.with_options :controller => 'games' do |game|
+  	game.hangman 'hangman', :action => 'hangman'
+  end
+   
   # The priority is based upon order of creation: first created -> highest priority.
 
   # Sample of regular route:

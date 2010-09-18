@@ -106,6 +106,7 @@ en:
   Privacy: "Privacy"
   About Us: "About Us"
   Feedback: "Feedback"
+  Hangman: "Hangman"
   
 zh:
   Home: "家"
@@ -212,3 +213,4 @@ zh:
   Privacy: "隐私"
   About Us: "关于我们"
   Feedback: "反馈"
+  Hangman: "刽子手"
