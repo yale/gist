@@ -56,7 +56,7 @@ function startAgain() {
  guesses = 0
  max = gallows.length-1
  guessed = " "
- toGuess = <% @word %>
+ toGuess = <%= '"' + @word.name + '"' %>
  displayHangman()
  displayToGuess()
  displayGuessed()
