@@ -4,9 +4,16 @@
 <head>
 <script language="JavaScript"><!--
 
-state1 = new Array([",      +----+    \n",
+state0 = new Array([",      +----+    \n",
 				    "      |    |     \n",
 				    "      |          \n",
+				    "      |          \n",
+				    "      |          \n",
+				    "      |          \n",
+				    "     ============"])
+state1 = new Array([",      +----+    \n",
+				    "      |    |     \n",
+				    "      |    O     \n",
 				    "      |          \n",
 				    "      |          \n",
 				    "      |          \n",
@@ -51,7 +58,7 @@ state6 = new Array([",      +----+    \n",
 				    "      |   / \\   \n",
 				    "      |  Owned   \n",
 				    "     ============"])
-gallows = new Array(state1, state2, state3, state4, state5, state6)
+gallows = new Array(state0, state1, state2, state3, state4, state5, state6)
 function startAgain() {
  guesses = 0
  max = gallows.length-1
@@ -92,18 +99,20 @@ function winner() {
 }
 function guess(s){
  s = s.toLowerCase()
- if(guessed.indexOf(s) == -1) guessed = s + guessed
- if(badGuess(s)) ++guesses
- displayHangman()
- displayToGuess()
- displayGuessed()
- if(guesses >= max){
- alert("You're dead. The word you missed was "+toGuess+".")
-  startAgain()
- }
- if(winner()) {
-  alert("You won!")
-  startAgain()
+ if(guessed.indexOf(s) == -1){
+  guessed = s + " " + guessed
+  if(badGuess(s)) ++guesses
+  displayHangman()
+  displayToGuess()
+  displayGuessed()
+  if(guesses >= max){
+   alert("You're dead. The word you missed was " + toGuess.toUpperCase() + ".")
+   startAgain()
+  }
+  if(winner()) {
+   alert("You won!")
+   startAgain()
+  }
  }
 }
 // --></SCRIPT>
@@ -120,32 +129,34 @@ function guess(s){
 <input type="text" name="guessed"
  onfocus="stayAway()"> Guessed letters<br>
 <p>Enter your next guess.</p>
-<input type="button" value=" A " onclick="guess('a')">
-<input type="button" value=" B " onclick="guess('b')">
-<input type="button" value=" C " onclick="guess('c')">
-<input type="button" value=" D " onclick="guess('d')">
+<input type="button" value=" Q " onclick="guess('q')">
+<input type="button" value=" W " onclick="guess('w')">
 <input type="button" value=" E " onclick="guess('e')">
+<input type="button" value=" R " onclick="guess('r')">
+<input type="button" value=" T " onclick="guess('t')">
+<input type="button" value=" Y " onclick="guess('y')">
+<input type="button" value=" U " onclick="guess('u')">
+<input type="button" value=" I " onclick="guess('i')">
+<input type="button" value=" O " onclick="guess('o')">
+<input type="button" value=" P " onclick="guess('p')"><p>
+&nbsp;&nbsp;
+<input type="button" value=" A " onclick="guess('a')">
+<input type="button" value=" S " onclick="guess('s')">
+<input type="button" value=" D " onclick="guess('d')">
 <input type="button" value=" F " onclick="guess('f')">
 <input type="button" value=" G " onclick="guess('g')">
 <input type="button" value=" H " onclick="guess('h')">
-<input type="button" value=" I " onclick="guess('i')">
 <input type="button" value=" J " onclick="guess('j')">
 <input type="button" value=" K " onclick="guess('k')">
-<input type="button" value=" L " onclick="guess('l')">
-<input type="button" value=" M " onclick="guess('m')"><p>
-<input type="button" value=" N " onclick="guess('n')">
-<input type="button" value=" O " onclick="guess('o')">
-<input type="button" value=" P " onclick="guess('p')">
-<input type="button" value=" Q " onclick="guess('q')">
-<input type="button" value=" R " onclick="guess('r')">
-<input type="button" value=" S " onclick="guess('s')">
-<input type="button" value=" T " onclick="guess('t')">
-<input type="button" value=" U " onclick="guess('u')">
-<input type="button" value=" V " onclick="guess('v')">
-<input type="button" value=" W " onclick="guess('w')">
+<input type="button" value=" L " onclick="guess('l')"><p>
+&nbsp;&nbsp;&nbsp&nbsp;&nbsp;
+<input type="button" value=" Z " onclick="guess('z')">
 <input type="button" value=" X " onclick="guess('x')">
-<input type="button" value=" Y " onclick="guess('y')">
-<input type="button" value=" Z " onclick="guess('z')"><p>
+<input type="button" value=" C " onclick="guess('c')">
+<input type="button" value=" V " onclick="guess('v')">
+<input type="button" value=" B " onclick="guess('b')">
+<input type="button" value=" N " onclick="guess('n')">
+<input type="button" value=" M " onclick="guess('m')"><p>
 <input type="text" onkeyup="if (this.value!='') { guess(this.value); this.value=''; }" value="Click buttons or type here" onclick="this.value='';" maxlength="1"><p>
 <input type="button" name="restart" value=" Start Again " onclick="startAgain()"><p>
 <script language="JavaScript"><!--
