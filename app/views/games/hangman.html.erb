@@ -59,11 +59,11 @@ state6 = new Array([",      +----+    \n",
 				    "      |  Owned   \n",
 				    "     ============"])
 				
-winner = new Array([",      +----+    \n",
-				    "      |  winner  \n",
+state7 = new Array([",      +----+    \n",
 				    "      |          \n",
+				    "      |  Winner  \n",
 				    "      |          \n",
-				    "      |  \\ O /  \n",
+				    "      |  \\_O_/  \n",
 				    "      |    |     \n",
 				    "     =====/=\\===="])
 gallows = new Array(state0, state1, state2, state3, state4, state5, state6)
@@ -114,7 +114,7 @@ function winner() {
 function guess(s){
  s = s.toLowerCase()
  if(guessed.indexOf(s) == -1){
-  guessed = s + " " + guessed
+  guessed = s + guessed
   if(badGuess(s)) ++guesses
   displayHangman()
   displayToGuess()
@@ -128,8 +128,8 @@ function guess(s){
    document.game.toGuess.value=pattern
   }
   if(winner()) {
-   document.game.status.value=winner
-   guesses == max
+   document.game.status.value=state7
+   guesses = max
   }
  }
 }
