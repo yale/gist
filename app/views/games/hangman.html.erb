@@ -4,61 +4,59 @@
 <head>
 <script language="JavaScript"><!--
 
-state1 = new Array([",   +----+     ",
-				    "   |    |     ",
-				    "   |          ",
-				    "   |          ",
-				    "   |          ",
-				    "   |          ",
-				    "  ============"])
+state1 = new Array([",      +----+    \n",
+				    "      |    |     \n",
+				    "      |          \n",
+				    "      |          \n",
+				    "      |          \n",
+				    "      |          \n",
+				    "     ============"])
 
-state2 = new Array([",   +----+     ",
-				    "   |    |     ",
-				    "   |    O     ",
-				    "   |    |     ",
-				    "   |          ",
-				    "   |          ",
-				    "  ============"])
+state2 = new Array([",      +----+    \n",
+				    "      |    |     \n",
+				    "      |    O     \n",
+				    "      |    |     \n",
+				    "      |          \n",
+				    "      |          \n",
+				    "     ============"])
 
-state3 = new Array([",   +----+     ",
-				    "   |    |     ",
-				    "   |    O     ",
-				    "   |   /|     ",
-				    "   |          ",
-				    "   |          ",
-				    "  ============"])
+state3 = new Array([",      +----+    \n",
+				    "      |    |     \n",
+				    "      |    O     \n",
+				    "      |   /|     \n",
+				    "      |          \n",
+				    "      |          \n",
+				    "     ============"])
 
-state4 = new Array([",   +----+     ",
-				    "   |    |     ",
-				    "   |    O     ",
-				    "   |   /|\\   ",
-				    "   |          ",
-				    "   |          ",
-				    "  ============"])
+state4 = new Array([",      +----+    \n",
+				    "      |    |     \n",
+				    "      |    O     \n",
+				    "      |   /|\\   \n",
+				    "      |          \n",
+				    "      |          \n",
+				    "     ============"])
 
-state5 = new Array([",   +----+     ",
-				    "   |    |     ",
-				    "   |    O     ",
-				    "   |   /|\\   ",
-				    "   |     \\   ",
-				    "   |          ",
-				    "  ============"])
+state5 = new Array([",      +----+    \n",
+				    "      |    |     \n",
+				    "      |    O     \n",
+				    "      |   /|\\   \n",
+				    "      |     \\   \n",
+				    "      |          \n",
+				    "     ============"])
 		
-state6 = new Array([",   +----+     ",
-				    "   |    |     ",
-				    "   |    O     ",
-				    "   |   /|\\   ",
-				    "   |   / \\   ",
-				    "   |  Owned   ",
-				    "  ============"])
+state6 = new Array([",      +----+    \n",
+				    "      |    |     \n",
+				    "      |    O     \n",
+				    "      |   /|\\   \n",
+				    "      |   / \\   \n",
+				    "      |  Owned   \n",
+				    "     ============"])
 gallows = new Array(state1, state2, state3, state4, state5, state6)
-guessChoices = <%= get_string_array_of_words_for_js %>
 function startAgain() {
  guesses = 0
  max = gallows.length-1
  guessed = " "
- len = guessChoices.length - 1
- toGuess = guessChoices[Math.round(len*Math.random())].toUpperCase()
+ toGuess = <% @word %>
  displayHangman()
  displayToGuess()
  displayGuessed()
@@ -113,13 +111,13 @@ function guess(s){
 <h2>Hangman</h2>
 <form name="game">
 <pre>
-<textarea name="status" rows="6" cols="16"
+<textarea name="status" rows="6" cols="21"
  onfocus="stayAway()"></textarea>
 </pre><P>
 <input type="text" name="toGuess"
- onfocus="stayAway()"> Mystery word<BR>
+ onfocus="stayAway()"> Mystery word<br>
 <input type="text" name="guessed"
- onfocus="stayAway()"> Guessed letters<BR>
+ onfocus="stayAway()"> Guessed letters<br>
 <p>Enter your next guess.</p>
 <input type="button" value=" A " onclick="guess('A')">
 <input type="button" value=" B " onclick="guess('B')">
@@ -147,12 +145,12 @@ function guess(s){
 <input type="button" value=" X " onclick="guess('X')">
 <input type="button" value=" Y " onclick="guess('Y')">
 <input type="button" value=" Z " onclick="guess('Z')"><p>
-<input type="text" onkeyup="if (this.value!='') { guess(this.value); this.value=''; }" value="Click buttons or type here" onclick="this.value='';" maxlength="1"><P>
-<input type="BUTTON" name="restart" value=" Start Again "
- onclick="startAgain()">
+<input type="text" onkeyup="if (this.value!='') { guess(this.value); this.value=''; }" value="Click buttons or type here" onclick="this.value='';" maxlength="1"><p>
+<input type="button" name="restart" value=" Start Again " onclick="startAgain()"><p>
 <script language="JavaScript"><!--
 startAgain()
 // --></SCRIPT>
 </form>
+<%= "definition - " + @word.definitions.first.body %>
 </body>
 </html>
