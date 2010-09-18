@@ -91,6 +91,7 @@ function winner() {
  return true
 }
 function guess(s){
+ s = s.toLowerCase()
  if(guessed.indexOf(s) == -1) guessed = s + guessed
  if(badGuess(s)) ++guesses
  displayHangman()
