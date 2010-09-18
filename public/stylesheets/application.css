@@ -423,6 +423,27 @@ a {
   margin: 10px 0;
 }
 
+#hangman {
+  display: block;
+  text-align: center;
+}
+
+#hangman h2{
+  font-size: 32px;
+}
+
+#hangman .used-letters input{
+  color: red;
+}
+
+#hangman .mystery-word input{
+  color: blue;
+}
+
+#hangman .gallows textarea{
+  color: #7F5A58;
+  font-style: bold;
+}
 
 #i18n {
   text-align: center;
