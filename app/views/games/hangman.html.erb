@@ -98,9 +98,6 @@ function displayToGuess() {
  }
  document.game.toGuess.value=pattern
 }
-//function displayGuessed() {
-// document.game.guessed.value=guessed
-//}
 function badGuess(s) {
  if(toGuess.indexOf(s) == -1) return true
  return false
@@ -118,8 +115,6 @@ function guess(s){
   if(badGuess(s)) ++guesses
   displayHangman()
   displayToGuess()
-  //displayGuessed()
-  //TODO DISPLAY RANDOM DEFINITION INSTEAD OF FIRSH
   if(guesses >= max){
    pattern=""
    for(i=0;i<toGuess.length;++i) {
@@ -178,7 +173,8 @@ function guess(s){
 startAgain()
 // --></SCRIPT>
 </form>
-<%= "definition - " + @word.definitions.first.body unless @word.definitions.first.nil?%>
+<% @definition = @word.definitions.random %>
+<%= "definition - " + @definition.body unless @definition.nil? %>
 </body>
 </html>
 <!--TODO: add points for correct guess and refresh page after win or loss-->

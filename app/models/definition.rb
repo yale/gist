@@ -20,6 +20,10 @@ class Definition < ActiveRecord::Base
 	 errors.add_to_base("You must write a definition") if body =~ /^Add your own definition for/
   end
   
+  def self.random
+    find :first, :offset => (count * rand).to_i
+  end
+  
   def get_vote user, mood
     vote = user_votes.find_by_user_id(user.id)
     if vote
