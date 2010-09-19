@@ -36,6 +36,7 @@ ActionController::Routing::Routes.draw do |map|
  
   map.with_options :controller => 'games' do |game|
   	game.hangman 'hangman', :action => 'hangman'
+  	game.tetris 'tetris', :action => 'tetris'
   end
    
   # The priority is based upon order of creation: first created -> highest priority.

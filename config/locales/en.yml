@@ -108,6 +108,7 @@ en:
   About Us: "About Us"
   Feedback: "Feedback"
   Hangman: "Hangman"
+  Tetris: "Tetris"
   
 zh:
   Home: "家"
@@ -148,6 +149,7 @@ zh:
   Offensive: "有攻击性"
   Random Word: "随机单词"
   Search for a word...: "搜索一个词..."
+  Search for a word: "搜索一个词..."
   Add your own definition...: "添加您自己的定义..."
   Profile: "剖面"
   Add your own definition for: "添加您自己的定义"
@@ -215,3 +217,4 @@ zh:
   About Us: "关于我们"
   Feedback: "反馈"
   Hangman: "刽子手"
+  Tetris: "俄罗斯方块"

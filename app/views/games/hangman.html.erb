@@ -74,15 +74,10 @@ function startAgain() {
  toGuess = <%= '"' + @word.name + '"' %>
  displayHangman()
  displayToGuess()
- //displayGuessed()
 }
 function stayAway() {
  document.game.elements[3].focus()
  alert("Stop touching me!")
-}
-function usedLettersBox() {
- document.game.elements[3].focus()
- alert("This is the used letters box!")
 }
 function displayHangman() {
  if (guesses <= max){
@@ -165,7 +160,6 @@ function guess(s){
 <input type="button" id = 'b' value=" B " onclick="style.visibility = 'hidden'; guess('b');">
 <input type="button" id = 'n' value=" N " onclick="style.visibility = 'hidden'; guess('n');">
 <input type="button" id = 'm' value=" M " onclick="style.visibility = 'hidden'; guess('m');"><br>
-<!--<div class="used-letters"><input type="text" name="guessed" onfocus="usedLettersBox()"><br></div>-->
 <input type="text" onkeyup="if (this.value!='') { document.getElementById(this.value.toLowerCase()).style.visibility = 'hidden'; guess(this.value);}" onkeypress="this.value='';" value="Click letters or type here" onclick="this.value='';" maxlength="1"><br>
 <%= button_to " Next word ", hangman_path, :method => :get %>
 <!--<input type="button" name="restart" value=" Start Over " onclick="startAgain()">-->

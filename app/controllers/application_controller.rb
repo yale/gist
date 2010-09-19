@@ -82,9 +82,10 @@ private
     session[:return_to] = nil
   end
   
-  def default_url_options(options={})  
-  	logger.debug "default_url_options is passed options: #{options.inspect}\n"  
-  	{ :locale => I18n.locale } 
-  end 
+  # uncomment this for persistent locale
+  #def default_url_options(options={})  
+  #	logger.debug "default_url_options is passed options: #{options.inspect}\n"  
+  #	{ :locale => I18n.locale } 
+  #end 
   
 end

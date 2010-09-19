@@ -422,10 +422,6 @@ a {
   font-size: 32px;
 }
 
-#hangman .used-letters input{
-  color: red;
-}
-
 #hangman .mystery-word input{
   color: blue;
 }
