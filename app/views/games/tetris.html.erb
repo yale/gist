@@ -847,7 +847,7 @@
 				this.type = this.nextType;
 				this.nextType = random(this.puzzles.length);
 				this.position = 0;
-				this.speed = 80 + (700 / this.tetris.stats.getLevel());
+				this.speed = 40 + (700 / this.tetris.stats.getLevel());
 				this.running = false;
 				this.stopped = false;
 				this.board = [];
@@ -947,7 +947,7 @@
 			{
 				// stats
 				this.tetris.stats.setPuzzles(this.tetris.stats.getPuzzles() + 1);
-				if (this.tetris.stats.getPuzzles() >= (10 + this.tetris.stats.getLevel() * 2)) {
+				if (this.tetris.stats.getPuzzles() >= (10 + this.tetris.stats.getLevel() * 20)) {
 					this.tetris.stats.setLevel(this.tetris.stats.getLevel() + 1);
 					this.tetris.stats.setPuzzles(0);
 				}
