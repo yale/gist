@@ -19,6 +19,18 @@ class Word < ActiveRecord::Base
     find(:all, :offset => (count * rand).to_i, :limit => n)
   end
   
+  def self.another_random_collection n
+    words = self.all
+    collection = []
+    until collection.size == 100 do
+      word = self.random
+      if word.definitions.size > 0
+        collection << word
+      end
+    end
+    collection
+  end
+  
   def make_slug
     self.url = self.name.to_url
   end

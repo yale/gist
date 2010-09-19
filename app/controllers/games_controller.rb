@@ -4,17 +4,11 @@ class GamesController < ApplicationController
   end  
   
   def tetris
-    words = Word.random_collection 100
-    @words_array = words.collect {|word| '"' + word.name + '"'}
-    @words_array = "[" + @words_array.join(", ") + " ]"
+    words = Word.another_random_collection 100
+    @words_array = words.collect {|word| word.name }
     @definitions_array = words.collect {|word|
       definition = word.definitions.random
-      if definition
-        '"' + definition.body + '"'
-      else
-        ""
-      end
+      definition.body
     }
-    @definitions_array = "[" + @definitions_array.join(", ") + "]"
   end
 end

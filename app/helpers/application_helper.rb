@@ -9,19 +9,19 @@ module ApplicationHelper
   def get_string_array_of_words_for_js
   	words = Word.all
   	words.map! do |w|
-  		"\"#{w.name}\""
+  		w.name
   	end
-  	return "[" + words.join(", ") + "]"
+  	return words.to_json
   end
   
   def get_string_array_of_users_for_js
   	users = User.all
-  	names = users.map {|u| "\"#{u.name}\""}
-  	logins = users.collect {|u| "\"#{u.login}\""}
+  	names = users.map {|u| u.name}
+  	logins = users.collect {|u| u.login}
   	users = names + logins
   	users.compact!
   	users.uniq!
-  	return "[" + users.join(", ") + "]"
+  	return users.to_json
   end
   
   def sort_url key, val

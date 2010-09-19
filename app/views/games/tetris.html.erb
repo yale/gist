@@ -1,3 +1,5 @@
+<% title "Tetris" %>
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -5,7 +7,7 @@
 	<title>JsTetris	- javascript tetris - open source</title>
 	<meta http-equiv="Content-Type"	content="text/html;	charset=utf-8">
 	<link href="/games/tetris/tetris.css"	rel="stylesheet" type="text/css">
-	<link href="/games/tetris/tetris.ico" rel="shortcut icon">
+	<!--><link href="/games/tetris/tetris.ico" rel="shortcut icon">-->
 	<script	type="text/javascript">
 	/**
 	 * Tetris Game
@@ -132,6 +134,7 @@
 
 		this.highscores = new Highscores(10);
 		this.paused = false;
+		document.textarea.definitions.value="Learn while you play!";
 
 		/**
 		 * @return void
@@ -142,7 +145,6 @@
 			if (self.puzzle && !confirm('Are you sure you want to start a new game ?')) return;
 			self.reset();
 			self.stats.start();
-			document.textarea.definitions.value="Learn while you play!"
 			document.getElementById("tetris-nextpuzzle").style.display = "block";
 			document.getElementById("tetris-keys").style.display = "none";
 			self.area = new Area(self.unit, self.areaX, self.areaY, "tetris-area");
@@ -682,20 +684,20 @@
 			 * @return bool
 			 * @access public
 			 */
-			i = 0
-			words = <%= @words_array %>
-			definitions = <%= @definitions_array %>
-			previous = ""
-			current = ""
+			i = 0;
+			var words = <%= @words_array.to_json %>;
+			var definitions = <%= @definitions_array.to_json %>;
+			previous = "";
+			current = "";
 			this.isLineFull = function(y)
 			{
 				for (var x = 0; x < this.x; x++) {
 					if (!this.board[y][x]) { return false; }
 				}
-				previous = current
-				current = (i + 1).toString() + ". " + words[i] + " - " + definitions[i] + "\n\n" + previous
-				document.textarea.definitions.value=current
-				i++
+				previous = current;
+				current = (i + 1).toString() + ". " + words[i] + " - " + definitions[i] + "\n\n" + previous;
+				document.textarea.definitions.value=current;
+				i++;
 				return true;
 			};
 
@@ -1521,8 +1523,8 @@
 	});
 	
 	function stayAway() {
-	 alert("No touchy touchy!")
-	}
+	 alert("No touchy touchy!");
+	};
 	
 	</script>
 	<style type="text/css">
