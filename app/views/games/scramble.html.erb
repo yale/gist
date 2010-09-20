@@ -1,6 +1,6 @@
 <div id="scramble">
 <html>
-<body onLoad="document.scramble.user.value = 'New Game';GameStatus = 1;" text="#000000" bgcolor="#ffffff">
+<body onLoad="document.scramble.user.value = 'New Game'; document.scramble.list.value='Word List:\n'; GameStatus = 1;" text="#000000" bgcolor="#ffffff">
 <SCRIPT LANGUAGE="JavaScript">
 <% title "Scramble" %>
 
@@ -37,10 +37,10 @@ document.images[WhichTile].src = "/games/scramble/" + WhichLetter + "0.gif";
 TilesOn = "";
 }
 function endgame() {
+	GameTime = -1
 GameStatus = 1;
 clearword(1);
 document.scramble.user.value = "New Game";
-parent.wordframe.document.write("<FORM ACTION=http://www.pixelsharp.com/projects/joggle/score.asp METHOD=POST><INPUT TYPE=Hidden NAME=words VALUE=" + Words + "><INPUT TYPE=Submit VALUE=Score></FORM><BR>");
 }
 function buttonpress() {
 var ActingStatus = GameStatus;
@@ -51,6 +51,7 @@ TileMap = "";
 GameTime = 75;
 TempCubes = Cubes;
 Position = 0;
+document.scramble.list.value="Word List:\n";
 while (TileMap.length != 25) {
 Position = Math.floor(Math.random() * (TempCubes.length - 1));
 TileMap = TileMap + TempCubes.charAt(Position);
@@ -60,7 +61,6 @@ TempCubes = TempCubes.substring(0, Position * 6) + TempCubes.substring(6 + Posit
 for (i=0; i<25; i++) {
 document.images[i].src ="/games/scramble/" + TileMap.charAt(i) + "0.gif";
 }
-parent.wordframe.document.location = "scramble-empty.html";
 GameTime = 181;
 setTimeout("countdown()", 1);
 
@@ -130,8 +130,8 @@ NewStatus = 3;
 if (GameStatus == 3) {
 if (CurrentWord.length > 3) {
 if (Words.indexOf(":" + CurrentWord + ":") == -1) {
-if (Words == ":") { parent.wordframe.document.write("<CENTER><B>Word List</B></CENTER><BR>"); }
-parent.wordframe.document.write(CurrentWord + "<BR>");
+if (Words == ":") { document.scramble.list.value="Word List:\n"}
+document.scramble.list.value=document.scramble.list.value + CurrentWord + "\n";
 Words = Words + CurrentWord + ":";
    }
 }
@@ -148,16 +148,30 @@ endgame();
 // End -->
 </SCRIPT>
 <CENTER>
-<h4>Scramble</h4>
-<FORM NAME=scramble>
-<TABLE BORDER=0 CELLPADDING=8 CELLSPACING=0 BGCOLOR="#C8CEC4">
-<TR><TD><A HREF="Javascript:click(0,0)" onmouseover="slide(0,0)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD><TD><A HREF="Javascript:click(0,1)" onmouseover="slide(0,1)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD><TD><A HREF="Javascript:click(0,2)" onmouseover="slide(0,2)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD><TD><A HREF="Javascript:click(0,3)" onmouseover="slide(0,3)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD><TD><A HREF="Javascript:click(0,4)" onmouseover="slide(0,4)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD></TR>
-<TR><TD><A HREF="Javascript:click(1,0)" onmouseover="slide(1,0)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD><TD><A HREF="Javascript:click(1,1)" onmouseover="slide(1,1)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD><TD><A HREF="Javascript:click(1,2)" onmouseover="slide(1,2)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD><TD><A HREF="Javascript:click(1,3)" onmouseover="slide(1,3)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD><TD><A HREF="Javascript:click(1,4)" onmouseover="slide(1,4)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD></TR>
-<TR><TD><A HREF="Javascript:click(2,0)" onmouseover="slide(2,0)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD><TD><A HREF="Javascript:click(2,1)" onmouseover="slide(2,1)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD><TD><A HREF="Javascript:click(2,2)" onmouseover="slide(2,2)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD><TD><A HREF="Javascript:click(2,3)" onmouseover="slide(2,3)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD><TD><A HREF="Javascript:click(2,4)" onmouseover="slide(2,4)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD></TR>
-<TR><TD><A HREF="Javascript:click(3,0)" onmouseover="slide(3,0)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD><TD><A HREF="Javascript:click(3,1)" onmouseover="slide(3,1)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD><TD><A HREF="Javascript:click(3,2)" onmouseover="slide(3,2)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD><TD><A HREF="Javascript:click(3,3)" onmouseover="slide(3,3)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD><TD><A HREF="Javascript:click(3,4)" onmouseover="slide(3,4)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD></TR>
-<TR><TD><A HREF="Javascript:click(4,0)" onmouseover="slide(4,0)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD><TD><A HREF="Javascript:click(4,1)" onmouseover="slide(4,1)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD><TD><A HREF="Javascript:click(4,2)" onmouseover="slide(4,2)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD><TD><A HREF="Javascript:click(4,3)" onmouseover="slide(4,3)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD><TD><A HREF="Javascript:click(4,4)" onmouseover="slide(4,4)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD></TR>
-</TABLE>
+<h4><a onclick="endgame()">Scramble</a></h4>
+<div class="center">
+<table style="width: 100%; height: 100%;" cellspacing="0" cellpadding="0">
+	<tr><td style="width: 65%; height: 65%; vertical-align: top;">
+	<div class="grid">
+	<FORM NAME="scramble">
+	<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BGCOLOR="#C8CEC4">
+	<TR><TD><A HREF="Javascript:click(0,0)" onmouseover="slide(0,0)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD><TD><A HREF="Javascript:click(0,1)" onmouseover="slide(0,1)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD><TD><A HREF="Javascript:click(0,2)" onmouseover="slide(0,2)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD><TD><A HREF="Javascript:click(0,3)" onmouseover="slide(0,3)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD><TD><A HREF="Javascript:click(0,4)" onmouseover="slide(0,4)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD></TR>
+	<TR><TD><A HREF="Javascript:click(1,0)" onmouseover="slide(1,0)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD><TD><A HREF="Javascript:click(1,1)" onmouseover="slide(1,1)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD><TD><A HREF="Javascript:click(1,2)" onmouseover="slide(1,2)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD><TD><A HREF="Javascript:click(1,3)" onmouseover="slide(1,3)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD><TD><A HREF="Javascript:click(1,4)" onmouseover="slide(1,4)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD></TR>
+	<TR><TD><A HREF="Javascript:click(2,0)" onmouseover="slide(2,0)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD><TD><A HREF="Javascript:click(2,1)" onmouseover="slide(2,1)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD><TD><A HREF="Javascript:click(2,2)" onmouseover="slide(2,2)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD><TD><A HREF="Javascript:click(2,3)" onmouseover="slide(2,3)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD><TD><A HREF="Javascript:click(2,4)" onmouseover="slide(2,4)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD></TR>
+	<TR><TD><A HREF="Javascript:click(3,0)" onmouseover="slide(3,0)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD><TD><A HREF="Javascript:click(3,1)" onmouseover="slide(3,1)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD><TD><A HREF="Javascript:click(3,2)" onmouseover="slide(3,2)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD><TD><A HREF="Javascript:click(3,3)" onmouseover="slide(3,3)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD><TD><A HREF="Javascript:click(3,4)" onmouseover="slide(3,4)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD></TR>
+	<TR><TD><A HREF="Javascript:click(4,0)" onmouseover="slide(4,0)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD><TD><A HREF="Javascript:click(4,1)" onmouseover="slide(4,1)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD><TD><A HREF="Javascript:click(4,2)" onmouseover="slide(4,2)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD><TD><A HREF="Javascript:click(4,3)" onmouseover="slide(4,3)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD><TD><A HREF="Javascript:click(4,4)" onmouseover="slide(4,4)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD></TR>
+	</TABLE>
+	</div>
+</td>
+
+<td>
+	<div class="list">
+	<textarea name="list" rows="18" cols="18" onfocus="stayAway()"></textarea>
+	</div>
+</td>
+</tr></table>
 <br><input type=button name="user" value=" Loading... " onclick="buttonpress()"><br>
+	</form>
 <img src=/games/scramble/a0.gif width=1 height=1>
 <img src=/games/scramble/b0.gif width=1 height=1>
 <img src=/games/scramble/c0.gif width=1 height=1>

@@ -457,6 +457,22 @@ a {
   border-width: 0;
   overflow: hidden;
 }
+#scramble .center{
+	display: inline;
+}
+#scramble .list{
+	float: right;
+}
+#scramble .grid{
+	float: right;
+}
+
+#scramble textarea{
+	color: white;
+	background: none;
+	border: none;
+	overflow: hidden;
+}
 
 #i18n {
   text-align: center;
