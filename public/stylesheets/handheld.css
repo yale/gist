@@ -419,17 +419,28 @@ a {
 }
 
 #hangman h2{
+  color: #fffeb3;
   font-size: 32px;
 }
 
 #hangman .mystery-word input{
-  color: blue;
+  color: white;
+  background: none;
+  border: none;
 }
 
 #hangman .gallows textarea{
-  color: #7F5A58;
+  color: #fffeb3;
   font-style: bold;
+  background: none;
+  border: none;
 }
+
+#scramble h2{
+  color: #fffeb3;
+  font-size: 32px;
+}
+
 
 #i18n {
   text-align: center;

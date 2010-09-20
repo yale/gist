@@ -5,68 +5,68 @@
 <head>
 <script language="JavaScript"><!--
 
-state0 = new Array([",      +----+    \n",
-				    "      |    |     \n",
-				    "      |          \n",
-				    "      |          \n",
-				    "      |          \n",
-				    "      |          \n",
-				    "     ============"])
-state1 = new Array([",      +----+    \n",
-				    "      |    |     \n",
-				    "      |    O     \n",
-				    "      |          \n",
-				    "      |          \n",
-				    "      |          \n",
-				    "     ============"])
+state0 ="      +----+     \n"+
+	    "      |    |     \n"+
+	    "      |          \n"+
+	    "      |          \n"+
+	    "      |          \n"+
+	    "      |          \n"+
+	    "     ==========="
+state1 ="      +----+     \n"+
+	    "      |    |     \n"+
+	    "      |    O     \n"+
+	    "      |          \n"+
+	    "      |          \n"+
+	    "      |          \n"+
+	    "     ==========="
 
-state2 = new Array([",      +----+    \n",
-				    "      |    |     \n",
-				    "      |    O     \n",
-				    "      |    |     \n",
-				    "      |          \n",
-				    "      |          \n",
-				    "     ============"])
+state2 ="      +----+     \n"+
+	    "      |    |     \n"+
+	    "      |    O     \n"+
+	    "      |    |     \n"+
+	    "      |          \n"+
+	    "      |          \n"+
+	    "     ==========="
 
-state3 = new Array([",      +----+    \n",
-				    "      |    |     \n",
-				    "      |    O     \n",
-				    "      |   /|     \n",
-				    "      |          \n",
-				    "      |          \n",
-				    "     ============"])
+state3 ="      +----+     \n"+
+	    "      |    |     \n"+
+	    "      |    O     \n"+
+	    "      |   /|     \n"+
+	    "      |          \n"+
+	    "      |          \n"+
+	    "     ==========="
 
-state4 = new Array([",      +----+    \n",
-				    "      |    |     \n",
-				    "      |    O     \n",
-				    "      |   /|\\   \n",
-				    "      |          \n",
-				    "      |          \n",
-				    "     ============"])
+state4 ="      +----+     \n"+
+	    "      |    |     \n"+
+	    "      |    O     \n"+
+	    "      |   /|\\   \n"+
+	    "      |          \n"+
+	    "      |          \n"+
+	    "     ==========="
 
-state5 = new Array([",      +----+    \n",
-				    "      |    |     \n",
-				    "      |    O     \n",
-				    "      |   /|\\   \n",
-				    "      |     \\   \n",
-				    "      |          \n",
-				    "     ============"])
+state5 ="      +----+     \n"+
+	    "      |    |     \n"+
+	    "      |    O     \n"+
+	    "      |   /|\\   \n"+
+	    "      |     \\   \n"+
+	    "      |          \n"+
+	    "     ==========="
 		
-state6 = new Array([",      +----+    \n",
-				    "      |    |     \n",
-				    "      |    O     \n",
-				    "      |   /|\\   \n",
-				    "      |   / \\   \n",
-				    "      |  Owned   \n",
-				    "     ============"])
+state6 ="      +----+     \n"+
+	    "      |    |     \n"+
+	    "      |    O     \n"+
+	    "      |   /|\\   \n"+
+	    "      |   / \\   \n"+
+	    "      |  Owned   \n"+
+	    "     ==========="
 				
-state7 = new Array([",      +----+    \n",
-				    "      |          \n",
-				    "      |  Winner  \n",
-				    "      |          \n",
-				    "      |  \\_O_/  \n",
-				    "      |    |     \n",
-				    "     =====/=\\===="])
+state7 ="      +----+     \n"+
+	    "      |          \n"+
+	    "      |  Winner  \n"+
+	    "      |          \n"+
+	    "      |  \\_O_/  \n"+
+	    "      |    |     \n"+
+	    "     =====/=\\==="
 gallows = new Array(state0, state1, state2, state3, state4, state5, state6)
 function startAgain() {
  guesses = 0
@@ -121,6 +121,7 @@ function guess(s){
   if(winner()) {
    document.game.status.value=state7
    guesses = max
+   <% current_user.add_points 10 unless current_user.nil?%>
   }
  }
 }
@@ -130,9 +131,9 @@ function guess(s){
 <h2>Hangman</h2>
 <form name="game">
 <pre>
-<div class="gallows"><textarea name="status" rows="7" cols="21" onfocus="stayAway()"></textarea><div>
-</pre><P>
-<div class="mystery-word"><input type="text" name="toGuess" onfocus="stayAway()"><br></div>
+<div class="gallows"><textarea name="status" rows="7" cols="22" onfocus="stayAway()"></textarea><div>
+</pre>
+<div class="mystery-word"><input type="text" name="toGuess" onfocus="stayAway()"><br></div><br>
 <input type="button" id = 'q' value=" Q " onclick="style.visibility = 'hidden'; guess('q');">
 <input type="button" id = 'w' value=" W " onclick="style.visibility = 'hidden'; guess('w');">
 <input type="button" id = 'e' value=" E " onclick="style.visibility = 'hidden'; guess('e');">
