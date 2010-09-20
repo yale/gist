@@ -427,13 +427,22 @@ a {
   color: white;
   background: none;
   border: none;
+font-size: 24px;
+text-align: center;
 }
 
 #hangman .gallows textarea{
-  color: #fffeb3;
+  color: white;
   font-style: bold;
   background: none;
   border: none;
+  font-size: 32px;
+float: center; 
+margin: 0; 
+padding: 0;
+border-width: 0;
+overflow: hidden;
+
 }
 
 #scramble h2{
