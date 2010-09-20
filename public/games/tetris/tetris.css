@@ -9,12 +9,14 @@ body, table, input {
 	font-family: tahoma;
 	color: #826C55;*/
 }
+
 #definitions textarea{
 	color: white;
 	background: none;
 	border: none;
 	overflow: hidden;
 }
+
 #tetris	{
 	font-size: 11px;
 	line-height: 1.2em;

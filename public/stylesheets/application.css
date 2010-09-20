@@ -41,6 +41,15 @@ h3 {
   margin: 20px 0 10px 0;
 }
 
+h4 {
+  color: #fffeb3;
+  font-size: 32px;
+  text-align: center;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight:normal;
+  margin-bottom:15px;
+}
+
 .word {
   font-family: Georgia, "Times New Roman", serif;
   font-style: italic;
@@ -428,17 +437,12 @@ a {
   text-align: center;
 }
 
-#hangman h2{
-  color: #fffeb3;
-  font-size: 32px;
-}
-
 #hangman .mystery-word input{
   color: white;
   background: none;
   border: none;
-font-size: 24px;
-text-align: center;
+  font-size: 24px;
+  text-align: center;
 }
 
 #hangman .gallows textarea{
@@ -447,19 +451,12 @@ text-align: center;
   background: none;
   border: none;
   font-size: 32px;
-float: center; 
-margin: 0; 
-padding: 0;
-border-width: 0;
-overflow: hidden;
-
+  float: center; 
+  margin: 0; 
+  padding: 0;
+  border-width: 0;
+  overflow: hidden;
 }
-
-#scramble h2{
-  color: #fffeb3;
-  font-size: 32px;
-}
-
 
 #i18n {
   text-align: center;
