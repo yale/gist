@@ -110,6 +110,7 @@ en:
   Feedback: "Feedback"
   Hangman: "Hangman"
   Tetris: "Tetris"
+  Scramble: "Scramble"
   
 zh:
   Home: "家"
@@ -220,3 +221,4 @@ zh:
   Feedback: "反馈"
   Hangman: "刽子手"
   Tetris: "俄罗斯方块"
+  Scramble: "争夺"
