@@ -1,48 +1,116 @@
-<div id="scramble">
-<html>
-<body onLoad="document.scramble.user.value = 'New Game'; document.scramble.list.value='Word List:\n'; GameStatus = 1;" text="#000000" bgcolor="#ffffff">
-<SCRIPT LANGUAGE="JavaScript">
-<% title "Scramble" %>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
 
-<!-- Begin
-var Words = "";
-var CurrentWord = "";
-var GameStatus = 0;
-var GameTime = 0;
-var LastTile = -10;
-var LastTileX = -10;
-var LastTileY = -10;
-var TilesOn = "";
-var TileMap = "";
-var LookUp = "abcdefghijklmnopqrstuvwxyz";
-var Cubes = "qbzjkxhhlrdotelpcittotemaeaeeetouotonhdthossnseusctiepyifpsrovwrgrlhnrodriyprheandnneeeemaaaafsrafaisrdordlnmnneagititieaumeegyifasrccwnstuotownetilic";
+<meta http-equiv="Pragma" content="no-cache">
+<style type="text/css"><!--
+.normallink a:link {  color: #1C469A; text-decoration: underline}
+.normallink a:visited {  color: #1C469A; text-decoration: underline}
+.normallink a:hover {  color: #1C469A; text-decoration: underline}
+.normallink a:active {  color: #EA485B; text-decoration: underline}
+.menulink a:link {  color: #FFFFFF; text-decoration: none}
+.menulink a:visited {  color: #FFFFFF; text-decoration: none}
+.menulink a:hover {  color: #FFFFFF; text-decoration: underline}
+.menulink a:active {  color: #EA485B; text-decoration: none}
+--></style>
+</head><body onLoad="document.scramble.button.value = 'New Game'; document.scramble.list.value=''; GameStatus = 1;" leftmargin="0" topmargin="0" alink="#ea485b" bgcolor="#ffffff" link="#1c469a" marginheight="0" marginwidth="0" text="#000000" vlink="#1c469a">
+<script language="JavaScript">
+
+var FixedMap = "dstdtarchdhptcatgyreofijg"
+var Words = ""
+var CurrentWord = ""
+var EncodedWord = ""
+var GameStatus = 0
+var GameTime = 0
+var CheatWords = 0
+var TimeStart = new Date()
+var CheckTime = 180
+var LastTile = -10
+var LastTileX = -10
+var LastTileY = -10
+var TilesOn = ""
+var TileMap = ""
+var NumWords = 0
+var imgoffset = 1
+var LookUp = "abcdefghijklmnopqrstuvwxyz"
+//var Cubes = "qbzjkxhhlrdotelpcittotemaeaeeetouotonhdthossnseusctiepyifpsrovwrgrlhnrodriyprheandnneeeemaaaafsrafaisrdordlnmnneagititieaumeegyifasrccwnstuotownetilic"
+
+function linkout() {
+  return true
+  //if (GameTime < 0) {return true}
+  //var ask = confirm("Leaving a game in progress is a score of 0.\r\nAre you sure you want to leave?")
+  //return ask
+}
+
+//clears the last entered word on the board
 function clearword(DoMap) {
-CurrentWord = "";
-LastTile = -10;
-LastTileX = -10;
-LastTileY = -10;
-if (DoMap) {
-for (i=0; i<TilesOn.length; i++) {
-WhichTile = LookUp.indexOf(TilesOn.charAt(i));
-if (WhichTile == -1) {
-WhichTile = i;
-WhichLetter = "0";
+  CurrentWord = ""
+  EncodedWord = ""
+  LastTile = -10
+  LastTileX = -10
+  LastTileY = -10
+  if (DoMap) {
+    for (i=0; i<TilesOn.length; i++) {
+      WhichTile = LookUp.indexOf(TilesOn.charAt(i))
+      if (WhichTile == -1) {
+        WhichTile = i
+        WhichLetter = "0"
+      }
+      else {
+        WhichLetter = TileMap.charAt(WhichTile)
+      }
+      document.images[WhichTile + imgoffset].src = "/games/scramble/" + WhichLetter + "0.gif"
+    }
+  }
+  TilesOn = ""
 }
-else {
-WhichLetter = TileMap.charAt(WhichTile);
-}
-document.images[WhichTile].src = "/games/scramble/" + WhichLetter + "0.gif";
-   }
-}
-TilesOn = "";
-}
+
 function endgame() {
-	GameTime = -1
-GameStatus = 1;
-clearword(1);
-document.scramble.user.value = "New Game";
+  GameTime = -1
+  GameStatus = 0
+  clearword(1)
+  document.scramble.user.value = " Game Over"
+document.scramble.button.value = "New Game";
+  var isNS4 = (document.layers ? true : false)
+  if (!isNS4) {
+    document.scramble.user.style.color = 'white'
+    document.scramble.user.style.backgroundColor = 'black'
+  }
 }
+
 function buttonpress() {
+  var ActingStatus = GameStatus
+  if (ActingStatus == 1) {
+    Words = ":"
+    clearword()
+    TileMap = FixedMap
+	document.scramble.list.value=""
+
+    GameTime = 181
+    setTimeout("countdown()", 1)
+    GameStatus = 2
+    TheDate = new Date()
+    TimeStart = TheDate.getTime()
+  }
+
+/*
+if ((ActingStatus == 2) || (ActingStatus == 3)) {
+GameStatus = 4;
+GameTime = GameTime * -1;
+TilesOn = "0000000000000000000000000";
+clearword(1);
+document.scramble.button.value = "Paused";
+}
+if (ActingStatus == 4) {
+for (i=0; i<25; i++) {
+document.images[i].src ="/games/scramble/" + TileMap.charAt(i) + "0.gif"
+}
+GameStatus = 2;
+setTimeout("countdown()", 1);
+   }
+*/
+}
+
+function buttonpress2() {
 var ActingStatus = GameStatus;
 if (ActingStatus == 1) {
 Words = ":";
@@ -51,7 +119,7 @@ TileMap = "";
 GameTime = 75;
 TempCubes = Cubes;
 Position = 0;
-document.scramble.list.value="Word List:\n";
+document.scramble.list.value="";
 while (TileMap.length != 25) {
 Position = Math.floor(Math.random() * (TempCubes.length - 1));
 TileMap = TileMap + TempCubes.charAt(Position);
@@ -81,155 +149,189 @@ GameStatus = 2;
 setTimeout("countdown()", 1);
    }
 }
+
 function countdown() {
-if (GameTime > -1) {
-GameTime = GameTime - 1;
-Division = ":";
-if (GameTime % 60 < 10) {Division = ":0"}
-document.scramble.user.value = Math.floor(GameTime / 60) + Division + GameTime % 60;
-if (GameTime != 0) {
-setTimeout("countdown()", 1000);
-}
-else {
-endgame();
-   }
-}
-else { GameTime = GameTime * -1; }
+  if (GameTime > -1) {
+    GameTime = GameTime - 1
+      TheDate = new Date()
+      NewCheckTime = 180 - Math.floor((TheDate.getTime() - TimeStart)/1000)
+      if ((Math.abs(NewCheckTime - CheckTime)) > 6) {
+        CheatWords = 2000
+//        endgame()
+//        alert("Time cheat detected.\r\nGame is voided.\r\n")
+        return(0)
+      }
+      else {
+        CheckTime = NewCheckTime
+      }
+      GameTime = CheckTime
+if (GameTime == 10) {document.bgColor = '#FFFFFF'}
+    if (GameTime == 10) {document.bgColor = '#FFFFFF'}
+
+    Division = ":"
+    if (GameTime % 60 < 10) {Division = ":0"}
+    //***************************************
+    document.scramble.user.value = "    " + Math.floor(GameTime / 60) + Division + GameTime % 60
+    if (GameTime > 0) {
+      setTimeout("countdown()", 1000)
+    }
+    else {
+      endgame()
+      setTimeout("javascript:scoregame()",15000)
+    }
+  }
 }
 function slide(TileX, TileY) {
-WhichTile = TileX * 5 + TileY;
-WhichLetter = TileMap.charAt(WhichTile);
-if (GameStatus == 3) {
-if ((Math.abs(TileX - LastTileX) < 2) && (Math.abs(TileY - LastTileY) < 2)) {
-if (TilesOn.indexOf(LookUp.charAt(WhichTile)) == -1) {
-CurrentWord = CurrentWord + WhichLetter;
-if (WhichLetter == 'q') { CurrentWord = CurrentWord + "u"; }
-document.images[WhichTile].src ="/games/scramble/" + WhichLetter + "1.gif";
-LastTile = WhichTile;
-LastTileX = TileX;
-LastTileY = TileY;
-TilesOn = TilesOn + LookUp.charAt(WhichTile);
-         }
+  WhichTile = TileX * 5 + TileY
+  WhichLetter = TileMap.charAt(WhichTile)
+  if (GameStatus == 3) {
+    if ((Math.abs(TileX - LastTileX) < 2) && (Math.abs(TileY - LastTileY) < 2)) {
+      Occurence = TilesOn.indexOf(LookUp.charAt(WhichTile))
+      if (Occurence == -1) {
+        CurrentWord = CurrentWord + WhichLetter
+        EncodedWord = EncodedWord + LookUp.charAt(WhichTile)
+        if (WhichLetter == 'q') {CurrentWord = CurrentWord + "u"}
+        document.images[WhichTile + imgoffset].src = "/games/scramble/" + WhichLetter + "1.gif"
+        LastTile = WhichTile
+        LastTileX = TileX
+        LastTileY = TileY
+        TilesOn = TilesOn + LookUp.charAt(WhichTile)
       }
-   }
+      else {
+        if ((Occurence == TilesOn.length - 2) && (document.scramble.backtrack.value == 1)) {
+          RemoveTile = LookUp.indexOf(EncodedWord.charAt(EncodedWord.length - 1))
+          WhichLetter = TileMap.charAt(RemoveTile)
+          document.images[RemoveTile + imgoffset].src = "/games/scramble/" + WhichLetter + "0.gif"
+          EncodedWord = EncodedWord.substring(0, EncodedWord.length - 1)
+          CurrentWord = CurrentWord.substring(0, CurrentWord.length - 1)
+          TilesOn = TilesOn.substring(0, TilesOn.length - 1)
+          if (CurrentWord.charAt(CurrentWord.length - 1) == 'q') {CurrentWord = CurrentWord.substring(0, CurrentWord.length - 1)}
+          LastTile = WhichTile
+          LastTileX = TileX
+          LastTileY = TileY
+        }
+      }
+    }
+  }
 }
-function click(TileX, TileY) {
-var NewStatus = GameStatus;
-WhichTile = TileX * 5 + TileY;
-WhichLetter = TileMap.charAt(WhichTile);
-if (GameStatus == 2) {
-CurrentWord = WhichLetter;
-if (WhichLetter == 'q') { CurrentWord = CurrentWord + "u"; }
-document.images[WhichTile].src ="/games/scramble/" + WhichLetter + "1.gif";
-LastTile = WhichTile;
-LastTileX = TileX;
-LastTileY = TileY;
-TilesOn = LookUp.charAt(WhichTile);
-NewStatus = 3;
-}
-if (GameStatus == 3) {
-if (CurrentWord.length > 3) {
-if (Words.indexOf(":" + CurrentWord + ":") == -1) {
-if (Words == ":") { document.scramble.list.value="Word List:\n"}
-document.scramble.list.value=document.scramble.list.value + CurrentWord + "\n";
-Words = Words + CurrentWord + ":";
-   }
-}
-clearword(1);
-NewStatus = 2;
-}
-GameStatus = NewStatus;
-}
-function abandon() {
-if (GameStatus == 4) {
-endgame();
-   }
-}
-// End -->
-</SCRIPT>
-<CENTER>
-<h4><a onclick="endgame()">Scramble</a></h4>
-<div class="center">
-<table style="width: 100%; height: 100%;" cellspacing="0" cellpadding="0">
-	<tr><td style="width: 65%; height: 65%; vertical-align: top;">
-	<div class="grid">
-	<FORM NAME="scramble">
-	<TABLE BORDER=0 CELLPADDING=0 CELLSPACING=0 BGCOLOR="#C8CEC4">
-	<TR><TD><A HREF="Javascript:click(0,0)" onmouseover="slide(0,0)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD><TD><A HREF="Javascript:click(0,1)" onmouseover="slide(0,1)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD><TD><A HREF="Javascript:click(0,2)" onmouseover="slide(0,2)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD><TD><A HREF="Javascript:click(0,3)" onmouseover="slide(0,3)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD><TD><A HREF="Javascript:click(0,4)" onmouseover="slide(0,4)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD></TR>
-	<TR><TD><A HREF="Javascript:click(1,0)" onmouseover="slide(1,0)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD><TD><A HREF="Javascript:click(1,1)" onmouseover="slide(1,1)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD><TD><A HREF="Javascript:click(1,2)" onmouseover="slide(1,2)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD><TD><A HREF="Javascript:click(1,3)" onmouseover="slide(1,3)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD><TD><A HREF="Javascript:click(1,4)" onmouseover="slide(1,4)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD></TR>
-	<TR><TD><A HREF="Javascript:click(2,0)" onmouseover="slide(2,0)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD><TD><A HREF="Javascript:click(2,1)" onmouseover="slide(2,1)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD><TD><A HREF="Javascript:click(2,2)" onmouseover="slide(2,2)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD><TD><A HREF="Javascript:click(2,3)" onmouseover="slide(2,3)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD><TD><A HREF="Javascript:click(2,4)" onmouseover="slide(2,4)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD></TR>
-	<TR><TD><A HREF="Javascript:click(3,0)" onmouseover="slide(3,0)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD><TD><A HREF="Javascript:click(3,1)" onmouseover="slide(3,1)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD><TD><A HREF="Javascript:click(3,2)" onmouseover="slide(3,2)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD><TD><A HREF="Javascript:click(3,3)" onmouseover="slide(3,3)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD><TD><A HREF="Javascript:click(3,4)" onmouseover="slide(3,4)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD></TR>
-	<TR><TD><A HREF="Javascript:click(4,0)" onmouseover="slide(4,0)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD><TD><A HREF="Javascript:click(4,1)" onmouseover="slide(4,1)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD><TD><A HREF="Javascript:click(4,2)" onmouseover="slide(4,2)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD><TD><A HREF="Javascript:click(4,3)" onmouseover="slide(4,3)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD><TD><A HREF="Javascript:click(4,4)" onmouseover="slide(4,4)"><IMG SRC=/games/scramble/00.gif BORDER=0></A></TD></TR>
-	</TABLE>
-	</div>
-</td>
 
-<td>
-	<div class="list">
-	<textarea name="list" rows="18" cols="18" onfocus="stayAway()"></textarea>
-	</div>
+function click(TileX, TileY) {
+  if (GameTime < 0) {return}
+  var NewStatus = GameStatus
+  WhichTile = TileX * 5 + TileY
+  WhichLetter = TileMap.charAt(WhichTile)
+  if (GameStatus == 2) {
+    CurrentWord = WhichLetter
+    EncodedWord = EncodedWord + LookUp.charAt(WhichTile)
+    if (WhichLetter == 'q') {CurrentWord = CurrentWord + "u"}
+    document.images[WhichTile + imgoffset].src = "/games/scramble/" + WhichLetter + "1.gif"
+    LastTile = WhichTile
+    LastTileX = TileX
+    LastTileY = TileY
+    TilesOn = LookUp.charAt(WhichTile)
+    NewStatus = 3
+  }
+  if (GameStatus == 3) {
+if (CurrentWord.length > 3) {
+      //if (Words.indexOf(":" + CurrentWord + ":") == -1) {
+      //  if (Words == ":") {parent.wordframe.document.write("<CENTER><B>Word List</B></CENTER><BR>")}
+      //  parent.wordframe.document.write(CurrentWord + "<BR>")
+      //  Words = Words + CurrentWord + ":"
+      //}
+      if (Words.indexOf(":" + EncodedWord + ":") == -1) {
+if (Words == ":") {document.scramble.list.value=""}
+        document.scramble.list.value=document.scramble.list.value + CurrentWord + "\n"
+        Words = Words + CurrentWord + ":"
+        if (NumWords == 0) {NumWords = GameTime}
+      }
+    }
+    clearword(1)
+    NewStatus = 2
+  }
+  GameStatus = NewStatus
+}
+
+function scoregame() {
+//  if (GameTime > -1) {endgame()}
+  GameTime = -2
+//  if (CheatWords < 4) {
+    //parent.wordframe.document.write("<BR>&nbsp;Scoring...<BR>")
+    document.scramble.numwords.value = NumWords
+    document.scramble.words.value = FixedMap+":"+Words
+    document.scramble.submit()
+//  }
+}
+
+//-->
+</script>
+<div id="scramble">
+	<h4>Scramble</h4>
+    <td class="menulink" align="Right" valign="Top"><img src="main_data/piece00.gif" align="Right" height="60" width="1"></td>
+
+<center>
+<form name="scramble" method="POST" action="r_score_wait.php?minlength=3" target="_top">
+  <input name="opponent" value="&nbsp;" type="Hidden">
+  <input name="numwords" type="Hidden">
+  <input name="words" type="Hidden">
+  <table border="0">
+  <tr valign="Top"><td class="normallink">
+	<div class="top">
+<table style="width: 100%; height: 100%;" cellspacing="0" cellpadding="0">
+<td style="width: 400px; vertical-align: top;">
+<div class="game">
+<table class="game-grid" bgcolor="#c8cec4" border="0" cellpadding="8" cellspacing="0">
+<tr>
+<td><a href="javascript:click(0,0)" onmouseover="slide(0,0)"><img src="/games/scramble/d0.gif" border="0"></a></td>
+<td><a href="javascript:click(0,1)" onmouseover="slide(0,1)"><img src="/games/scramble/s0.gif" border="0"></a></td>
+<td><a href="javascript:click(0,2)" onmouseover="slide(0,2)"><img src="/games/scramble/t0.gif" border="0"></a></td>
+<td><a href="javascript:click(0,3)" onmouseover="slide(0,3)"><img src="/games/scramble/d0.gif" border="0"></a></td>
+<td><a href="javascript:click(0,4)" onmouseover="slide(0,4)"><img src="/games/scramble/t0.gif" border="0"></a></td>
+</tr><tr>
+<td><a href="javascript:click(1,0)" onmouseover="slide(1,0)"><img src="/games/scramble/a0.gif" border="0"></a></td>
+<td><a href="javascript:click(1,1)" onmouseover="slide(1,1)"><img src="/games/scramble/r0.gif" border="0"></a></td>
+<td><a href="javascript:click(1,2)" onmouseover="slide(1,2)"><img src="/games/scramble/c0.gif" border="0"></a></td>
+<td><a href="javascript:click(1,3)" onmouseover="slide(1,3)"><img src="/games/scramble/h0.gif" border="0"></a></td>
+<td><a href="javascript:click(1,4)" onmouseover="slide(1,4)"><img src="/games/scramble/d0.gif" border="0"></a></td>
+</tr><tr>
+<td><a href="javascript:click(2,0)" onmouseover="slide(2,0)"><img src="/games/scramble/h0.gif" border="0"></a></td>
+<td><a href="javascript:click(2,1)" onmouseover="slide(2,1)"><img src="/games/scramble/p0.gif" border="0"></a></td>
+<td><a href="javascript:click(2,2)" onmouseover="slide(2,2)"><img src="/games/scramble/t0.gif" border="0"></a></td>
+<td><a href="javascript:click(2,3)" onmouseover="slide(2,3)"><img src="/games/scramble/c0.gif" border="0"></a></td>
+<td><a href="javascript:click(2,4)" onmouseover="slide(2,4)"><img src="/games/scramble/a0.gif" border="0"></a></td>
+</tr><tr>
+<td><a href="javascript:click(3,0)" onmouseover="slide(3,0)"><img src="/games/scramble/t0.gif" border="0"></a></td>
+<td><a href="javascript:click(3,1)" onmouseover="slide(3,1)"><img src="/games/scramble/g0.gif" border="0"></a></td>
+<td><a href="javascript:click(3,2)" onmouseover="slide(3,2)"><img src="/games/scramble/y0.gif" border="0"></a></td>
+<td><a href="javascript:click(3,3)" onmouseover="slide(3,3)"><img src="/games/scramble/r0.gif" border="0"></a></td>
+<td><a href="javascript:click(3,4)" onmouseover="slide(3,4)"><img src="/games/scramble/e0.gif" border="0"></a></td>
+</tr><tr>
+<td><a href="javascript:click(4,0)" onmouseover="slide(4,0)"><img src="/games/scramble/o0.gif" border="0"></a></td>
+<td><a href="javascript:click(4,1)" onmouseover="slide(4,1)"><img src="/games/scramble/f0.gif" border="0"></a></td>
+<td><a href="javascript:click(4,2)" onmouseover="slide(4,2)"><img src="/games/scramble/i0.gif" border="0"></a></td>
+<td><a href="javascript:click(4,3)" onmouseover="slide(4,3)"><img src="/games/scramble/j0.gif" border="0"></a></td>
+<td><a href="javascript:click(4,4)" onmouseover="slide(4,4)"><img src="/games/scramble/g0.gif" border="0"></a></td>
+</tr>
+</table>
+</div>
 </td>
-</tr></table>
-<br><input type=button name="user" value=" Loading... " onclick="buttonpress()"><br>
-	</form>
-<img src=/games/scramble/a0.gif width=1 height=1>
-<img src=/games/scramble/b0.gif width=1 height=1>
-<img src=/games/scramble/c0.gif width=1 height=1>
-<img src=/games/scramble/d0.gif width=1 height=1>
-<img src=/games/scramble/e0.gif width=1 height=1>
-<img src=/games/scramble/f0.gif width=1 height=1>
-<img src=/games/scramble/g0.gif width=1 height=1>
-<img src=/games/scramble/h0.gif width=1 height=1>
-<img src=/games/scramble/i0.gif width=1 height=1>
-<img src=/games/scramble/j0.gif width=1 height=1>
-<img src=/games/scramble/k0.gif width=1 height=1>
-<img src=/games/scramble/l0.gif width=1 height=1>
-<img src=/games/scramble/m0.gif width=1 height=1>
-<img src=/games/scramble/n0.gif width=1 height=1>
-<img src=/games/scramble/o0.gif width=1 height=1>
-<img src=/games/scramble/p0.gif width=1 height=1>
-<img src=/games/scramble/q0.gif width=1 height=1>
-<img src=/games/scramble/r0.gif width=1 height=1>
-<img src=/games/scramble/s0.gif width=1 height=1>
-<img src=/games/scramble/t0.gif width=1 height=1>
-<img src=/games/scramble/u0.gif width=1 height=1>
-<img src=/games/scramble/v0.gif width=1 height=1>
-<img src=/games/scramble/w0.gif width=1 height=1>
-<img src=/games/scramble/x0.gif width=1 height=1>
-<img src=/games/scramble/y0.gif width=1 height=1>
-<img src=/games/scramble/z0.gif width=1 height=1>
-<img src=/games/scramble/a1.gif width=1 height=1>
-<img src=/games/scramble/b1.gif width=1 height=1>
-<img src=/games/scramble/c1.gif width=1 height=1>
-<img src=/games/scramble/d1.gif width=1 height=1>
-<img src=/games/scramble/e1.gif width=1 height=1>
-<img src=/games/scramble/f1.gif width=1 height=1>
-<img src=/games/scramble/g1.gif width=1 height=1>
-<img src=/games/scramble/h1.gif width=1 height=1>
-<img src=/games/scramble/i1.gif width=1 height=1>
-<img src=/games/scramble/j1.gif width=1 height=1>
-<img src=/games/scramble/k1.gif width=1 height=1>
-<img src=/games/scramble/l1.gif width=1 height=1>
-<img src=/games/scramble/m1.gif width=1 height=1>
-<img src=/games/scramble/n1.gif width=1 height=1>
-<img src=/games/scramble/o1.gif width=1 height=1>
-<img src=/games/scramble/p1.gif width=1 height=1>
-<img src=/games/scramble/q1.gif width=1 height=1>
-<img src=/games/scramble/r1.gif width=1 height=1>
-<img src=/games/scramble/s1.gif width=1 height=1>
-<img src=/games/scramble/t1.gif width=1 height=1>
-<img src=/games/scramble/u1.gif width=1 height=1>
-<img src=/games/scramble/v1.gif width=1 height=1>
-<img src=/games/scramble/w1.gif width=1 height=1>
-<img src=/games/scramble/x1.gif width=1 height=1>
-<img src=/games/scramble/y1.gif width=1 height=1>
-<img src=/games/scramble/z1.gif width=1 height=1>
-</center>
-<small><ul>
-<li>To enter a word, click the first letter of the word, then move the mouse over the next letters in turn, and finally click the last letter of the word.
-<li>To pause the game, click the button displaying the time. Click it again to unpause. Pausing the game reduces the remaining time by 1 second.
-<li>To abandon the current game, first pause the game, then click on "Scramble."
-<li>To score the game, after the game has ended or been abandoned, click the "Score" button in the frame on the right.
-</body>
-</html>
+<td style="vertical-align: top;">
+<div class="list">
+<BODY TEXT=#000000 BGCOLOR=#FFFFFF><TABLE BORDER=0 WIDTH=100%><TR ALIGN=CENTER><TD BGCOLOR=#361377>&nbsp;<B><FONT COLOR=#FFFFFF>Word List</TD></TR><TR><TD BGCOLOR=#F6F6F6 ALIGN=Center>&nbsp;<B>3</B> or more letters&nbsp;</TD></TR></TABLE>
+  <textarea name="list" rows="16" cols="10" readonly="readonly"></textarea>
+</div>
+</td>
+</table>
+<div class="buttons">
+	</div>
+<center>
+	<input type=button name="button" value=" Loading... " onclick="buttonpress()">
+<input value="3:00" name="user" size="11" type="Text" readonly="readonly"><br>
+<input name="backtrack" value="" type="Hidden"><br>
+<b><font color="#1c469a">[<a href="javascript:scoregame()">SCORE GAME</a>]</font></b>
+  </center></td></tr></tbody></table>
+<br><br>
+</form>
+Note: if you do not hit "SCORE GAME", it will score automatically 15 seconds after the end.
+</center></body></html>
+</div>
 </div>

@@ -131,9 +131,9 @@ function guess(s){
 <h4>Hangman</h4>
 <form name="game">
 <pre>
-<div class="gallows"><textarea name="status" rows="7" cols="22" onfocus="stayAway()"></textarea><div>
+<div class="gallows"><textarea name="status" rows="7" cols="22" readonly="readonly""></textarea><div>
 </pre>
-<div class="mystery-word"><input type="text" name="toGuess" onfocus="stayAway()"><br></div><br>
+<div class="mystery-word"><input type="text" name="toGuess" readonly="readonly"><br></div><br>
 <input type="button" id = 'q' value=" Q " onclick="style.visibility = 'hidden'; guess('q');">
 <input type="button" id = 'w' value=" W " onclick="style.visibility = 'hidden'; guess('w');">
 <input type="button" id = 'e' value=" E " onclick="style.visibility = 'hidden'; guess('e');">

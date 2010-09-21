@@ -457,21 +457,35 @@ a {
   border-width: 0;
   overflow: hidden;
 }
-#scramble .center{
-	display: inline;
+
+#scramble {
+		padding-top: 0px;
+}
+
+#scramble .game{
+	float: right;
+}
+#scramble .game-grid td{
+	padding: 15px; 
 }
 #scramble .list{
 	float: right;
-}
-#scramble .grid{
-	float: right;
+	padding-left: 10px;
 }
 
+#scramble .list{
+	float: right;
+}
+#scramble .buttons{
+clear: right;
+}
+#scramble .top{
+}
 #scramble textarea{
 	color: white;
 	background: none;
 	border: none;
-	overflow: hidden;
+	/*overflow: hidden;*/
 }
 
 #i18n {
