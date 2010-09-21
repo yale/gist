@@ -11,4 +11,14 @@ class GamesController < ApplicationController
       definition.body
     }
   end
+  
+  def scramble
+    path = File.join(Rails.root, "public/games/scramble/word_list.txt")
+    file = File.new(path)
+    @word_list = file.lines.to_a
+    
+    
+
+
+  end
 end

@@ -1,3 +1,5 @@
+<% title "Scramble" %>
+
 <html><head>
 <meta http-equiv="content-type" content="text/html; charset=ISO-8859-1">
 
@@ -12,10 +14,10 @@
 .menulink a:hover {  color: #FFFFFF; text-decoration: underline}
 .menulink a:active {  color: #EA485B; text-decoration: none}
 --></style>
-</head><body onLoad="document.scramble.button.value = ' New Game '; document.scramble.list.value=''; document.scramble.user.value = '3:00'; GameStatus = 1;" leftmargin="0" topmargin="0" alink="#ea485b" bgcolor="#ffffff" link="#1c469a" marginheight="0" marginwidth="0" text="#000000" vlink="#1c469a">
+</head><body onLoad="document.scramble.button.value = ' New Game '; document.scramble.list.value = ''; document.scramble.timer.value = '3:00'; GameStatus = 1;" leftmargin="0" topmargin="0" alink="#ea485b" bgcolor="#ffffff" link="#1c469a" marginheight="0" marginwidth="0" text="#000000" vlink="#1c469a">
 <script language="JavaScript">
 
-var Words = ""
+var Words = []
 var CurrentWord = ""
 var EncodedWord = ""
 var GameStatus = 0
@@ -32,13 +34,7 @@ var NumWords = 0
 var imgoffset = 1
 var LookUp = "abcdefghijklmnopqrstuvwxyz"
 var Cubes = "qbzjkxhhlrdotelpcittotemaeaeeetouotonhdthossnseusctiepyifpsrovwrgrlhnrodriyprheandnneeeemaaaafsrafaisrdordlnmnneagititieaumeegyifasrccwnstuotownetilic"
-
-function linkout() {
-  return true
-  //if (GameTime < 0) {return true}
-  //var ask = confirm("Leaving a game in progress is a score of 0.\r\nAre you sure you want to leave?")
-  //return ask
-}
+var score = 0
 
 //clears the last entered word on the board
 function clearword(DoMap) {
@@ -65,34 +61,35 @@ function clearword(DoMap) {
 
 function quit(){
 	document.scramble.list.value=''; 
-	document.scramble.user.value = '3:00'; 
-	endgame();
+	document.scramble.timer.value = '3:00'; 
 	TilesOn = "0000000000000000000000000";
-	 clearword(1);
-	GameStatus=1;
-	TileMap= ""
+	endgame();
 }
 
 function endgame() {
   GameTime = -1
-  GameStatus = 0
+  GameStatus = 1
   clearword(1)
-  document.scramble.user.value = "Game Over "
+  document.scramble.timer.value = "Game Over "
 document.scramble.button.value = " New Game ";
   var isNS4 = (document.layers ? true : false)
   if (!isNS4) {
-    document.scramble.user.style.color = 'white'
-    document.scramble.user.style.backgroundColor = 'black'
+    document.scramble.timer.style.color = 'white'
+    document.scramble.timer.style.backgroundColor = 'black'
   }
+	TileMap= ""
+	scoregame()
 }
 
 function buttonpress() {
   var ActingStatus = GameStatus
   if (ActingStatus == 1) {
-    Words = ":"
+    Words = []
     clearword()
-	document.scramble.list.value=""
+	document.scramble.list.value="";
 	document.scramble.button.value="    Pause     "
+	document.scramble.timer.style.color = 'black'
+	document.scramble.timer.style.backgroundColor = 'white'
 
     GameTime = 181
     setTimeout("countdown()", 1)
@@ -139,8 +136,7 @@ function countdown() {
     if (GameTime == 10) {document.bgColor = '#FFFFFF'}
     Division = ":"
     if (GameTime % 60 < 10) {Division = ":0"}
-    //***************************************
-    document.scramble.user.value = "    " + Math.floor(GameTime / 60) + Division + GameTime % 60
+    document.scramble.timer.value = "    " + Math.floor(GameTime / 60) + Division + GameTime % 60
     if (GameTime > 0) {
       setTimeout("countdown()", 1000)
     }
@@ -204,15 +200,11 @@ function click(TileX, TileY) {
   }
   if (GameStatus == 3) {
 if (CurrentWord.length >= 3) {
-      //if (Words.indexOf(":" + CurrentWord + ":") == -1) {
-      //  if (Words == ":") {parent.wordframe.document.write("<CENTER><B>Word List</B></CENTER><BR>")}
-      //  parent.wordframe.document.write(CurrentWord + "<BR>")
-      //  Words = Words + CurrentWord + ":"
-      //}
-      if (Words.indexOf(":" + EncodedWord + ":") == -1) {
-if (Words == ":") {document.scramble.list.value=""}
-        document.scramble.list.value=document.scramble.list.value + CurrentWord + "\n"
-        Words = Words + CurrentWord + ":"
+      if (Words.indexOf(CurrentWord) == -1) {
+		if (Words.length == 0) {document.scramble.list.value=""}
+		Words.push(CurrentWord)
+		scoregame()
+        //document.scramble.list.value=Words.reverse().join("\n")
         if (NumWords == 0) {NumWords = GameTime}
       }
     }
@@ -223,14 +215,38 @@ if (Words == ":") {document.scramble.list.value=""}
 }
 
 function scoregame() {
-//  if (GameTime > -1) {endgame()}
-  GameTime = -2
-//  if (CheatWords < 4) {
-    //parent.wordframe.document.write("<BR>&nbsp;Scoring...<BR>")
-    document.scramble.numwords.value = NumWords
-    document.scramble.words.value = FixedMap+":"+Words
-    document.scramble.submit()
-//  }
+	var score = 0;
+	var wordList = <%= @word_list.to_json %>
+	var validList = []
+	var invalidList = []
+	for (i=0; i < Words.length; i++){
+		if (wordList.indexOf(Words[i] + "\r\n") != -1){
+			if (Words[i].length == 3){
+				score += 1
+			}
+			else if (Words[i].length == 4){
+				score += 1
+			}
+			else if (Words[i].length == 5){
+				score += 2
+			}
+			else if (Words[i].length == 6){
+				score += 3
+			}
+			else if (Words[i].length == 7){
+				score += 4
+			}
+			else{
+				score += 11
+			}
+			validList.push(Words[i])
+		}
+		else{
+			invalidList.push(Words[i])
+		}
+	}
+    document.scramble.list.value = "Score: " + score + "\n\n" + "Valid Words:\n" + validList.join("\n") + "\n\n" + "Invalid Words: " + invalidList.join("\n");
+
 }
 
 //-->
@@ -288,7 +304,7 @@ function scoregame() {
 <td style="vertical-align: top;">
 <div class="list">
 <BODY TEXT=#000000 BGCOLOR=#FFFFFF><TABLE BORDER=0 WIDTH=100%><TR ALIGN=CENTER><TD BGCOLOR=#361377>&nbsp;<B><FONT COLOR=#FFFFFF>Word List</TD></TR><TR><TD BGCOLOR=#F6F6F6 ALIGN=Center>&nbsp;<B>3</B> or more letters&nbsp;</TD></TR></TABLE>
-  <textarea name="list" rows="16" cols="10" readonly="readonly"></textarea>
+  <textarea name="list" value="" rows="16" cols="10" readonly="readonly"></textarea>
 </div>
 </td>
 </table>
@@ -297,9 +313,9 @@ function scoregame() {
 <center>
 	<input type=button name="button" value="Loading..." onclick="buttonpress()">
 	<input type=button name="button2" value="Quit" onclick="quit()">
-<input value="3:00" name="user" size="11" type="Text" readonly="readonly"><br>
+<input value="3:00" name="timer" size="11" type="Text" readonly="readonly"><br>
 <input name="backtrack" value="" type="Hidden"><br>
-<b><font color="#1c469a">[<a href="javascript:scoregame()">SCORE GAME</a>]</font></b>
+<b><font color="#1c469a"><a href="javascript:scoregame()">SCORE GAME</a></font></b>
   </center></td></tr></tbody></table>
 </form>
  <img src=/games/scramble/a0.gif width=1 height=1>
@@ -355,7 +371,22 @@ function scoregame() {
 <img src=/games/scramble/y1.gif width=1 height=1>
 <img src=/games/scramble/z1.gif width=1 height=1>
 <br>
-Note: if you do not hit "SCORE GAME", it will score automatically 15 seconds after the end.
+To enter a word, click starting letter, slide, click ending letter.
 </center></body></html>
 </div>
 </div>
+
+<% content_for :sidebar do %>
+
+  <div class="section">
+    <h3>How points work:</h3>
+    <table>
+    <tr><td>3 Letters: 1 point</td></tr>
+    <tr><td>4 Letters: 1 point</td></tr>
+    <tr><td>5 Letters: 2 points</td></tr>
+    <tr><td>6 Letters: 3 points</td></tr>
+    <tr><td>7 Letters: 4 points</td></tr>
+    <tr><td>8 or More Letters: 11 points</td></tr>
+    </table><br>
+  </div>
+<% end %>
