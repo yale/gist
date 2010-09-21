@@ -14,7 +14,7 @@
 .menulink a:hover {  color: #FFFFFF; text-decoration: underline}
 .menulink a:active {  color: #EA485B; text-decoration: none}
 --></style>
-</head><body onLoad="document.scramble.button.value = ' New Game '; document.scramble.list.value = ''; document.scramble.timer.value = '3:00'; GameStatus = 1;" leftmargin="0" topmargin="0" alink="#ea485b" bgcolor="#ffffff" link="#1c469a" marginheight="0" marginwidth="0" text="#000000" vlink="#1c469a">
+</head><body onLoad="document.scramble.button.value = '    Start     '; document.scramble.list.value = ''; document.scramble.timer.value = '3:00'; GameStatus = 1;" leftmargin="0" topmargin="0" alink="#ea485b" bgcolor="#ffffff" link="#1c469a" marginheight="0" marginwidth="0" text="#000000" vlink="#1c469a">
 <script language="JavaScript">
 
 var Words = []
@@ -71,7 +71,7 @@ function endgame() {
   GameStatus = 1
   clearword(1)
   document.scramble.timer.value = "Game Over "
-document.scramble.button.value = " New Game ";
+document.scramble.button.value = "    Start     ";
   var isNS4 = (document.layers ? true : false)
   if (!isNS4) {
     document.scramble.timer.style.color = 'white'
