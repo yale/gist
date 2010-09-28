@@ -245,9 +245,37 @@ function scoregame() {
 			invalidList.push(Words[i])
 		}
 	}
-    document.scramble.list.value = "Score: " + score + "\n\n" + "Valid Words:\n" + validList.join("\n") + "\n\n" + "Invalid Words: " + invalidList.join("\n");
+	links = []
+
+document.scramble.list.value = "Score: " + score + "\n\n" + "Valid Words:\n"  + validList.join("\n") + "\n\n" + "Invalid Words: " + invalidList.join("\n");
 
 }
+
+if (!Array.prototype.forEach)
+{
+  Array.prototype.forEach = function(fun /*, thisp*/)
+  {
+    var len = this.length;
+    if (typeof fun != "function")
+      throw new TypeError();
+
+    var thisp = arguments[1];
+    for (var i = 0; i < len; i++)
+    {
+      if (i in this)
+        fun.call(thisp, this[i], i, this);
+    }
+  };
+}
+//adding to collection verify that bumps out oldest
+//verify that over 125 gives you a error message and verify text
+//verify adding content item in relationships tab bumps out
+//no items and add content items so over max
+
+function searchWord(element, index, array) {
+   document.scramble.list.value = document.scramble.list.value + element.link("http://definitious.com/finds?word=") + "\n"; 
+}
+
 
 //-->
 </script>
