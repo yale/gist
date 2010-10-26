@@ -11,8 +11,8 @@ $('#user_search').autocomplete({
         },
         select: function(event, ui) {
             $('#user_search').val(ui.item.user.name);
-    		$('#link_origin_id').val(ui.item.user.id);
-			$(this).parents().find('form:first').submit();
+    		$('#link_user_id').val(ui.item.user.id);
+			// $(this).parents().find('link_user_id').submit();
             return false;
         }
     })
@@ -30,6 +30,7 @@ $('#user_search').autocomplete({
   <p><%= @users.size %> users and counting...</p>
   <% form_tag(finds_path, :method => 'get') do %>
     <%= text_field_tag(:user, I18n.t("Search for a user..."), :onFocus => "if(this.value==this.defaultValue) this.value='';", :onBlur  => "if(this.value=='') this.value=this.defaultValue;", 'id' => 'user_search') %>
+    <input id="link_user_id" name="link[user_id]" type="hidden"/>
   <% end %>
 </div>
 
