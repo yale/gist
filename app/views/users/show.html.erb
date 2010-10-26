@@ -1,9 +1,35 @@
 <% title @user.username %>
 
+<script type="text/javascript">
+$(function() {  
+$('#user_search').autocomplete({
+        minLength: 2,
+        source: '<%= users_path(:json) %>',
+        focus: function(event, ui) {
+            $('#user_search').val(ui.item.user.name);
+            return false;
+        },
+        select: function(event, ui) {
+            $('#user_search').val(ui.item.user.name);
+    		$('#link_origin_id').val(ui.item.user.id);
+			$(this).parents().find('form:first').submit();
+            return false;
+        }
+    })
+    .data( "autocomplete" )._renderItem = function( ul, item ) {
+        return $( "<li></li>" )
+            .data( "item.autocomplete", item )
+            .append( "<a>" + item.user.name + "</a>" )
+			.append( "<a>" + item.user.login + "</a>" )
+            .appendTo( ul );
+    };
+});
+</script>
+
 <div id="user-search">
   <p><%= @users.size %> users and counting...</p>
   <% form_tag(finds_path, :method => 'get') do %>
-    <%= text_field_tag(:user, I18n.t("Search for a user..."), :onFocus => "if(this.value==this.defaultValue) this.value='';", :onBlur  => "if(this.value=='') this.value=this.defaultValue;", 'id' => 'user_autocomplete') %>
+    <%= text_field_tag(:user, I18n.t("Search for a user..."), :onFocus => "if(this.value==this.defaultValue) this.value='';", :onBlur  => "if(this.value=='') this.value=this.defaultValue;", 'id' => 'user_search') %>
   <% end %>
 </div>
 

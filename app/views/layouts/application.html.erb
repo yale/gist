@@ -7,7 +7,7 @@
     
 </head>
   </title>
-    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.1/jquery.min.js"></script>
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js"></script>
     <% if protect_against_forgery? %>
     <script type='text/javascript'>
     //<![CDATA[
@@ -35,19 +35,7 @@
     <%= javascript_include_tag 'jrails' %>
     
     <script src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php" type="text/javascript"></script>
-    
-    <script type="text/javascript">
-    $(function() {
-  		var available_words = <%= get_string_array_of_words_for_js %>;
-  		var available_users = <%= get_string_array_of_users_for_js %>;
-  		$("#word_autocomplete").autocomplete({
-  			source: available_words
-  		});
-  				$("#user_autocomplete").autocomplete({
-  			source: available_users
-  		});
-  	});
-    </script>
+
     <script type="text/javascript">
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-17217475-1']);
@@ -59,6 +47,32 @@
         var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
       })();
     </script>
+
+    <script type="text/javascript">
+    $(function() {  
+    $('#word_search').autocomplete({
+            minLength: 2,
+            source: '<%= words_path(:json) %>',
+            focus: function(event, ui) {
+                $('#word_search').val(ui.item.word.name);
+                return false;
+            },
+            select: function(event, ui) {
+                $('#word_search').val(ui.item.word.name);
+        		$('#link_origin_id').val(ui.item.word.id);
+			 	$(this).parents().find('form:first').submit();
+                return false;
+            }
+        })
+        .data( "autocomplete" )._renderItem = function( ul, item ) {
+            return $( "<li></li>" )
+                .data( "item.autocomplete", item )
+                .append( "<a>" + item.word.name + "</a>" )
+                .appendTo( ul );
+        };
+    });
+    </script>
+
   </head>
   <body>
     <div id="topbar">
@@ -93,9 +107,10 @@
       <div id="header">
         <h1 id="logo"><a href="/">Definitious</a></h1>
         <div id="search">
-          <% form_tag(finds_path, :method => 'get') do %>
-            <%= text_field_tag (:word, I18n.t("Search for a word..."), :onFocus => "if(this.value==this.defaultValue) this.value='';", :onBlur  => "if(this.value=='') this.value=this.defaultValue;", 'id' => 'word_autocomplete') %>
-          <% end %>
+	      <% form_tag(finds_path, :method => 'get') do %>
+		    <%= text_field_tag (:word, I18n.t("Search for a word..."), :onFocus => "if(this.value==this.defaultValue) this.value='';", :onBlur  => "if(this.value=='') this.value=this.defaultValue;", 'id' => 'word_search') %>
+		    <input id="link_origin_id" name="link[origin_id]" type="hidden"/>
+		  <% end %>
         </div>
       </div>
 

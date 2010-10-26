@@ -15,10 +15,15 @@ class WordsController < ApplicationController
   	@random_def = @random.definitions.find :first
   	@words_size = Word.all.size
   	@definitions_size = Definition.all.size
-    
+  	
+    if params[:term]
+      @word_autocomplete = Word.find(:all,:conditions => ['name LIKE ?', "#{params[:term]}%"], :select => "name", :limit => 10)
+    end
+
     respond_to do |wants|
       wants.html # index.html.erb
-      wants.xml  { render :xml => @words }
+      wants.xml  { render :xml => @word_autocomplete }
+      wants.json { render :json => @word_autocomplete.to_json }
     end
   end
   

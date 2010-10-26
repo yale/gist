@@ -5,8 +5,15 @@ class UsersController < ApplicationController
 
   def index
     @users = User.top
+    
+    if params[:term]
+      @user_autocomplete = User.find(:all,:conditions => ['name LIKE ? OR login', "%#{params[:term]}%"], :select => "name, login", :limit => 10)
+    end
+    
     respond_to do |wants|
       wants.html
+      wants.xml  { render :xml => @user_autocomplete }
+      wants.json { render :json => @user_autocomplete.to_json }
     end
   end
 
