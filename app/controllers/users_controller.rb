@@ -7,7 +7,8 @@ class UsersController < ApplicationController
     @users = User.top
     
     if params[:term]
-      @user_autocomplete = User.find(:all,:conditions => ['name LIKE ? OR login', "%#{params[:term]}%"], :select => "name, login", :limit => 10)
+      #@user_autocomplete = User.find(:all,:conditions => ['name LIKE ? OR login', "%#{params[:term]}%"], :select => "name, login", :limit => 10)
+      @user_autocomplete = User.find(:all,:conditions => ['name LIKE ?', "%#{params[:term]}%"], :select => "name, login", :limit => 10)
     end
     
     respond_to do |wants|
