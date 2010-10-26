@@ -17,7 +17,7 @@ class WordsController < ApplicationController
   	@definitions_size = Definition.all.size
   	
     if params[:term]
-      @word_autocomplete = Word.find(:all,:conditions => ['LOWER(name) LIKE LOWER(?)', "#{params[:term]}%"], :select => "name", :limit => 10)
+      @word_autocomplete = Word.find(:all,:conditions => ['LOWER(name) LIKE ?', "#{params[:term].downcase}%"], :select => "name", :limit => 10)
     end
 
     respond_to do |wants|
