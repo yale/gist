@@ -111,6 +111,7 @@ en:
   Hangman: "Hangman"
   Tetris: "Tetris"
   Scramble: "Scramble"
+  Random Definition: "Random Definition"
   
 zh:
   Home: "家"
@@ -222,3 +223,4 @@ zh:
   Hangman: "刽子手"
   Tetris: "俄罗斯方块"
   Scramble: "争夺"
+  Random Definition: "随机的定义"
