@@ -27,8 +27,8 @@
     }
   });  
 </script>
-
-<div class="one-fourty" id="numberofWord">140</div>
+<div id="define-form">
+<table><tr><td>
 <div id="define">
   <% form_for word, :html => { :method => :get }, :url => add_definition_word_path(word) do |f| -%>
     <%= text_area(:definition, :body, {:value => I18n.t("Add your own definition for") + " #{word.name}...", :onFocus => "if(this.value==this.defaultValue) this.value='';", :onBlur  => "if(this.value=='') this.value=this.defaultValue;", :cols => 40, :rows => 4, :onkeyup =>"CountlimitChars()", :id=>"PostArea"}) %>
@@ -36,3 +36,11 @@
     <%= f.submit I18n.t("Define!") %>
   <% end -%>
 </div>
+</td>
+<td style="vertical-align: top">
+	<div class="one-fourty" id="numberofWord">140</div>
+</td>
+</tr></table>
+</div>
+
+

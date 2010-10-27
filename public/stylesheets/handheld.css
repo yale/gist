@@ -319,7 +319,6 @@ a {
   font-size:22px;
   font-weight:bold;
   color:#D6D6D6;
-  float:right;
 }
  
 .one-fourty-orange{
@@ -330,7 +329,6 @@ a {
   font-size:22px;
   font-weight:bold;
   color:#990000;
-  float:right;
 }
  
 .one-fourty-red{
@@ -341,11 +339,16 @@ a {
   font-size:22px;
   font-weight:bold;
   color:#FF0000;
-  float:right;
+}
+
+#define-form table{
+  margin-left: auto;
+  margin-right: auto;
 }
 
 #define {
   margin: 10px auto;
+  padding-right: 10px;
 }
 
 #define textarea {
@@ -361,6 +364,7 @@ a {
 
 #define input {
   font-size: 16px;
+  float: right;
 }
 
 #login-definitious, #register-definitious {

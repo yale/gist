@@ -351,8 +351,13 @@ a {
   float:right;
 }
 
+#define-form table{
+  float: right;
+}
+
 #define {
   width: 440px;
+  padding-right: 10px;
   margin: 10px auto;
 }
 
