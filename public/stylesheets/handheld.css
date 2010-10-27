@@ -41,6 +41,15 @@ h3 {
   margin: 20px 0 10px 0;
 }
 
+h4 {
+  color: #fffeb3;
+  font-size: 32px;
+  text-align: center;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight:normal;
+  margin-bottom:15px;
+}
+
 .word {
   font-family: Georgia, "Times New Roman", serif;
   font-style: italic;
