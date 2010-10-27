@@ -35,7 +35,6 @@
     <%= javascript_include_tag 'jrails' %>
     
     <script src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php" type="text/javascript"></script>
-
     <script type="text/javascript">
       var _gaq = _gaq || [];
       _gaq.push(['_setAccount', 'UA-17217475-1']);
@@ -59,7 +58,6 @@
             },
             select: function(event, ui) {
                 $('#word_search').val(ui.item.word.name);
-        		$('#link_origin_id').val(ui.item.word.id);
 			 	$(this).parents().find('form:first').submit();
                 return false;
             }
@@ -109,7 +107,6 @@
         <div id="search">
 	      <% form_tag(finds_path, :method => 'get') do %>
 		    <%= text_field_tag (:word, I18n.t("Search for a word..."), :onFocus => "if(this.value==this.defaultValue) this.value='';", :onBlur  => "if(this.value=='') this.value=this.defaultValue;", 'id' => 'word_search') %>
-		    <input id="link_origin_id" name="link[origin_id]" type="hidden"/>
 		  <% end %>
         </div>
       </div>
