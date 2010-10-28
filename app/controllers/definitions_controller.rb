@@ -77,7 +77,7 @@ class DefinitionsController < ApplicationController
     
     @like_percentage = @definition.like_percentage
     @dislike_percentage = @definition.dislike_percentage
-	@helpful_percentage = @definition.helpful_percentage
+	  @helpful_percentage = @definition.helpful_percentage
     @funny_percentage = @definition.funny_percentage
     @poetic_percentage = @definition.poetic_percentage
     @inaccurate_percentage = @definition.inaccurate_percentage
@@ -85,6 +85,11 @@ class DefinitionsController < ApplicationController
     @offensive_percentage = @definition.offensive_percentage
     
     @points = @definition.total_points
+    
+    @google_dictionary_url = 'http://www.google.com/dictionary?aq=f&langpair=en|en&q=' + @word.name.gsub(' ', '+')
+    @urban_dictionary_url = 'http://www.urbandictionary.com/define.php?term=' + @word.name.gsub(' ', '+') 
+    @wikipedia_url = 'http://en.wikipedia.org/wiki/' + @word.name.gsub(' ', '+')
+    @thesaurus_url = 'http://thesaurus.com/browse/' + @word.name.gsub(' ', '+')
     
     respond_to do |wants|
       wants.html # show.html.erb
