@@ -1,8 +1,14 @@
 <% title @word.name.capitalize %>
+<%= javascript_include_tag 'external-search' %>
+
 <h2 class="word"><%=h @word.name %></h2>
 <% if current_user and current_user.login == "murtazajafferji"%>
   <%= link_to 'Delete', @word, :confirm => "Are you sure?", :method => :delete %>
 <% end %>
+
+<iframe id="searchResult1" width="500" height="200" style="display: none" frameborder="0" ></iframe>
+<iframe id="searchResult2" width="500" height="200" style="display: none" frameborder="0"></iframe>
+<iframe id="searchResult3" width="500" height="200" style="display: none" frameborder="0" ></iframe>
 
 <%= render :partial => 'definitions/sorter', :locals => {:word => @word} %>
 
@@ -13,3 +19,16 @@
 <% end %>
 
 <%= render :partial => 'words/definition_form', :locals => {:word => @word} %>
+<% content_for :sidebar do %>
+<div class="external-results">
+	Show results from: <br>
+	<table style="font-size: 10px">
+	<tr><td width="130">Google Dictionary</td><td width="50"><input type="button" id="searchButton1" value="Show" onclick="search(<%='\'' + @word.name + '\'' %>, 'http://www.google.com/dictionary?aq=f&langpair=en|en&q=', 1); this.style.display='none';" display=""/><input type="button" id="toggleButton1" value="Hide" onclick="toggleIframe(1)" style="display: none"/>
+	</td></tr>
+	<tr><td>Urban Dictionary</td><td><input type="button" id="searchButton2" value="Show" onclick="search(<%='\'' + @word.name + '\'' %>, 'http://www.urbandictionary.com/define.php?term=', 2); this.style.display='none';" display=""/><input type="button" id="toggleButton2" value="Hide" onclick="toggleIframe(2)" style="display: none"/>
+	<tr><td>Wikipedia</td><td><input type="button" id="searchButton3" value="Show" onclick="search(<%='\'' + @word.name + '\'' %>, 'http://en.wikipedia.org/wiki/', 3); this.style.display='none';" display=""/><input type="button" id="toggleButton3" value="Hide" onclick="toggleIframe(3)" style="display: none"/>
+	</td></tr>
+	</td></tr>
+	</table>
+</div>
+	<% end %>

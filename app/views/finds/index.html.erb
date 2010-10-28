@@ -1,12 +1,28 @@
 <% title "Search" %>
+<%= javascript_include_tag 'external-search' %>
+
 <div class="search-result">
   <% if @word %>
-    <h1><%= "#{$query} is not defined. Do you want to define it?" %>
+    <h1><%= "#{$query} is not defined. Do you want to define it?" %>			
     <% form_for @word, :url => { :action => "create" } do |f| -%>
       <%= f.error_messages %>
       <%= f.submit I18n.t("Define!")  %>
     <% end -%>
     </h1>
+<div class="external-results">
+	...or show results from: <br>
+	<table>
+	<tr><td width="130">Google Dictionary</td><td width="50"><input type="button" id="searchButton1" value="Show" onclick="search(<%='\'' + $query + '\'' %>, 'http://www.google.com/dictionary?aq=f&langpair=en|en&q=', 1); this.style.display='none';" display=""/><input type="button" id="toggleButton1" value="Hide" onclick="toggleIframe(1)" style="display: none"/>
+	</td></tr>
+	<tr><td>Urban Dictionary</td><td><input type="button" id="searchButton2" value="Show" onclick="search(<%='\'' + $query + '\'' %>, 'http://www.urbandictionary.com/define.php?term=', 2); this.style.display='none';" display=""/><input type="button" id="toggleButton2" value="Hide" onclick="toggleIframe(2)" style="display: none"/>
+	<tr><td>Wikipedia</td><td><input type="button" id="searchButton3" value="Show" onclick="search(<%='\'' + $query + '\'' %>, 'http://en.wikipedia.org/wiki/', 3); this.style.display='none';" display=""/><input type="button" id="toggleButton3" value="Hide" onclick="toggleIframe(3)" style="display: none"/>
+	</td></tr>
+	</td></tr>
+	</table>
+</div>
+	<iframe id="searchResult1" width="500" height="200" style="display: none" frameborder="0" ></iframe>
+	<iframe id="searchResult2" width="500" height="200" style="display: none" frameborder="0"></iframe>
+	<iframe id="searchResult3" width="500" height="200" style="display: none" frameborder="0" ></iframe>
   <% else %>
     <h1><%= "Sorry. We could not find the user #{$query}." %></h1>
   <% end %>
