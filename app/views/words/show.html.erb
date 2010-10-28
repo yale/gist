@@ -24,10 +24,10 @@
 <div class="external-results">
 	Show results from: <br>
 	<table style="font-size: 10px">
-		<tr><td width="130">Google Dictionary</td><td width="150"><input type="button" id="searchButton1" value="Show" onclick="search(<%='\'' + $query + '\'' %>, 'http://www.google.com/dictionary?aq=f&langpair=en|en&q=', 1); this.style.display='none';" display=""/><input type="button" id="toggleButton1" value="Hide" onclick="toggleIframe(1)" style="display: none"/><input type="button" id="sizeButton1" value="Expand" onclick="changeSize(1)" style="display: none"/>
+		<tr><td width="130">Google Dictionary</td><td width="150"><input type="button" id="searchButton1" value="Show" onclick="search(<%='\'' + @word + '\'' %>, 'http://www.google.com/dictionary?aq=f&langpair=en|en&q=', 1); this.style.display='none';" display=""/><input type="button" id="toggleButton1" value="Hide" onclick="toggleIframe(1)" style="display: none"/><input type="button" id="sizeButton1" value="Expand" onclick="changeSize(1)" style="display: none"/>
 		</td></tr>
-		<tr><td>Urban Dictionary</td><td><input type="button" id="searchButton2" value="Show" onclick="search(<%='\'' + $query + '\'' %>, 'http://www.urbandictionary.com/define.php?term=', 2); this.style.display='none';" display=""/><input type="button" id="toggleButton2" value="Hide" onclick="toggleIframe(2)" style="display: none"/><input type="button" id="sizeButton2" value="Expand" onclick="changeSize(2)" style="display: none"/>
-		<tr><td>Wikipedia</td><td><input type="button" id="searchButton3" value="Show" onclick="search(<%='\'' + $query + '\'' %>, 'http://en.wikipedia.org/wiki/', 3); this.style.display='none';" display=""/><input type="button" id="toggleButton3" value="Hide" onclick="toggleIframe(3)" style="display: none"/><input type="button" id="sizeButton3" value="Expand" onclick="changeSize(3)" style="display: none"/>
+		<tr><td>Urban Dictionary</td><td><input type="button" id="searchButton2" value="Show" onclick="search(<%='\'' + @word + '\'' %>, 'http://www.urbandictionary.com/define.php?term=', 2); this.style.display='none';" display=""/><input type="button" id="toggleButton2" value="Hide" onclick="toggleIframe(2)" style="display: none"/><input type="button" id="sizeButton2" value="Expand" onclick="changeSize(2)" style="display: none"/>
+		<tr><td>Wikipedia</td><td><input type="button" id="searchButton3" value="Show" onclick="search(<%='\'' + @word + '\'' %>, 'http://en.wikipedia.org/wiki/', 3); this.style.display='none';" display=""/><input type="button" id="toggleButton3" value="Hide" onclick="toggleIframe(3)" style="display: none"/><input type="button" id="sizeButton3" value="Expand" onclick="changeSize(3)" style="display: none"/>
 		</td></tr>
 		</td></tr>
 		</table>
