@@ -59,10 +59,22 @@ h4 {
 
 .search-result {
   text-align: center;
+  color: #fffeb3;
+  font-size: 16px;
 }
 
 .external-results {
+  text-align: center;
+  color: #b1d4ed;
+  font-size: 14px;
+  clear:both;
+}
+
+.external-results table{
+  margin-left: auto;
+  margin-right: auto;
   text-align: left;
+  color: white;
 }
 
 a {
