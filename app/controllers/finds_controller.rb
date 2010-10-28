@@ -14,10 +14,10 @@ class FindsController < ApplicationController
   	  end
   	end 
     
-    @google_dictionary_url = 'http://www.google.com/dictionary?aq=f&langpair=en|en&q=' + $query.gsub(' ', '+')
-    @urban_dictionary_url = 'http://www.urbandictionary.com/define.php?term=' + $query.gsub(' ', '+') 
-    @wikipedia_url = 'http://en.wikipedia.org/wiki/' + $query.gsub(' ', '+')
-    @thesaurus_url = 'http://thesaurus.com/browse/' + $query.gsub(' ', '+')
+    @google_dictionary_url = "'#{'http://www.google.com/dictionary?aq=f&langpair=en|en&q=' + $query.gsub(' ', '+')}'"
+    @urban_dictionary_url = "'#{'http://www.urbandictionary.com/define.php?term=' + $query.gsub(' ', '+')}'"
+    @wikipedia_url = "'#{'http://en.wikipedia.org/wiki/' + $query.gsub(' ', '+')}'"
+    @thesaurus_url = "'#{'http://thesaurus.com/browse/' + $query.gsub(' ', '+')}'"
     
     respond_to do |wants|
       if @result 
