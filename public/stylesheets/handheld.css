@@ -58,10 +58,20 @@ h4 {
 }
 
 .did-you-mean {
-	color:#CC0000;
-	font-size:medium;
-	font-weight:normal;
-	font-family:arial,sans-serif;
+/*  color: #CC0000;*/
+  color: #FF0000;
+  font-size: medium;
+  font-weight: normal;
+  font-family: arial,sans-serif;
+}
+
+.did-you-mean a{
+  color: #2200C1 !important;
+  font-size: medium;
+  font-weight: bold;
+  font-style: italic;
+  text-decoration: underline;
+  font-family: arial,sans-serif;
 }
 
 .search-result {
