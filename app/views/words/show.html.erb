@@ -9,6 +9,7 @@
 <iframe id="searchResult1" width="500" height="200" style="display: none" frameborder="0" ></iframe>
 <iframe id="searchResult2" width="500" height="200" style="display: none" frameborder="0"></iframe>
 <iframe id="searchResult3" width="500" height="200" style="display: none" frameborder="0" ></iframe>
+<iframe id="searchResult4" width="500" height="200" style="display: none" frameborder="0" ></iframe>
 </div>
 
 <%= render :partial => 'definitions/sorter', :locals => {:word => @word} %>
@@ -24,11 +25,13 @@
 <div class="external-results">
 	Show results from: <br>
 	<table style="font-size: 10px">
-		<tr><td width="130">Google Dictionary</td><td width="150"><input type="button" id="searchButton1" value="Show" onclick="search(<%='\'' + @word.name.gsub(' ', '+') + '\'' %>, 'http://www.google.com/dictionary?aq=f&langpair=en|en&q=', 1); this.style.display='none';" display=""/><input type="button" id="toggleButton1" value="Hide" onclick="toggleIframe(1)" style="display: none"/><input type="button" id="sizeButton1" value="Expand" onclick="changeSize(1)" style="display: none"/>
+		<tr><td width="150"><a href=<%="'" + @google_dictionary_url + "'" %>>Google Dictionary</a></td><td width="100"><input type="button" id="searchButton1" value="Show" onclick="search(<%="'" + @google_dictionary_url + "'" %>, 1); this.style.display='none';" display=""/><input type="button" id="toggleButton1" value="Hide" onclick="toggleIframe(1)" style="display: none"/><input type="button" id="sizeButton1" value="Expand" onclick="changeSize(1)" style="display: none"/>
 		</td></tr>
-		<tr><td>Urban Dictionary</td><td><input type="button" id="searchButton2" value="Show" onclick="search(<%='\'' + @word.name.gsub(' ', '+') + '\'' %>, 'http://www.urbandictionary.com/define.php?term=', 2); this.style.display='none';" display=""/><input type="button" id="toggleButton2" value="Hide" onclick="toggleIframe(2)" style="display: none"/><input type="button" id="sizeButton2" value="Expand" onclick="changeSize(2)" style="display: none"/>
-		<tr><td>Wikipedia</td><td><input type="button" id="searchButton3" value="Show" onclick="search(<%='\'' + @word.name.gsub(' ', '+') + '\'' %>, 'http://en.wikipedia.org/wiki/', 3); this.style.display='none';" display=""/><input type="button" id="toggleButton3" value="Hide" onclick="toggleIframe(3)" style="display: none"/><input type="button" id="sizeButton3" value="Expand" onclick="changeSize(3)" style="display: none"/>
+		<tr><td><a href=<%="'" + @urban_dictionary_url + "'" %>>Urban Dictionary</a></td><td><input type="button" id="searchButton2" value="Show" onclick="search(<%="'" + @urban_dictionary_url + "'" %>, 2); this.style.display='none';" display=""/><input type="button" id="toggleButton2" value="Hide" onclick="toggleIframe(2)" style="display: none"/><input type="button" id="sizeButton2" value="Expand" onclick="changeSize(2)" style="display: none"/>
 		</td></tr>
+		<tr><td><a href=<%="'" + @wikipedia_url + "'" %>>Wikipedia</a></td><td><input type="button" id="searchButton3" value="Show" onclick="search(<%="'" + @wikipedia_url + "'" %>, 3); this.style.display='none';" display=""/><input type="button" id="toggleButton3" value="Hide" onclick="toggleIframe(3)" style="display: none"/><input type="button" id="sizeButton3" value="Expand" onclick="changeSize(3)" style="display: none"/>
+		</td></tr>
+		<tr><td><a href=<%="'" + @thesaurus_url + "'" %>>Thesaurus.com</a></td><td><input type="button" id="searchButton4" value="Show" onclick="search(<%="'" + @thesaurus_url + "'" %>, 4); this.style.display='none';" display=""/><input type="button" id="toggleButton4" value="Hide" onclick="toggleIframe(4)" style="display: none"/><input type="button" id="sizeButton4" value="Expand" onclick="changeSize(4)" style="display: none"/>
 		</td></tr>
 		</table>
 </div>

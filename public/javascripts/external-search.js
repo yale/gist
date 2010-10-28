@@ -1,6 +1,5 @@
-function search(word, url, identifier) {
-    var search = url + word;
-    document.getElementById("searchResult" + identifier).src = search;
+function search(url, identifier) {
+    document.getElementById("searchResult" + identifier).src = url;
     showIframe(identifier);
 }
 function showIframe(identifier) {
