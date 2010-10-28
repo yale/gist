@@ -45,10 +45,12 @@ class WordsController < ApplicationController
   def show
     params[:word_id] = @word.id
     @definitions = Definition.list params
-    @google_dictionary_url = "'#{'http://www.google.com/dictionary?aq=f&langpair=en|en&q=' + @word.name.gsub(' ', '+')}'"
-    @urban_dictionary_url = "'#{'http://www.urbandictionary.com/define.php?term=' + @word.name.gsub(' ', '+')}'"
-    @wikipedia_url = "'#{'http://en.wikipedia.org/wiki/' + @word.name.gsub(' ', '+')}'"
-    @thesaurus_url = "'#{'http://thesaurus.com/browse/' + @word.name.gsub(' ', '+')}'"
+    
+    word = @word.name.gsub(' ', '+')
+    @google_dictionary_url = "'#{'http://www.google.com/dictionary?aq=f&langpair=en|en&q=' + word}'"
+    @urban_dictionary_url = "'#{'http://www.urbandictionary.com/define.php?term=' + word}'"
+    @wikipedia_url = "'#{'http://en.wikipedia.org/wiki/' + word}'"
+    @thesaurus_url = "'#{'http://thesaurus.com/browse/' + word}'"
 
     respond_to do |wants|
       wants.html

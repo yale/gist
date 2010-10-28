@@ -57,6 +57,13 @@ h4 {
   font-weight: bold;
 }
 
+.did-you-mean {
+	color:#CC0000;
+	font-size:medium;
+	font-weight:normal;
+	font-family:arial,sans-serif;
+}
+
 .search-result {
   text-align: center;
   color: #fffeb3;
