@@ -84,7 +84,15 @@ h4 {
   text-align: center;
   color: #b1d4ed;
   font-size: 14px;
-  clear:both;
+  clear: both;
+}
+
+.external-results-sidebar{
+  text-align: left;
+  color: #b1d4ed;
+  top: 80px;
+  left: 10px;
+  position: absolute;
 }
 
 .external-results a{
@@ -92,10 +100,15 @@ h4 {
 }
 
 .external-results table{
-  margin-left: auto;
-  margin-right: auto;
   text-align: left;
   color: white;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.external-results-sidebar table{
+  margin-left: ;
+  margin-right: ;
 }
 
 a {
