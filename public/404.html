@@ -1,30 +1,329 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE HTML>
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
 
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  
+    <meta charset="utf-8">
+    <title>Definitious : 404 page not found</title>
+    <meta name="google-site-verification" content="prpLgqQEKhoSzaS96o3aIPQ6u4czl74V1cvjAuNwkkk">
+    
 
-<head>
-  <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
-  <title>The page you were looking for doesn't exist (404)</title>
-	<style type="text/css">
-		body { background-color: #fff; color: #666; text-align: center; font-family: arial, sans-serif; }
-		div.dialog {
-			width: 25em;
-			padding: 0 4em;
-			margin: 4em auto 0 auto;
-			border: 1px solid #ccc;
-			border-right-color: #999;
-			border-bottom-color: #999;
-		}
-		h1 { font-size: 100%; color: #f00; line-height: 1.5em; }
-	</style>
-</head>
+    <script src="404_files/ga.js" async="" type="text/javascript"></script><script type="text/javascript" src="404_files/jquery.js"></script>
+    
+    <script type="text/javascript">
+    //<![CDATA[
+      window._auth_token_name = "#{request_forgery_protection_token}";
+      window._auth_token = "#{form_authenticity_token}";
+    //]]>
+    </script>
+    
+   
+    <link href="404_files/reset.css" media="screen" rel="stylesheet" type="text/css">
+    <link href="404_files/jquery-ui-1.css" media="screen" rel="stylesheet" type="text/css">
+    
+      
+        <link href="404_files/application.css" media="screen and (min-width: 800px), projection" rel="stylesheet" type="text/css">
+        <link href="404_files/handheld.css" media="handheld, only screen and (max-width: 800px)" rel="stylesheet" type="text/css">
+      
+    
+    <script src="404_files/jquery_002.js" type="text/javascript"></script>
+<script src="404_files/jquery-ui.js" type="text/javascript"></script>
+<script src="404_files/jrails.js" type="text/javascript"></script>
+<script src="404_files/application.js" type="text/javascript"></script>
+    <script src="404_files/jquery-1.js" type="text/javascript"></script>
+    <script src="404_files/jquery-ui-1.js" type="text/javascript"></script>
+    <script src="404_files/jrails.js" type="text/javascript"></script>
+    
+    <script src="404_files/FeatureLoader.js" type="text/javascript"></script><script type="text/javascript">
+      var _gaq = _gaq || [];
+      _gaq.push(['_setAccount', 'UA-17217475-1']);
+      _gaq.push(['_trackPageview']);
 
-<body>
-  <!-- This file lives in public/404.html -->
-  <div class="dialog">
-    <h1>The page you were looking for doesn't exist.</h1>
-    <p>You may have mistyped the address or the page may have moved.</p>
+      (function() {
+        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+      })();
+    </script><script type="text/javascript">
+    $(function() {  
+    $('#word_search').autocomplete({
+            minLength: 2,
+            source: '/words.json',
+            focus: function(event, ui) {
+                $('#word_search').val(ui.item.word.name);
+                return false;
+            },
+            select: function(event, ui) {
+                $('#word_search').val(ui.item.word.name);
+			 	$(this).parents().find('form:first').submit();
+                return false;
+            }
+        })
+        .data( "autocomplete" )._renderItem = function( ul, item ) {
+            return $( "<li></li>" )
+                .data( "item.autocomplete", item )
+                .append( "<a>" + item.word.name + "</a>" )
+                .appendTo( ul );
+        };
+    });
+    </script><script src="404_files/XFBML.js" type="text/javascript"></script><link href="404_files/connect-css.css" type="text/css" rel="stylesheet"></head><div firebugversion="1.5.4" style="display: none;" id="_firebugConsole"></div><body><div id="FB_HiddenContainer" style="position: absolute; top: -10000px; left: -10000px; width: 0px; height: 0px;"><div><iframe name="fb_api_server" src="404_files/client_restserver.html" class="FB_SERVER_IFRAME" scrolling="no" frameborder="0"></iframe></div><div><iframe name="loginStatus" src="404_files/login_status.html" class="FB_SERVER_IFRAME" scrolling="no" frameborder="0"></iframe></div></div>
+    
+
+    
+
+  
+    <div id="topbar">
+      <div id="topnav">
+        <ul>
+          <li id="homebutton"><a href="http://definitious.com/">Home</a></li>
+          <li><a href="http://definitious.com/words/random">Random Word</a></li>
+          <li><a href="http://definitious.com/users">User Leaderboard</a></li>
+		  <li><a href="http://definitious.com/hangman">Hangman</a></li>
+		<li><a href="http://definitious.com/tetris">Tetris</a></li>
+		<li><a href="http://definitious.com/scramble">Scramble</a></li>
+        </ul>
+      </div>
+      
+      <div id="usernav">
+        <ul>
+          
+            <li><a href="http://definitious.com/users/murtazajafferji">Murtaza Jafferji</a></li>
+            
+            <li><a href="#" onclick='FB.Connect.logoutAndRedirect("/logout")'>Logout</a></li><li>
+            
+          
+        </li></ul>
+      </div>
+    </div>
+    <div id="container">
+      <div id="header">
+        <h1 id="logo"><a href="http://definitious.com/">Definitious</a></h1>
+        <div id="search">
+	      <form action="/finds" method="get">
+		    <input aria-haspopup="true" aria-autocomplete="list" role="textbox" autocomplete="off" class="ui-autocomplete-input" id="word_search" name="word" onblur="if(this.value=='') this.value=this.defaultValue;" onfocus="if(this.value==this.defaultValue) this.value='';" value="Search for a word..." type="text">
+		  </form>
+        </div>
+      </div>
+
+    	<div id="sidebar">
+  <div id="nav">
+  <ul>
+    <li><a href="http://definitious.com/definitions/hot">What's Hot</a></li>
+    <li><a href="http://definitious.com/definitions?sort=date">New Definitions</a></li>
+    <li><a href="http://definitious.com/definitions?sort=like&amp;timespan=week">Top Definitions</a></li>
+  </ul>
+</div>
+  
+<div class="external-results">
+	<div class="external-results-sidebar">
+	Show results from: <br>
+	<table style="font-size: 10px;">
+		<tbody><tr><td width="130"><a href="http://www.google.com/dictionary?aq=f&amp;langpair=en%7Cen&amp;q=404+page+not+found">Google Dictionary</a></td><td width="50"><input id="searchButton1" value="Show" onclick="search('http://www.google.com/dictionary?aq=f&amp;langpair=en|en&amp;q=404+page+not+found', 1)" display="" type="button"><input id="toggleButton1" value="Hide" onclick="toggleIframe(1)" style="display: none;" type="button"><input id="sizeButton1" value="Expand" onclick="changeSize(1)" style="display: none;" type="button">
+		</td></tr>
+		<tr><td><a href="http://www.urbandictionary.com/define.php?term=404+page+not+found">Urban Dictionary</a></td><td><input id="searchButton2" value="Show" onclick="search('http://www.urbandictionary.com/define.php?term=404+page+not+found', 2)" display="" type="button"><input id="toggleButton2" value="Hide" onclick="toggleIframe(2)" style="display: none;" type="button"><input id="sizeButton2" value="Expand" onclick="changeSize(2)" style="display: none;" type="button">
+		</td></tr>
+		<tr><td><a href="http://en.wikipedia.org/wiki/404+page+not+found">Wikipedia</a></td><td><input id="searchButton3" value="Show" onclick="search('http://en.wikipedia.org/wiki/404+page+not+found', 3)" display="" type="button"><input id="toggleButton3" value="Hide" onclick="toggleIframe(3)" style="display: none;" type="button"><input id="sizeButton3" value="Expand" onclick="changeSize(3)" style="display: none;" type="button">
+		</td></tr>
+		<tr><td><a href="http://thesaurus.com/browse/404+page+not+found">Thesaurus.com</a></td><td><input id="searchButton4" value="Show" onclick="search('http://thesaurus.com/browse/404+page+not+found', 4)" display="" type="button"><input id="toggleButton4" value="Hide" onclick="toggleIframe(4)" style="display: none;" type="button"><input id="sizeButton4" value="Expand" onclick="changeSize(4)" style="display: none;" type="button">
+		</td></tr>
+		</tbody></table>
+	</div>
+</div>
+	
+</div>
+  
+      <div id="main">
+        <script src="404_files/FeatureLoader.js" type="text/javascript"></script>
+        <script type="text/javascript">
+//<![CDATA[
+             jQuery(document).ready( function() {
+                FB_RequireFeatures(["XFBML"], function() {
+                  FB.init('b33d27141426c0ba61e5327b8137db0b','/xd_receiver.html', {});
+                  
+                });
+              });
+
+//]]>
+</script>
+    	  
+<script src="404_files/external-search.js" type="text/javascript"></script>
+
+<h2 class="word">404 page not found</h2>
+
+  <a href="http://definitious.com/words/404-page-not-found" onclick="if (confirm('Are you sure?')) { var f = document.createElement('form'); f.style.display = 'none'; this.parentNode.appendChild(f); f.method = 'POST'; f.action = this.href;var m = document.createElement('input'); m.setAttribute('type', 'hidden'); m.setAttribute('name', '_method'); m.setAttribute('value', 'delete'); f.appendChild(m);var s = document.createElement('input'); s.setAttribute('type', 'hidden'); s.setAttribute('name', 'authenticity_token'); s.setAttribute('value', 'Zv5mlQ12tcu7Htm+KQRpSTOkLC61ZmnlGE80tRnu/P4='); f.appendChild(s);f.submit(); };return false;">Delete</a>
+
+
+<iframe id="searchResult1" style="display: none;" width="500" frameborder="0" height="200"></iframe>
+<iframe id="searchResult2" style="display: none;" width="500" frameborder="0" height="200"></iframe>
+<iframe id="searchResult3" style="display: none;" width="500" frameborder="0" height="200"></iframe>
+<iframe id="searchResult4" style="display: none;" width="500" frameborder="0" height="200"></iframe>
+
+<div id="sorter">
+  <p>Sort by <a href="http://definitious.com/words/404-page-not-found?sort=like&amp;word_id=1073709897">Popularity</a>, or by mood: <a href="http://definitious.com/words/404-page-not-found?sort=helpful&amp;word_id=1073709897">helpful</a>, <a href="http://definitious.com/words/404-page-not-found?sort=funny&amp;word_id=1073709897">funny</a> or <a href="http://definitious.com/words/404-page-not-found?sort=poetic&amp;word_id=1073709897">poetic</a></p>
+  <p>Show definitions from: <a href="http://definitious.com/words/404-page-not-found?timespan=today&amp;word_id=1073709897">today</a>, <a href="http://definitious.com/words/404-page-not-found?timespan=week&amp;word_id=1073709897">this week</a>, <a href="http://definitious.com/words/404-page-not-found?timespan=month&amp;word_id=1073709897">this month</a> or <a href="http://definitious.com/words/404-page-not-found?timespan=all&amp;word_id=1073709897">all time</a></p>
+</div>
+
+
+  <div id="definitions">
+  <div class="definition" id="definition-1073689636">
+  
+  
+    <ul class="thumbs">
+  <li class="like-button"><a href="#" onclick="$.ajax({data:'authenticity_token=' + encodeURIComponent('Zv5mlQ12tcu7Htm+KQRpSTOkLC61ZmnlGE80tRnu/P4='), dataType:'script', type:'post', url:'/definitions/1073689636/vote?mood=like'}); return false;">Like</a></li>
+  <li class="dislike-button"><a href="#" onclick="$.ajax({data:'authenticity_token=' + encodeURIComponent('Zv5mlQ12tcu7Htm+KQRpSTOkLC61ZmnlGE80tRnu/P4='), dataType:'script', type:'post', url:'/definitions/1073689636/vote?mood=dislike'}); return false;">Dislike</a></li>
+</ul>
+  
+  <div class="definition-content">
+    <p>
+      
+        <span class="index">1.</span>
+      
+      <span class="part-of-speech">noun</span>
+      <span class="body"><a href="http://definitious.com/definitions/1073689636">The page you requested does not exist. </a></span>
+    </p>
+    
+    <div class="meta">
+  
+  <p class="byline">submitted by 
+  <a href="http://definitious.com/users/murtazajafferji">Murtaza Jafferji</a> on October 28, 2010.</p>
+  
+  <p class="stats">
+    <span class="score">0% Liked.
+    
+      
+    </span>
+    <a href="#" class="stats-toggle">More stats</a>
+  </p>
+  
+  
+  
+  
+    <a href="http://definitious.com/definitions/1073689636" onclick="if (confirm('Are you sure?')) { var f = document.createElement('form'); f.style.display = 'none'; this.parentNode.appendChild(f); f.method = 'POST'; f.action = this.href;var m = document.createElement('input'); m.setAttribute('type', 'hidden'); m.setAttribute('name', '_method'); m.setAttribute('value', 'delete'); f.appendChild(m);var s = document.createElement('input'); s.setAttribute('type', 'hidden'); s.setAttribute('name', 'authenticity_token'); s.setAttribute('value', 'Zv5mlQ12tcu7Htm+KQRpSTOkLC61ZmnlGE80tRnu/P4='); f.appendChild(s);f.submit(); };return false;">Delete</a>
+  
+  
+    <a href="http://definitious.com/definitions/1073689636/edit">Edit</a>
+  
+  
+  <div style="display: none;" class="detailed-stats">
+  
+    
+      <div>
+        <p>0 likes, 0 dislikes, 0 helpful, 0 funny, 0 poetic</p>
+      </div>
+    
+  
+</div>
+  
+  <p class="comments">
+    <a href="#" class="comment-box-toggle">0 comments</a>
+  </p>
+  
+  <div style="display: none;" class="comment-box">
+    <ul class="comment-list">
+  
+</ul>
+    <div class="definition-comment-form">
+  
+    <form action="/definitions/1073689636/add_comment" class="comment-form" method="post"><div style="margin: 0pt; padding: 0pt; display: inline;"><input name="authenticity_token" value="Zv5mlQ12tcu7Htm+KQRpSTOkLC61ZmnlGE80tRnu/P4=" type="hidden"></div>
+      <input id="comment_comment" name="comment[comment]" size="30" type="text">
+
+      <input name="commit" value="Add Comment" type="submit">
+
+      <input id="commentable_valueDefinition" name="commentable[valueDefinition]" type="hidden">
+      <input id="id_value1073689636" name="id[value1073689636]" type="hidden">
+    </form>
+  
+</div>
   </div>
-</body>
-</html>
+  
+</div>
+    
+  </div>
+  
+</div>
+</div>
+
+
+<script type="text/javascript" src="404_files/jquery-1.html"></script>
+<script>
+  $(function() {  
+    $("#submitbutton").click(function() {  
+      if ($("textarea#PostArea").val() != "" && $("textarea#PostArea").val().length < 140) {
+        $('#formSubmit').submit();
+        $(".formmesssage").text("your form submitted").show().fadeOut(1000);
+      }else{
+        $(".formmesssage").text("Not valid!").show().fadeOut(1000);
+      }
+    });  
+  });  
+ 
+  $(function() {
+    CountlimitChars = function(){
+      $("#numberofWord").text(140 - $("textarea#PostArea").val().length ).show();
+      if($("textarea#PostArea").val().length > 130){
+        $("#numberofWord").addClass("one-fourty-red");
+      }else{
+        $("#numberofWord").removeClass('one-fourty-red').addClass("one-fourty-orange");
+      }
+      if($("textarea#PostArea").val().length > 110){
+        $("#numberofWord").addClass("one-fourty-orange");
+      }else{
+        $("#numberofWord").removeClass('one-fourty-orange').addClass("one-fourty");
+      }
+    }
+  });  
+</script>
+<div id="define-form">
+<table><tbody><tr><td>
+<div id="define">
+  <form action="/words/404-page-not-found/add_definition" class="edit_word" id="edit_word_1073709897" method="get">    <textarea cols="40" id="PostArea" name="definition[body]" onblur="if(this.value=='') this.value=this.defaultValue;" onfocus="if(this.value==this.defaultValue) this.value='';" onkeyup="CountlimitChars()" rows="4">Add your own definition for 404 page not found...</textarea>
+    <select id="definition_part_of_speech" name="definition[part_of_speech]"><option selected="selected" value="">(part of speech)</option>
+<option value="noun">noun</option>
+<option value="adjective">adjective</option>
+<option value="acronym">acronym</option>
+<option value="verb">verb</option>
+<option value="adverb">adverb</option>
+<option value="preposition">preposition</option>
+<option value="interjection">interjection</option></select>
+    <input id="word_submit" name="commit" value="Define!" type="submit">
+  </form></div>
+</td>
+<td style="vertical-align: top;">
+	<div class="one-fourty" id="numberofWord">140</div>
+</td>
+</tr></tbody></table>
+</div>
+
+
+
+
+      </div>
+      
+      <div id="ads">
+  
+<!-- Begin BidVertiser code -->
+<noscript><a href="http://www.bidvertiser.com">affiliate program</a></noscript>
+<!-- End BidVertiser code --> 
+
+<!-- Begin Facebook code -->
+<iframe src="404_files/likebox.html" style="border: medium none; overflow: hidden; width: 185px; height: 587px; background-color: rgb(255, 255, 255);" scrolling="no" frameborder="0"></iframe>
+<!-- End Facebook code --> 
+</div>
+    </div>
+    <div id="footer">
+      <div id="info">
+      <ul>
+        <li id="terms"><a href="http://definitious.com/terms">Terms of Service</a></li>
+        <li id="privacy"><a href="http://definitious.com/privacy">Privacy</a></li>
+        <li id="about"><a href="http://definitious.com/about">About Us</a></li>
+        <li id="feedback"><a href="http://definitious.com/feedback">Feedback</a></li>
+      </ul>
+      </div>
+      <p id="i18n">
+        View this site in
+        <span><a href="http://definitious.com/words/404-page-not-found">English</a></span>
+        or
+        <span><a href="http://definitious.com/words/404-page-not-found?locale=zh">中文</a></span>
+      </p>
+    </div>
+  <ul style="z-index: 1; top: 0px; left: 0px; display: none;" aria-activedescendant="ui-active-menuitem" role="listbox" class="ui-autocomplete ui-menu ui-widget ui-widget-content ui-corner-all"></ul></body></html>

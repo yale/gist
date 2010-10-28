@@ -1,0 +1,22 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script>document.domain = "facebook.com";</script><script src="login_status_data/en_US.js"></script><script>
+      var config = {"base_domain":"","channel":"http:\/\/definitious.com\/xd_receiver.html","connect_state":1,"debug":false,"granted_perms":{"extended":[],"user":[],"friends":[]},"in_facebook":false,"locale":"en_US","origin":null,"public_session_data":null,"referer_url":"http:\/\/definitious.com\/words\/404-page-not-found","session":{"uid":570340452,"session_key":"2.PXvBrAcldk7_JySAfL3ocA__.3600.1288310400-570340452","secret":"gFvCqKAJw9SuorLOGsYGkg__","expires":1288310400,"sig":"b24eca8ee8ecdf2ac0357dff3b6b3f6c"}};
+      FB.Bootstrap._requireFeatures(["Connect"], function() {
+        if (config.debug) {
+          FB.FBDebug.isEnabled = true;
+          FB.FBDebug.logLevel = 6;
+        }
+        FB.XdComm.Server.init("/xd_receiver_v0.4.php");
+        new FBIntern.LoginStatus().initialize(
+          config.channel,
+          config.session,
+          { inFacebook: config.in_facebook, locale: config.locale },
+          config.connect_state,
+          config.base_domain,
+          config.public_session_data,
+          config.referer_url,
+          config.origin,
+          config.granted_perms
+        );
+      });
+    </script><script src="404_files/XFBML.js" type="text/javascript"></script><link href="404_files/connect-css.css" type="text/css" rel="stylesheet"></head><div firebugversion="1.5.4" style="display: none;" id="_firebugConsole"></div><body><div id="FB_HiddenContainer" style="position: absolute; top: -10000px; left: -10000px; width: 0px; height: 0px;"><iframe src="login_status_data/xd_receiver.html" class="FB_RECEIVER_DOM"></iframe></div></body></html>
