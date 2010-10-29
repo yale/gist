@@ -91,6 +91,10 @@ h4 {
   clear: both;
 }
 
+.external-results-sidebar #second{
+  width: 50px;
+}
+
 .external-results a{
   color: white !important;
 }
