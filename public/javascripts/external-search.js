@@ -25,13 +25,13 @@ function toggleIframe(identifier) {
 }
 
 function changeSize(identifier) {
-	var size = document.getElementById("searchResult" + identifier).style.width;
-	if (size == "500px") {
-	    document.getElementById("searchResult" + identifier).style.width = "575px";
+	var width = document.getElementById("searchResult" + identifier).style.width;
+	if (width == "90%") {
+	    document.getElementById("searchResult" + identifier).style.width = "100%";
 		document.getElementById("searchResult" + identifier).style.height = "600px";
 		document.getElementById("sizeButton" + identifier).value = "Contract";
     } else {
-		document.getElementById("searchResult" + identifier).style.width = "500px";
+		document.getElementById("searchResult" + identifier).style.width = "90%";
 		document.getElementById("searchResult" + identifier).style.height = "200px";
 		document.getElementById("sizeButton" + identifier).value = "Expand";
     }
