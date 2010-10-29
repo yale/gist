@@ -120,7 +120,7 @@ a {
   background-color: #0e3b5a;
   height: 36px;
   font-size: 11px;
-  width: 343px;
+  width: 100%;
 }
 
 #topbar a {
@@ -161,7 +161,7 @@ a {
 #topnav li a {border-right-width: 1px;}
 
 #container {
-  width: 343px;
+  width: 100%;
 }
 
 #header {
@@ -425,7 +425,7 @@ a {
 }
 
 #login-facebook, #register-facebook {
-  padding-top: 1px;
+  padding-top: 1px;100%
   margin-left: 260px;
 }
 
@@ -442,7 +442,7 @@ a {
   clear: both;
   padding: 20px 0;
   font-size: 12px;
-  width: 343px;
+  width: 100%;
 }
 
 #info{
