@@ -44,6 +44,7 @@ class WordsController < ApplicationController
 
   def show
     params[:word_id] = @word.id
+    params[:sort] = "like"
     @definitions = Definition.list params
     
     word = @word.name.gsub(' ', '+')
