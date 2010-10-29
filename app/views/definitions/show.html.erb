@@ -3,11 +3,12 @@
 <div class="make-room-for-external-search">&nbsp;</div>
 
 <%= render :partial => 'definitions/definition', :locals => {:definition => @definition, :word => true} %>
-
+<div class="external-results">
 <iframe id="searchResult1" width="90%" height="200" style="display: none" frameborder="0" ></iframe>
 <iframe id="searchResult2" width="90%" height="200" style="display: none" frameborder="0"></iframe>
 <iframe id="searchResult3" width="90%" height="200" style="display: none" frameborder="0" ></iframe>
 <iframe id="searchResult4" width="90%" height="200" style="display: none" frameborder="0" ></iframe>
+</div>
 
 <div id="definition-details">
   <p><%=I18n.t("This definition has earned")%> <%= @user.username %> <%= @points %> <%=I18n.t("points")%>.</p>
@@ -29,7 +30,7 @@
 	<div class="external-results-sidebar">
 	Show results from: <br>
 	<table style="font-size: 10px">
-		<tr><td width="130"><a href=<%= @google_dictionary_url %>>Google Dictionary</a></td><td id="second" width="100"><input type="button" id="searchButton1" value="Show" onclick="search(<%= @google_dictionary_url %>, 1)" display=""/><input type="button" id="toggleButton1" value="Hide" onclick="toggleIframe(1)" style="display: none"/><input type="button" id="sizeButton1" value="Expand" onclick="changeSize(1)" style="display: none"/>
+		<tr><td width="130"><a href=<%= @google_dictionary_url %>>Google Dictionary</a></td><td id="second" width="110"><input type="button" id="searchButton1" value="Show" onclick="search(<%= @google_dictionary_url %>, 1)" display=""/><input type="button" id="toggleButton1" value="Hide" onclick="toggleIframe(1)" style="display: none"/><input type="button" id="sizeButton1" value="Expand" onclick="changeSize(1)" style="display: none"/>
 		</td></tr>
 		<tr><td><a href=<%= @urban_dictionary_url %>>Urban Dictionary</a></td><td><input type="button" id="searchButton2" value="Show" onclick="search(<%= @urban_dictionary_url %>, 2)" display=""/><input type="button" id="toggleButton2" value="Hide" onclick="toggleIframe(2)" style="display: none"/><input type="button" id="sizeButton2" value="Expand" onclick="changeSize(2)" style="display: none"/>
 		</td></tr>
