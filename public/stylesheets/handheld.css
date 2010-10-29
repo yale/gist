@@ -82,7 +82,7 @@ h4 {
 }
 
 .make-room-for-external-search {
-	height: 80px;
+	height: 85px;
 }
 
 .external-results {
@@ -98,7 +98,7 @@ h4 {
   top: 80px;
   left: 10px;
   position: absolute;*/
-  padding-top: 10px;
+  padding-top: 15px;
 }
 
 .external-results a{
