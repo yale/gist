@@ -214,7 +214,7 @@ class Definition < ActiveRecord::Base
   end
   
   def definition_type
-	definition_type = []
+	  definition_type = []
   	if helpful == funny and helpful == poetic and helpful == 0 
     elsif helpful == funny and helpful == poetic
         definition_type << I18n.t("helpful")
@@ -242,7 +242,7 @@ class Definition < ActiveRecord::Base
   def definition_type_negative
 	definition_type_negative = []
   	if inaccurate == mature and inaccurate == offensive and inaccurate == 0 
-elsif inaccurate == mature and inaccurate == offensive and inaccurate >= User::NEGATIVE_SHOW_THRESHOLD
+    elsif inaccurate == mature and inaccurate == offensive and inaccurate >= User::NEGATIVE_SHOW_THRESHOLD
         definition_type_negative << "inaccurate"
         definition_type_negative << "mature"
         definition_type_negative << "offensive"
@@ -371,9 +371,9 @@ elsif inaccurate == mature and inaccurate == offensive and inaccurate >= User::N
   def make_slug
   	if self.word
       self.url = self.word.name.to_url + "-" + self.id.to_s
-	else
-	  self.url = self.id.to_s
-	end
+	  else
+	    self.url = self.id.to_s
+	  end
   end
   
   #def to_param
