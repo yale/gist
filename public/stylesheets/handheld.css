@@ -120,7 +120,7 @@ a {
   background-color: #0e3b5a;
   height: 36px;
   font-size: 11px;
-  width: 100%;
+  width: 343px;
 }
 
 #topbar a {
@@ -161,7 +161,7 @@ a {
 #topnav li a {border-right-width: 1px;}
 
 #container {
-  width: 100%;
+  width: 343px;
 }
 
 #header {
@@ -263,7 +263,6 @@ a {
   border-top: solid 4px #13517a;
   background-color: #176092;
   padding: 20px;
-  width: 100%;
 }
 
 #main a {
