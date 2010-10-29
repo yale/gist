@@ -2,13 +2,14 @@
 <%= javascript_include_tag 'external-search' %>
 <div class="make-room-for-external-search">&nbsp;</div>
 
-<%= render :partial => 'definitions/definition', :locals => {:definition => @definition, :word => true} %>
 <div class="external-results">
 <iframe id="searchResult1" width="90%" height="200" style="display: none" frameborder="0" ></iframe>
 <iframe id="searchResult2" width="90%" height="200" style="display: none" frameborder="0"></iframe>
 <iframe id="searchResult3" width="90%" height="200" style="display: none" frameborder="0" ></iframe>
 <iframe id="searchResult4" width="90%" height="200" style="display: none" frameborder="0" ></iframe>
 </div>
+
+<%= render :partial => 'definitions/definition', :locals => {:definition => @definition, :word => true} %>
 
 <div id="definition-details">
   <p><%=I18n.t("This definition has earned")%> <%= @user.username %> <%= @points %> <%=I18n.t("points")%>.</p>
