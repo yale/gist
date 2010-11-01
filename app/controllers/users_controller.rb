@@ -92,7 +92,7 @@ class UsersController < ApplicationController
     
     @like_percentage =  @user.like_percentage
     @dislike_percentage = @user.dislike_percentage
-	@helpful_percentage = @user.helpful_percentage
+	  @helpful_percentage = @user.helpful_percentage
     @funny_percentage = @user.funny_percentage
     @poetic_percentage = @user.poetic_percentage
     
@@ -118,7 +118,7 @@ class UsersController < ApplicationController
       @comments_posted_points = @user.comments_posted_points
       @comments_received = @user.comments_received
       @comments_received_points = @user.comments_received_points
-	  @facebook_points = @user.facebook_points
+	    @facebook_points = @user.facebook_points
     end
     
     respond_to do |wants|
