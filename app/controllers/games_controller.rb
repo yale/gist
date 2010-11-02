@@ -18,6 +18,4 @@ class GamesController < ApplicationController
     @word_list = file.lines.to_a
   end
   
-  def smbc
-  end
 end

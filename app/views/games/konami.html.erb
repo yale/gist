@@ -1,0 +1,40 @@
+<% title "Secret Games" %>
+
+<div id="konami_code_game">
+<html>
+<head>
+<%= javascript_include_tag 'mootools-1.2-core.js' %>
+<%= javascript_include_tag 'mootools-1.2-more.js' %>
+<%= javascript_include_tag 'MooFlow' %>
+<%= stylesheet_link_tag 'MooFlow' %>
+
+  <script type='text/javascript'>
+    window.addEvent('domready', function(){
+    var mf = new MooFlow($('MooFlow'), {
+      startIndex: 0,
+      useSlider: true,
+      useAutoPlay: true,
+      useCaption: true,
+      useResize: true,
+      useWindowResize: true,
+      useMouseWheel: true,
+      useKeyInput: true
+    });
+    });
+    </script>
+</head>
+<body>
+<h4>Secret Games</h4>
+<div id="content">
+
+  <div id="MooFlow">
+    <div><img src="images/logo.png" title="@2" alt="Ein @-Symbol" /></div>
+    <div><img src="images/logo2.png" title="Stimme von oben" alt="Lautsprecherturm" /></div>
+	<a href="http://google.com">
+	   <img src="images/logo.png" title="Title" alt="Some descriptions" />
+	</a>
+  </div>
+
+</body>
+</html>
+</div>

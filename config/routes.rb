@@ -38,7 +38,9 @@ ActionController::Routing::Routes.draw do |map|
   	game.hangman 'hangman', :action => 'hangman'
   	game.tetris 'tetris', :action => 'tetris'
   	game.scramble 'scramble', :action => 'scramble'
-  	game.smbc 'smbc', :action => 'smbc'
+  	game.konami 'konami', :action => 'konami'
+  	game.asteroids 'asteroids', :action => 'asteroids'
+  	game.bowman 'bowman', :action => 'bowman'
   end
    
   # The priority is based upon order of creation: first created -> highest priority.

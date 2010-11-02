@@ -482,6 +482,10 @@ a {
   margin: 10px 0;
 }
 
+#konami_code_game{
+	text-align: center;
+}
+
 #hangman {
   display: block;
   text-align: center;
