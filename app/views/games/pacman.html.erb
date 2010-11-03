@@ -1,0 +1,18 @@
+<% title "Pacman" %>
+
+<div id="konami_code_game">
+<html>
+<head>
+<%= javascript_include_tag 'swfobject' %>
+</head>
+<body>
+<h4>Pacman</h4>
+<script type="text/javascript">
+	swfobject.embedSWF("swf/pacman.swf", "flashcontent", "550", "400", "9");
+</script>
+<div id="flashcontent">
+  <h1>You need to upgrade your Flash Player or turn on JavaScript</h1>
+</div>
+</body>
+</html>
+</div>

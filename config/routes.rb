@@ -41,6 +41,18 @@ ActionController::Routing::Routes.draw do |map|
   	game.konami 'konami', :action => 'konami'
   	game.asteroids 'asteroids', :action => 'asteroids'
   	game.bowman 'bowman', :action => 'bowman'
+  	game.ngame 'n', :action => 'n'
+  	game.helicopter 'helicopter', :action => 'helicopter'
+  	game.portal 'portal', :action => 'portal'
+  	game.pacman 'pacman', :action => 'pacman'
+  	game.linerider 'linerider', :action => 'linerider'
+  	game.smbc 'smbc', :action => 'smbc'
+  	game.bloodypingu 'bloodypingu', :action => 'bloodypingu'
+  	game.frogger 'frogger', :action => 'frogger'
+  	game.connect4 'connect4', :action => 'connect4'
+  	game.winterbells 'winterbells', :action => 'winterbells'
+  	game.solitaire 'solitaire', :action => 'solitaire'
+  	game.governorofpoker 'governorofpoker', :action => 'governorofpoker'
   end
    
   # The priority is based upon order of creation: first created -> highest priority.
