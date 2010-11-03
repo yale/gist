@@ -53,6 +53,7 @@ ActionController::Routing::Routes.draw do |map|
   	game.winterbells 'winterbells', :action => 'winterbells'
   	game.solitaire 'solitaire', :action => 'solitaire'
   	game.governorofpoker 'governorofpoker', :action => 'governorofpoker'
+    game.supersmashflash 'supersmashflash', :action => 'supersmashflash'
   end
    
   # The priority is based upon order of creation: first created -> highest priority.
