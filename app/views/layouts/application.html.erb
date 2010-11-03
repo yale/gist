@@ -120,6 +120,7 @@
         <div id="search">
 	      <% form_tag(finds_path, :method => 'get') do %>
 		    <%= text_field_tag (:word, I18n.t("Search for a word..."), :onFocus => "if(this.value==this.defaultValue) this.value='';", :onBlur  => "if(this.value=='') this.value=this.defaultValue;", 'id' => 'word_search') %>
+			<%# image_submit_tag("../images/search.gif", :id => 'searchbutton', :alt => "Search!") %>
 		  <% end %>
         </div>
       </div>

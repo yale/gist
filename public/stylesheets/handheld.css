@@ -208,7 +208,7 @@ a {
 
 #search input {
   display: block;
-  padding: 0px 40px 8px 8px;
+  padding: 8px 40px 8px 8px;
   margin: 10px auto;
   width: 210px;
   background: #fff url(../images/search.gif) 220px 5px no-repeat;
