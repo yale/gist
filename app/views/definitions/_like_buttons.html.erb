@@ -1,4 +1,9 @@
 <ul class="thumbs">
-  <li class="like-button<%= " voted" if definition.get_vote current_user, :like %>"><%= link_to_remote I18n.t("Like"), :url => vote_definition_path(definition, :mood => :like), :method => :post %></a></li>
-  <li class="dislike-button<%= " voted" if definition.get_vote current_user, :dislike %>"><%= link_to_remote I18n.t("Dislike"), :url => vote_definition_path(definition, :mood => :dislike), :method => :post %></li>
+  <% if current_user %>
+    <li class="like-button<%= " voted" if definition.get_vote current_user, :like %>"><%= link_to_remote I18n.t("Like"), :url => vote_definition_path(definition, :mood => :like), :method => :post %></a></li>
+    <li class="dislike-button<%= " voted" if definition.get_vote current_user, :dislike %>"><%= link_to_remote I18n.t("Dislike"), :url => vote_definition_path(definition, :mood => :dislike), :method => :post %></li>
+  <% else %>
+    <li class="like-button"><%= link_to I18n.t("Register"), new_user_path %></a></li>
+    <li class="dislike-button"><%= link_to I18n.t("Register"), new_user_path %></a></li>
+  <% end %>
 </ul>

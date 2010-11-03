@@ -1,8 +1,8 @@
 <div class="definition" id="definition-<%= definition.id %>">
   <% @counter ||= 1 %>
-  <% if current_user %>
+  <%# if current_user %>
     <%= render :partial => 'definitions/like_buttons', :locals => {:definition => definition} %>
-  <% end %>
+  <%# end %>
   <div class="definition-content">
     <p>
       <% if defined? word and definition.word %>
