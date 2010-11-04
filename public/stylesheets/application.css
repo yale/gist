@@ -245,6 +245,7 @@ vertical-align: middle;
 
 #word_search:hover { 
 	border:solid 2px #00BFF3;
+	background:#fff;  
 }
 
 #word_search:focus { 
@@ -291,6 +292,7 @@ vertical-align: middle;
 
 #user_search:hover { 
 	border:solid 2px #00BFF3;
+	background:#fff;  
 }
 
 #user_search:focus { 
