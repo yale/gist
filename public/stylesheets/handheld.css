@@ -199,7 +199,7 @@ a {
   padding-bottom: 0px;
 }
 
-#search {
+/*#search {
   display: block;
   margin: 10px auto;
   text-align: right;
@@ -212,10 +212,118 @@ a {
   margin: 10px auto;
   width: 210px;
   background: #fff url(../images/search.gif) 220px 5px no-repeat;
+}*/
+
+/* Search */
+.search { 
+	width:260px; 
+	height:40px; 
+	padding: 10px;
+	margin-left: auto;   
+	margin-right: auto
 }
 
+.search form { 
+	width:260px; 
+	margin:0; 
+}
 
-#user-search {
+#word_search { 
+	width:210px; 
+	display:block; 
+	font-size:18px; 
+/*	color:#a9bac4; */
+	padding:8px 38px 8px 10px; 
+	float:left; 
+	border:0; 
+	height:19px;
+    background:#f1f1f1; 
+	opacity: 0.9; 
+	-webkit-transition:opacity 0.3s linear; 
+	border:solid 2px #a9bac4; 
+/*	border:solid 5px #BBBBBB;*/
+}
+
+.search:hover { 
+	opacity: 1; 
+}
+
+#word_search:hover { 
+	border:solid 2px #00BFF3;
+}
+
+#word_search:focus { 
+/*	color:#333; */
+/*	border:solid 1px #1d2a32; */
+	border:solid 2px #00BFF3;
+	opacity: 1; 
+	background:#fff; 
+}
+
+#searchsubmit { 
+	width:20px; 
+	height:20px; 
+	display:block; 
+	position:relative; 
+	float:right; 
+	right:5px; 
+	top:-30px; 
+}
+
+/* User search */
+.search-user { 
+	float: right;
+	height:29px; 
+}
+
+.search-user form { 
+	width:210px; 
+	margin:0; 
+}
+
+#user_search { 
+	width:160px; 
+	display:block; 
+	font-size:14px; 
+/*	color:#a9bac4; */
+	padding:6px 38px 6px 10px; 
+	float:left; 
+	border:0; 
+	height:18px;
+    background:#f1f1f1; 
+	opacity: 0.9; 
+	-webkit-transition:opacity 0.3s linear; 
+	border:solid 2px #a9bac4; 
+/*	border:solid 5px #BBBBBB;*/
+}
+
+.search-user:hover { 
+	opacity: 1; 
+}
+
+#user_search:hover { 
+	border:solid 2px #00BFF3;
+}
+
+#user_search:focus { 
+/*	color:#333; */
+/*	border:solid 1px #1d2a32; */
+	border:solid 2px #00BFF3;
+	opacity: 1; 
+	background:#fff; 
+}
+
+#searchsubmit-user { 
+	width:16px; 
+	height:16px; 
+	display:block; 
+	position:relative; 
+	float:right; 
+	right:5px; 
+	top:-26px; 
+}
+
+/*#user-search {
   float: right;
   padding: 0px 0px 0px 3px;
 }
@@ -225,7 +333,7 @@ a {
   width: 160px;
   padding: 3px 40px 3px 6px;
   background: #fff url(../images/search.gif) 170px 0px no-repeat;
-}
+}*/
 
 #sidebar {
   height: 30px;

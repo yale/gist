@@ -117,12 +117,18 @@
     <div id="container">
       <div id="header">
         <h1 id="logo"><a href="/">Definitious</a></h1>
-        <div id="search">
-	      <% form_tag(finds_path, :method => 'get') do %>
-		    <%= text_field_tag (:word, I18n.t("Search for a word..."), :onFocus => "if(this.value==this.defaultValue) this.value='';", :onBlur  => "if(this.value=='') this.value=this.defaultValue;", 'id' => 'word_search') %>
-			<%# image_submit_tag("../images/search.gif", :id => 'searchbutton', :alt => "Search!") %>
-		  <% end %>
+        <!-- <div id="search">
+	      <%# form_tag(finds_path, :method => 'get') do %>
+		    <%# text_field_tag (:word, I18n.t("Search for a word..."), :onFocus => "if(this.value==this.defaultValue) this.value='';", :onBlur  => "if(this.value=='') this.value=this.defaultValue;", :id => 'word_search') %><%# image_submit_tag("search.gif", :id => 'searchbutton', :alt => "Search!") %>
+		  <%# end %>
+        </div> -->
+        <div class="search">
+			<% form_tag(finds_path, :method => 'get') do %>
+			    <%= text_field_tag (:word, I18n.t("Search for a word..."), :onFocus => "if(this.value==this.defaultValue) this.value='';", :onBlur  => "if(this.value=='') this.value=this.defaultValue;", :id => 'word_search') %>
+			<%= image_submit_tag("search.png", :onmouseover => "this.src='/images/search-hover.png'", :onmouseout => "this.src='/images/search.png'", :id => 'searchsubmit', :alt => "Search!") %>
+			  <% end %>
         </div>
+
       </div>
 
       <%= render :partial => 'layouts/sidebar' %>

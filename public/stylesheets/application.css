@@ -185,7 +185,7 @@ a {
   height: 40px;
 }
 
-#search {
+/*#search {
   width: 280px;
   margin-left: 230px;
   text-align: right;
@@ -196,9 +196,135 @@ a {
   padding: 8px 40px 8px 8px;
   width: 210px;
   background: #fff url(../images/search.gif) 220px 5px no-repeat;
+}*/
+
+/*#search {
+  width: 280px;
+  margin-left: 230px;
+  text-align: right;
+  font-size: 18px;
 }
 
-#user-search {
+#word_search {
+  padding: 8px 0px 8px 8px;
+  width: 210px;
+  background: #fff url(../images/search.gif) 220px 5px no-repeat;
+vertical-align: middle;
+}
+
+#searchbutton{
+border: 8px solid #fff;
+vertical-align: middle;
+}*/
+
+/* Search */
+.search { 
+	width:260px; 
+	margin-left: 250px;
+	height:29px; 
+}
+
+.search form { 
+	width:260px; 
+	margin:0; 
+}
+
+#word_search { 
+	width:210px; 
+	display:block; 
+	font-size:18px; 
+/*	color:#a9bac4; */
+	padding:8px 38px 8px 10px; 
+	float:left; 
+	border:0; 
+	height:19px;
+    background:#f1f1f1; 
+	opacity: 0.9; 
+	-webkit-transition:opacity 0.3s linear; 
+	border:solid 2px #a9bac4; 
+/*	border:solid 5px #BBBBBB;*/
+}
+
+.search:hover { 
+	opacity: 1; 
+}
+
+#word_search:hover { 
+	border:solid 2px #00BFF3;
+}
+
+#word_search:focus { 
+/*	color:#333; */
+/*	border:solid 1px #1d2a32; */
+	border:solid 2px #00BFF3;
+	opacity: 1; 
+	background:#fff; 
+}
+
+#searchsubmit { 
+	width:20px; 
+	height:20px; 
+	display:block; 
+	position:relative; 
+	float:right; 
+	right:5px; 
+	top:-30px; 
+}
+
+/* User search */
+.search-user { 
+	float: right;
+	height:29px; 
+}
+
+.search-user form { 
+	width:210px; 
+	margin:0; 
+}
+
+#user_search { 
+	width:160px; 
+	display:block; 
+	font-size:14px; 
+/*	color:#a9bac4; */
+	padding:6px 38px 6px 10px; 
+	float:left; 
+	border:0; 
+	height:18px;
+    background:#f1f1f1; 
+	opacity: 0.9; 
+	-webkit-transition:opacity 0.3s linear; 
+	border:solid 2px #a9bac4; 
+/*	border:solid 5px #BBBBBB;*/
+}
+
+.search-user:hover { 
+	opacity: 1; 
+}
+
+#user_search:hover { 
+	border:solid 2px #00BFF3;
+}
+
+#user_search:focus { 
+/*	color:#333; */
+/*	border:solid 1px #1d2a32; */
+	border:solid 2px #00BFF3;
+	opacity: 1; 
+	background:#fff; 
+}
+
+#searchsubmit-user { 
+	width:16px; 
+	height:16px; 
+	display:block; 
+	position:relative; 
+	float:right; 
+	right:5px; 
+	top:-26px; 
+}
+
+/*#user-search {
   float: right;
   padding: 0px 0px 0px 3px;
 }
@@ -209,6 +335,7 @@ a {
   padding: 3px 40px 3px 6px;
   background: #fff url(../images/search.gif) 170px 0px no-repeat;
 }
+*/
 
 #sidebar {
   width: 150px;

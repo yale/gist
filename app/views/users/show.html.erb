@@ -24,11 +24,18 @@ $('#user_search').autocomplete({
 });
 </script>
 
-<div id="user-search">
-  <p><%= @users.size %> users and counting...</p>
-  <% form_tag(finds_path, :method => 'get') do %>
-    <%= text_field_tag(:user, I18n.t("Search for a user..."), :onFocus => "if(this.value==this.defaultValue) this.value='';", :onBlur  => "if(this.value=='') this.value=this.defaultValue;", 'id' => 'user_search') %>
-  <% end %>
+<!-- <div id="user-search">
+  <p><%# @users.size %> users and counting...</p>
+  <%# form_tag(finds_path, :method => 'get') do %>
+    <%# text_field_tag(:user, I18n.t("Search for a user..."), :onFocus => "if(this.value==this.defaultValue) this.value='';", :onBlur  => "if(this.value=='') this.value=this.defaultValue;", 'id' => 'user_search') %>
+  <%# end %>
+</div> -->
+
+<div class="search-user">
+	<% form_tag(finds_path, :method => 'get') do %>
+	    <%= text_field_tag (:user, I18n.t("Search for a user..."), :onFocus => "if(this.value==this.defaultValue) this.value='';", :onBlur  => "if(this.value=='') this.value=this.defaultValue;", :id => 'user_search') %>
+	<%= image_submit_tag("search.png", :onmouseover => "this.src='/images/search-hover.png'", :onmouseout => "this.src='/images/search.png'", :id => 'searchsubmit-user', :alt => "Search!") %>
+	  <% end %>
 </div>
 
 <h2><%= link_to @user.username, @user %></h2>

@@ -3,16 +3,16 @@ class FindsController < ApplicationController
     
     if params[:user]
   	  $query = params[:user].lstrip.rstrip
-  	  @result = User.find(:first, :conditions => { :name => $query })
+  	  @result = User.find(:first, :conditions => ['LOWER(name) LIKE ?', "#{$query.downcase}%"])
   	  if @result.nil?
-  	  	@result = User.find(:first, :conditions => { :login => $query })
+  	  	@result = User.find(:first, :conditions => ['LOWER(login) LIKE ?', "#{$query.downcase}%"])
   	  end
   	end
   	
   	if params[:word]
-  	  $query = params[:word].downcase.lstrip.rstrip
+  	  $query = params[:word].lstrip.rstrip
   	  @word = Word.new
-  	  @result = Word.find(:first, :conditions => { :name => $query })
+  	  @result = Word.find(:first, :conditions => ['LOWER(name) LIKE ?', "#{$query.downcase}%"])
   	  if @result.nil?
         query = $query.gsub(' ', '+')
         @google_dictionary_url = "'#{'http://www.google.com/dictionary?aq=f&langpair=en|en&q=' + query}'"
