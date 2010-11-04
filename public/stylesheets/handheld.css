@@ -238,14 +238,8 @@ a {
 	border:0; 
 	height:19px;
     background:#f1f1f1; 
-	opacity: 0.9; 
-	-webkit-transition:opacity 0.3s linear; 
 	border:solid 2px #a9bac4; 
 /*	border:solid 5px #BBBBBB;*/
-}
-
-.search:hover { 
-	opacity: 1; 
 }
 
 #word_search:hover { 
@@ -256,7 +250,6 @@ a {
 /*	color:#333; */
 /*	border:solid 1px #1d2a32; */
 	border:solid 2px #00BFF3;
-	opacity: 1; 
 	background:#fff; 
 }
 
@@ -291,14 +284,8 @@ a {
 	border:0; 
 	height:18px;
     background:#f1f1f1; 
-	opacity: 0.9; 
-	-webkit-transition:opacity 0.3s linear; 
 	border:solid 2px #a9bac4; 
 /*	border:solid 5px #BBBBBB;*/
-}
-
-.search-user:hover { 
-	opacity: 1; 
 }
 
 #user_search:hover { 
@@ -309,7 +296,6 @@ a {
 /*	color:#333; */
 /*	border:solid 1px #1d2a32; */
 	border:solid 2px #00BFF3;
-	opacity: 1; 
 	background:#fff; 
 }
 
