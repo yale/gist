@@ -698,7 +698,6 @@ label {
   width: 20px;
   background: url(../images/refresh.png) center 3px no-repeat;
   display: block;
-  border: 0;
 }
 
 #refreshbutton a:hover {
