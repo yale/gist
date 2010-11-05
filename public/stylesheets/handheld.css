@@ -433,9 +433,9 @@ a {
   font-weight: bold;
 }
 
-  #main .body a {
-      color: white;
-  }
+#main .body a {
+  color: white;
+}
 
 .byline {
   float: right;
@@ -617,9 +617,11 @@ a {
 #scramble .game{
 	float: right;
 }
+
 #scramble .game-grid td{
 	padding: 15px; 
 }
+
 #scramble .list{
 	float: right;
 	padding-left: 10px;
@@ -628,18 +630,20 @@ a {
 #scramble .list{
 	float: right;
 }
+
 #scramble .buttons{
 clear: right;
 }
+
 #scramble .top{
 }
+
 #scramble textarea{
 	color: white;
 	background: none;
 	border: none;
 	/*overflow: hidden;*/
 }
-
 
 #i18n {
   text-align: center;
@@ -658,4 +662,39 @@ label {
   display: block;
   font-weight: bold;
   text-transform: uppercase;
+}
+
+#random {
+  display: block;
+}
+
+#random-word {
+  float: left;
+  margin-right: 10px;
+}
+
+#refreshbutton {
+  height: 25px;
+}
+
+#refreshbutton a {
+  text-indent: -9999em;
+  overflow: hidden;
+  height: 23px;
+  width: 20px;
+  background: url(../images/refresh.png) center 3px no-repeat;
+  display: block;
+  border: 0;
+}
+
+#refreshbutton a:hover {
+  background: url(../images/refresh-hover.png) center 3px no-repeat;
+}
+
+a:focus { 
+  outline: none;
+}
+
+input:focus { 
+  outline: none;
 }

@@ -32,6 +32,7 @@ $('#user_search').autocomplete({
 </div> -->
 
 <div class="search-user">
+	<p><%= @users.size %> users and counting...</p>
 	<% form_tag(finds_path, :method => 'get') do %>
 	    <%= text_field_tag (:user, I18n.t("Search for a user..."), :onFocus => "if(this.value==this.defaultValue) this.value='';", :onBlur  => "if(this.value=='') this.value=this.defaultValue;", :id => 'user_search') %>
 	<%= image_submit_tag("search.png", :onmouseover => "this.src='/images/search-hover.png'", :onmouseout => "this.src='/images/search.png'", :id => 'searchsubmit-user', :alt => "Search!") %>
