@@ -17,6 +17,7 @@ class ApplicationController < ActionController::Base
   
   before_filter :instantiate_controller_and_action_names
   before_filter :set_locale
+  before_filter :email_defaults
   
   LOCALES = {"en" => I18n.t("English"), "zh" => I18n.t("Chinese")}
    
@@ -39,6 +40,22 @@ class ApplicationController < ActionController::Base
     redirect_to :back
     rescue ActionController::RedirectBackError
     redirect_to path
+  end
+  
+  def email_defaults
+    Pony.options = {
+      :from => 'Definitious <noreply@definitious.com>', 
+      :via => :smtp, 
+      :via_options => {
+        :address              => 'smtp.gmail.com',
+        :port                 => '587',
+        :enable_starttls_auto => true,
+        :user_name            => 'noreply@definitious.com',
+        :password             => 'default',
+        :authentication       => :plain # :plain, :login, :cram_md5, no auth by default
+        #:domain               => "localhost.localdomain" # the HELO domain provided by the client to the server
+      } 
+    }
   end
 
 private

@@ -12,7 +12,7 @@ class FindsController < ApplicationController
   	if params[:word]
   	  $query = params[:word].lstrip.rstrip
   	  @word = Word.new
-  	  @result = Word.find(:first, :conditions => ['LOWER(name) LIKE ?', "#{$query.downcase}%"])
+  	  @result = Word.find(:first, :conditions => ['LOWER(name) LIKE ?', "#{$query.downcase}"])
   	  if @result.nil?
         query = $query.gsub(' ', '+')
         @google_dictionary_url = "'#{'http://www.google.com/dictionary?aq=f&langpair=en|en&q=' + query}'"
@@ -49,6 +49,7 @@ class FindsController < ApplicationController
         # @suggestion_google = titles_google[0] + "\n" unless titles_google[0].nil?
       end
     end
+    
     respond_to do |wants|
       if @result 
         wants.html { redirect_to @result }

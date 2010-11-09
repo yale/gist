@@ -52,6 +52,7 @@ Rails::Initializer.run do |config|
   
   config.gem 'jackdempsey-acts_as_commentable', :lib => 'acts_as_commentable', :source => "http://gems.github.com"
   config.gem "google_translate"
+  config.gem "pony"
   #config.gem "facebooker"
   
   config.gem 'will_paginate', :version => '~> 2.3.11', :source => 'http://gemcutter.org'

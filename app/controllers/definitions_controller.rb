@@ -7,6 +7,15 @@ class DefinitionsController < ApplicationController
     comment = @definition.comments.create(params[:comment])
     # Assign this comment to the logged in user
     comment.user_id = current_user.id
+    
+    current_user.add_points User::SCORE[:comment]
+    comment.commentable.user.add_points User::SCORE[:comment]
+
+    Pony.mail(
+      :to => comment.commentable.user.email, 
+      :subject => "#{current_user.username} commented on your definition for #{comment.commentable.word.name}", 
+      :body => "#{current_user.username} wrote \"#{comment.comment}\" on your definition for #{comment.commentable.word.name}"
+    )
 
     # Add the comment
     if comment.save
