@@ -56,5 +56,5 @@ Rails::Initializer.run do |config|
   #config.gem "facebooker"
   
   config.gem 'will_paginate', :version => '~> 2.3.11', :source => 'http://gemcutter.org'
-  
+    
 end

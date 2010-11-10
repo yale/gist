@@ -10,12 +10,14 @@ class DefinitionsController < ApplicationController
     
     current_user.add_points User::SCORE[:comment]
     comment.commentable.user.add_points User::SCORE[:comment]
-
-    Pony.mail(
-      :to => comment.commentable.user.email, 
-      :subject => "#{current_user.username} commented on your definition for #{comment.commentable.word.name}", 
-      :body => "#{current_user.username} wrote \"#{comment.comment}\" on your definition for #{comment.commentable.word.name}"
-    )
+    
+    if comment.commentable.user.email
+      Pony.mail(
+        :to => comment.commentable.user.email, 
+        :subject => "#{current_user.username} commented on your definition for #{comment.commentable.word.name}", 
+        :body => "#{current_user.username} wrote \"#{comment.comment}\" on your definition for #{comment.commentable.word.name}"
+        )
+    end
 
     # Add the comment
     if comment.save

@@ -6,3 +6,4 @@ doc/app
 Thumbs.db
 tmp/**/*
 index
+vendor/plugins/authentication/generators/authenticated/templates/site_keys.rb 
