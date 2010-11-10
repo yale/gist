@@ -44,13 +44,13 @@ class ApplicationController < ActionController::Base
   
   def email_defaults
     Pony.options = {
-      :from => 'Definitious <noreply@definitious.com>', 
+      :from => "Definitious <#{SITE_EMAIL}>", 
       :via => :smtp, 
       :via_options => {
         :address              => 'smtp.gmail.com',
         :port                 => '587',
         :enable_starttls_auto => true,
-        :user_name            => 'noreply@definitious.com',
+        :user_name            => SITE_EMAIL,
         :password             => 'default',
         :authentication       => :plain # :plain, :login, :cram_md5, no auth by default
         #:domain               => "localhost.localdomain" # the HELO domain provided by the client to the server

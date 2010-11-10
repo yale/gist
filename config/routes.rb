@@ -3,6 +3,7 @@ ActionController::Routing::Routes.draw do |map|
   map.login '/login', :controller => 'sessions', :action => 'new'
   map.register '/register', :controller => 'users', :action => 'create'
   map.signup '/signup', :controller => 'users', :action => 'new'
+  map.activate '/activate/:activation_code', :controller => 'users', :action => 'activate', :activation_code => nil
   map.home '/home', :controller => "users", :action => "home"
   
   map.resources :users, :collection => {:link_user_accounts => :get, :top => :get}

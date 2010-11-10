@@ -12,6 +12,7 @@ class User < ActiveRecord::Base
   before_create :make_slug
   
   after_create :register_user_to_fb
+  after_create :signup_notification
 
   validates_presence_of     :login
   validates_length_of       :login,    :within => 3..40
@@ -26,7 +27,7 @@ class User < ActiveRecord::Base
   validates_uniqueness_of   :email
   validates_format_of       :email,    :with => Authentication.email_regex, :message => Authentication.bad_email_message
 
-  
+  before_create :make_activation_code 
 
   # HACK HACK HACK -- how to do attr_accessible from here?
   # prevents a user from submitting a crafted form that bypasses activation
@@ -53,11 +54,11 @@ class User < ActiveRecord::Base
   # We really need a Dispatch Chain here or something.
   # This will also let us return a human error message.
   #
-  def self.authenticate(login, password)
-    return nil if login.blank? || password.blank?
-    u = find_by_login(login.downcase) # need to get the salt
-    u && u.authenticated?(password) ? u : nil
-  end
+  # def self.authenticate(login, password)
+  #   return nil if login.blank? || password.blank?
+  #   u = find_by_login(login.downcase) # need to get the salt
+  #   u && u.authenticated?(password) ? u : nil
+  # end
 
   def login=(value)
     write_attribute :login, (value ? value.downcase : nil)
@@ -85,6 +86,7 @@ class User < ActiveRecord::Base
   #If you were using username to display to people you might want to get them to select one after registering through Facebook Connect
   def self.create_from_fb_connect(fb_user)
     new_facebooker = User.new(:name => fb_user.name, :login => "facebooker_#{fb_user.uid}", :password => "", :email => "")
+    new_facebooker.activate!
     new_facebooker.fb_user_id = fb_user.uid.to_i
     #We need to save without validations
     new_facebooker.save(false)
@@ -321,5 +323,78 @@ class User < ActiveRecord::Base
   rescue
     number
   end
+  
+  # Activates the user in the database.
+  def activate!
+    @activated = true
+    self.activated_at = Time.now.utc
+    self.activation_code = nil
+    save(false)
+  end
+
+  # Returns true if the user has just been activated.
+  def recently_activated?
+    @activated
+  end
+
+  def active?
+    # the existence of an activation code means they have not activated yet
+    activation_code.nil?
+  end
+  
+  def recently_activated?
+    @activated
+  end
+
+  def self.authenticate(login, password)
+    return nil if login.blank? || password.blank?
+    u = find :first, :conditions => ['login = ? and activated_at IS NOT NULL', login] # need to get the salt
+    u && u.authenticated?(password) ? u : nil
+  end
+
+  def signup_notification
+    setup_email
+    @subject     = "Welcome to Definitious, #{username}!"
+
+    @body        = "Please click this link to activate your account: \nhttp://#{SITE_URL}/activate/#{activation_code}"
+  
+    Pony.mail(
+      :subject => @subject, 
+      :body => @body
+    )
+  end
+
+  def activation
+    setup_email
+    @subject     = 'Your account has been activated!'
+    @body        = "http://#{SITE_URL}/"
+  
+    Pony.mail(
+      :subject => @subject, 
+      :body => @body
+    )
+  end
+
+  protected
+    def make_activation_code
+          self.activation_code = self.class.make_token
+    end
+    
+    def setup_email
+      Pony.options = {
+        :from => "Definitious <#{SITE_EMAIL}>", 
+        :to => email, 
+        :via => :smtp, 
+        :via_options => {
+          :address              => 'smtp.gmail.com',
+          :port                 => '587',
+          :enable_starttls_auto => true,
+          :user_name            => SITE_EMAIL,
+          :password             => 'default',
+          :authentication       => :plain # :plain, :login, :cram_md5, no auth by default
+          #:domain               => "localhost.localdomain" # the HELO domain provided by the client to the server
+        } 
+      }
+    end
   
 end

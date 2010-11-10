@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100723041852) do
+ActiveRecord::Schema.define(:version => 20101110155508) do
 
   create_table "comments", :force => true do |t|
     t.string    "title",            :limit => 50, :default => ""
@@ -87,19 +87,21 @@ ActiveRecord::Schema.define(:version => 20100723041852) do
   end
 
   create_table "users", :force => true do |t|
-    t.string    "login",                     :limit => 40
-    t.string    "name",                      :limit => 100, :default => ""
-    t.string    "email",                     :limit => 100
-    t.string    "crypted_password",          :limit => 40
-    t.string    "salt",                      :limit => 40
-    t.timestamp "created_at"
-    t.timestamp "updated_at"
-    t.string    "remember_token",            :limit => 40
-    t.timestamp "remember_token_expires_at"
-    t.integer   "fb_user_id"
-    t.string    "email_hash"
-    t.string    "url"
-    t.integer   "points",                                   :default => 0
+    t.string   "login",                     :limit => 40
+    t.string   "name",                      :limit => 100, :default => ""
+    t.string   "email",                     :limit => 100
+    t.string   "crypted_password",          :limit => 40
+    t.string   "salt",                      :limit => 40
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "remember_token",            :limit => 40
+    t.datetime "remember_token_expires_at"
+    t.integer  "fb_user_id"
+    t.string   "email_hash"
+    t.string   "url"
+    t.integer  "points",                                   :default => 0
+    t.string   "activation_code",           :limit => 40
+    t.datetime "activated_at"
   end
 
   add_index "users", ["login"], :name => "index_users_on_login", :unique => true
