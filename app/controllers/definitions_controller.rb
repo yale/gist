@@ -15,7 +15,7 @@ class DefinitionsController < ApplicationController
       Pony.mail(
         :to => comment.commentable.user.email, 
         :subject => "#{current_user.username} commented on your definition for #{comment.commentable.word.name}", 
-        :body => "#{current_user.username} wrote \"#{comment.comment}\" on your definition for #{comment.commentable.word.name}: \n" + "#{SITE_URL}/definitions/#{@definition.id}"
+        :body => "#{current_user.username} wrote:\n \"#{comment.comment}\"\n" + "#{SITE_URL}/definitions/#{@definition.id}"
         )
     end
 
