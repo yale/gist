@@ -1,7 +1,7 @@
 # Settings specified here will take precedence over those in config/environment.rb
 
 SITE_NAME = "Definitious"
-SITE_URL = "localhost:3000"
+SITE_URL = "http://localhost:3000"
 SITE_EMAIL = "noreply@definitious.com"
 
 # for searching

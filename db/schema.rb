@@ -99,7 +99,7 @@ ActiveRecord::Schema.define(:version => 20101110155508) do
     t.integer  "fb_user_id"
     t.string   "email_hash"
     t.string   "url"
-    t.integer  "points",                                   :default => 0
+    t.integer  "points",                    :default => 0
     t.string   "activation_code",           :limit => 40
     t.datetime "activated_at"
   end

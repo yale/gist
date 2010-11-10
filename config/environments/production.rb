@@ -1,7 +1,7 @@
 # Settings specified here will take precedence over those in config/environment.rb
 
 SITE_NAME = "Definitious"
-SITE_URL = "www.definitious.com"
+SITE_URL = "http://www.definitious.com"
 SITE_EMAIL = "noreply@definitious.com"
 
 

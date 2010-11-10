@@ -353,15 +353,17 @@ class User < ActiveRecord::Base
   end
 
   def signup_notification
-    setup_email
-    @subject     = "Welcome to Definitious, #{username}!"
+    if !email.empty?
+      setup_email
+      @subject     = "Welcome to Definitious, #{username}!"
 
-    @body        = "Please click this link to activate your account: \nhttp://#{SITE_URL}/activate/#{activation_code}"
+      @body        = "Please click this link to activate your account: \nhttp://#{SITE_URL}/activate/#{activation_code}"
   
-    Pony.mail(
-      :subject => @subject, 
-      :body => @body
-    )
+      Pony.mail(
+        :subject => @subject, 
+        :body => @body
+      )
+    end
   end
 
   def activation
