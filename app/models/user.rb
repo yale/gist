@@ -13,7 +13,8 @@ class User < ActiveRecord::Base
   
   after_create :register_user_to_fb
   after_create :signup_notification
-
+  before_update :email_changed_notification
+  
   validates_presence_of     :login
   validates_length_of       :login,    :within => 3..40
   validates_uniqueness_of   :login
@@ -356,8 +357,7 @@ class User < ActiveRecord::Base
     if !email.empty?
       setup_email
       @subject     = "Welcome to Definitious, #{username}!"
-
-      @body        = "Please click this link to activate your account: \nhttp://#{SITE_URL}/activate/#{activation_code}"
+      @body        = "Please click this link to activate your account: \n#{SITE_URL}/activate/#{activation_code}"
   
       Pony.mail(
         :subject => @subject, 
@@ -369,7 +369,7 @@ class User < ActiveRecord::Base
   def activation
     setup_email
     @subject     = 'Your account has been activated!'
-    @body        = "http://#{SITE_URL}/"
+    @body        = SITE_URL
   
     Pony.mail(
       :subject => @subject, 
@@ -377,9 +377,25 @@ class User < ActiveRecord::Base
     )
   end
 
+  def email_changed_notification
+    if self.email_changed? and (self.email != self.temp)
+      self.token = self.class.make_token
+      setup_email
+      @subject     = "Email address verification"
+      @body        = "Please click this link to verify this email address: \n#{SITE_URL}/change/#{token}"
+  
+      Pony.mail(
+        :subject => @subject, 
+        :body => @body
+      )
+      self.temp = self.email
+      self.email = self.email_was
+    end
+  end
+  
   protected
     def make_activation_code
-          self.activation_code = self.class.make_token
+      self.activation_code = self.class.make_token
     end
     
     def setup_email

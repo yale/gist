@@ -153,5 +153,23 @@ class UsersController < ApplicationController
       redirect_back_or_default('/')
     end
   end
+  
+  def change_email
+    user = User.find_by_token(params[:token]) unless params[:token].blank?
+    case
+    when (!params[:token].blank?) && user && user.active?
+      user.email = user.temp
+      user.token = nil
+      user.save(false)
+      flash[:notice] = "Email successfully changed!"
+      redirect_to '/'
+    when params[:token].blank?
+      flash[:error] = "The token was missing.  Please follow the URL from your email."
+      redirect_back_or_default('/')
+    else 
+      flash[:error]  = "We couldn't find a user with that token -- check your email? Or maybe you've already activated -- try signing in."
+      redirect_back_or_default('/')
+    end
+  end
  
 end
