@@ -37,6 +37,7 @@ ActionController::Routing::Routes.draw do |map|
   end
  
   map.with_options :controller => 'games' do |game|
+    game.games 'games', :action => 'games'
   	game.hangman 'hangman', :action => 'hangman'
   	game.tetris 'tetris', :action => 'tetris'
   	game.scramble 'scramble', :action => 'scramble'

@@ -1,0 +1,39 @@
+<% title "Games" %>
+
+<div id="konami_code_game">
+<html>
+<head>
+<%= javascript_include_tag 'mootools-1.2-core.js' %>
+<%= javascript_include_tag 'mootools-1.2-more.js' %>
+<%= javascript_include_tag 'MooFlow' %>
+<%= stylesheet_link_tag 'MooFlow' %>
+
+  <script type='text/javascript'>
+    window.addEvent('domready', function(){
+    var mf = new MooFlow($('MooFlow'), {
+      startIndex: 0,
+      useSlider: true,
+      useAutoPlay: true,
+      useCaption: true,
+      useResize: true,
+      useWindowResize: true,
+      useMouseWheel: true,
+      useKeyInput: true,
+	  bgColor: 'transparent'
+    });
+    });
+    </script>
+</head>
+<body>
+<h4>Games</h4>
+<div id="content">
+  <div id="MooFlow">
+	<div><a href='<%= hangman_path %>'><img src="images/games/hangman.jpg" title="<a href='<%= hangman_path %>'>Hangman</a>" alt="Golden cubes await capture as you guide your ninja-like icon through treacherous territory. Watch out for mines, lasers, and heat-seeking missiles." /><br>Hangman<br></a></div>
+	<div><a href='<%= tetris_path %>'><img src="images/games/tetris.jpg" title="<a href='<%= tetris_path %>'>Tetris</a>" alt="Golden cubes await capture as you guide your ninja-like icon through treacherous territory. Watch out for mines, lasers, and heat-seeking missiles." /><br>Tetris<br></a></div>
+	<div><a href='<%= scramble_path %>'><img src="images/games/scramble.jpg" title="<a href='<%= scramble_path %>'>Scramble</a>" alt="Golden cubes await capture as you guide your ninja-like icon through treacherous territory. Watch out for mines, lasers, and heat-seeking missiles." /><br>Scramble<br></a></div>					
+    </div>					
+    </div>
+
+</body>
+</html>
+</div>
