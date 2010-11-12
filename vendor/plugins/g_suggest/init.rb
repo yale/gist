@@ -1,1 +1,0 @@
-String.send :include, GSuggest
