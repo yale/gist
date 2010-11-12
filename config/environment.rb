@@ -51,7 +51,7 @@ Rails::Initializer.run do |config|
   #config.gem "ruby-openid", :lib => "openid"
   
   #config.gem 'jackdempsey-acts_as_commentable', :lib => 'acts_as_commentable', :source => "http://gems.github.com"
-  config.gem "google_translate"
+  #config.gem "google_translate"
   #config.gem "pony"
   #config.gem "facebooker"
   

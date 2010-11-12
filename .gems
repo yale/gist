@@ -1,3 +1,2 @@
 rails -v 2.3.8
 hpricot --version 0.6
-google_translate

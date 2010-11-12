@@ -1,4 +1,4 @@
-<div class="definition" id="definition-<%= definition.id %>">
+<div class="definition" id="definition-<%= definition.id unless definition.nil? %>">
   <% @counter ||= 1 %>
   <%# if current_user %>
     <%= render :partial => 'definitions/like_buttons', :locals => {:definition => definition} %>
