@@ -115,6 +115,7 @@ en:
   Receive email notifications for comments on my definitions: "Receive email notifications for comments on my definitions"
   Save: "Save"
   Games: "Games"
+  Leaderboard: "Leaderboard"
   
 zh:
   Home: "家"
@@ -230,3 +231,4 @@ zh:
   Receive email notifications for comments on my definitions: "在我的定义接收电子邮件通知征求意见"
   Save: "保存"
   Games: "游戏"
+  Leaderboard: "排行榜"
