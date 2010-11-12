@@ -378,6 +378,16 @@ class User < ActiveRecord::Base
       :body => @body
     )
   end
+  
+  # def comment_notification
+  #   if prefers?(:comment_notification) 
+  #     write_preference(:comment_notification, false)
+  #   else
+  #     write_preference(:comment_notification, true)
+  #   end
+  #   save(false)
+  #   prefers?(:comment_notification) 
+  # end
 
   def email_changed_notification
     if self.email_changed? and (self.email != self.temp)
