@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20101111012908) do
+ActiveRecord::Schema.define(:version => 20101112023606) do
 
   create_table "comments", :force => true do |t|
     t.string    "title",            :limit => 50, :default => ""
@@ -44,6 +44,19 @@ ActiveRecord::Schema.define(:version => 20101111012908) do
     t.string    "category"
     t.string    "url"
   end
+
+  create_table "preferences", :force => true do |t|
+    t.string   "name",       :null => false
+    t.integer  "owner_id",   :null => false
+    t.string   "owner_type", :null => false
+    t.integer  "group_id"
+    t.string   "group_type"
+    t.string   "value"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "preferences", ["owner_id", "owner_type", "name", "group_id", "group_type"], :name => "index_preferences_on_owner_and_name_and_preference", :unique => true
 
   create_table "sessions", :force => true do |t|
     t.string    "session_id", :null => false
