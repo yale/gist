@@ -22,9 +22,9 @@
     <%= f.password_field :password_confirmation %>
   </p>
 	<p>
-    <% f.fields_for @user.preferences do |preferences| %>
-      <%= preferences.check_box :comment_notification %> <%= I18n.t("Receive email notifications for comments on my definitions") %>
-    <% end %>
+    <%# f.fields_for @user.preferences do |preferences| %>
+      <%# preferences.check_box :comment_notification %> <%= I18n.t("Receive email notifications for comments on my definitions") %>
+    <%# end %>
 	</p>
   <p>An email will be sent to verify a new email address before being updated</p>
   <p><%= f.submit I18n.t("Save") %></p>
