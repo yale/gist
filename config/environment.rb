@@ -46,15 +46,15 @@ Rails::Initializer.run do |config|
   # config.i18n.default_locale = :de
   config.i18n.load_path += Dir[Rails.root.join('my', 'locales', '*.{rb,yml}')]
   
-  config.gem "authlogic"
+  #config.gem "authlogic"
   #config.gem "authlogic-oid", :lib => "authlogic_openid"
   #config.gem "ruby-openid", :lib => "openid"
   
-  config.gem 'jackdempsey-acts_as_commentable', :lib => 'acts_as_commentable', :source => "http://gems.github.com"
+  #config.gem 'jackdempsey-acts_as_commentable', :lib => 'acts_as_commentable', :source => "http://gems.github.com"
   config.gem "google_translate"
-  config.gem "pony"
+  #config.gem "pony"
   #config.gem "facebooker"
   
-  config.gem 'will_paginate', :version => '~> 2.3.11', :source => 'http://gemcutter.org'
+  #config.gem 'will_paginate', :version => '~> 2.3.11', :source => 'http://gemcutter.org'
     
 end

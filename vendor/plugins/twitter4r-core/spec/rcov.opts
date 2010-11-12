@@ -1,0 +1,7 @@
+--output doc/rcov
+--failure-threshold 100
+--html
+--include-file "lib/twitter/*,lib/twitter/client/*"
+--exclude-only "/usr/lib/ruby,/usr/lib64/ruby,spec,$HOME/.rvm"
+--aggregate "coverage.data"
+--gcc
