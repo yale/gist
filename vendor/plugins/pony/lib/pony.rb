@@ -1,5 +1,5 @@
 require 'rubygems'
-require 'mail'
+#require 'mail'
 require 'base64'
 
 # = The express way to send email in Ruby
