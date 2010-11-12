@@ -11,7 +11,7 @@ class DefinitionsController < ApplicationController
     current_user.add_points User::SCORE[:comment]
     comment.commentable.user.add_points User::SCORE[:comment]
     
-    if comment.commentable.user.email
+    if comment.commentable.user.email and comment.commentable.user.settings.comment_notification
       Pony.mail(
         :to => comment.commentable.user.email, 
         :subject => "#{current_user.username} commented on your definition for #{comment.commentable.word.name}", 

@@ -66,7 +66,7 @@ class UsersController < ApplicationController
     if @user.update_attributes(params[:user])
       User.update(@user.id, "url" => @user.login.to_url)
       flash[:notice] = "Successfully updated profile."
-      redirect_to "/words"
+      redirect_to(:back)
     else
       render :action => 'edit'
     end
@@ -162,7 +162,7 @@ class UsersController < ApplicationController
       user.token = nil
       user.save(false)
       flash[:notice] = "Email successfully changed!"
-      redirect_to '/'
+      redirect_back_or_default('/')
     when params[:token].blank?
       flash[:error] = "The token was missing.  Please follow the URL from your email."
       redirect_back_or_default('/')

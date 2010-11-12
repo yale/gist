@@ -1,5 +1,6 @@
 <% form_for @user do |f| %>
   <%= f.error_messages %>
+
   <p>
     <%= f.label I18n.t("Username") %>
     <%= f.text_field :login %>
@@ -20,6 +21,11 @@
     <%= f.label I18n.t("Password confirmation") %>
     <%= f.password_field :password_confirmation %>
   </p>
+	<p>
+    <% f.fields_for @user.preferences do |preferences| %>
+      <%= preferences.check_box :comment_notification %> <%= I18n.t("Receive email notifications for comments on my definitions") %>
+    <% end %>
+	</p>
   <p>An email will be sent to verify a new email address before being updated</p>
-  <p><%= f.submit I18n.t("Submit") %></p>
+  <p><%= f.submit I18n.t("Save") %></p>
 <% end %>

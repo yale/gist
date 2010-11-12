@@ -6,7 +6,7 @@
 <%= error_messages_for :user %>
 
 <div class="left" id="register-definitious">
-  <h3>Create a new definitious account</h3>
+  <h3>Create a new Definitious account</h3>
 <% form_for :user, :url => users_path do |f| -%>
 <p><%= label_tag 'login', I18n.t("Username") %>
 <%= f.text_field :login, :size => 20 %></p>
