@@ -17,6 +17,11 @@ body {
   color: #b1d4ed;
 }
 
+h1 {
+  font-size: 11px;
+  text-align: center;
+}
+
 h2 {
   font-size: 24px;
   font-family: Georgia, "Times New Roman", serif;

@@ -1,6 +1,7 @@
 <% title "Sign up"%>
 
 <h2><%=I18n.t("Sign up as a new user")%></h2>
+<h1><%=I18n.t("Have an account?")%> <%= link_to I18n.t("Login instead"), login_path %></h1>
 <% @user.password = @user.password_confirmation = nil %>
 
 <%= error_messages_for :user %>

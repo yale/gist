@@ -1,6 +1,8 @@
 <% title "Log in"%>
 
 <h2><%=I18n.t("Log in")%></h2>
+<h1><%=I18n.t("Not a Definitious user yet?")%> <%= link_to I18n.t("Click here to sign up"), signup_path %></h1>
+
 <div class="left" id="login-definitious">
 <h3><%=I18n.t("Login with your Definitious account")%></h3>
 <% form_tag session_path do -%>

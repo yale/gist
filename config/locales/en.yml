@@ -116,6 +116,10 @@ en:
   Save: "Save"
   Games: "Games"
   Leaderboard: "Leaderboard"
+  Have an account?: "Have an account?"
+  Login instead: "Login instead"
+  Not a Definitious user yet?: "Not a Definitious user yet?"
+  Click here to sign up: "Click here to sign up"
   
 zh:
   Home: "家"
@@ -232,3 +236,7 @@ zh:
   Save: "保存"
   Games: "游戏"
   Leaderboard: "排行榜"
+  Have an account?: "有一个帐户？"
+  Login instead: "而登录"
+  Not a Definitious user yet?: "不是Definitious用户了吗？"
+  Click here to sign up: "点击这里注册"
