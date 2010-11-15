@@ -376,6 +376,18 @@ class Definition < ActiveRecord::Base
 	  end
   end
   
+  def embed_link
+    require 'oembed'
+	  links = OEmbed.simple_extract(body)
+	  embedded_links = []
+	  OEmbed::Providers.register_all unless links.empty?
+	  links.each do |l|
+	    res = OEmbed::Providers.get(l, {:maxwidth => 300, :maxheight => 300}) rescue OEmbed::Error
+	    embedded_links.push res.html rescue OEmbed::Error
+    end
+    embedded_links
+  end 
+  
   #def to_param
   #  if url
   #  	url

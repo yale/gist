@@ -12,6 +12,7 @@
       <% end %>
       <span class="part-of-speech"><%=h definition.part_of_speech %></span>
       <span class="body"><%=link_to definition.body, definition %></span>
+	  <%= definition.embed_link.join("<br>") %>
     </p>
     
     <%= render :partial => 'definitions/meta', :locals => {:definition => definition} %>
