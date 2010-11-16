@@ -715,3 +715,27 @@ a:focus {
 input:focus { 
   outline: none;
 }
+
+#embedded {
+  /*text-align: center;*/
+}
+
+#definition-details {
+  display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 50%;
+
+}
+
+#popularity-details {
+  text-align: center;
+}
+
+#mood-details {
+  float: left;
+}
+
+#negative-mood-details {
+  float: right;
+}
