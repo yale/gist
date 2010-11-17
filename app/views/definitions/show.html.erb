@@ -1,5 +1,8 @@
 <% title @definition.user.username + "'s definition for " + @definition.word.name.capitalize %>
 <%= javascript_include_tag 'external-search' %>
+
+<h2> <%= @definition.user.username + "'s definition for " + @definition.word.name.capitalize %> </h2>
+
 <div class="make-room-for-external-search">&nbsp;</div>
 
 <div class="external-results">
@@ -8,7 +11,7 @@
 <iframe id="searchResult3" width="90%" height="200" style="display: none" frameborder="0" ></iframe>
 <iframe id="searchResult4" width="90%" height="200" style="display: none" frameborder="0" ></iframe>
 </div>
-<h2> <%= @definition.user.username + "'s definition for " + @definition.word.name.capitalize %> </h2>
+
 <%= render :partial => 'definitions/definition', :locals => {:definition => @definition, :word => true} %>
 
 <div id="definition-details">

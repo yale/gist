@@ -1,12 +1,31 @@
 <% title "Find Meaning" %>
 
+<div id="day">
+  <div id="definition-of-the-day">
+	  <h2><%= link_to_remote I18n.t("Definition of the Day"), :url => definition_of_the_day_definitions_path %></h2>
+  </div>
+  <li id="refreshbutton"><%= link_to_remote I18n.t("Refresh"), :url => definition_of_the_day_definitions_path %></li>
+</div>
+<div id="definition_of_the_day">
+  <%= render :partial => 'definitions/definition', :locals => {:definition => @definition_of_the_day, :word => true} %>
+</div>
+
+<div id="recent">
+  <div id="most-recent">
+    <h2><%= link_to_remote I18n.t("Most Recent Definition"), :url => most_recent_definitions_path %></h2>
+  </div>
+  <li id="refreshbutton"><%= link_to_remote I18n.t("Refresh"), :url => most_recent_definitions_path %></li>
+</div>
+<div id="most_recent">
+  <%= render :partial => 'definitions/definition', :locals => {:definition => @most_recent, :word => true} %>
+</div>
+
 <div id="random">
   <div id="random-word">
     <h2><%= link_to_remote I18n.t("Random Definition"), :url => random_words_path %></h2>
   </div>
   <li id="refreshbutton"><%= link_to_remote I18n.t("Refresh"), :url => random_words_path %></li>
 </div>
-
 <div id="random_word">
   <%= render :partial => 'definitions/definition', :locals => {:word => @random, :definition => @random_def } %>
 </div>

@@ -1,0 +1,3 @@
+page["#definition_of_the_day .definition"].replace :partial => 'definitions/definition', :locals => {:definition => @definition_of_the_day, :word => true}
+page["#definition_of_the_day .detailed-stats"].hide
+page["#definition_of_the_day .comment-box"].hide

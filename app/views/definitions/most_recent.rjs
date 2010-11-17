@@ -1,0 +1,3 @@
+page["#most_recent .definition"].replace :partial => 'definitions/definition', :locals => {:definition => @most_recent, :word => true}
+page["#most_recent .detailed-stats"].hide
+page["#most_recent .comment-box"].hide

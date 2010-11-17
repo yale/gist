@@ -35,6 +35,22 @@ class Word < ActiveRecord::Base
     self.url = self.name.to_url
   end
   
+  def popular
+    Definition.find(:first, :conditions => ['word_id LIKE ?', id], :order => 'like DESC' )
+  end
+  
+  def helpful
+    Definition.find(:first, :conditions => ['word_id LIKE ?', id], :order => 'helpful DESC' )
+  end
+  
+  def funny
+    Definition.find(:first, :conditions => ['word_id LIKE ?', id], :order => 'funny DESC' )
+  end
+  
+  def poetic
+    Definition.find(:first, :conditions => ['word_id LIKE ?', id], :order => 'poetic DESC' )
+  end
+  
   def to_param
     if url
     	url

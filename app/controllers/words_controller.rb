@@ -15,6 +15,9 @@ class WordsController < ApplicationController
   	@random_def = @random.definitions.find :first
   	@words_size = Word.all.size
   	@definitions_size = Definition.all.size
+  	@most_recent = Definition.last
+  	$clicks = 0
+  	@definition_of_the_day = Definition.definition_of_the_day
   	
     if params[:term]
       @word_autocomplete = Word.find(:all,:conditions => ['LOWER(name) LIKE ?', "#{params[:term].downcase}%"], :select => "name", :limit => 10)

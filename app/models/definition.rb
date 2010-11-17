@@ -388,6 +388,27 @@ class Definition < ActiveRecord::Base
     embedded_links
   end 
   
+  def no_mood?
+    helpful + funny + poetic == 0
+  end
+  
+  def no_negative_mood?
+    inaccurate + mature + offensive == 0
+  end
+  
+  def self.definition_of_the_day
+    i = 1
+    definition = nil
+    date = Date.current
+    date = date - $clicks
+    $clicks += 1
+    until definition   
+      definition = Definition.find(:first, :conditions => ["created_at < ? AND created_at >= ?", date, date - i.day], :order => 'like DESC')
+      i += 1
+    end
+    definition
+  end
+  
   #def to_param
   #  if url
   #  	url

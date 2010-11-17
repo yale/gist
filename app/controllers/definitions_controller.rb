@@ -177,6 +177,26 @@ class DefinitionsController < ApplicationController
       wants.html { render :action => "hot" }
     end
   end
+  
+  def most_recent
+    @most_recent = Definition.last
+    
+    respond_to do |wants|
+      wants.html { redirect_to @most_recent }
+      wants.xml { render :xml => @most_recent }
+      wants.js
+    end
+  end
+  
+  def definition_of_the_day
+    @definition_of_the_day = Definition.definition_of_the_day
+    
+    respond_to do |wants|
+      wants.html { redirect_to @definition_of_the_day }
+      wants.xml { render :xml => @definition_of_the_day }
+      wants.js
+    end
+  end
 
   private
     def find_definition

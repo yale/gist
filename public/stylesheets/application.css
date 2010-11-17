@@ -691,6 +691,24 @@ label {
   margin-right: 10px;
 }
 
+#recent {
+  display: block;
+}
+
+#most-recent {
+  float: left;
+  margin-right: 10px;
+}
+
+#day {
+  display: block;
+}
+
+#definition-of-the-day {
+  float: left;
+  margin-right: 10px;
+}
+
 #refreshbutton {
   height: 25px;
 }
