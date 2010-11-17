@@ -36,7 +36,7 @@ class Word < ActiveRecord::Base
   end
   
   def popular
-    Definition.find(:first, :conditions => ['word_id LIKE ?', id], :order => "'like' DESC" )
+    Definition.find(:first, :conditions => ['word_id LIKE ?', id], :order => "like DESC" )
   end
   
   def helpful

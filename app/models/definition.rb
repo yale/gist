@@ -403,7 +403,7 @@ class Definition < ActiveRecord::Base
     date = date - $clicks
     $clicks += 1
     until definition   
-      definition = Definition.find(:first, :conditions => ["created_at < ? AND created_at >= ?", date, date - i.day], :order => "'helpful' DESC")
+      definition = Definition.find(:first, :conditions => ["created_at < ? AND created_at >= ?", date, date - i.day], :order => 'like DESC')
       i += 1
     end
     definition
