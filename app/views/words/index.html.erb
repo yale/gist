@@ -1,14 +1,14 @@
 <% title "Find Meaning" %>
 
-<!-- <div id="day">
+<div id="day">
   <div id="definition-of-the-day">
-	  <h2><%# link_to_remote I18n.t("Definition of the Day"), :url => definition_of_the_day_definitions_path %></h2>
+	  <h2><%= link_to_remote I18n.t("Definition of the Day"), :url => definition_of_the_day_definitions_path %></h2>
   </div>
-  <li id="refreshbutton"><%# link_to_remote I18n.t("Refresh"), :url => definition_of_the_day_definitions_path %></li>
+  <li id="refreshbutton"><%= link_to_remote I18n.t("Refresh"), :url => definition_of_the_day_definitions_path %></li>
 </div>
 <div id="definition_of_the_day">
-  <%# render :partial => 'definitions/definition', :locals => {:definition => @definition_of_the_day, :word => true} %>
-</div> -->
+  <%= render :partial => 'definitions/definition', :locals => {:definition => @definition_of_the_day, :word => true} %>
+</div>
 
 <div id="recent">
   <div id="most-recent">
