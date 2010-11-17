@@ -54,7 +54,6 @@ $('#user_search').autocomplete({
   <% end %>
 <% end %>
 
-
 <% if current_user %>
   <% if @user.id == current_user.id %>
     <p><%= link_to I18n.t("Edit Profile"), edit_user_path(:current) %></p>
