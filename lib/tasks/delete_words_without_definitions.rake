@@ -3,8 +3,8 @@ task :delete_words_without_definitions => [ :environment ] do | t |
   array = []
   Word.find(:all).each do |word|
     if word.definitions.empty?
-  	  #word.delete
   	  array.push word.name
+  	  word.delete
   	end
   end
   puts "Deleted words:"
