@@ -715,14 +715,16 @@ input:focus {
 }
 
 #definition-of-the-day a{
-  color: #F7C41F;
+	color: #D9D7FC;
+  /*color: #B1ACA9;*/
   /*color: #FF9900;*/
+	/*color: #F7C41F;*/
 }
 
 #most-recent a{
-  color: #F7C41F;
+  color: #D9D7FC;
 }
 
 #random-definition a{
-  color: #F7C41F;
+  color: #D9D7FC;
 }
