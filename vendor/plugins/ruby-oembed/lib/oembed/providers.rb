@@ -32,7 +32,7 @@ module OEmbed
       end
 
       def register_all
-        register(Youtube, Flickr, Viddler, Qik, Pownce, Revision3, Hulu, Vimeo)
+        register(Youtube, Flickr, Viddler, Qik, Pownce, Revision3, Hulu, Vimeo, OohEmbed, Embedly, PollEverywhere, MyOpera, ClearspringWidgets, NFBCanada, Scribd, MovieClips, TwentyThree)
       end
 
       # Takes an array of OEmbed::Provider instances or OEmbed::ProviderDiscovery
