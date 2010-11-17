@@ -7,12 +7,12 @@
 	  <div class="did-you-mean">Did you mean: <a href=<%= @suggestion_yahoo_search %>><%= @suggestion_yahoo %></a></div>
 	<% end %>
 	<%# "Did you mean #{@suggestion_google}?" unless @suggestion_google.nil?%>
-    <h1><%= "#{$query} is not defined. Do you want to define it?" %>			
+    <p><%= "#{$query} is not defined. Do you want to define it?" %>			
     <% form_for @word, :url => { :action => "create" } do |f| -%>
       <%= f.error_messages %>
       <%= f.submit I18n.t("Define!")  %>
     <% end -%>
-    </h1>
+    </p>
 <div class="external-results">
 	...or show results from: <br>
 	<table>

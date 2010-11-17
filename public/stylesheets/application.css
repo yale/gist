@@ -80,7 +80,6 @@ h4 {
 
 .search-result {
   text-align: center;
-  color: #fffeb3;
   font-size: 16px;
 }
 
@@ -113,6 +112,7 @@ h4 {
 a {
   text-decoration: none;
   color: #cbd7e0;
+  /*color: #FF9900;*/
 }
 
 #topbar {
@@ -686,7 +686,7 @@ label {
   display: block;
 }
 
-#random-word {
+#random-definition {
   float: left;
   margin-right: 10px;
 }
@@ -756,4 +756,17 @@ input:focus {
 
 #negative-mood-details {
   float: right;
+}
+
+#definition-of-the-day a{
+  color: #F7C41F;
+  /*color: #FF9900;*/
+}
+
+#most-recent a{
+  color: #F7C41F;
+}
+
+#random-definition a{
+  color: #F7C41F;
 }

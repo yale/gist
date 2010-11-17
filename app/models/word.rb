@@ -12,7 +12,12 @@ class Word < ActiveRecord::Base
   end
   
   def self.random
-    find :first, :offset => (count * rand).to_i
+    definitions = []
+    until !definitions.empty?
+      word = find :first, :offset => (count * rand).to_i
+      definitions = word.definitions
+    end
+    word
   end
   
   def self.random_collection n

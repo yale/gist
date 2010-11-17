@@ -1,5 +1,5 @@
 <% title "Find Meaning" %>
-
+<div id="homepage">
 <div id="day">
   <div id="definition-of-the-day">
 	  <h2><%= link_to_remote I18n.t("Definition of the Day"), :url => definition_of_the_day_definitions_path %></h2>
@@ -21,13 +21,14 @@
 </div>
 
 <div id="random">
-  <div id="random-word">
+  <div id="random-definition">
     <h2><%= link_to_remote I18n.t("Random Definition"), :url => random_words_path %></h2>
   </div>
   <li id="refreshbutton"><%= link_to_remote I18n.t("Refresh"), :url => random_words_path %></li>
 </div>
-<div id="random_word">
+<div id="random_definition">
   <%= render :partial => 'definitions/definition', :locals => {:word => @random, :definition => @random_def } %>
+</div>
 </div>
 
 <% content_for :sidebar do %>

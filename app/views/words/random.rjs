@@ -1,3 +1,3 @@
-page["#random_word .definition"].replace :partial => 'definitions/definition', :locals => {:word => @word, :definition => @definition}
-page["#random_word .detailed-stats"].hide
-page["#random_word .comment-box"].hide
+page["#random_definition .definition"].replace :partial => 'definitions/definition', :locals => {:word => @word, :definition => @definition}
+page["#random_definition .detailed-stats"].hide
+page["#random_definition .comment-box"].hide

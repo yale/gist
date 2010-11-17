@@ -1,9 +1,9 @@
 <% title @definition.user.username + "'s definition for " + @definition.word.name.capitalize %>
 <%= javascript_include_tag 'external-search' %>
 
-<h2> <%= @definition.user.username + "'s definition for " + @definition.word.name.capitalize %> </h2>
-
 <div class="make-room-for-external-search">&nbsp;</div>
+
+<h2> <%= @definition.user.username + "'s definition for " + @definition.word.name.capitalize %> </h2>
 
 <div class="external-results">
 <iframe id="searchResult1" width="90%" height="200" style="display: none" frameborder="0" ></iframe>
