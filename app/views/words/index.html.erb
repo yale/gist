@@ -9,7 +9,7 @@
 <div id="definition_of_the_day">
   <%# render :partial => 'definitions/definition', :locals => {:definition => @definition_of_the_day, :word => true} %>
 </div> -->
-
+<%= Word.random.popular %>
 <div id="recent">
   <div id="most-recent">
     <h2><%= link_to_remote I18n.t("Most Recent Definition"), :url => most_recent_definitions_path %></h2>
