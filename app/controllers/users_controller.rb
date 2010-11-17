@@ -87,6 +87,9 @@ class UsersController < ApplicationController
     @helpful_received = @user.votes_received "helpful"
     @funny_received = @user.votes_received "funny"
     @poetic_received = @user.votes_received "poetic"
+    @inaccurate_received = @user.votes_received "inaccurate"
+    @mature_received = @user.votes_received "mature"
+    @offensive_received = @user.votes_received "offensive"
     
     @user_type = @user.user_type
     

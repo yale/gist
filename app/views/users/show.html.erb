@@ -63,6 +63,12 @@ $('#user_search').autocomplete({
 
 <h3>Based on votes, <%= link_to @user.username, @user %> is a <%= itemize_type @user_type %> user</h3>
 
+<div class="user-charts">
+	<%= google_pie_chart([["Like", @like_received], ["Dislike", @dislike_received]], :width => 150, :height => 100, :type => "like") unless @user.no_likes_or_dislikes?%><br>
+  <%= google_pie_chart([["Helpful", @helpful_received], ["Funny", @funny_received], ["Poetic", @poetic_received]], :width => 150, :height => 100) unless @user.no_mood?%><br>
+  <%= google_pie_chart([["Inaccurate", @inaccurate_received], ["Mature", @mature_received], ["Offensive", @offensive_received]], :width => 150, :height => 100, :type => "negative") unless @user.no_negative_mood?%>
+</div>
+
 <h3>Stats</h3>
 <span><%= pluralize(@like_received, "like") %> received - <%= @like_percentage %></span><br>
 <span><%= pluralize(@dislike_received, "dislike") %> received - <%= @dislike_percentage %></span><br>
@@ -102,14 +108,14 @@ $('#user_search').autocomplete({
 <p>This user has not posted any definitions.</p>
 <% end %>
 
-<h3>Recent comments</h3>
-<% if @comments %>
+<!-- <h3>Recent comments</h3>
+<%# if @comments %>
 <ul id="user-comments">
-  <%= render :partial => 'users/comment', :collection => @comments %>
+  <%# render :partial => 'users/comment', :collection => @comments %>
 </ul>
-<% else %>
+<%# else %>
 <p>This user has not posted any comments.</p>
-<% end %>
+<%# end %> -->
 
 <% end %>
 

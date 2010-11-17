@@ -60,8 +60,10 @@ module ApplicationHelper
     options[:width] ||= 250
     options[:height] ||= 100
     #options[:colors] = %w(0DB2AC F5DD7E FC8D4D FC694D FABA32 704948 968144 C08FBC ADD97E)
-    if options[:negative]
+    if options[:type] == "negative"
       options[:colors] = %w(FC694D 704948 FC8D4D)
+    elsif options[:type] == "like"
+      options[:colors] = %w(69D2E7 DB220D)
     else
       options[:colors] = %w(0DB2AC F5DD7E ADD97E)
     end

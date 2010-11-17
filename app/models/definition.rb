@@ -392,6 +392,10 @@ class Definition < ActiveRecord::Base
     helpful + funny + poetic == 0
   end
   
+  def no_likes_or_dislikes?
+    like + dislike == 0
+  end
+  
   def no_negative_mood?
     inaccurate + mature + offensive == 0
   end

@@ -268,6 +268,10 @@ class User < ActiveRecord::Base
   	votes_received(:helpful) + votes_received(:funny) + votes_received(:poetic)
   end
   
+  def negative_mood_vote_received
+  	votes_received(:inaccurate) + votes_received(:mature) + votes_received(:offensive)
+  end
+  
   def like_dislike_vote_received
   	votes_received(:like) + votes_received(:dislike)
   end
@@ -302,6 +306,18 @@ class User < ActiveRecord::Base
         user_type << "poetic"
     end
     user_type
+  end
+  
+  def no_mood?
+    mood_vote_received == 0
+  end
+  
+  def no_negative_mood?
+    negative_mood_vote_received == 0
+  end
+  
+  def no_likes_or_dislikes?
+    like_dislike_vote_received == 0
   end
   
   def number_to_percentage(number, options = {})
