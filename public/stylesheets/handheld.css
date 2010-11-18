@@ -728,3 +728,8 @@ input:focus {
 #random-definition a{
   color: #D9D7FC;
 }
+
+.user-charts {
+	/*float: right;*/
+	text-align: center;
+}

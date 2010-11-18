@@ -774,5 +774,6 @@ input:focus {
 }
 
 .user-charts {
-	float: right;
+	/*float: right;*/
+	text-align: center;
 }

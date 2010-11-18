@@ -63,18 +63,18 @@ $('#user_search').autocomplete({
 <h3>Based on votes, <%= link_to @user.username, @user %> is a <%= itemize_type @user_type %> user</h3>
 
 <div class="user-charts">
-	<%= google_pie_chart([["Like", @like_received], ["Dislike", @dislike_received]], :width => 150, :height => 100, :type => "like") unless @user.no_likes_or_dislikes?%><br>
-  <%= google_pie_chart([["Helpful", @helpful_received], ["Funny", @funny_received], ["Poetic", @poetic_received]], :width => 150, :height => 100) unless @user.no_mood?%><br>
-  <%= google_pie_chart([["Inaccurate", @inaccurate_received], ["Mature", @mature_received], ["Offensive", @offensive_received]], :width => 150, :height => 100, :type => "negative") unless @user.no_negative_mood?%>
+	<h3>Stats</h3>
+	<%= google_pie_chart([["Like", @like_received], ["Dislike", @dislike_received]], :width => 175, :height => 100, :type => "like") unless @user.no_likes_or_dislikes?%>
+  <%= google_pie_chart([["Helpful", @helpful_received], ["Funny", @funny_received], ["Poetic", @poetic_received]], :width => 175, :height => 100) unless @user.no_mood?%>
+  <%= google_pie_chart([["Inaccurate", @inaccurate_received], ["Mature", @mature_received], ["Offensive", @offensive_received]], :width => 175, :height => 100, :type => "negative") unless @user.no_negative_mood?%>
 </div>
 
-<h3>Stats</h3>
-<span><%= pluralize(@like_received, "like") %> received - <%= @like_percentage %></span><br>
-<span><%= pluralize(@dislike_received, "dislike") %> received - <%= @dislike_percentage %></span><br>
+<!-- <span><%# pluralize(@like_received, "like") %> received - <%= @like_percentage %></span><br>
+<span><%# pluralize(@dislike_received, "dislike") %> received - <%= @dislike_percentage %></span><br>
 <p>and</p>
-<span><%= pluralize(@helpful_received, "helpful vote") %> received - <%= @helpful_percentage %></span><br>
-<span><%= pluralize(@funny_received, "funny vote") %> received - <%= @funny_percentage %></span><br>
-<span><%= pluralize(@poetic_received, "poetic vote") %> received - <%= @poetic_percentage %></span><br>
+<span><%# pluralize(@helpful_received, "helpful vote") %> received - <%= @helpful_percentage %></span><br>
+<span><%# pluralize(@funny_received, "funny vote") %> received - <%= @funny_percentage %></span><br>
+<span><%# pluralize(@poetic_received, "poetic vote") %> received - <%= @poetic_percentage %></span><br> -->
 
 <% if @user.login != "wiktionary.org" %>
 	
@@ -88,15 +88,15 @@ $('#user_search').autocomplete({
 <span><%= pluralize(@definition_points, "bonus point") %> for <%= pluralize(@popular_definitions, "popular definition") %></span><br>
 <span><%= pluralize(@facebook_points, "bonus point") %> for <%= (@user.facebook_user?)? "registering with Facebook": "not registering with Facebook" %></span><br>
 
-<h3>Voting breakdown</h3>
-<span><%= pluralize(@like_cast, "like vote") %> cast</span><br>  
-<span><%= pluralize(@dislike_cast, "dislike vote") %> cast</span><br> 
-<span><%= pluralize(@helpful_cast, "helpful vote") %> cast</span><br> 
-<span><%= pluralize(@funny_cast, "funny vote") %> cast</span><br> 
-<span><%= pluralize(@poetic_cast, "poetic vote") %> cast</span><br> 
-<span><%= pluralize(@inaccurate_cast, "inaccurate vote") %> cast</span><br> 
-<span><%= pluralize(@mature_cast, "mature vote") %> cast</span><br> 
-<span><%= pluralize(@offensive_cast, "offensive vote") %> cast</span><br>
+<!-- <h3>Voting breakdown</h3>
+<span><%# pluralize(@like_cast, "like vote") %> cast</span><br>  
+<span><%# pluralize(@dislike_cast, "dislike vote") %> cast</span><br> 
+<span><%# pluralize(@helpful_cast, "helpful vote") %> cast</span><br> 
+<span><%# pluralize(@funny_cast, "funny vote") %> cast</span><br> 
+<span><%# pluralize(@poetic_cast, "poetic vote") %> cast</span><br> 
+<span><%# pluralize(@inaccurate_cast, "inaccurate vote") %> cast</span><br> 
+<span><%# pluralize(@mature_cast, "mature vote") %> cast</span><br> 
+<span><%# pluralize(@offensive_cast, "offensive vote") %> cast</span><br> -->
 
 <h3>Recent definitions</h3>
 <% if @definitions %>

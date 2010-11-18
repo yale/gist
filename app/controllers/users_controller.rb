@@ -99,14 +99,14 @@ class UsersController < ApplicationController
     @funny_percentage = @user.funny_percentage
     @poetic_percentage = @user.poetic_percentage
     
-    @like_cast = @user.votes_cast "like"
-    @dislike_cast = @user.votes_cast "dislike"
-    @helpful_cast = @user.votes_cast "helpful"
-    @funny_cast = @user.votes_cast "funny"
-    @poetic_cast = @user.votes_cast "poetic"
-    @inaccurate_cast = @user.votes_cast "inaccurate"
-    @mature_cast = @user.votes_cast "mature"
-    @offensive_cast = @user.votes_cast "offensive" 
+    #@like_cast = @user.votes_cast "like"
+    #@dislike_cast = @user.votes_cast "dislike"
+    #@helpful_cast = @user.votes_cast "helpful"
+    #@funny_cast = @user.votes_cast "funny"
+    #@poetic_cast = @user.votes_cast "poetic"
+    #@inaccurate_cast = @user.votes_cast "inaccurate"
+    #@mature_cast = @user.votes_cast "mature"
+    #@offensive_cast = @user.votes_cast "offensive" 
     
     if @user.username != "wiktionary.org"
       @definition_points = @user.definition_points
