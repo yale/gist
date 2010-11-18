@@ -7,7 +7,7 @@
       <span class="<%= "voted" if definition.get_vote current_user, :funny %>"><%= link_to_remote I18n.t("Funny"), :url => vote_definition_path(definition, :mood => :funny), :method => :post %></span>
       or <span class="<%= "voted" if definition.get_vote current_user, :poetic %>"><%= link_to_remote I18n.t("Poetic"), :url => vote_definition_path(definition, :mood => :poetic), :method => :post %></span>?
       </p>
-        <p><%= pluralize(definition.like, "like") %>, <%= pluralize(definition.dislike, "dislike") %>, <%= definition.helpful %> <%=I18n.t("helpful")%>, <%= definition.funny %> <%=I18n.t("funny")%>, <%= definition.poetic %> <%=I18n.t("poetic")%></p>
+        <!-- <p><%# pluralize(definition.like, "like") %>, <%# pluralize(definition.dislike, "dislike") %>, <%# definition.helpful %> <%#I18n.t("helpful")%>, <%# definition.funny %> <%#I18n.t("funny")%>, <%# definition.poetic %> <%#I18n.t("poetic")%></p> -->
 				<%= google_pie_chart([["Like", definition.like], ["Dislike", definition.dislike]], :width => 150, :height => 75, :type => "like") unless definition.no_likes_or_dislikes? %>
 				<%= google_pie_chart([["Helpful", definition.helpful], ["Funny", definition.funny], ["Poetic", definition.poetic]], :width => 150, :height => 75) unless definition.no_mood? %>
       </div>
@@ -18,20 +18,20 @@
       <span class="<%= "voted" if definition.get_vote current_user, :mature %>"><%= link_to_remote I18n.t("Mature"), :url => vote_definition_path(definition, :mood => :mature), :method => :post %></span>
       or <span class="<%= "voted" if definition.get_vote current_user, :offensive %>"><%= link_to_remote I18n.t("Offensive"), :url => vote_definition_path(definition, :mood => :offensive), :method => :post %></span>?
       </p>
-      <p><%= pluralize(definition.like, "like") %>, <%= pluralize(definition.dislike, "dislike") %>, <%= definition.inaccurate %> <%=I18n.t("inaccurate")%>, <%= definition.mature %> <%=I18n.t("mature")%>, <%= definition.offensive %> <%=I18n.t("offensive")%></p>
+      <!-- <p><%# pluralize(definition.like, "like") %>, <%# pluralize(definition.dislike, "dislike") %>, <%# definition.inaccurate %> <%#I18n.t("inaccurate")%>, <%# definition.mature %> <%#I18n.t("mature")%>, <%# definition.offensive %> <%#I18n.t("offensive")%></p> -->
 			<%= google_pie_chart([["Like", definition.like], ["Dislike", definition.dislike]], :width => 150, :height => 75, :type => "like") unless definition.no_likes_or_dislikes? %>
 			<%= google_pie_chart([["Inaccurate", definition.inaccurate], ["Mature", definition.mature], ["Offensive", definition.offensive]], :width => 150, :height => 100, :type => "negative") unless definition.no_negative_mood? %>
     </div>
     <% else %>
       <div>
-        <p><%= pluralize(definition.like, "like") %>, <%= pluralize(definition.dislike, "dislike") %>, <%= definition.helpful %> <%=I18n.t("helpful")%>, <%= definition.funny %> <%=I18n.t("funny")%>, <%= definition.poetic %> <%=I18n.t("poetic")%></p>
+        <!-- <p><%# pluralize(definition.like, "like") %>, <%# pluralize(definition.dislike, "dislike") %>, <%# definition.helpful %> <%#I18n.t("helpful")%>, <%# definition.funny %> <%#I18n.t("funny")%>, <%# definition.poetic %> <%#I18n.t("poetic")%></p> -->
 				<%= google_pie_chart([["Like", definition.like], ["Dislike", definition.dislike]], :width => 150, :height => 75, :type => "like") unless definition.no_likes_or_dislikes? %>
 				<%= google_pie_chart([["Helpful", definition.helpful], ["Funny", definition.funny], ["Poetic", definition.poetic]], :width => 150, :height => 75) unless definition.no_mood?%>
       </div>
     <% end %>
   <% else %>
   <div>
-    <p><%= pluralize(definition.like, "like") %>, <%= pluralize(definition.dislike, "dislike") %>, <%= definition.helpful %> <%=I18n.t("helpful")%>, <%= definition.funny %> <%=I18n.t("funny")%>, <%= definition.poetic %> <%=I18n.t("poetic")%></p>
+    <!-- <p><%# pluralize(definition.like, "like") %>, <%# pluralize(definition.dislike, "dislike") %>, <%# definition.helpful %> <%#I18n.t("helpful")%>, <%# definition.funny %> <%#I18n.t("funny")%>, <%# definition.poetic %> <%#I18n.t("poetic")%></p> -->
 		<%= google_pie_chart([["Like", definition.like], ["Dislike", definition.dislike]], :width => 150, :height => 100, :type => "like") unless definition.no_likes_or_dislikes? %>
 		<%= google_pie_chart([["Helpful", definition.helpful], ["Funny", definition.funny], ["Poetic", definition.poetic]], :width => 150, :height => 100) unless definition.no_mood?%>
       </div>
