@@ -11,7 +11,7 @@ $('#user_search').autocomplete({
         },
         select: function(event, ui) {
             $('#user_search').val(ui.item.user.name);
-			$(this).parents().find('form:last').submit();
+			$(this).parents().find('form:eq(1)').submit();
             return false;
         }
     })

@@ -27,7 +27,7 @@ function toggleIframe(identifier) {
 function changeSize(identifier) {
 	var width = document.getElementById("searchResult" + identifier).style.width;
 	if (width == "90%") {
-	    document.getElementById("searchResult" + identifier).style.width = "100%";
+	  document.getElementById("searchResult" + identifier).style.width = "100%";
 		document.getElementById("searchResult" + identifier).style.height = "600px";
 		document.getElementById("sizeButton" + identifier).value = "Contract";
     } else {
