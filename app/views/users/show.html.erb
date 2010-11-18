@@ -101,7 +101,7 @@ $('#user_search').autocomplete({
 <h3>Recent definitions</h3>
 <% if @definitions %>
 <div id="definitions">
-    <%= render :partial => 'definitions/definition', :collection => @definitions, :locals => {:word => true} %>
+    <%= render :partial => 'definitions/definition', :collection => @definitions.reverse, :locals => {:word => true} %>
 </div>
 <% else %>
 <p>This user has not posted any definitions.</p>
