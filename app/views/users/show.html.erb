@@ -46,7 +46,6 @@ $('#user_search').autocomplete({
   <% if current_user and @user.id == current_user.id %>
     <% if current_user.facebook_user? %>
       <fb:profile-pic uid="<%= current_user.fb_user_id%>" facebook-logo="true" size="large" ></fb:profile-pic>
-      <p><a href="#" onclick='FB.Connect.logoutAndRedirect("/logout")'>Logout</a></p>
     <% end %>
   <% else %>
   <% if @user.facebook_user? %>
