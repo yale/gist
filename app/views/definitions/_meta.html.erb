@@ -5,13 +5,13 @@
   <%#link_to(@user.username, @user) + " " + "on" + " " + definition.created_at.strftime("%B %d, %Y") + "." %></p>
   
   <p class="stats">
+	  <a href="#" class="stats-toggle"><%=submit_tag I18n.t("Stats"), :class => 'btn stats' %></a>
     <span class="score"><%= definition.percent_liked %>% <%= I18n.t("Liked") %>.
     <% definition_type = definition.definition_type + definition.definition_type_negative %>
     <% if !definition_type.empty? %>
       <%=I18n.t("Voted as")%> <span><%= itemize_type definition_type %></span>.
     <% end %>  
     </span>
-    <a href="#" class="stats-toggle"><%=submit_tag I18n.t("Stats"), :class => 'btn stats' %></a>
 
   </p>
   
