@@ -14,24 +14,30 @@
 
 <%= render :partial => 'definitions/definition', :locals => {:definition => @definition, :word => true} %>
 
-<div id="definition-details">
+<!-- <div id="definition-details">
 	<div id="popularity-details">
-  	<p><%=I18n.t("Earned")%> <%= @user.username %> <%= @points %> <%=I18n.t("points")%>.</p>
-    <p class="like-votes"><%= pluralize(@definition.like, "like") %> - <%= @like_percentage %></p>
-    <p class="dislike-votes"><%= pluralize(@definition.dislike, "dislike") %> - <%= @dislike_percentage %></p>
+  	<p><%#I18n.t("Earned")%> <%# @user.username %> <%# @points %> <%#I18n.t("points")%>.</p>
+    <p class="like-votes"><%# pluralize(@definition.like, "like") %> - <%# @like_percentage %></p>
+    <p class="dislike-votes"><%# pluralize(@definition.dislike, "dislike") %> - <%# @dislike_percentage %></p>
 	</div>
   <div id="mood-details">
     <p>And</p>
-    <p class="helpful-votes"><%= @definition.helpful %> <%=I18n.t("helpful")%> - <%= @helpful_percentage %></p>
-    <p class="funny-votes"><%= @definition.funny %> <%=I18n.t("funny")%> - <%= @funny_percentage %></p>
-    <p class="poetic-votes"><%= @definition.poetic %> <%=I18n.t("poetic")%> - <%= @poetic_percentage %></p>
+    <p class="helpful-votes"><%# @definition.helpful %> <%#I18n.t("helpful")%> - <%# @helpful_percentage %></p>
+    <p class="funny-votes"><%# @definition.funny %> <%#I18n.t("funny")%> - <%# @funny_percentage %></p>
+    <p class="poetic-votes"><%# @definition.poetic %> <%#I18n.t("poetic")%> - <%# @poetic_percentage %></p>
   </div>
   <div id="negative-mood-details">
     <p>And</p>
-    <p class="helpful-votes"><%= @definition.inaccurate %> <%=I18n.t("inaccurate")%> - <%= @inaccurate_percentage %></p>
-    <p class="funny-votes"><%= @definition.mature %> <%=I18n.t("mature")%> - <%= @mature_percentage %></p>
-    <p class="poetic-votes"><%= @definition.offensive %> <%=I18n.t("offensive")%> - <%= @offensive_percentage %></p>
+    <p class="helpful-votes"><%# @definition.inaccurate %> <%#I18n.t("inaccurate")%> - <%# @inaccurate_percentage %></p>
+    <p class="funny-votes"><%# @definition.mature %> <%#I18n.t("mature")%> - <%# @mature_percentage %></p>
+    <p class="poetic-votes"><%# @definition.offensive %> <%#I18n.t("offensive")%> - <%# @offensive_percentage %></p>
   </div>
+</div> -->
+
+<div class="individual-definition-charts">
+  <%= google_pie_chart([["Like", @definition.like], ["Dislike", @definition.dislike]], :width => 175, :height => 100, :type => "like") unless @definition.no_likes_or_dislikes? %>
+  <%= google_pie_chart([["Helpful", @definition.helpful], ["Funny", @definition.funny], ["Poetic", @definition.poetic]], :width => 175, :height => 100) unless @definition.no_mood? %>
+  <%= google_pie_chart([["Inaccurate", @definition.inaccurate], ["Mature", @definition.mature], ["Offensive", @definition.offensive]], :width => 175, :height => 100, :type => "negative") unless @definition.no_negative_mood? %>
 </div>
 
 <% content_for :sidebar do %>

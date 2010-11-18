@@ -76,24 +76,24 @@ class DefinitionsController < ApplicationController
   	@word = @definition.word
   	@user = @definition.user
   	
-  	@like_total = @definition.like
-    @dislike_total = @definition.dislike
-    @helpful_total = @definition.helpful
-    @funny_total = @definition.funny
-    @poetic_total = @definition.poetic
-    
-    @inaccurate_total = @definition.inaccurate
-    @mature_total = @definition.mature
-    @offensive_total = @definition.offensive
-    
-    @like_percentage = @definition.like_percentage
-    @dislike_percentage = @definition.dislike_percentage
-	  @helpful_percentage = @definition.helpful_percentage
-    @funny_percentage = @definition.funny_percentage
-    @poetic_percentage = @definition.poetic_percentage
-    @inaccurate_percentage = @definition.inaccurate_percentage
-    @mature_percentage = @definition.mature_percentage
-    @offensive_percentage = @definition.offensive_percentage
+  	# @like_total = @definition.like
+  	# @dislike_total = @definition.dislike
+  	# @helpful_total = @definition.helpful
+  	# @funny_total = @definition.funny
+  	# @poetic_total = @definition.poetic
+  	#     
+  	# @inaccurate_total = @definition.inaccurate
+  	# @mature_total = @definition.mature
+  	# @offensive_total = @definition.offensive
+  	#     
+  	# @like_percentage = @definition.like_percentage
+  	# @dislike_percentage = @definition.dislike_percentage
+  	# @helpful_percentage = @definition.helpful_percentage
+  	# @funny_percentage = @definition.funny_percentage
+  	# @poetic_percentage = @definition.poetic_percentage
+  	# @inaccurate_percentage = @definition.inaccurate_percentage
+  	# @mature_percentage = @definition.mature_percentage
+  	# @offensive_percentage = @definition.offensive_percentage
     
     @points = @definition.total_points
     

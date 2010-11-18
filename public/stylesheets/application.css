@@ -777,3 +777,7 @@ input:focus {
 	/*float: right;*/
 	text-align: center;
 }
+
+.individual-definition-charts {
+	text-align: center;
+}

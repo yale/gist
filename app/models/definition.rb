@@ -335,7 +335,7 @@ class Definition < ActiveRecord::Base
   end
   
   def inaccurate_percentage
-    if mood_sum == 0
+    if mood_sum_negative == 0
       inaccurate_percentage = number_to_percentage(0, :precision => 2) 
     else
       inaccurate_percentage = number_to_percentage(inaccurate.to_f/mood_sum_negative.to_f * 100, :precision => 2)
@@ -343,7 +343,7 @@ class Definition < ActiveRecord::Base
   end
   
   def mature_percentage
-    if mood_sum == 0
+    if mood_sum_negative == 0
       mature_percentage = number_to_percentage(0, :precision => 2) 
     else
       mature_percentage = number_to_percentage(mature.to_f/mood_sum_negative.to_f * 100, :precision => 2)
@@ -351,7 +351,7 @@ class Definition < ActiveRecord::Base
   end
   
   def offensive_percentage
-    if mood_sum == 0
+    if mood_sum_negative == 0
       offensive_percentage = number_to_percentage(0, :precision => 2) 
     else
       offensive_percentage = number_to_percentage(offensive.to_f/mood_sum_negative.to_f * 100, :precision => 2)
