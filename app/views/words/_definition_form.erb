@@ -33,7 +33,7 @@
   <% form_for word, :html => { :method => :get }, :url => add_definition_word_path(word) do |f| -%>
     <%= text_area(:definition, :body, {:value => I18n.t("Add your own definition for") + " #{word.name}...", :onFocus => "if(this.value==this.defaultValue) this.value='';", :onBlur  => "if(this.value=='') this.value=this.defaultValue;", :cols => 40, :rows => 4, :onkeyup =>"CountlimitChars()", :id=>"PostArea"}) %>
     <%= select(:definition, :part_of_speech, Definition::PARTS_OF_SPEECH, {:prompt => '(part of speech)'}) %>
-    <%= f.submit I18n.t("Define!") %>
+    <%= f.submit I18n.t("Define!"), :class => "btn blue"  %>
   <% end -%>
 </div>
 </td>

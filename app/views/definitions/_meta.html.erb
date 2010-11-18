@@ -1,7 +1,8 @@
 <div class="meta">
   
-  <p class="byline"><%= I18n.t("submitted by") %> <% @user = User.find(definition.user_id) unless definition.user_id.nil?%>
-  <%=link_to(@user.username, @user) + " " + "on" + " " + definition.created_at.strftime("%B %d, %Y") + "." %></p>
+  <p class="byline"><%= I18n.t("by") %> <% @user = User.find(definition.user_id) unless definition.user_id.nil?%>
+	<%=link_to(@user.username, @user) + " " + definition.created_at.strftime("%m/%d/%y") %></p>
+  <%#link_to(@user.username, @user) + " " + "on" + " " + definition.created_at.strftime("%B %d, %Y") + "." %></p>
   
   <p class="stats">
     <span class="score"><%= definition.percent_liked %>% <%= I18n.t("Liked") %>.
@@ -10,7 +11,8 @@
       <%=I18n.t("Voted as")%> <span><%= itemize_type definition_type %></span>.
     <% end %>  
     </span>
-    <a href="#" class="stats-toggle"><%=I18n.t("More stats")%></a>
+    <a href="#" class="stats-toggle"><%=submit_tag I18n.t("Stats"), :class => 'btn stats' %></a>
+
   </p>
   
   <% if current_user.nil? %>

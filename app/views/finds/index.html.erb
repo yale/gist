@@ -10,19 +10,19 @@
     <p><%= "#{$query} is not defined. Do you want to define it?" %>			
     <% form_for @word, :url => { :action => "create" } do |f| -%>
       <%= f.error_messages %>
-      <%= f.submit I18n.t("Define!")  %>
+      <%= f.submit I18n.t("Define!"), :class => "btn blue"  %>
     <% end -%>
     </p>
 <div class="external-results">
 	...or show results from: <br>
 	<table>
-		<tr><td width="130"><a href=<%= @google_dictionary_url %>>Google Dictionary</a></td><td width="150"><input type="button" id="searchButton1" value="Show" onclick="search(<%= @google_dictionary_url %>, 1)" display=""/><input type="button" id="toggleButton1" value="Hide" onclick="toggleIframe(1)" style="display: none"/><input type="button" id="sizeButton1" value="Expand" onclick="changeSize(1)" style="display: none"/>
+		<tr><td width="130"><a href=<%= @google_dictionary_url %>>Google Dictionary</a></td><td width="150"><input type="button" id="searchButton1" value="Show" onclick="search(<%= @google_dictionary_url %>, 1)" display="" class="btn blue"/><input type="button" id="toggleButton1" value="Hide" onclick="toggleIframe(1)" style="display: none" class="btn blue"/><input type="button" id="sizeButton1" value="Expand" onclick="changeSize(1)" style="display: none" class="btn blue"/>
 		</td></tr>
-		<tr><td><a href=<%= @urban_dictionary_url %>>Urban Dictionary</a></td><td><input type="button" id="searchButton2" value="Show" onclick="search(<%= @urban_dictionary_url %>, 2)" display=""/><input type="button" id="toggleButton2" value="Hide" onclick="toggleIframe(2)" style="display: none"/><input type="button" id="sizeButton2" value="Expand" onclick="changeSize(2)" style="display: none"/>
+		<tr><td><a href=<%= @urban_dictionary_url %>>Urban Dictionary</a></td><td><input type="button" id="searchButton2" value="Show" onclick="search(<%= @urban_dictionary_url %>, 2)" display="" class="btn blue"/><input type="button" id="toggleButton2" value="Hide" onclick="toggleIframe(2)" style="display: none" class="btn blue"/><input type="button" id="sizeButton2" value="Expand" onclick="changeSize(2)" style="display: none" class="btn blue"/>
 		</td></tr>
-		<tr><td><a href=<%= @wikipedia_url %>>Wikipedia</a></td><td><input type="button" id="searchButton3" value="Show" onclick="search(<%= @wikipedia_url %>, 3)" display=""/><input type="button" id="toggleButton3" value="Hide" onclick="toggleIframe(3)" style="display: none"/><input type="button" id="sizeButton3" value="Expand" onclick="changeSize(3)" style="display: none"/>
+		<tr><td><a href=<%= @wikipedia_url %>>Wikipedia</a></td><td><input type="button" id="searchButton3" value="Show" onclick="search(<%= @wikipedia_url %>, 3)" display="" class="btn blue"/><input type="button" id="toggleButton3" value="Hide" onclick="toggleIframe(3)" style="display: none" class="btn blue"/><input type="button" id="sizeButton3" value="Expand" onclick="changeSize(3)" style="display: none" class="btn blue"/>
 		</td></tr>
-		<tr><td><a href=<%= @thesaurus_url %>>Thesaurus.com</a></td><td><input type="button" id="searchButton4" value="Show" onclick="search(<%= @thesaurus_url %>, 4)" display=""/><input type="button" id="toggleButton4" value="Hide" onclick="toggleIframe(4)" style="display: none"/><input type="button" id="sizeButton4" value="Expand" onclick="changeSize(4)" style="display: none"/>
+		<tr><td><a href=<%= @thesaurus_url %>>Thesaurus.com</a></td><td><input type="button" id="searchButton4" value="Show" onclick="search(<%= @thesaurus_url %>, 4)" display="" class="btn blue"/><input type="button" id="toggleButton4" value="Hide" onclick="toggleIframe(4)" style="display: none" class="btn blue"/><input type="button" id="sizeButton4" value="Expand" onclick="changeSize(4)" style="display: none" class="btn blue"/>
 		</td></tr>
 		</table>
 </div>

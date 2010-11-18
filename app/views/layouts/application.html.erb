@@ -108,6 +108,7 @@
             <li><%= link_to I18n.t("Logout"), logout_path %></li>
             <% end %>
           <% else %>
+							<li><%= fb_login_button('window.location = "/users/link_user_accounts";', :size => :medium)%></li>
               <li><%= link_to I18n.t("Register"), new_user_path %></li>
               <li><%= link_to I18n.t("Login"), login_path %></li>
           <% end %>

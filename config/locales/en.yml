@@ -123,6 +123,8 @@ en:
   Earned: "Earned"
   Most Recent Definition: "Most Recent Definition"
   Definition of the Day: "Definition of the Day"
+  Stats: "Stats"
+  Comment: "Comment"
   
 zh:
   Home: "家"
@@ -246,3 +248,5 @@ zh:
   Earned: "赚"
   Most Recent Definition: "最新的定义"
   Definition of the Day: "定义的一天"
+  Stats: "统计"
+  Comment: "评论"

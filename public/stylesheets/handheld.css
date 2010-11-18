@@ -441,19 +441,30 @@ a {
   color: white;
 }
 
+/*.stats {
+  float: left;
+}*/
+
 .byline {
   float: right;
 }
 
+/*.date {
+  float: right;
+}
+*/
+
 .meta {
   font-size: 11px;
+  /*color: #CACCE3;*/
   color: #a1b0bb;
-}
+/*  display: block;
+*/}
 
-.meta .voted a {
+/*.meta .voted a {
   font-weight: bold;
   background-color: #176092;
-}
+}*/
 
 .detailed-stats div {
   padding: 5px;

@@ -16,7 +16,7 @@
 <p><%= label_tag 'remember_me', I18n.t("Remember me") %>
 <%= check_box_tag 'remember_me', '1', @remember_me %></p>
 
-<p><%= submit_tag I18n.t("Log in") %></p>
+<p><%= submit_tag I18n.t("Log in"), :class => "btn blue"  %></p>
 
 <% end -%>
 </div>
