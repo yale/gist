@@ -404,8 +404,8 @@ class Definition < ActiveRecord::Base
     i = 1
     definition = nil
     date = Date.current
-    date = date - $clicks
-    $clicks += 1
+    date = date - $clicks.day unless $clicks.nil?
+    $clicks += 1 unless $clicks.nil?
     until definition   
       definition = Definition.find(:first, :conditions => ["created_at < ? AND created_at >= ?", date, date - i.day], :order => '"like" DESC')
       i += 1

@@ -61,13 +61,10 @@ module ApplicationHelper
     options[:height] ||= 100
     #options[:colors] = %w(0DB2AC F5DD7E FC8D4D FC694D FABA32 704948 968144 C08FBC ADD97E)
     if options[:type] == "negative"
-      #options[:colors] = %w(FC694D 704948 FC8D4D)
       options[:colors] = %w(292C37 57493C 9F111B)
     elsif options[:type] == "like"
-      #options[:colors] = %w(69D2E7 DB220D)
       options[:colors] = %w(2cda0b e31b1b)
     else
-      #options[:colors] = %w(0DB2AC F5DD7E ADD97E)
       options[:colors] = %w(26ADE4 EB6841 DD2C7F)
     end
     dt = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-."
