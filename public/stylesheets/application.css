@@ -815,6 +815,7 @@ input:focus {
 .btn.mature { background: #57493C; padding: 0px; width: 20%;}
 .btn.offensive { background: #9F111B; padding: 0px; width: 20%;}
 .btn.stats { background: #176092; padding: 0px; border: 1px solid #a1b0bb;}
+.btn.comment { background: #176092; padding: 0px; border: 1px solid #a1b0bb;}
 .btn.external { background: #2ae; padding: 0px; border: 1px solid #FFF;}
 .btn:hover { background-color: #a00; color: #fff; }
 .btn:active { background-color: #444; color: #fff; }
@@ -832,5 +833,6 @@ input:focus {
 * html .btn.mature { background: #57493C; padding: 0px; width: 20%;}
 * html .btn.offensive { background: #9F111B; padding: 0px; width: 20%;}
 * html .btn.stats { background: #176092; padding: 0px; border: 1px solid #a1b0bb;}
+* html .btn.comment { background: #176092; padding: 0px; border: 1px solid #a1b0bb;}
 * html .btn.external { background: #2ae; padding: 0px; border: 1px solid #FFF;}
 * html .btn:hover { border-color: #a00; }
