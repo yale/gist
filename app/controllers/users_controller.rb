@@ -146,6 +146,7 @@ class UsersController < ApplicationController
     case
     when (!params[:activation_code].blank?) && user && !user.active?
       user.activate!
+      user.activation
       flash[:notice] = "Signup complete! Please sign in to continue."
       redirect_to '/login'
     when params[:activation_code].blank?

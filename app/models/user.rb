@@ -375,23 +375,30 @@ class User < ActiveRecord::Base
     if !email.empty?
       setup_email
       @subject     = "Confirm your Definitious account, #{username}!"
-      @body        = "Please confirm your Definitious account by clicking on this link: \n#{SITE_URL}/activate/#{activation_code}"
+      @body        = "Your Definitious account has been created!<br><br>
+
+      Username: #{login}<br><br>
+
+      Confirm your account by clicking on this link:<br>
+      #{SITE_URL}/activate/#{activation_code}"
   
       Pony.mail(
         :subject => @subject, 
-        :body => @body
+        :html_body => @body
       )
     end
   end
 
   def activation
     setup_email
-    @subject     = 'Welcome to Definitious, #{username}!'
-    @body        = SITE_URL
+    @subject     = "Welcome to Definitious, #{username}!"
+    @body        = "#{username}, your account has been activated.  Welcome aboard!<br><br>
+
+    #{SITE_URL}"
   
     Pony.mail(
       :subject => @subject, 
-      :body => @body
+      :html_body => @body
     )
   end
   

@@ -8,7 +8,7 @@ class InfoController < ApplicationController
   def privacy
   end
   
-  def feedback
+  def contact
   end
   
 end

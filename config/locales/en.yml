@@ -126,6 +126,9 @@ en:
   Stats: "Stats"
   Comment: "Comment"
   No votes have been cast for this definition: "No votes have been cast for this definition"
+  Contact: "Contact"
+  About: "About"
+  optional: "optional"
   
 zh:
   Home: "家"
@@ -252,3 +255,6 @@ zh:
   Stats: "统计"
   Comment: "评论"
   No votes have been cast for this definition: "无票投给了这个定义"
+  Contact: "联系"
+  About: "关于"
+  optional: "可选"

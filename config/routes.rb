@@ -9,6 +9,9 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resources :users, :collection => {:link_user_accounts => :get, :top => :get}
   
+  map.new_feedback 'feedbacks/new', :controller => 'feedbacks', :action => 'new'
+  map.feedback 'feedbacks', :controller => 'feedbacks', :action => 'create'
+  
   #Do NOT change to sessionS
   map.resource :session
   
@@ -31,7 +34,7 @@ ActionController::Routing::Routes.draw do |map|
 
   map.with_options :controller => 'info' do |info|
   	info.about 'about', :action => 'about'
-  	info.feedback 'feedback', :action => 'feedback'
+  	info.contact 'contact', :action => 'contact'
   	info.privacy 'privacy', :action => 'privacy'
   	info.terms 'terms', :action => 'terms'
   end
