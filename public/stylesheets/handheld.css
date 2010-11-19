@@ -765,6 +765,7 @@ input:focus {
 .btn.green { background: #9d4; }
 .btn.lime { background: #bbce00; }
 .btn.pink { background: #e1a; }
+.btn.gold { background: #FBB829; }
 .btn.helpful { background: #26ADE4; padding: 0px; width: 20%;}
 .btn.funny { background: #EB6841; padding: 0px; width: 20%;}
 .btn.poetic { background: #DD2C7F; padding: 0px; width: 20%;}
@@ -785,6 +786,7 @@ input:focus {
 * html .btn.green { border-color: #9d4; }
 * html .btn.lime { border-color: #bbce00; }
 * html .btn.pink { border-color: #e1a; }
+* html .btn.gold { background: #FBB829; }
 * html .btn.helpful { background: #26ADE4; padding: 0px; width: 20%;}
 * html .btn.funny { background: #EB6841; padding: 0px; width: 20%;}
 * html .btn.poetic { background: #DD2C7F; padding: 0px; width: 20%;}

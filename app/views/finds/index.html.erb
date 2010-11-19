@@ -10,7 +10,7 @@
     <p><%= "#{$query} is not defined. Do you want to define it?" %>			
     <% form_for @word, :url => { :action => "create" } do |f| -%>
       <%= f.error_messages %>
-      <%= f.submit I18n.t("Define!"), :class => "btn blue"  %>
+      <%= f.submit I18n.t("Define!"), :class => "btn gold"  %>
     <% end -%>
     </p>
 <div class="external-results">
