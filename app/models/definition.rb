@@ -3,7 +3,6 @@ class Definition < ActiveRecord::Base
   belongs_to :user
   belongs_to :word
   acts_as_commentable
-  #validates_length_of       :body, :maximum => 140, :message => 'definitions must be 140 characters or less'
   validates_presence_of     :body
   validates_uniqueness_of   :body
   validate :must_be_defined
@@ -11,7 +10,7 @@ class Definition < ActiveRecord::Base
   validates_length_of       :body, :maximum => 140, :message => 'definitions must be 140 characters or less'
   
   
-  PAGE_LIMIT = 50
+  PAGE_LIMIT = 20
   PARTS_OF_SPEECH = ['noun', 'adjective', 'acronym', 'verb', 'adverb', 'preposition', 'interjection']
   MOODS = ["helpful", "funny", "poetic", "offensive", "mature", "inaccurate"]
   
