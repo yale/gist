@@ -11,7 +11,8 @@ div#feedback {
 a#feedback_link {				
   position: fixed;
   z-index: 99999;
-  background-color: #CC0000;
+  /*background-color: #CC0000;*/
+	background-color: #000000;
   width: 26px;
   height: 96px;
   overflow: hidden;
@@ -68,8 +69,8 @@ a#feedback_close_link {
   position: absolute;
   height: 22px;
   width: 66px;
-  background-image: url(/images/feedback/closelabel.gif);
-  _background-image: url(/images/feedback/closelabel.gif);
+  background-image: url(/images/feedback/closelabel.png);
+  _background-image: url(/images/feedback/closelabel.png);
 }
 
 div#feedback_modal_window {
