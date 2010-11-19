@@ -10,7 +10,7 @@
 		  <a href="#" class="comment-box-toggle"><%=submit_tag I18n.t("Comments"), :class => 'btn comment' %></a>
 	    <!-- <a href="#" class="comment-box-toggle"><%= pluralize(definition.comments.size, "comment") %></a> -->
 	  <!-- </p> -->
-    <span class="score"><%= definition.percent_liked %>% <%= I18n.t("Liked") %>.
+    <span class="score"><!-- <%# definition.percent_liked %>% <%# I18n.t("Liked") %>. -->
       <% definition_type = definition.definition_type + definition.definition_type_negative %>
       <% if !definition_type.empty? %>
         <%=I18n.t("Voted as")%> <span><%= itemize_type definition_type %></span>.
