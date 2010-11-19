@@ -27,7 +27,7 @@ class Word < ActiveRecord::Base
   def self.another_random_collection n
     words = self.all
     collection = []
-    until collection.size == 100 do
+    until collection.size == n do
       word = self.random
       if word.definitions.size > 0
         collection << word
