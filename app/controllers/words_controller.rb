@@ -51,9 +51,10 @@ class WordsController < ApplicationController
     @definitions = Definition.list params
     
     word = @word.name.gsub(' ', '+')
+    word_wikipedia = @word.name.gsub(' ', '_')
     @google_dictionary_url = "'#{'http://www.google.com/dictionary?aq=f&langpair=en|en&q=' + word}'"
     @urban_dictionary_url = "'#{'http://www.urbandictionary.com/define.php?term=' + word}'"
-    @wikipedia_url = "'#{'http://en.wikipedia.org/wiki/' + word}'"
+    @wikipedia_url = "'#{'http://en.wikipedia.org/wiki/' + word_wikipedia}'"
     @thesaurus_url = "'#{'http://thesaurus.com/browse/' + word}'"
 
     respond_to do |wants|

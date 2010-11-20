@@ -15,9 +15,10 @@ class FindsController < ApplicationController
   	  @result = Word.find(:first, :conditions => ['LOWER(name) LIKE ?', "#{$query.downcase}"])
   	  if @result.nil?
         query = $query.gsub(' ', '+')
+        query_wikipedia = $query.gsub(' ', '_')
         @google_dictionary_url = "'#{'http://www.google.com/dictionary?aq=f&langpair=en|en&q=' + query}'"
         @urban_dictionary_url = "'#{'http://www.urbandictionary.com/define.php?term=' + query}'"
-        @wikipedia_url = "'#{'http://en.wikipedia.org/wiki/' + query}'"
+        @wikipedia_url = "'#{'http://en.wikipedia.org/wiki/' + query_wikipedia}'"
         @thesaurus_url = "'#{'http://thesaurus.com/browse/' + query}'"
     
         require 'net/http'

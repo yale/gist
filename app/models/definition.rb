@@ -387,6 +387,17 @@ class Definition < ActiveRecord::Base
     embedded_links
   end 
   
+  def html_body
+    require 'oembed'
+	  links = OEmbed.simple_extract(body)
+	  html_body = body
+	  links.each do |l|
+	    html_link = "<a href=#{l}>#{l}</a>"
+	    html_body = body.gsub(l, html_link)
+    end
+    html_body
+  end
+  
   def no_mood?
     helpful + funny + poetic == 0
   end

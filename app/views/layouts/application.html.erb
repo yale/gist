@@ -28,7 +28,7 @@
     <%= javascript_include_tag 'jrails' %>
 	  <%= include_growlr %>
 		<%= feedback_includes %>
-		<%= feedback_tab(:position => 'left') %>
+		<%= feedback_tab(:position => 'left') unless is_mobile_device? %>
 		
 		<% if protect_against_forgery? %>
     <script type='text/javascript'>
