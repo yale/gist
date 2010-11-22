@@ -151,9 +151,13 @@ a {
 
 #topbar li a {
   display: block;
-  padding: 9px 5px;
+  padding: 11px 5px;
   border: solid #214a67;
   border-width: 0px;
+}
+
+#connect a{
+  padding: 6px 5px !important;
 }
   
 #homebutton a {
@@ -180,7 +184,7 @@ a {
 }
 
 #logo {
-  margin: 0 auto;
+  margin: 10px 0px 0px 0px;
   text-align: center;
   display: block;
 }

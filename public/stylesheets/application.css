@@ -142,6 +142,10 @@ a {
   border: solid #214a67;
   border-width: 0px;
 }
+
+#connect a{
+  padding: 6px 14px !important;
+}
   
 #homebutton a {
   text-indent: -9999em;
