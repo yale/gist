@@ -1,5 +1,5 @@
 <div class="definition-comment-form">
-    <% form_tag add_comment_definition_path(definition), :class => 'comment-form' do %>
+    <% form_remote_tag :url => add_comment_definition_path(definition), :class => 'comment-form' do %>
       <%= text_field 'comment', 'comment' %></br>
 			<% if current_user %>
         <%= submit_tag I18n.t("Comment"), :class => "btn add-comment" %>

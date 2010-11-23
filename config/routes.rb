@@ -15,7 +15,7 @@ ActionController::Routing::Routes.draw do |map|
   #Do NOT change to sessionS
   map.resource :session
   
-  map.resources :comments
+  map.resources :comments, :member => { :destroy => :post }
 
   map.resources :finds
 

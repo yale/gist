@@ -46,7 +46,7 @@ $('#user_search').autocomplete({
 <% elsif current_user and current_user.following?(@user) %>
   <%= button_to_remote I18n.t("Unfollow"), {:url => unfollow_user_path(:user => @user)}, :method => :post, :class => "btn helpful" %>
 <% elsif !current_user %>
-  <%= button_to I18n.t("Follow"), new_user_path, :class => "btn helpful" %>
+  <%= button I18n.t("Follow"), new_user_path, "btn helpful" %>
 <% end %>
 
 <p class="points"><%= pluralize(@user.points, "point") %></p>

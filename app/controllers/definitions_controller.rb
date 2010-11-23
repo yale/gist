@@ -28,6 +28,7 @@ class DefinitionsController < ApplicationController
     respond_to do |wants|
       wants.html { redirect_to(:back); }
       wants.xml  { render :xml => @definition }
+      wants.js
     end
   end
 

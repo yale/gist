@@ -15,6 +15,12 @@
       <% if !definition_type.empty? %>
         <%=I18n.t("Voted as")%> <span><%= itemize_type definition_type %></span>.
       <% end %>  
+		  <% if current_user and (current_user.id == definition.user_id or current_user.login == "murtazajafferji")%>
+		    <%= link_to 'Delete', definition, :confirm => "Are you sure?", :method => :delete %>
+		  <% end %>
+		  <% if current_user and current_user.login == "murtazajafferji" %>
+		    <%= link_to 'Edit', edit_definition_path(definition)%>
+		  <% end %>
     </span>
   </p>
   
@@ -22,17 +28,10 @@
     <%# link_to I18n.t("Log in to vote!"), login_path %>
   <%# end %>
   
-  <% if current_user and (current_user.id == definition.user_id or current_user.login == "murtazajafferji")%>
-    <%= link_to 'Delete', definition, :confirm => "Are you sure?", :method => :delete %>
-  <% end %>
-  <% if current_user and current_user.login == "murtazajafferji" %>
-    <%= link_to 'Edit', edit_definition_path(definition)%>
-  <% end %>
-  
   <%= render :partial => 'definitions/stats', :locals => { :definition => definition } %>
   
-  <div class="comment-box">
-    <%= render :partial => 'comments/comments', :locals => {:comments => definition.comments.recent.limit(10).all} %>
+  <div class="comment-box" id="comments-<%= definition.id unless definition.nil? %>">
+    <%= render :partial => 'comments/comments', :locals => {:comments => definition.comments.recent.limit(10).reverse} %>
     <%= render :partial => 'comments/form', :locals => {:definition => definition} %>
   </div>
   

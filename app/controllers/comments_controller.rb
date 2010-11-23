@@ -78,10 +78,12 @@ class CommentsController < ApplicationController
   # DELETE /comments/1.xml
   def destroy
     @comment.destroy
+    @definition = @comment.commentable
   	
     respond_to do |wants|
       wants.html { redirect_to(:back) }
       wants.xml  { head :ok }
+      wants.js
     end
   end
 
