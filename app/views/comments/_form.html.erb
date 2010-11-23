@@ -3,12 +3,14 @@
     <% form_tag add_comment_definition_path(definition), :class => 'comment-form' do %>
       <%= text_field 'comment', 'comment' %></br>
 
-      <%= submit_tag I18n.t("Comment"), :class => "btn blue" %>
+      <%= submit_tag I18n.t("Comment"), :class => "btn add-comment" %>
 
       <%= hidden_field 'commentable', :value => 'Definition' %>
       <%= hidden_field 'id', :value => definition.id %>
     <% end %>
   <% else %>
-    <p><%= link_to 'Log in to comment.', login_path %></p>
+    <!-- <p><%# link_to 'Log in to comment.', login_path %></p> -->
+		<%= text_field 'comment', 'comment' %>
+		<%= button_to_remote I18n.t("Comment"), {:url => new_user_path}, :class => "btn add-comment" %>
   <% end %>
 </div>

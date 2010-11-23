@@ -7,7 +7,7 @@ ActionController::Routing::Routes.draw do |map|
   map.change '/change/:token', :controller => 'users', :action => 'change_email', :token => nil
   map.home '/home', :controller => "users", :action => "home"
   
-  map.resources :users, :collection => {:link_user_accounts => :get, :top => :get}
+  map.resources :users, :member => { :follow => :post, :unfollow => :post }, :collection => {:link_user_accounts => :get, :top => :get}
   
   map.new_feedback 'feedbacks/new', :controller => 'feedbacks', :action => 'new'
   map.feedback 'feedbacks', :controller => 'feedbacks', :action => 'create'

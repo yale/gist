@@ -18,9 +18,9 @@
     </span>
   </p>
   
-  <% if current_user.nil? %>
-    <%= link_to I18n.t("Log in to vote!"), login_path %>
-  <% end %>
+  <%# if current_user.nil? %>
+    <%# link_to I18n.t("Log in to vote!"), login_path %>
+  <%# end %>
   
   <% if current_user and (current_user.id == definition.user_id or current_user.login == "murtazajafferji")%>
     <%= link_to 'Delete', definition, :confirm => "Are you sure?", :method => :delete %>

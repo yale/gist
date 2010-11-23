@@ -5,6 +5,9 @@ class User < ActiveRecord::Base
   include ::Authentication::ByPassword
   include ::Authentication::ByCookieToken
   #include ::Authorization::AasmRoles::AASM
+  
+  acts_as_followable
+  acts_as_follower
 
   has_many :comments
   has_many :definitions

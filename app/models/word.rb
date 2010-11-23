@@ -3,6 +3,8 @@ class Word < ActiveRecord::Base
   before_create :make_slug
   has_many :definitions
   
+  acts_as_followable
+  
   validates_presence_of :name
   validates_uniqueness_of :name
   

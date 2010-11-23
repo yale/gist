@@ -129,6 +129,8 @@ en:
   Contact: "Contact"
   About: "About"
   optional: "optional"
+  Follow: "Follow"
+  Unfollow: "Unfollow"
   
 zh:
   Home: "家"
@@ -258,3 +260,5 @@ zh:
   Contact: "联系"
   About: "关于"
   optional: "可选"
+  Follow: "按照"
+  Unfollow: "取消追踪"

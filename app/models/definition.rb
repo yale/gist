@@ -3,6 +3,7 @@ class Definition < ActiveRecord::Base
   belongs_to :user
   belongs_to :word
   acts_as_commentable
+  acts_as_followable
   validates_presence_of     :body
   validates_uniqueness_of   :body
   validate :must_be_defined

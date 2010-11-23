@@ -34,6 +34,11 @@
     <% end %>
   <% else %>
   <div>
+		<div>
+	  	<%= button_to_remote I18n.t("Helpful"), {:url => new_user_path}, :class => "btn helpful" %>
+    	<%= button_to_remote I18n.t("Funny"), {:url => new_user_path}, :class => "btn funny" %>
+    	<%= button_to_remote I18n.t("Poetic"), {:url => new_user_path}, :class => "btn poetic" %>
+		</div>
     <!-- <p><%# pluralize(definition.like, "like") %>, <%# pluralize(definition.dislike, "dislike") %>, <%# definition.helpful %> <%#I18n.t("helpful")%>, <%# definition.funny %> <%#I18n.t("funny")%>, <%# definition.poetic %> <%#I18n.t("poetic")%></p> -->
 		<%= google_pie_chart([["Like", definition.like], ["Dislike", definition.dislike]], :width => 150, :height => 75, :type => "like") unless definition.no_likes_or_dislikes? %>
 		<%= google_pie_chart([["Helpful", definition.helpful], ["Funny", definition.funny], ["Poetic", definition.poetic]], :width => 150, :height => 75) unless definition.no_mood?%>

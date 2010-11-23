@@ -45,6 +45,19 @@ ActiveRecord::Schema.define(:version => 20101212023606) do
     t.string    "url"
   end
 
+  create_table "follows", :force => true do |t|
+    t.integer  "followable_id",                      :null => false
+    t.string   "followable_type",                    :null => false
+    t.integer  "follower_id",                        :null => false
+    t.string   "follower_type",                      :null => false
+    t.boolean  "blocked",         :default => false, :null => false
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "follows", ["followable_id", "followable_type"], :name => "fk_followables"
+  add_index "follows", ["follower_id", "follower_type"], :name => "fk_follows"
+
   create_table "preferences", :force => true do |t|
     t.string    "name",       :null => false
     t.integer   "owner_id",   :null => false

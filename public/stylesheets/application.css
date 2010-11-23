@@ -824,6 +824,7 @@ input:focus {
 .voted input.btn:hover{ background: #444;}
 .btn.stats { background: #176092; padding: 0px; border: 1px solid #a1b0bb;}
 .btn.comment { background: #176092; padding: 0px; border: 1px solid #a1b0bb;}
+.btn.add-comment { background: #2ae; padding: 0px;}
 .btn.external { background: #2ae; padding: 0px; border: 1px solid #FFF;}
 .btn:hover { background-color: #a00; color: #fff; }
 .btn:active { background-color: #444; color: #fff; }
@@ -845,5 +846,6 @@ input:focus {
 * html .voted input.btn:hover{ background: #444;}
 * html .btn.stats { background: #176092; padding: 0px; border: 1px solid #a1b0bb;}
 * html .btn.comment { background: #176092; padding: 0px; border: 1px solid #a1b0bb;}
+* html .btn.add-comment { background: #2ae; padding: 0px;}
 * html .btn.external { background: #2ae; padding: 0px; border: 1px solid #FFF;}
 * html .btn:hover { border-color: #a00; }

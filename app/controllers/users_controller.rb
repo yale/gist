@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_filter :require_user, :only => [:follow, :unfollow]
   # Be sure to include AuthenticationSystem in Application Controller instead
   include AuthenticatedSystem
   
@@ -173,6 +174,34 @@ class UsersController < ApplicationController
     else 
       flash[:error]  = "We couldn't find a user with that token -- check your email? Or maybe you've already activated -- try signing in."
       redirect_back_or_default('/')
+    end
+  end
+  
+  def follow 
+    user =  User.find_by_url(params[:user])
+    respond_to do |wants|
+      if current_user.follow(user)
+        flash[:notice] = "You are now following #{user.username}"
+        wants.html { redirect_to :back }
+        wants.js
+      else
+        flash[:notice] = 'Something has gone horribly wrong.'
+        wants.html { redirect_to :back }
+      end
+    end
+  end
+  
+  def unfollow
+    user =  User.find_by_url(params[:user])
+    respond_to do |wants|
+      if current_user.stop_following(user)
+        flash[:notice] = "You are no longer following #{user.username}"
+        wants.html { redirect_to :back }
+        wants.js
+      else
+        flash[:notice] = 'Something has gone horribly wrong.'
+        wants.html { redirect_to :back }
+      end
     end
   end
  
