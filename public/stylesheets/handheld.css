@@ -773,6 +773,7 @@ input:focus {
 .btn.helpful { background: #26ADE4; padding: 0px; width: 20%;}
 .btn.funny { background: #EB6841; padding: 0px; width: 20%;}
 .btn.poetic { background: #DD2C7F; padding: 0px; width: 20%;}
+.btn.fake { background: #26ADE4; padding: 0px;}
 .btn.inaccurate { background: #292C37; padding: 0px; width: 20%;}
 .btn.mature { background: #57493C; padding: 0px; width: 20%;}
 .btn.offensive { background: #9F111B; padding: 0px; width: 20%;}
