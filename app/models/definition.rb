@@ -216,8 +216,7 @@ class Definition < ActiveRecord::Base
       definitions += u.definitions
     end
     definitions.sort_by{|e| e.created_at }.last(20).reverse
-  end  #current_user.notes.all(:joins => :categories, :conditions => ["categories.name = ?", search_parameter])
-  
+  end  
   
   # def self.find_latest
   #   self.all(:limit => PAGE_LIMIT, :order => 'created_at DESC')
