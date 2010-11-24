@@ -209,9 +209,19 @@ class Definition < ActiveRecord::Base
     self.find(:all, :select => select_query, :order => 'popularity DESC', :limit => PAGE_LIMIT, :offset => offset)
   end
   
-  def self.find_latest
-    self.all(:limit => PAGE_LIMIT, :order => 'created_at DESC')
-  end
+  def self.news_feed user
+    users = user.following_users
+    definitions = []
+    users.each do |u|
+      definitions += u.definitions
+    end
+    definitions.sort_by{|e| e.created_at }.last(20).reverse
+  end  #current_user.notes.all(:joins => :categories, :conditions => ["categories.name = ?", search_parameter])
+  
+  
+  # def self.find_latest
+  #   self.all(:limit => PAGE_LIMIT, :order => 'created_at DESC')
+  # end
   
   def definition_type
 	  definition_type = []

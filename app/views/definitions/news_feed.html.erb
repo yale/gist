@@ -1,0 +1,8 @@
+<% title "News Feed" %>
+
+<h2><%=I18n.t("News Feed")%></h2>
+<% if @definitions.nil? %>
+  <p> You are not following any users yet. </p>
+<% else %>
+  <%= render :partial => "definitions/list", :locals => {:definitions => @definitions, :no_sort => true} %>
+<% end%>

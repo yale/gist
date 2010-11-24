@@ -181,6 +181,13 @@ class DefinitionsController < ApplicationController
     end
   end
   
+  def news_feed
+    @definitions = Definition.news_feed(current_user) if current_user
+    respond_to do |wants|
+      wants.html { render :action => "news_feed" }
+    end
+  end
+  
   def most_recent
     @most_recent = Definition.last
     

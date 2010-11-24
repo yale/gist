@@ -131,6 +131,7 @@ en:
   optional: "optional"
   Follow: "Follow"
   Unfollow: "Unfollow"
+  News Feed: "News Feed"
   
 zh:
   Home: "家"
@@ -262,3 +263,4 @@ zh:
   optional: "可选"
   Follow: "按照"
   Unfollow: "取消追踪"
+  News Feed: "新闻提要"

@@ -1,7 +1,8 @@
 <div id="nav">
   <ul>
+		<li><%= link_to I18n.t("News Feed"), news_feed_definitions_path %></li>
     <li><%= link_to I18n.t("New Definitions"), definitions_path(:sort => :date) %></li>
     <li><%= link_to I18n.t("Top Definitions"), definitions_path(:sort => :like, :timespan => :week) %></li>
-		<li><%= link_to I18n.t("What's Hot"), hot_definitions_path %></li>
+		<!-- <li><%# link_to I18n.t("What's Hot"), hot_definitions_path %></li> -->
   </ul>
 </div>
