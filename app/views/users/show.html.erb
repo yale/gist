@@ -59,6 +59,8 @@ $('#user_search').autocomplete({
 
 <div class="points"><%= pluralize(@user.points, "point") %></div>
 <div class="member-since">Member since <%= @user.created_at.strftime("%B %d, %Y") %></div>
+<div class="following-count"><%= @user.following_users_count %> following</div>
+<div class="followers-count"><%= pluralize(@user.count_user_followers, "follower") %></div>
 
   <% if current_user and @user.id == current_user.id %>
     <% if current_user.facebook_user? %>

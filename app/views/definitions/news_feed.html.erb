@@ -2,7 +2,7 @@
 
 <h2><%=I18n.t("News Feed")%></h2>
 <% if @definitions.nil? or @definitions.empty? %>
-  <p> You are not following any users yet. </p>
+  <p> You are not following any users yet. To follow users, go to their profiles (by clicking on their usernames) and click on the "Follow" button. </p>
 <% else %>
   <%= render :partial => "definitions/list", :locals => {:definitions => @definitions, :no_sort => true} %>
 <% end%>
