@@ -11,7 +11,7 @@ class Definition < ActiveRecord::Base
   validates_length_of       :body, :maximum => 140, :message => 'definitions must be 140 characters or less'
   
   
-  PAGE_LIMIT = 20
+  PAGE_LIMIT = 50
   PARTS_OF_SPEECH = ['noun', 'adjective', 'acronym', 'verb', 'adverb', 'preposition', 'interjection']
   MOODS = ["helpful", "funny", "poetic", "offensive", "mature", "inaccurate"]
   
@@ -215,7 +215,7 @@ class Definition < ActiveRecord::Base
     users.each do |u|
       definitions += u.definitions
     end
-    definitions.sort_by{|e| e.created_at }.last(20).reverse
+    definitions.sort_by{|e| e.created_at }.last(PAGE_LIMIT).reverse
   end  
   
   # def self.find_latest
