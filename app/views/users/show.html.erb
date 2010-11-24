@@ -39,14 +39,15 @@ $('#user_search').autocomplete({
 	  <% end %>
 </div>
 
-<h2><%= link_to @user.username, @user %></h2>
-
-<div id="follow-button">
-<%= render :partial => 'users/follow_button', :locals => {:user => @user} %>
+<div class="user-header">
+	<div id="username"><h2><%= link_to @user.username, @user %><h2></div>
+	<div id="follow-button">
+		<%= render :partial => 'users/follow_button', :locals => {:user => @user} %>
+	</div>
 </div>
 
-<p class="points"><%= pluralize(@user.points, "point") %></p>
-<p class="member-since">Member since <%= @user.created_at.strftime("%B %d, %Y") %></p>
+<div class="points"><%= pluralize(@user.points, "point") %></div>
+<div class="member-since">Member since <%= @user.created_at.strftime("%B %d, %Y") %></div>
 
   <% if current_user and @user.id == current_user.id %>
     <% if current_user.facebook_user? %>
