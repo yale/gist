@@ -195,7 +195,7 @@ class UsersController < ApplicationController
     respond_to do |wants|
       wants.html { redirect_to :back }
       wants.xml  { render :xml => @user }
-      wants.js
+      #wants.js
     end
   end
  
