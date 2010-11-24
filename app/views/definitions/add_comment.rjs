@@ -1,1 +1,2 @@
 page["#comments-#{@definition.id} .comment-list"].replace :partial => 'comments/comments', :locals => {:comments => @definition.comments.recent.limit(10).reverse}
+page["#comments-#{@definition.id} .definition-comment-form"].replace :partial => 'comments/form', :locals => {:definition => @definition}
