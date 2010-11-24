@@ -1,12 +1,19 @@
-<% if !current_user %>
-  <%= button I18n.t("Follow"), new_user_path, "btn blue" %>
-<% elsif current_user and user.id != current_user.id %>
-	<% if !current_user.following?(user) %>
-  	<%= button_to_remote I18n.t("Follow"), {:url => follow_user_path(:user => user)}, :method => :post, :class => "btn follow", :id => "follow", :onclick => "$('#follow').toggle();$('#unfollow').toggle();" %>
-<%= button_to_remote I18n.t("Unfollow"), {:url => follow_user_path(:user => user)}, :method => :post, :class => "btn unfollow", :id => "unfollow", :onclick => "$('#follow').toggle();$('#unfollow').toggle();", :style => "display:none;" %>
-		<% else %>
-		<%= button_to_remote I18n.t("Follow"), {:url => follow_user_path(:user => user)}, :method => :post, :class => "btn follow", :id => "follow", :onclick => "$('#follow').toggle();$('#unfollow').toggle();", :style => "display:none;" %>
-		<%= button_to_remote I18n.t("Unfollow"), {:url => follow_user_path(:user => user)}, :method => :post, :class => "btn unfollow", :id => "unfollow", :onclick => "$('#follow').toggle();$('#unfollow').toggle();" %>
-		<% end %>
-<% end %>
+<!-- <%# if !current_user %>
+  <%# button I18n.t("Follow"), new_user_path, "btn blue" %>
+<%# elsif current_user and user.id != current_user.id %>
+	<%# if !current_user.following?(user) %>
+  	<%# button_to_remote I18n.t("Follow"), {:url => follow_user_path(:user => user)}, :method => :post, :class => "btn follow", :id => "follow", :onclick => "$('#follow').toggle();$('#unfollow').toggle();" %>
+<%# button_to_remote I18n.t("Unfollow"), {:url => follow_user_path(:user => user)}, :method => :post, :class => "btn unfollow", :id => "unfollow", :onclick => "$('#follow').toggle();$('#unfollow').toggle();", :style => "display:none;" %>
+		<%# else %>
+		<%# button_to_remote I18n.t("Follow"), {:url => follow_user_path(:user => user)}, :method => :post, :class => "btn follow", :id => "follow", :onclick => "$('#follow').toggle();$('#unfollow').toggle();", :style => "display:none;" %>
+		<%# button_to_remote I18n.t("Unfollow"), {:url => follow_user_path(:user => user)}, :method => :post, :class => "btn unfollow", :id => "unfollow", :onclick => "$('#follow').toggle();$('#unfollow').toggle();" %>
+		<%# end %>
+<%# end %> -->
 
+<% if current_user and user.id != current_user.id and !current_user.following?(user) %>
+  <%= button_to_remote I18n.t("Follow"), {:url => follow_user_path(:user => user)}, :method => :post, :class => "btn blue" %>
+<% elsif current_user and current_user.following?(user) %>
+  <%= button_to_remote I18n.t("Unfollow"), {:url => follow_user_path(:user => user)}, :method => :post, :class => "btn pink" %>
+<% elsif !current_user %>
+  <%= button I18n.t("Follow"), new_user_path, "btn blue" %>
+<% end %>
