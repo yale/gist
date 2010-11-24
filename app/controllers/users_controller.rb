@@ -179,29 +179,23 @@ class UsersController < ApplicationController
   
   def follow 
     user =  User.find_by_url(params[:user])
-    respond_to do |wants|
-      if current_user.follow(user)
-        flash[:notice] = "You are now following #{user.username}"
-        wants.html { redirect_to :back }
-        wants.js
-      else
-        flash[:notice] = 'Something has gone horribly wrong.'
-        wants.html { redirect_to :back }
-      end
-    end
-  end
-  
-  def unfollow
-    user =  User.find_by_url(params[:user])
-    respond_to do |wants|
+    if current_user.following?(user)
       if current_user.stop_following(user)
         flash[:notice] = "You are no longer following #{user.username}"
-        wants.html { redirect_to :back }
-        wants.js
       else
-        flash[:notice] = 'Something has gone horribly wrong.'
-        wants.html { redirect_to :back }
+        flash[:error] = 'Something has gone horribly wrong.'
       end
+    else
+      if current_user.follow(user)
+        flash[:notice] = "You are now following #{user.username}"
+      else
+        flash[:error] = 'Something has gone horribly wrong.'
+      end
+    end
+    respond_to do |wants|
+      wants.html { redirect_to :back }
+      wants.xml  { render :xml => @user }
+      wants.js
     end
   end
  
