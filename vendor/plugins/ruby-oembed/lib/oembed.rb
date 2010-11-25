@@ -36,6 +36,22 @@ module OEmbed
 	  end
 	end
 	
+	# for html_body method in Definition.rb
+	def self.simpler_extract(str, &block)
+	  #reg = /(https?:\/\/[^\s]+)/i
+	  reg = /\b(?#Protocol)(?:(?:ht|f)tp(?:s?)\:\/\/|~\/|\/)?(?#Username:Password)(?:\w+:\w+@)?(?#Subdomains)(?:(?:[-\w]+\.)+(?#TopLevel Domains)(?:com|org|net|gov|mil|biz|info|mobi|name|aero|jobs|museum|travel|[a-z]{2}))(?#Port)(?::[\d]{1,5})?(?#Directories)(?:(?:(?:\/(?:[-\w~!$+|.,=]|%[a-f\d]{2})+)+|\/)+|\?|#)?(?#Query)(?:(?:\?(?:[-\w~!$+|.,*:]|%[a-f\d{2}])+=?(?:[-\w~!$+|.,*:=]|%[a-f\d]{2})*)(?:&(?:[-\w~!$+|.,*:]|%[a-f\d{2}])+=?(?:[-\w~!$+|.,*:=]|%[a-f\d]{2})*)*)*(?#Anchor)(?:#(?:[-\w~!$+|.,*:=]|%[a-f\d]{2})*)?\b/i 
+	  if block_given?
+		str.scan(reg) { yield $& }
+		nil
+	  else
+		result = []
+		str.scan(reg) {
+		  result.push $&
+		}
+		result.uniq
+	  end
+	end
+	
 	private
 
 	# extraction of inner loop of .transform(), to allow for easier

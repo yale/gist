@@ -389,7 +389,8 @@ class Definition < ActiveRecord::Base
     require 'oembed'
 	  links = OEmbed.simple_extract(body)
 	  embedded_links = []
-	  OEmbed::Providers.register_all unless links.empty?
+	  #OEmbed::Providers.register_all unless links.empty?
+	  OEmbed::Providers.register(OEmbed::Providers::Embedly) unless links.empty?
 	  links.each do |l|
 	    res = OEmbed::Providers.get(l, {:maxwidth => 300, :maxheight => 300}) rescue OEmbed::Error
 	    embedded_links.push res.html rescue OEmbed::Error
@@ -399,11 +400,11 @@ class Definition < ActiveRecord::Base
   
   def html_body
     require 'oembed'
-	  links = OEmbed.simple_extract(body)
+	  links = OEmbed.simpler_extract(body)
 	  html_body = body
 	  links.each do |l|
 	    html_link = "<a href=#{l}>#{l}</a>"
-	    html_body = body.gsub(l, html_link)
+	    html_body = html_body.gsub(l, html_link)
     end
     html_body
   end
