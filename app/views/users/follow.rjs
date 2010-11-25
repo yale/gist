@@ -1,1 +1,2 @@
 page["#follow-button"].replace :partial => 'users/follow_button', :locals => {:user => @user}
+page[".follow-count"].replace :partial => 'users/follow_count', :locals => {:user => @user}

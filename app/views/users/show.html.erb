@@ -60,7 +60,8 @@ $('#user_search').autocomplete({
 <div class="points"><%= pluralize(@user.points, "point") %></div>
 <div class="member-since">Member since <%= @user.created_at.strftime("%B %d, %Y") %></div>
 <div class="following-count"><%= @user.following_users_count %> following</div>
-<div class="followers-count"><%= pluralize(@user.count_user_followers, "follower") %></div>
+<div class="follower-count"><%= pluralize(@user.count_user_followers, "follower") %></div>
+<%# render :partial => 'users/follow_count', :locals => {:user => @user} %>
 
   <% if current_user and @user.id == current_user.id %>
     <% if current_user.facebook_user? %>
@@ -86,6 +87,29 @@ $('#user_search').autocomplete({
   <%= google_pie_chart([["Inaccurate", @inaccurate_received], ["Mature", @mature_received], ["Offensive", @offensive_received]], :width => 175, :height => 100, :type => "negative") unless @user.no_negative_mood?%>
 </div>
 
+<div class="follow-list">
+	<div id="follower-list">
+    <h3>Followers:</h3>
+ 		<% if @user.user_followers.empty? %>
+		  <p><%= "No users are following #{@user.username}" %></p>
+		<% else %>
+      <% @user.user_followers.each do |u| %>
+        <%= link_to u.username, u %><br>
+      <% end %>
+		<% end %>
+	</div>
+  <div id="following-list">
+    <h3>Following:</h3>
+ 		<% if @user.following_users.empty? %>
+		  <p><%= "#{@user.username} is not following any users" %></p>
+		<% else %>
+      <% @user.following_users.each do |u| %>
+        <%= link_to u.username, u %><br>
+      <% end %>
+		<% end %>
+  </div>
+</div>
+
 <!-- <h3>Stats</h3>
 <span><%# pluralize(@like_received, "like") %> received - <%= @like_percentage %></span><br>
 <span><%# pluralize(@dislike_received, "dislike") %> received - <%= @dislike_percentage %></span><br>
@@ -95,35 +119,40 @@ $('#user_search').autocomplete({
 <span><%# pluralize(@poetic_received, "poetic vote") %> received - <%= @poetic_percentage %></span><br> -->
 
 <% if @user.login != "wiktionary.org" %>
-	
-<h3>Points breakdown</h3>
-<span><%= pluralize(@like_points, "point") %> for <%= pluralize(@like_received, "like") %> received</span><br>
-<span><%= pluralize(@dislike_points, "point") %> for <%= pluralize(@dislike_received, "dislike") %> received</span><br>
-<span><%= pluralize(@mood_points, "point") %> for <%= pluralize(@mood_votes_received, "helpful/funny/poetic vote") %> received</span><br>
-<span><%= pluralize(@votes_cast_points, "point") %> for <%= pluralize(@votes_cast, "vote") %> cast</span><br>
-<span><%= pluralize(@comments_posted_points, "point") %> for <%= pluralize(@comments_posted, "comment") %> posted</span><br>
-<span><%= pluralize(@comments_received_points, "point") %> for <%= pluralize(@comments_received, "comment") %> received</span><br>
-<span><%= pluralize(@definition_points, "bonus point") %> for <%= pluralize(@popular_definitions, "popular definition") %></span><br>
-<span><%= pluralize(@facebook_points, "bonus point") %> for <%= (@user.facebook_user?)? "registering with Facebook": "not registering with Facebook" %></span><br>
-
-<!-- <h3>Voting breakdown</h3>
-<span><%# pluralize(@like_cast, "like vote") %> cast</span><br>  
-<span><%# pluralize(@dislike_cast, "dislike vote") %> cast</span><br> 
-<span><%# pluralize(@helpful_cast, "helpful vote") %> cast</span><br> 
-<span><%# pluralize(@funny_cast, "funny vote") %> cast</span><br> 
-<span><%# pluralize(@poetic_cast, "poetic vote") %> cast</span><br> 
-<span><%# pluralize(@inaccurate_cast, "inaccurate vote") %> cast</span><br> 
-<span><%# pluralize(@mature_cast, "mature vote") %> cast</span><br> 
-<span><%# pluralize(@offensive_cast, "offensive vote") %> cast</span><br> -->
-
-<h3>Recent definitions</h3>
-<% if @definitions %>
-<div id="definitions">
-    <%= render :partial => 'definitions/definition', :collection => @definitions.reverse, :locals => {:word => true} %>
+  <div class= "points-breakdown">
+    <h3>Points breakdown</h3>
+    <span><%= pluralize(@like_points, "point") %> for <%= pluralize(@like_received, "like") %> received</span><br>
+    <span><%= pluralize(@dislike_points, "point") %> for <%= pluralize(@dislike_received, "dislike") %> received</span><br>
+    <span><%= pluralize(@mood_points, "point") %> for <%= pluralize(@mood_votes_received, "helpful/funny/poetic vote") %> received</span><br>
+    <span><%= pluralize(@votes_cast_points, "point") %> for <%= pluralize(@votes_cast, "vote") %> cast</span><br>
+    <span><%= pluralize(@comments_posted_points, "point") %> for <%= pluralize(@comments_posted, "comment") %> posted</span><br>
+    <span><%= pluralize(@comments_received_points, "point") %> for <%= pluralize(@comments_received, "comment") %> received</span><br>
+    <span><%= pluralize(@definition_points, "bonus point") %> for <%= pluralize(@popular_definitions, "popular definition") %></span><br>
+    <span><%= pluralize(@facebook_points, "bonus point") %> for <%= (@user.facebook_user?)? "registering with Facebook": "not registering with Facebook" %></span>
 </div>
-<% else %>
-<p>This user has not posted any definitions.</p>
-<% end %>
+
+<!-- <div class= "voting-breakdown">
+  <h3>Voting breakdown</h3>
+  <span><%# pluralize(@like_cast, "like vote") %> cast</span><br>  
+  <span><%# pluralize(@dislike_cast, "dislike vote") %> cast</span><br> 
+  <span><%# pluralize(@helpful_cast, "helpful vote") %> cast</span><br> 
+  <span><%# pluralize(@funny_cast, "funny vote") %> cast</span><br> 
+  <span><%# pluralize(@poetic_cast, "poetic vote") %> cast</span><br> 
+  <span><%# pluralize(@inaccurate_cast, "inaccurate vote") %> cast</span><br> 
+  <span><%# pluralize(@mature_cast, "mature vote") %> cast</span><br> 
+  <span><%# pluralize(@offensive_cast, "offensive vote") %> cast</span><br>
+</div> -->
+
+<div class= "recent-definitions">
+  <h3>Recent definitions</h3>
+  <% if @definitions %>
+  <div id="definitions">
+    <%= render :partial => 'definitions/definition', :collection => @definitions.reverse, :locals => {:word => true} %>
+  </div>
+  <% else %>
+    <p>This user has not posted any definitions.</p>
+  <% end %>
+</div>
 
 <!-- <h3>Recent comments</h3>
 <%# if @comments %>
