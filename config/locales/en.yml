@@ -132,6 +132,7 @@ en:
   Follow: "Follow"
   Unfollow: "Unfollow"
   News Feed: "News Feed"
+  Demo: "Demo"
   
 zh:
   Home: "家"
@@ -264,3 +265,4 @@ zh:
   Follow: "按照"
   Unfollow: "取消追踪"
   News Feed: "新闻提要"
+  Demo: "示范"
