@@ -835,6 +835,10 @@ input:focus {
 	padding-top: 5px;
 }
 
+#comment_comment textarea{
+	overflow: hidden;
+}
+
 /*---------- left aligned button ----------*/
 .btn { position: relative; background: #aaa; padding: 2px; margin: 0px; color: #fff; text-decoration: none; cursor: pointer; }
 .btn * { font-style: normal; background-image: url('../images/btn2.png'); background-repeat: no-repeat; display: block; position: relative; }
@@ -862,7 +866,7 @@ input:focus {
 .voted input.btn:hover{ background: #444;}
 .btn.stats { background: #176092; padding: 0px; border: 1px solid #a1b0bb;}
 .btn.comment { background: #176092; padding: 0px; border: 1px solid #a1b0bb;}
-.btn.add-comment { background: #2ae; padding: 0px;}
+.btn.add-comment { background: #2ae; padding: 0px; vertical-align: bottom; margin-bottom: 2px;}
 .btn.external { background: #2ae; padding: 0px; border: 1px solid #FFF;}
 .btn.follow { background: #2cda0b; padding: 3px; font-size: 12px; width: 80px;}
 .btn.unfollow { background: #e31b1b; padding: 3px; font-size: 12px; width: 80px;}
@@ -886,7 +890,7 @@ input:focus {
 * html .voted input.btn:hover{ background: #444;}
 * html .btn.stats { background: #176092; padding: 0px; border: 1px solid #a1b0bb;}
 * html .btn.comment { background: #176092; padding: 0px; border: 1px solid #a1b0bb;}
-* html .btn.add-comment { background: #2ae; padding: 0px;}
+* html .btn.add-comment { background: #2ae; padding: 0px; vertical-align: bottom; margin-bottom: 2px;}
 * html .btn.external { background: #2ae; padding: 0px; border: 1px solid #FFF;}
 * html .btn.follow { background: #2cda0b; padding: 3px; font-size: 12px; width: 80px;}
 * html .btn.unfollow { background: #e31b1b; padding: 3px; font-size: 12px; width: 80px;}
