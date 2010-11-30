@@ -3,8 +3,11 @@
 <div class="make-room-for-external-search">&nbsp;</div>
 
 <h2 class="word"><%=h @word.name %></h2>
-<% if current_user and current_user.login == "murtazajafferji"%>
+<% if current_user and current_user.login == "xcxmjafferji"%>
   <%= link_to 'Delete', @word, :confirm => "Are you sure?", :method => :delete %>
+<% end %>
+<% if current_user and current_user.login == "xcxmjafferji" %>
+  <%= link_to 'Edit', edit_word_path(@word)%>
 <% end %>
 
 <div class="external-results">

@@ -1,6 +1,6 @@
 <li class="comment">
   <%=h link_to(comment.user.username, comment.user) unless comment.user.nil? %>: <%=h comment.comment %>
-  <% if current_user and (current_user.id == comment.user_id or current_user.login == "murtazajafferji") %>
+  <% if current_user and (current_user.id == comment.user_id or current_user.login == "xcxmjafferji") %>
     <%= link_to_remote 'Delete', {:url => destroy_comment_path(comment)} %>
   <% end %>
 </li>

@@ -101,6 +101,21 @@ class WordsController < ApplicationController
     end
   end
   
+  # PUT /words/1
+  # PUT /words/1.xml
+  def update
+    respond_to do |wants|
+      if @word.update_attributes(params[:word])
+        flash[:notice] = 'Word was successfully updated.'
+        wants.html { redirect_to(@word) }
+        wants.xml  { head :ok }
+      else
+        wants.html { render :action => "edit" }
+        wants.xml  { render :xml => @word.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
+  
   protected
     def authorize
     end

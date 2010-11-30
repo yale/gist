@@ -15,10 +15,10 @@
       <% if !definition_type.empty? %>
         <%=I18n.t("Voted as")%> <span><%= itemize_type definition_type %></span>.
       <% end %>  
-		  <% if current_user and (current_user.id == definition.user_id or current_user.login == "murtazajafferji")%>
+		  <% if current_user and (current_user.id == definition.user_id or current_user.login == "xcxmjafferji")%>
 		    <%= link_to 'Delete', definition, :confirm => "Are you sure?", :method => :delete %>
 		  <% end %>
-		  <% if current_user and current_user.login == "murtazajafferji" %>
+		  <% if current_user and current_user.login == "xcxmjafferji" %>
 		    <%= link_to 'Edit', edit_definition_path(definition)%>
 		  <% end %>
     </span>
