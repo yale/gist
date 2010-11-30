@@ -82,7 +82,8 @@ module ApplicationHelper
       :chco => options[:colors].slice(0, data.length).join(','),
       :chf => "bg,s,FFFFFF00",
       :chdlp => "r",
-      :chdls => "FFFFFFFF,8",
+      # :chdls => "FFFFFFFF,8",
+      :chdls => "000000,8",
     }
 
     image_tag("http://chart.apis.google.com/chart?#{opts.map{|k,v|"#{k}=#{v}"}.join('&')}")
