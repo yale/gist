@@ -780,10 +780,12 @@ input:focus {
 
 #follower-list {
 	float: left;
+	width: 50%;
 }
 
 #following-list {
 	float: right;
+	width: 50%;
 }
 
 .points-breakdown {

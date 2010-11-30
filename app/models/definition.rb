@@ -403,7 +403,7 @@ class Definition < ActiveRecord::Base
 	  links = OEmbed.simpler_extract(body)
 	  html_body = body
 	  links.each do |l|
-	    html_link = "<a href=#{l}>#{l}</a>"
+	    html_link = "<a href=#{l}><font color='#B1D4ED'>#{l}</font></a>"
 	    html_body = html_body.gsub(l, html_link)
     end
     html_body
