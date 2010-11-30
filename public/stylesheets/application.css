@@ -382,10 +382,10 @@ vertical-align: middle;
 
 #main {
 	/*background: url(../images/backgrounds/main-bg.jpg) repeat-y scroll center top #F2E2C1;*/
-	background: url(../images/backgrounds/notebook-paper-blue.jpg) repeat-y scroll center top #176092;
+	/*background: url(../images/backgrounds/notebook-paper-blue.jpg) repeat-y scroll center top #176092;*/
   float: left;
   border-top: solid 4px #13517a;
-  /*background-color: #176092;*/
+  background-color: #176092;
   width: 560px;
   padding: 20px;
 }
