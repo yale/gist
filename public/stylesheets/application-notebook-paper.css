@@ -14,7 +14,8 @@ body, html {
 body {
   font-family: "Lucida Grande", Helvetica, Arial, sans-serif;
   font-size: 14px;
-  color: #b1d4ed;
+  /*color: #b1d4ed;*/
+	color: #025D8C
 }
 
 h1 {
@@ -25,7 +26,9 @@ h2 {
   font-size: 24px;
   font-family: Georgia, "Times New Roman", serif;
   margin-bottom: 15px;
-	color: #D9D7FC;
+	/*color: #D9D7FC;*/
+	/*color: #b1d4ed;*/
+	color: #9C000D;
 }
 
 h2.word {
@@ -41,13 +44,15 @@ h2.word {
 
 h3 {
   font-size: 16px;
-  color: white;
+  /*color: white;*/
+  color: #000;
   font-weight: bold;
   margin: 20px 0 10px 0;
 }
 
 h4 {
-  color: #fffeb3;
+  /*color: #fffeb3;*/
+	color: #FF6600;
   font-size: 32px;
   text-align: center;
   font-family: Georgia, "Times New Roman", serif;
@@ -99,8 +104,13 @@ h4 {
   width: 50px;
 }
 
-.external-results a{
+#sidebar .external-results a{
   color: white !important;
+}
+
+.external-results a{
+  /*color: white !important;*/
+	color: #000 !important;
 }
 
 .external-results table{
@@ -362,6 +372,7 @@ vertical-align: middle;
   line-height: 13px;
   padding: 5px;
   font-size: 10px;
+  color: #b1d4ed;
 }
 
 #sidebar h3 {
@@ -382,16 +393,17 @@ vertical-align: middle;
 
 #main {
 	/*background: url(../images/backgrounds/main-bg.jpg) repeat-y scroll center top #F2E2C1;*/
-	/*background: url(../images/backgrounds/notebook-paper-small.jpg) repeat-y scroll center top #176092;*/
+	background: url(../images/backgrounds/notebook-paper.jpg) repeat-y scroll center top #176092;
   float: left;
   border-top: solid 4px #13517a;
-  background-color: #176092;
+  /*background-color: #176092;*/
   width: 560px;
   padding: 20px;
 }
 
 #main a {
-  color: #fffeb3;
+  /*color: #fffeb3;*/
+	color: #FF6600;
 }
 
 #main a:hover {
@@ -449,7 +461,8 @@ vertical-align: middle;
 }
 
 .index, .body {
-  color: #fff;
+  /*color: #fff;*/
+	color: #000;
 }
 
 .body {
@@ -457,7 +470,9 @@ vertical-align: middle;
 }
 
 #main .body a {
-    color: white;
+    /*color: white;*/
+		/*color: #000;*/
+		color: #333333;
 }
 
 /*.stats {
@@ -475,11 +490,12 @@ vertical-align: middle;
 
 .meta {
   font-size: 11px;
-  color: #B1D4ED;
+	color: #D71801;
+  /*color: #B1D4ED;*/
   /*color: #CACCE3;*/
   /*color: #a1b0bb;*/
-/*  display: block;
-*/}
+  /*display: block;*/
+}
 
 /*.meta .voted a {
   font-weight: bold;
@@ -488,8 +504,8 @@ vertical-align: middle;
 
 .detailed-stats div {
   padding: 5px;
-  border: solid 2px #13517a;
-  background-color: #13517a;
+  /*border: solid 2px #13517a;*/
+  /*background-color: #13517a;*/
 }
 
 .points {
@@ -779,18 +795,19 @@ input:focus {
 }
 
 #definition-of-the-day a{
-	color: #D9D7FC;
+	color: #9C000D;
+	/*color: #D9D7FC;*/
   /*color: #B1ACA9;*/
   /*color: #FF9900;*/
 	/*color: #F7C41F;*/
 }
 
 #most-recent a{
-  color: #D9D7FC;
+  color: #9C000D;
 }
 
 #random-definition a{
-  color: #D9D7FC;
+  color: #9C000D;
 }
 
 .user-charts {
@@ -808,7 +825,8 @@ input:focus {
 }
 
 .user-header #username a{
-	color: #D9D7FC;
+	/*color: #D9D7FC;*/
+	color: #9C000D;
 	font-size: 28px;
 }
 
@@ -817,7 +835,8 @@ input:focus {
 }
 
 .comment {
-	color: #FFF;
+	/*color: #FFF;*/
+	color: #000;
 }
 
 .follow-list {
@@ -839,6 +858,10 @@ input:focus {
 
 #comment_comment textarea{
 	overflow: hidden;
+}
+
+.section h3{
+	color: #FFF;
 }
 
 /*---------- left aligned button ----------*/
