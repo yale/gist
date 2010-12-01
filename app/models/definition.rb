@@ -209,14 +209,20 @@ class Definition < ActiveRecord::Base
     self.find(:all, :select => select_query, :order => 'popularity DESC', :limit => PAGE_LIMIT, :offset => offset)
   end
   
+  # def self.news_feed user
+  #   users = user.following_users
+  #   definitions = []
+  #   users.each do |u|
+  #     definitions += u.definitions
+  #   end
+  #   definitions.sort_by{|e| e.created_at }.last(PAGE_LIMIT).reverse
+  # end  
+  
   def self.news_feed user
     users = user.following_users
-    definitions = []
-    users.each do |u|
-      definitions += u.definitions
-    end
-    definitions.sort_by{|e| e.created_at }.last(PAGE_LIMIT).reverse
-  end  
+    users = users.collect{|u| u.id}
+    Definition.find(:all, :conditions => {:user_id => users}, :order => 'created_at DESC', :limit => PAGE_LIMIT)
+  end
   
   # def self.find_latest
   #   self.all(:limit => PAGE_LIMIT, :order => 'created_at DESC')
@@ -392,7 +398,7 @@ class Definition < ActiveRecord::Base
 	  #OEmbed::Providers.register_all unless links.empty?
 	  OEmbed::Providers.register(OEmbed::Providers::Embedly) unless links.empty?
 	  links.each do |l|
-	    res = OEmbed::Providers.get(l, {:maxwidth => 500, :maxheight => 300}) rescue OEmbed::Error
+	    res = OEmbed::Providers.get(l, {:maxheight => 300, :maxwidth => 300}) rescue OEmbed::Error
 	    embedded_links.push res.html rescue OEmbed::Error
     end
     embedded_links
