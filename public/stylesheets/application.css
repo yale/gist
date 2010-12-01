@@ -878,6 +878,14 @@ input:focus {
 	text-align: center;
 }
 
+.lower-roman li{ 
+	list-style-type: lower-roman;
+}
+
+.bullet li{ 
+	list-style-type: disc;
+}
+
 /*---------- left aligned button ----------*/
 .btn { position: relative; background: #aaa; padding: 2px; margin: 0px; color: #fff; text-decoration: none; cursor: pointer; }
 .btn * { font-style: normal; background-image: url('../images/btn2.png'); background-repeat: no-repeat; display: block; position: relative; }
