@@ -7,7 +7,7 @@ class Definition < ActiveRecord::Base
   validates_presence_of     :body
   validates_uniqueness_of   :body
   validate :must_be_defined
-  before_create :make_slug
+  after_create :make_slug
   validates_length_of       :body, :maximum => 140, :message => 'definitions must be 140 characters or less'
   
   
@@ -385,10 +385,11 @@ class Definition < ActiveRecord::Base
   
   def make_slug
   	if self.word
-      self.url = self.word.name.to_url + "-" + self.id.to_s
+      self.url = self.word.name.to_url + "-" + id.to_s
 	  else
-	    self.url = self.id.to_s
+	    self.url = id.to_s
 	  end
+	  self.save
   end
   
   def embed_link
@@ -440,12 +441,12 @@ class Definition < ActiveRecord::Base
     definition
   end
   
-  #def to_param
-  #  if url
-  #  	url
-  #  else
-  #    id.to_s
-  #  end
-  #end
+  def to_param
+   if url
+    url
+   else
+     id.to_s
+   end
+  end
 
 end

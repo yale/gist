@@ -125,7 +125,6 @@ class DefinitionsController < ApplicationController
 
   # GET /definitions/1/edit
   def edit
-  	@definition = Definition.find(params[:id])
   end
 
   # POST /definitions
@@ -210,10 +209,10 @@ class DefinitionsController < ApplicationController
 
   private
     def find_definition
-      #@definition = Definition.find_by_url(params[:id])
-      #if @definition.nil?
+      @definition = Definition.find_by_url(params[:id])
+      if @definition.nil?
       	@definition = Definition.find(params[:id])
-      #end
+      end
     end
 
 end
