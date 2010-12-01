@@ -398,7 +398,7 @@ class Definition < ActiveRecord::Base
 	  #OEmbed::Providers.register_all unless links.empty?
 	  OEmbed::Providers.register(OEmbed::Providers::Embedly) unless links.empty?
 	  links.each do |l|
-	    res = OEmbed::Providers.get(l, {:maxheight => 300}) rescue OEmbed::Error
+	    res = OEmbed::Providers.get(l, {:maxheight => 300, :maxwidth => 300}) rescue OEmbed::Error
 	    embedded_links.push res.html rescue OEmbed::Error
     end
     embedded_links
