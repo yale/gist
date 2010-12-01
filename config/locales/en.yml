@@ -133,6 +133,7 @@ en:
   Unfollow: "Unfollow"
   News Feed: "News Feed"
   Demo: "Demo"
+  Resume: "Resume"
   
 zh:
   Home: "家"
@@ -266,3 +267,4 @@ zh:
   Unfollow: "取消追踪"
   News Feed: "新闻提要"
   Demo: "示范"
+  Resume: "简历"

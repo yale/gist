@@ -37,6 +37,7 @@ ActionController::Routing::Routes.draw do |map|
   	info.contact 'contact', :action => 'contact'
   	info.privacy 'privacy', :action => 'privacy'
   	info.terms 'terms', :action => 'terms'
+  	info.resume 'resume', :action => 'resume'
   end
  
   map.with_options :controller => 'games' do |game|

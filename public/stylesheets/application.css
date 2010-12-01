@@ -847,6 +847,10 @@ input:focus {
 	text-align: center;
 }
 
+.info h2{
+	text-align: center;
+}
+
 /*---------- left aligned button ----------*/
 .btn { position: relative; background: #aaa; padding: 2px; margin: 0px; color: #fff; text-decoration: none; cursor: pointer; }
 .btn * { font-style: normal; background-image: url('../images/btn2.png'); background-repeat: no-repeat; display: block; position: relative; }
