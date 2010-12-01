@@ -825,6 +825,7 @@ input:focus {
 	font-size: 14px;
 	font-weight: bold;
 	margin: 5px;
+	text-align: center;
 }
 
 /*---------- left aligned button ----------*/
