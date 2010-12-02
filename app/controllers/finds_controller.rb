@@ -14,7 +14,7 @@ class FindsController < ApplicationController
   	  @word = Word.new
   	  @result = Word.find(:first, :conditions => ['LOWER(name) LIKE ?', "#{$query.downcase}"])
   	  if @result.nil?
-        query = $query.gsub(' ', '+').gsub('"','%22')
+        query = $query.gsub(' ', '+')
         query_wikipedia = $query.gsub(' ', '_')
         @google_dictionary_url = "'#{'http://www.google.com/dictionary?aq=f&langpair=en|en&q=' + query}'"
         @urban_dictionary_url = "'#{'http://www.urbandictionary.com/define.php?term=' + query}'"
@@ -25,7 +25,7 @@ class FindsController < ApplicationController
         require 'rexml/document'
 
         # Spelling suggestion for $query
-        url_yahoo = "http://search.yahooapis.com/WebSearchService/V1/spellingSuggestion?appid=Ubg.W.nV34Hzm.almmRoPYM8EZRl9hJd4l62lBl81mxxSf888w4t35WCWTvBEvvifusGmajS&query=#{query}"
+        url_yahoo = "http://search.yahooapis.com/WebSearchService/V1/spellingSuggestion?appid=Ubg.W.nV34Hzm.almmRoPYM8EZRl9hJd4l62lBl81mxxSf888w4t35WCWTvBEvvifusGmajS&query=#{URI.escape(query)}"
 
         # get the XML data as a string
         xml_data_yahoo = Net::HTTP.get_response(URI.parse(url_yahoo)).body
