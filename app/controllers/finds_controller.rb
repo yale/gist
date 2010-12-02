@@ -51,14 +51,18 @@ class FindsController < ApplicationController
       end
     end
     
-    respond_to do |wants|
-      if @result 
-        wants.html { redirect_to @result }
-        wants.xml  { render :xml => @result }
-        wants.json { render :json => @result }
-      else 
-      	wants.html 
-        wants.xml
+    if $query == "↑, ↑, ↓, ↓, ←, →, ←, →, B, A, ENTER" or $query == "(↑, ↑, ↓, ↓, ←, →, ←, →, B, A, ENTER)"
+    	redirect_to konami_path
+    else
+      respond_to do |wants|
+        if @result 
+          wants.html { redirect_to @result }
+          wants.xml  { render :xml => @result }
+          wants.json { render :json => @result }
+        else 
+        	wants.html 
+          wants.xml
+        end
       end
     end
   end
