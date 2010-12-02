@@ -433,9 +433,9 @@ class User < ActiveRecord::Base
   
   def new_definitions limit = nil
     if limit.nil?
-      Definition.find(:all, :conditions => ['user_id LIKE ?', id], :order => 'created_at DESC')
+      Definition.find(:all, :conditions => ['user_id = ?', id], :order => 'created_at DESC')
     else
-      Definition.find(:all, :conditions => ['user_id LIKE ?', id], :order => 'created_at DESC', :limit => limit)
+      Definition.find(:all, :conditions => ['user_id = ?', id], :order => 'created_at DESC', :limit => limit)
     end
   end 
   
