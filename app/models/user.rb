@@ -431,6 +431,10 @@ class User < ActiveRecord::Base
     end
   end
   
+  def new_definitions limit = -1
+    Definition.find(:all, :conditions => ['user_id LIKE ?', "#{id}"], :order => 'created_at DESC', :limit => limit)
+  end 
+  
   protected
     def make_activation_code
       self.activation_code = self.class.make_token

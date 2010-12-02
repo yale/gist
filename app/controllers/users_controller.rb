@@ -81,7 +81,7 @@ class UsersController < ApplicationController
     end
     @comments = @user.comments
     @votes = @user.user_votes
-    @definitions = @user.definitions
+    @definitions = @user.new_definitions
     
     @like_received = @user.votes_received "like"
     @dislike_received = @user.votes_received "dislike"
