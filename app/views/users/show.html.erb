@@ -58,7 +58,7 @@ $('#user_search').autocomplete({
 </div>
 
 <div class="points"><%= pluralize(@user.points, "point") %></div>
-<div class="member-since">Member since <%= @user.created_at.strftime("%B %d, %Y") %></div>
+<div class="member-since">Member since <%= @user.created_at.in_time_zone('Eastern Time (US & Canada)').strftime("%B %d, %Y") %></div>
 <div class="following-count"><%= @user.following_users_count %> following</div>
 <div class="follower-count"><%= pluralize(@user.count_user_followers, "follower") %></div>
 <%# render :partial => 'users/follow_count', :locals => {:user => @user} %>

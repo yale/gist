@@ -1,7 +1,7 @@
 <div class="meta">
   
   <p class="byline"><%= I18n.t("by") %> <% @user = User.find(definition.user_id) unless definition.user_id.nil?%>
-	<%=link_to(@user.username, @user) + " " + definition.created_at.strftime("%m/%d/%y") %></p>
+	<%=link_to(@user.username, @user) + " " + definition.created_at.in_time_zone('Eastern Time (US & Canada)').strftime("%m/%d/%y") %></p>
   <%#link_to(@user.username, @user) + " " + "on" + " " + definition.created_at.strftime("%B %d, %Y") + "." %></p>
   
   <p class="stats">

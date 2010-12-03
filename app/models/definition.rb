@@ -428,14 +428,30 @@ class Definition < ActiveRecord::Base
     inaccurate + mature + offensive == 0
   end
   
+  # def self.definition_of_the_day
+  #   i = 1
+  #   definition = nil
+  #   date = Date.current
+  #   date = date - $clicks.day unless $clicks.nil?
+  #   $clicks += 1 unless $clicks.nil?
+  #   until definition   
+  #     definition = Definition.find(:first, :conditions => ["created_at < ? AND created_at >= ?", date, date - i.day], :order => '"like" DESC')
+  #     i += 1
+  #   end
+  #   definition
+  # end
+  
   def self.definition_of_the_day
+    tz = 'Eastern Time (US & Canada)'
     i = 1
     definition = nil
-    date = Date.current
+    date = Time.now.in_time_zone(tz).to_date
+    #(Time.now.midnight - 1.day)..Time.now.midnight
     date = date - $clicks.day unless $clicks.nil?
     $clicks += 1 unless $clicks.nil?
     until definition   
-      definition = Definition.find(:first, :conditions => ["created_at < ? AND created_at >= ?", date, date - i.day], :order => '"like" DESC')
+      #definition.created_at.in_time_zone('Eastern Time (US & Canada)').to_date
+      definition = Definition.find(:first, :conditions => ["created_at < ? AND created_at >= ?", date + 5.hours, date - i.day + 5.hours], :order => '"like" DESC')
       i += 1
     end
     definition
