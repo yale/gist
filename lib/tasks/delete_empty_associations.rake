@@ -2,7 +2,7 @@ desc "Delete empty associations"
 task :delete_empty_associations => [ :environment ] do | t |
   
   puts "Delete specific users"
-  users_to_delete = ['mustafas52', 'zubidubi', 'wakawaka', 'shakira', 'idiot', 'faridas']
+  users_to_delete = ['lolmurtaza', 'moomoo', 'peaches', 'jiatai', '2010teller', 'abdel.gelil.abdel.daye']
   count = 0
   deleted_users = []
   users_to_delete.each do |user|
