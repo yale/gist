@@ -452,6 +452,7 @@ class Definition < ActiveRecord::Base
     until definition   
       #definition.created_at.in_time_zone('Eastern Time (US & Canada)').to_date
       definition = Definition.find(:first, :conditions => ["created_at < ? AND created_at >= ?", date + 5.hours, date - i.day + 5.hours], :order => '"like" DESC')
+      definition = nil if definition == self.last
       i += 1
     end
     definition
