@@ -13,7 +13,7 @@ development:
   api_key: b33d27141426c0ba61e5327b8137db0b
   secret_key: 1de354c13159cd3a0a89b464c7504518
   canvas_page_name: definitious
-  callback_url: http://localhost:3000/signup/
+  callback_url: http://localhost:3000/
   pretty_errors: true
   set_asset_host_to_callback_url: false
   tunnel:
@@ -27,7 +27,7 @@ test:
   api_key: b33d27141426c0ba61e5327b8137db0b
   secret_key: 1de354c13159cd3a0a89b464c7504518
   canvas_page_name: definitious
-  callback_url: http://localhost:3000/signup/
+  callback_url: http://localhost:3000/
   pretty_errors: true
   set_asset_host_to_callback_url: false
   tunnel:
@@ -41,7 +41,7 @@ production:
   api_key: b33d27141426c0ba61e5327b8137db0b
   secret_key: 1de354c13159cd3a0a89b464c7504518
   canvas_page_name: definitious
-  callback_url: http://definitious.com/signup/
+  callback_url: http://definitious.com/
   pretty_errors: true
   set_asset_host_to_callback_url: false
   tunnel:
