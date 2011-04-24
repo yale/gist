@@ -5,7 +5,7 @@ class Definition < ActiveRecord::Base
   acts_as_commentable
   acts_as_followable
   validates_presence_of     :body
-  validates_uniqueness_of   :body
+  #validates_uniqueness_of   :body
   validate :must_be_defined
   after_create :make_slug
   validates_length_of       :body, :maximum => 140, :message => 'definitions must be 140 characters or less'
