@@ -66,6 +66,14 @@
 
     <script type="text/javascript">
     $(function() {  
+			var lastRequest;
+			$('.autocomplete').keypress(function(){
+			    if (lastRequest){
+			        lastRequest.abort();
+			        lastRequest = null;
+			    }
+			    lastRequest = $.ajax({type: "GET"});
+			});
     $('#word_search').autocomplete({
             minLength: 2,
             source: '<%= words_path(:json) %>',
